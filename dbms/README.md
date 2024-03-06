@@ -53,4 +53,6 @@
 - **content: 댓글 내용**
 - **comment_time: 댓글 작성 시간**
 
-- `https://service-oriented-computing.netlify.app/`
+## API정보
+
+- **https://www.kobis.or.kr/kobisopenapi/homepg/board/downloadSource.do <br> - API키 사용에 필요한 jar파일 다운**
