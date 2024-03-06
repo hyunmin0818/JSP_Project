@@ -24,6 +24,7 @@
 - **genre: 영화 장르**
 - **production_status: 제작 상태**
 - **director_id (FK): Directors 릴레이션의 외래키 (감독 정보 연결)**
+- **actor_id (FK): Actors 릴레이션의 외래키(배우 정보 연결)**
 - **production_company: 제작사**
 
 ## 사용자 (Users) 테이블
