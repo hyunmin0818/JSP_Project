@@ -1,0 +1,48 @@
+movie테이블
+-영화이름
+-제작연도
+-제작국가
+-장르
+-감독
+-제작사
+-주연
+-running time
+
+
+user테이블
+-아이디
+-비밀번호
+-이름
+-주민번호
+-전화번호
+-이메일
+
+배우 테이블
+actorid
+name
+birth date
+origin(출생지)
+
+감독 테이블
+director id
+name
+birth date
+origin
+
+리뷰테이블
+리뷰 아이디
+유저아이디 fk
+movie id fk
+rating
+comment
+review time 
+극장/ott 구분(어떤곳에서 개봉했는지)
+original language
+
+댓글 테이블
+comment id 
+userid
+review id
+content
+comment time
+
