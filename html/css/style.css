@@ -1104,6 +1104,19 @@ ol {
 	color: #ffffff;
 	border-radius: 0 4px 4px 0;
 }
+.anime__details__btn .reservation{   /*예매 버튼 */
+	font-size: 13px;
+	color: #ffffff;
+	background: #e53637;
+	display: inline-block;
+	font-weight: 700;
+	letter-spacing: 2px;
+	text-transform: uppercase;
+	padding: 14px 30px;
+	border-radius: 4px 4px 4px 4px;
+	float: right; 		/* 요소를 오른쪽으로 띄움 */
+    margin-left: 1px; /* 왼쪽 여백을 추가하여 다른 요소와 간격을 조절 */
+}
 
 .anime__details__review {
 	margin-bottom: 55px;

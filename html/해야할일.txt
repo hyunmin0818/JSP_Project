@@ -7,6 +7,7 @@
     
 2-2. inedx.html에서 클릭시 
     anime-details.html 연결
+    얘매버튼 만듬
 
 3.categories.html 에서 첫번쨰 상품 영화 정보로 바꾸기 v 
 
