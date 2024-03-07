@@ -287,7 +287,31 @@ ol {
 	text-align: center;
 	cursor: pointer;
 }
-
+#logincenter{             
+  /* login창 하나만 나올 때 가운데 정렬로 오게 함 */
+	padding-top: 5px;
+	padding-bottom: 500px;
+ }
+ #logincenter, #logincenter2 {            /*logincenter만 가운데정렬하도록함*/
+	position: relative;
+	padding-left: 0px;
+ }
+ 
+ #logincenter::after, #logincenter2::after{   /*login__form의 가운데 중앙 회색선이 없어지지 않아서 .login__form의 css값을 복사하여 색만 수정*/
+	position: absolute;
+	right: -14px;
+	top: -40px;
+	height: 330px;
+	width: 1px;
+	background: rgba(5, 5, 5, 0);
+	content: "";
+ }
+ 
+ 
+ #logincenter{         /*로그인 창 가운데 정렬 */
+	margin:0 auto;
+ }
+ 
 .search-model {
 	display: none;
 	position: fixed;
