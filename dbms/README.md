@@ -9,23 +9,26 @@
 ## 배우 (Actors) 테이블
 
 - **actor_id (PK)**
-- **name: 배우 이름**
+- **actor: 배우 이름**
 - **birth_date: 배우 생년월일**
 
 ## 영화 (Movies) 테이블
 
 - **movie_id (PK)**
-- **title_korean: 영화 한글 제목**
-- **title_english: 영화 영문 제목**
-- **movie_code: 영화 코드**
-- **production_year: 제작 연도**
-- **production_country: 제작 국가**
-- **type: 영화 유형**
-- **genre: 영화 장르**
-- **production_status: 제작 상태**
-- **director_id (FK): Directors 릴레이션의 외래키 (감독 정보 연결)**
-- **actor_id (FK): Actors 릴레이션의 외래키(배우 정보 연결)**
-- **production_company: 제작사**
+- **createDts: 제작시작 년도**
+- **createDte: 제작종료 년도**
+- **releaseDts: 개봉시작일**
+- **releaseDte: 개봉종료일**
+- **nation: 제작국가명**
+- **company: 제작사명**
+- **genre: 장르**
+- **plot: 줄거리**
+- **runtime: 상영시간**
+- **type: 영화유형**
+- **director: 감독명**
+- **actor: 배우명**
+- **staff: 스탭명**
+- **keyword: 키워드**
 
 ## 사용자 (Users) 테이블
 
@@ -55,4 +58,4 @@
 
 ## API정보
 
-- **https://www.kobis.or.kr/kobisopenapi/homepg/board/downloadSource.do <br> - API키 사용에 필요한 jar파일 다운**
+- **https://www.kmdb.or.kr/info/api/apiDetail/6**
