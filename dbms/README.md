@@ -56,15 +56,6 @@
 - **comment: 리뷰 내용**
 - **review_time: 리뷰 작성 시간**
 
-## 댓글 (Comments) 테이블
-
-- **comment_id (PK)**
-- **user_id (FK): Users 릴레이션의 외래키 (사용자 정보 연결)**
-- **review_id (FK): Reviews 릴레이션의 외래키 (리뷰 정보 연결)**
-- **operator_id: Operator 릴레이션의 외래키 (운영자 정보 연결)**
-- **content: 댓글 내용**
-- **comment_time: 댓글 작성 시간**
-
 ## API정보
 
 - **https://www.kmdb.or.kr/info/api/apiDetail/6**
