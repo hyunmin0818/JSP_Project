@@ -38,11 +38,20 @@
 - **userphone: 사용자 연락처**
 - **userbirth: 사용자 생년월일**
 
+## 운영자 (Operator) 테이블
+
+- **operator_id (PK)**
+- **username: 운영자 이름**
+- **operator_password: 운영자 비밀번호**
+- **email: 운영자 이메일**
+- **operator_phone: 운영자 연락처**
+
 ## 리뷰 (Reviews) 테이블
 
 - **review_id (PK)**
 - **user_id (FK): Users 릴레이션의 외래키 (사용자 정보 연결)**
 - **movie_id (FK): Movies 릴레이션의 외래키 (영화 정보 연결)**
+- **operator_id: Operator 릴레이션의 외래키 (운영자 정보 연결)**
 - **rating: 평점**
 - **comment: 리뷰 내용**
 - **review_time: 리뷰 작성 시간**
@@ -52,6 +61,7 @@
 - **comment_id (PK)**
 - **user_id (FK): Users 릴레이션의 외래키 (사용자 정보 연결)**
 - **review_id (FK): Reviews 릴레이션의 외래키 (리뷰 정보 연결)**
+- **operator_id: Operator 릴레이션의 외래키 (운영자 정보 연결)**
 - **content: 댓글 내용**
 - **comment_time: 댓글 작성 시간**
 
