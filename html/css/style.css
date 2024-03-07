@@ -39,6 +39,11 @@ body {
 	background: #0b0c2a;
 }
 
+ #dropdown-toggle{					 /*로그인 캐릭터 id 별도 추가  색깔 새로 추가함*/
+	color:white;
+}
+
+
 h1,
 h2,
 h3,
