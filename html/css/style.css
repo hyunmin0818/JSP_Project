@@ -672,9 +672,16 @@ ol {
 }
 
 .product__item__pic {
-	height: 325px;
-	position: relative;
-	border-radius: 5px;
+    height: 325px;
+    position: relative;
+    border-radius: 5px;
+    overflow: hidden; /* 이미지가 넘치지 않도록 처리 */
+    transition: transform 0.3s; /* 호버 효과를 위한 애니메이션 추가 */
+}
+
+.product__item__pic:hover {
+    cursor: pointer; /* 마우스 커서를 손가락 모양으로 변경 */
+    transform: scale(1.05); /* 호버 시 약간 확대되는 효과 */
 }
 
 .product__item__pic .ep {
@@ -761,6 +768,8 @@ ol {
 .product__sidebar__view {
 	position: relative;
 	margin-bottom: 80px;
+	cursor: pointer;
+
 }
 
 .product__sidebar__view .filter__controls {
@@ -841,6 +850,7 @@ ol {
 }
 
 .product__sidebar__comment__item__pic {
+	cursor: pointer; /* 마우스 커서를 손가락 모양으로 변경 */
 	float: left;
 	margin-right: 15px;
 }
