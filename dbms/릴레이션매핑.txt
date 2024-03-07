@@ -1,48 +1,66 @@
 movie테이블
--영화이름
--제작연도
--제작국가
--장르
--감독
--제작사
--주연
--running time
+movie_id (PK)
+movieSeq : 등록 seq
+title_korean: 영화 한글 제목
+title_english: 영화 영문 제목
+title_origin : 영화 원제
+production_year: 제작 연도
+production_country: 제작 국가
+runtime : 상영시간
+rating : 대표관람등급
+type: 영화 유형
+genre: 영화 장르
+movie_use : 용도구분(극장용/ott)
+production_status: 제작 상태
+director_id (FK): Directors 릴레이션의 외래키 (감독 정보 연결)
+actor_id (FK): Actors 릴레이션의 외래키(배우 정보 연결)
+production_company: 제작사
+poster_URL : 포스터이미지 URL
+still_URL : 스틸이미지 URL
+vod_URL : 영화 vod URL
+screenArea : 관람지역
+audiAcc : 누적 관람인원
+Awards1 : 영화제 수상내역
+Awards2 : 수상내역 기타
 
 
 user테이블
--아이디
--비밀번호
--이름
--주민번호
--전화번호
--이메일
+user_id (PK)
+userpassword: 사용자 비밀번호
+username: 사용자 이름
+email: 사용자 이메일
+userphone: 사용자 연락처
+userbirth: 사용자 생년월일
+
 
 배우 테이블
-actorid
+actorid (PK)
 name
 birth date
-origin(출생지)
+
 
 감독 테이블
-director id
+director id (PK)
 name
 birth date
-origin
+
 
 리뷰테이블
-리뷰 아이디
-유저아이디 fk
-movie id fk
-rating
-comment
-review time 
-극장/ott 구분(어떤곳에서 개봉했는지)
-original language
+review_id (PK)
+user_id (FK): Users 릴레이션의 외래키 (사용자 정보 연결)
+movie_id (FK): Movies 릴레이션의 외래키 (영화 정보 연결)
+rating: 평점
+comment: 리뷰 내용
+review_time: 리뷰 작성 시간
+
 
 댓글 테이블
-comment id 
-userid
-review id
-content
-comment time
+comment_id (PK)
 
+user_id (FK): Users 릴레이션의 외래키 (사용자 정보 연결)
+
+review_id (FK): Reviews 릴레이션의 외래키 (리뷰 정보 연결)
+
+content: 댓글 내용
+
+comment_time: 댓글 작성 시간
