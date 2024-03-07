@@ -1,0 +1,466 @@
+<!DOCTYPE html>
+<html lang="zxx">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="description" content="Anime Template">
+    <meta name="keywords" content="Anime, unica, creative, html">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Anime | Template</title>
+
+    <!-- Google Font -->
+    <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Mulish:wght@300;400;500;600;700;800;900&display=swap"
+    rel="stylesheet">
+
+    <!-- Css Styles -->
+    <link rel="stylesheet" href="css/bootstrap.min.css" type="text/css">
+    <link rel="stylesheet" href="css/font-awesome.min.css" type="text/css">
+    <link rel="stylesheet" href="css/elegant-icons.css" type="text/css">
+    <link rel="stylesheet" href="css/plyr.css" type="text/css">
+    <link rel="stylesheet" href="css/nice-select.css" type="text/css">
+    <link rel="stylesheet" href="css/owl.carousel.min.css" type="text/css">
+    <link rel="stylesheet" href="css/slicknav.min.css" type="text/css">
+    <link rel="stylesheet" href="css/style.css" type="text/css">
+</head>
+
+<body>
+    <!-- Page Preloder -->
+    <div id="preloder">
+        <div class="loader"></div>
+    </div>
+
+    <!-- Header Section Begin -->
+    <header class="header">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-2">
+                    <div class="header__logo">
+                        <a href="./admin_index.html">
+                            <img src="img/logo.png" alt="">
+                        </a>
+                    </div>
+                </div>
+                <div class="col-lg-8">
+                    <!-- 헤더 네비게이션-->
+                    <div class="header__nav">
+                        <nav class="header__menu mobile-menu">
+                            <ul>
+                                <li class="active"><a href="./admin_index.html">Homepage</a></li>  
+                                <li><a href="./admin_categories.html">Categories <span class="arrow_carrot-down"></span></a>
+                                    <ul class="dropdown">
+                                        <li><a href="./admin_categories.html">Categories</a></li>
+                                        <li><a href="./admin_details.html">Anime Details</a></li>
+                                        <li><a href="./anime-watching.html">Anime Watching</a></li>
+                                        <li><a href="./blog-details.html">Blog Details</a></li>
+                                        <li><a href="./signup.html">Sign Up</a></li>
+                                        <li><a href="./login.html">Login</a></li>
+                                    </ul>
+                                </li>
+                                <li><a href="./blog.html">Our Blog</a></li>
+                                <li><a href="#">Contacts</a></li>
+                            </ul>
+                        </nav>
+                    </div>
+                </div>
+                <!-- 헤더 오른쪽 영역 -->
+                <div class="col-lg-2">
+                    <div class="header__right">
+                        <a href="#" class="search-switch"><span class="icon_search"></span></a>
+                        <a href="./login.html"><span class="icon_profile"></span></a>
+                    </div>
+                </div>
+            </div>
+            <!-- 모바일 메뉴 랩 -->
+            <div id="mobile-menu-wrap"></div>
+        </div>
+    </header>
+    <!-- Header End -->
+
+    <!-- Breadcrumb Begin -->
+    <div class="breadcrumb-option">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="breadcrumb__links">
+                        <!-- 홈 링크 -->
+                        <a href="./admin_index.html"><i class="fa fa-home"></i> Home</a>
+                        <!-- 카테고리 링크 -->
+                        <a href="./admin_categories.html">Categories</a>
+                        <!-- 현재 페이지 -->
+                        <span>Romance</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Breadcrumb End -->
+
+    <!-- Product Section Begin -->
+    <!-- 제품 섹션 시작 -->
+    <section class="product-page spad">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8">
+                    <div class="product__page__content">
+                        <!-- 섹션 타이틀: 로맨스 -->
+                        <div class="product__page__title">
+                            <div class="row">
+                                <div class="col-lg-8 col-md-8 col-sm-6">
+                                    <div class="section-title">
+                                        <h4>Romance</h4>
+                                    </div>
+                                </div>
+                                <div class="col-lg-4 col-md-4 col-sm-6">
+                                     <!-- 정렬 필터 -->
+                                    <div class="product__page__filter">
+                                        <p>Order by:</p>
+                                        <select>
+                                            <option value="">A-Z</option>
+                                            <option value="">1-10</option>
+                                            <option value="">10-50</option>
+                                        </select>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row" id="product-list">
+                            <div class="col-lg-4 col-md-6 col-sm-6">
+                                <!-- 제품 항목 시작 -->
+                                <div class="product__item">
+                                     <!-- 제품 이미지 -->
+                                    <div class="product__item__pic set-bg" data-setbg="img/popular/popular-1.jpg"
+                                    onclick="window.location.href='anime-details.html'">
+                                        <!-- 댓글 수 -->
+                                        <div class="comment"><i class="fa fa-comments"></i> 6</div>
+                                        <!-- 조회 수 -->
+                                        <div class="view"><i class="fa fa-eye"></i> 9141</div>
+                                    </div>
+                                    <!-- 제품 텍스트 정보 -->
+                                    <div class="product__item__text">
+                                        <!-- 활성 상태 -->
+                                        <ul> <!-- 유형: 영화 -->
+                                            <li>미스터리</li>
+                                            <li>스릴러</li>
+                                            <!-- 삭제기능 -->
+                                            <input type="button" value="삭제" class="delete" id="deleteButton" style="display: none;">
+                                        </ul>
+                                        <!-- 제목 -->
+                                        <h5><a href="anime-details.html">파묘</a></h5>
+                                    </div>
+                                </div>
+                                <!-- 제품 항목 끝 -->
+                            </div>
+                            
+                            <div class="col-lg-4 col-md-6 col-sm-6">
+                                <div class="product__item">
+                                    <div class="product__item__pic set-bg" data-setbg="img/trending/trend-6.jpg">
+                                        <div class="ep">18 / 18</div>
+                                        <div class="comment"><i class="fa fa-comments"></i> 11</div>
+                                        <div class="view"><i class="fa fa-eye"></i> 9141</div>
+                                    </div>
+                                    <div class="product__item__text">
+                                        <ul>
+                                            <li>Active</li>
+                                            <li>Movie</li>
+                                        </ul>
+                                        <h5><a href="#">Code Geass: Hangyaku no Lelouch R2</a></h5>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                     <!-- 페이지 네비게이션 -->
+                    <div class="product__pagination">
+                        <a href="#" class="current-page">1</a>
+                        <a href="#">2</a>
+                        <a href="#">3</a>
+                        <a href="#">4</a>
+                        <a href="#">5</a>
+                        <a href="#"><i class="fa fa-angle-double-right"></i></a>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6 col-sm-8">
+                    <div class="product__sidebar">
+                        <!-- 인기 동영상 -->
+                        <div class="product__sidebar__view">
+                            <div class="section-title">
+                                <h5>Top Views</h5>
+                            </div>
+                            <!-- 필터링 컨트롤 -->
+                            <ul class="filter__controls">
+                                <li class="active" data-filter="*">Day</li>
+                                <li data-filter=".week">Week</li>
+                                <li data-filter=".month">Month</li>
+                                <li data-filter=".years">Years</li>
+                            </ul>
+                            <!-- 동영상 목록 -->
+                            <div class="filter__gallery">
+                                <!-- 각 동영상 -->
+                                <div class="product__sidebar__view__item set-bg mix day years"
+                                data-setbg="img/sidebar/tv-1.jpg">
+                                <div class="ep">18 / ?</div>
+                                <div class="view"><i class="fa fa-eye"></i> 9141</div>
+                                <h5><a href="#">Boruto: Naruto next generations</a></h5>
+                            </div>
+                             <!-- 다른 동영상들도 유사한 구조로 제공됨 -->
+
+                            <div class="product__sidebar__view__item set-bg mix month week"
+                            data-setbg="img/sidebar/tv-2.jpg">
+                            <div class="ep">18 / ?</div>
+                            <div class="view"><i class="fa fa-eye"></i> 9141</div>
+                            <h5><a href="#">The Seven Deadly Sins: Wrath of the Gods</a></h5>
+                        </div>
+                        <div class="product__sidebar__view__item set-bg mix week years"
+                        data-setbg="img/sidebar/tv-3.jpg">
+                        <div class="ep">18 / ?</div>
+                        <div class="view"><i class="fa fa-eye"></i> 9141</div>
+                        <h5><a href="#">Sword art online alicization war of underworld</a></h5>
+                    </div>
+                    <div class="product__sidebar__view__item set-bg mix years month"
+                    data-setbg="img/sidebar/tv-4.jpg">
+                    <div class="ep">18 / ?</div>
+                    <div class="view"><i class="fa fa-eye"></i> 9141</div>
+                    <h5><a href="#">Fate/stay night: Heaven's Feel I. presage flower</a></h5>
+                </div>
+                <div class="product__sidebar__view__item set-bg mix day"
+                data-setbg="img/sidebar/tv-5.jpg">
+                <div class="ep">18 / ?</div>
+                <div class="view"><i class="fa fa-eye"></i> 9141</div>
+                <h5><a href="#">Fate stay night unlimited blade works</a></h5>
+            </div>
+        </div>
+    </div>
+    <!-- 댓글 섹션 -->
+    <div class="product__sidebar__comment">
+        <div class="section-title">
+            <h5>New Comment</h5>
+        </div>
+        <!-- 각 댓글 아이템 -->
+        <div class="product__sidebar__comment__item">
+            <div class="product__sidebar__comment__item__pic">
+                <img src="img/sidebar/comment-1.jpg" alt="">
+            </div>
+            <div class="product__sidebar__comment__item__text">
+                <ul>
+                    <li>Active</li>
+                    <li>Movie</li>
+                </ul>
+                <h5><a href="#">The Seven Deadly Sins: Wrath of the Gods</a></h5>
+                <span><i class="fa fa-eye"></i> 19.141 Viewes</span>
+            </div>
+        </div>
+        <!-- 다른 댓글 아이템들도 유사한 구조로 제공됨 -->
+        <div class="product__sidebar__comment__item">
+            <div class="product__sidebar__comment__item__pic">
+                <img src="img/sidebar/comment-2.jpg" alt="">
+            </div>
+            <div class="product__sidebar__comment__item__text">
+                <ul>
+                    <li>Active</li>
+                    <li>Movie</li>
+                </ul>
+                <h5><a href="#">Shirogane Tamashii hen Kouhan sen</a></h5>
+                <span><i class="fa fa-eye"></i> 19.141 Viewes</span>
+            </div>
+        </div>
+        <div class="product__sidebar__comment__item">
+            <div class="product__sidebar__comment__item__pic">
+                <img src="img/sidebar/comment-3.jpg" alt="">
+            </div>
+            <div class="product__sidebar__comment__item__text">
+                <ul>
+                    <li>Active</li>
+                    <li>Movie</li>
+                </ul>
+                <h5><a href="#">Kizumonogatari III: Reiket su-hen</a></h5>
+                <span><i class="fa fa-eye"></i> 19.141 Viewes</span>
+            </div>
+        </div>
+        <div class="product__sidebar__comment__item">
+            <div class="product__sidebar__comment__item__pic">
+                <img src="img/sidebar/comment-4.jpg" alt="">
+            </div>
+            <div class="product__sidebar__comment__item__text">
+                <ul>
+                    <li>Active</li>
+                    <li>Movie</li>
+                </ul>
+                <h5><a href="#">Monogatari Series: Second Season</a></h5>
+                <span><i class="fa fa-eye"></i> 19.141 Viewes</span>
+            </div>
+        </div>
+    </div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Product Section End -->
+
+<!-- Footer Section Begin -->
+<footer class="footer">
+    <!-- 페이지 위로 이동 버튼 -->
+    <div class="page-up">
+        <a href="#" id="scrollToTopButton"><span class="arrow_carrot-up"></span></a>
+    </div>
+    <div class="container">
+        <div class="row">
+            <!-- 로고 -->
+            <div class="col-lg-3">
+                <div class="footer__logo">
+                    <a href="./admin_index.html"><img src="img/logo.png" alt=""></a>
+                </div>
+            </div>
+            <!-- 푸터 내비게이션 -->
+            <div class="col-lg-6">
+                <div class="footer__nav">
+                    <ul>
+                        <!-- 활성화된 페이지 -->
+                        <li class="active"><a href="./admin_index.html">Homepage</a></li>
+                        <li><a href="./admin_categories.html">Categories</a></li>
+                        <li><a href="./blog.html">Our Blog</a></li>
+                        <li><a href="#">Contacts</a></li>
+                    </ul>
+                </div>
+            </div>
+            <!-- 저작권 정보  절대 지우지말것 -->
+            <div class="col-lg-3">
+                <p><!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+                  Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved | This template is made with <i class="fa fa-heart" aria-hidden="true"></i> by <a href="https://colorlib.com" target="_blank">Colorlib</a>
+                  <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. --></p>
+
+              </div>
+          </div>
+      </div>
+  </footer>
+  <!-- Footer Section End -->
+
+  <!-- 검색어 -->
+  <div class="search-model">
+    <div class="h-100 d-flex align-items-center justify-content-center">
+        <div class="search-close-switch"><i class="icon_close"></i></div>
+        <form class="search-model-form">
+            <input type="text" id="search-input" autocomplete="current-search-input" placeholder="검색어 입력.." value="">
+        </form>
+    </div>
+</div>
+<!-- Search model end -->
+
+<!-- Js Plugins -->
+<script>
+    // 제품 데이터 배열
+    const products = [
+        {
+            imageUrl: "img/popular/popular-1.jpg",
+            comments: 33,
+            views: 22222,
+            genres: ["미스터리", "스릴러"],
+            title: "파묘",
+            detailsUrl: "anime-details.html"
+        },
+        {
+            imageUrl: "img/popular/popular-1.jpg",
+            comments: 33,
+            views: 22222,
+            genres: ["미스터리", "스릴러"],
+            title: "파묘",
+            detailsUrl: "anime-details.html"
+        },
+        {
+            imageUrl: "img/popular/popular-1.jpg",
+            comments: 33,
+            views: 22222,
+            genres: ["미스터리", "스릴러"],
+            title: "파묘",
+            detailsUrl: "anime-details.html"
+        },
+        // 다른 제품들도 여기에 추가할 수 있습니다.
+    ];
+
+    // 제품 리스트에 제품 항목을 동적으로 추가하는 함수
+    function addProductToDOM(product) {
+        const productList = document.getElementById("product-list");
+
+        const productItem = document.createElement("div");
+        productItem.classList.add("col-lg-4", "col-md-6", "col-sm-6");
+        productItem.innerHTML = `
+            <div class="product__item">
+                <div class="product__item__pic set-bg" data-setbg="${product.imageUrl}" onclick="window.location.href='${product.detailsUrl}'">
+                    <div class="comment"><i class="fa fa-comments"></i> ${product.comments}</div>
+                    <div class="view"><i class="fa fa-eye"></i> ${product.views}</div>
+                </div>
+                <div class="product__item__text">
+                    <ul>
+                        ${product.genres.map(genre => `<li>${genre}</li>`).join("")}
+                        <input type="button" value="삭제" class="delete" id="deleteButton" >
+                    </ul>
+                    <h5><a href="${product.detailsUrl}">${product.title}</a></h5>
+                </div>
+            </div>
+        `;
+                // style="display: none; 을 넣으면 숨길수있음 
+        productList.appendChild(productItem);
+    }
+
+    // 제품 데이터 배열을 순회하면서 제품을 추가합니다.
+    products.forEach(product => {
+        addProductToDOM(product);
+    });
+</script>
+
+<!-- <body>
+    로그인 상태에 따라 표시할 버튼 
+    <input type="button" value="삭제" class="delete" id="deleteButton" style="display: none;">
+    <button id="logoutButton" style="display: none;">로그아웃</button>
+    <button id="loginButton" style="display: none;">로그인</button>
+</body> -->
+<script>
+    // 사용자가 로그인 상태인지 확인하는 함수
+    function isLoggedIn() {
+        // 여기에 로그인 상태를 확인하는 코드를 추가합니다.
+        // 예시로 간단하게 true 또는 false를 반환하는 것으로 대체합니다.
+        return true; // 로그인 상태라고 가정합니다.
+    }
+
+    // 페이지 로드 시 실행되는 함수
+    window.onload = function() {
+        // 로그인 상태를 확인하고 버튼을 표시하거나 숨깁니다.
+        if (isLoggedIn()) {
+            document.getElementById('deleteButton').style.display = 'inline-block'; // 로그인 상태일 때 버튼 표시
+        } else {
+            document.getElementById('deleteButton').style.display = 'none'; // 로그인 상태가 아닐 때 버튼 숨김
+        }
+
+        // 삭제 버튼 클릭 시 실행되는 함수
+        document.getElementById('deleteButton').onclick = function() {
+            // 사용자에게 삭제 여부를 확인하는 알림 창을 표시합니다.
+            var confirmed = confirm("정말로 삭제하시겠습니까?");
+
+            // 사용자가 확인을 선택한 경우
+            if (confirmed) {
+                // 여기에 삭제 동작을 수행하는 코드를 추가합니다.
+                // 예시로 간단하게 삭제 동작을 콘솔에 출력하는 것으로 대체합니다.
+                console.log("삭제가 완료되었습니다.");
+            } else {
+                // 사용자가 취소를 선택한 경우 아무 동작도 수행하지 않습니다.
+                console.log("삭제가 취소되었습니다.");
+            }
+        };  
+    };
+</script>
+
+<script src="js/jquery-3.3.1.min.js"></script>
+<script src="js/bootstrap.min.js"></script>
+<script src="js/player.js"></script>
+<script src="js/jquery.nice-select.min.js"></script>
+<script src="js/mixitup.min.js"></script>
+<script src="js/jquery.slicknav.js"></script>
+<script src="js/owl.carousel.min.js"></script>
+<script src="js/main.js"></script>
+
+
+</body>
+
+</html>

@@ -39,7 +39,7 @@
                 <!-- 로고 -->
                 <div class="col-lg-2">
                     <div class="header__logo">
-                        <a href="./index.html">
+                        <a href="./admin_index.html">
                             <img src="img/logo.png" alt="">
                         </a>
                     </div>
@@ -50,13 +50,13 @@
                         <nav class="header__menu mobile-menu">
                             <ul>
                                 <!-- 홈페이지로 이동하는 링크 -->
-                                <li class="active"><a href="./index.html">Homepage</a></li>
+                                <li class="active"><a href="./admin_index.html">Homepage</a></li>
                                 <!-- 카테고리 메뉴 -->
-                                <li><a href="./categories.html">Categories <span class="arrow_carrot-down"></span></a>
+                                <li><a href="./admin_categories.html">Categories <span class="arrow_carrot-down"></span></a>
                                     <ul class="dropdown">
                                         <!-- 카테고리 관련 페이지로 이동하는 링크 -->
-                                        <li><a href="./categories.html">Categories</a></li>
-                                        <li><a href="./anime-details.html">Anime Details</a></li>
+                                        <li><a href="./admin_categories.html">Categories</a></li>
+                                        <li><a href="./admin_details.html">Anime Details</a></li>
                                         <li><a href="./anime-watching.html">Anime Watching</a></li>
                                         <li><a href="./blog-details.html">Blog Details</a></li>
                                         <li><a href="./signup.html">Sign Up</a></li>
@@ -91,9 +91,9 @@
                 <div class="col-lg-12">
                     <div class="breadcrumb__links">
                         <!-- 홈으로 이동하는 링크 -->
-                        <a href="./index.html"><i class="fa fa-home"></i> Home</a>
+                        <a href="./admin_index.html"><i class="fa fa-home"></i> Home</a>
                         <!-- 카테고리 페이지로 이동하는 링크 -->
-                        <a href="./categories.html">Categories</a>
+                        <a href="./admin_categories.html">Categories</a>
                         <!-- 현재 페이지의 카테고리 이름을 표시하는 부분 -->
                         <span>Romance</span>
                     </div>
@@ -190,6 +190,7 @@
                                     <h6>Chris Curry - <span>1 Hour ago</span></h6>
                                     <p>whachikan Just noticed that someone categorized this as belonging to the genre
                                     "demons" LOL</p>
+                                    <input type="button" value="삭제" class="delete" id="deleteButton" >
                                 </div>
                                 <!-- 다른 리뷰 아이템들 -->
                                 <!-- 여기에 리뷰 아이템들이 더 있음 -->
@@ -202,6 +203,7 @@
                                 <div class="anime__review__item__text">
                                     <h6>Lewis Mann - <span>5 Hour ago</span></h6>
                                     <p>Finally it came out ages ago</p>
+                                    <input type="button" value="삭제" class="delete" id="deleteButton" >
                                 </div>
                             </div>
                             <div class="anime__review__item">
@@ -211,6 +213,7 @@
                                 <div class="anime__review__item__text">
                                     <h6>Louis Tyler - <span>20 Hour ago</span></h6>
                                     <p>Where is the episode 15 ? Slow update! Tch</p>
+                                    <input type="button" value="삭제" class="delete" id="deleteButton" >
                                 </div>
                             </div>
                             <div class="anime__review__item">
@@ -221,6 +224,7 @@
                                     <h6>Chris Curry - <span>1 Hour ago</span></h6>
                                     <p>whachikan Just noticed that someone categorized this as belonging to the genre
                                     "demons" LOL</p>
+                                    <input type="button" value="삭제" class="delete" id="deleteButton" >
                                 </div>
                             </div>
                             <div class="anime__review__item">
@@ -297,15 +301,15 @@
                     <!-- 로고 -->
                     <div class="col-lg-3">
                         <div class="footer__logo">
-                            <a href="./index.html"><img src="img/logo.png" alt=""></a>
+                            <a href="./admin_index.html"><img src="img/logo.png" alt=""></a>
                         </div>
                     </div>
                     <div class="col-lg-6">
                         <!-- 푸터 내비게이션 -->
                         <div class="footer__nav">
                             <ul>
-                                <li class="active"><a href="./index.html">Homepage</a></li>
-                                <li><a href="./categories.html">Categories</a></li>
+                                <li class="active"><a href="./admin_index.html">Homepage</a></li>
+                                <li><a href="./admin_categories.html">Categories</a></li>
                                 <li><a href="./blog.html">Our Blog</a></li>
                                 <li><a href="#">Contacts</a></li>
                             </ul>
@@ -337,6 +341,49 @@
         <!-- Search model end -->
 
         <!-- Js Plugins -->
+
+    </script>
+
+    <!-- <body>
+        로그인 상태에 따라 표시할 버튼 
+        <input type="button" value="삭제" class="delete" id="deleteButton" style="display: none;">
+        <button id="logoutButton" style="display: none;">로그아웃</button>
+        <button id="loginButton" style="display: none;">로그인</button>
+    </body> -->
+    <script>
+        // 사용자가 로그인 상태인지 확인하는 함수
+        function isLoggedIn() {
+            // 여기에 로그인 상태를 확인하는 코드를 추가합니다.
+            // 예시로 간단하게 true 또는 false를 반환하는 것으로 대체합니다.
+            return true; // 로그인 상태라고 가정합니다.
+        }
+    
+        // 페이지 로드 시 실행되는 함수
+        window.onload = function() {
+            // 로그인 상태를 확인하고 버튼을 표시하거나 숨깁니다.
+            if (isLoggedIn()) {
+                document.getElementById('deleteButton').style.display = 'inline-block'; // 로그인 상태일 때 버튼 표시
+            } else {
+                document.getElementById('deleteButton').style.display = 'none'; // 로그인 상태가 아닐 때 버튼 숨김
+            }
+    
+            // 삭제 버튼 클릭 시 실행되는 함수
+            document.getElementById('deleteButton').onclick = function() {
+                // 사용자에게 삭제 여부를 확인하는 알림 창을 표시합니다.
+                var confirmed = confirm("정말로 삭제하시겠습니까?");
+    
+                // 사용자가 확인을 선택한 경우
+                if (confirmed) {
+                    // 여기에 삭제 동작을 수행하는 코드를 추가합니다.
+                    // 예시로 간단하게 삭제 동작을 콘솔에 출력하는 것으로 대체합니다.
+                    console.log("삭제가 완료되었습니다.");
+                } else {
+                    // 사용자가 취소를 선택한 경우 아무 동작도 수행하지 않습니다.
+                    console.log("삭제가 취소되었습니다.");
+                }
+            };  
+        };
+    </script>
         <script src="js/jquery-3.3.1.min.js"></script>
         <script src="js/bootstrap.min.js"></script>
         <script src="js/player.js"></script>

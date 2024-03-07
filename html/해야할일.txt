@@ -1,13 +1,13 @@
 1.문서정리 v 
 
 
-2-1. categories.html 에서 카테고리 클릭시 
-    anime-details.html 연결
-    css 변경 등  v
+2-1. categories.html 에서 카테고리 클릭시         v
+    anime-details.html 연결                      v
+    css 변경 등                                  v
     
-2-2. inedx.html에서 클릭시 
-    anime-details.html 연결
-    얘매버튼 만듬
+2-2. inedx.html에서 클릭시                       v
+    anime-details.html 연결                     v
+    얘매버튼 만듬                                v
 
 3.categories.html 에서 첫번쨰 상품 영화 정보로 바꾸기 v 
 
@@ -17,4 +17,18 @@
 
 5.categories.html 에서 반복되는 코드 jascrpt로 DB연동해서 표기하는 방법 궁립
 
-6.blog 무슨 html인지 알아내기
+6.blog 무슨 html인지 알아내기 
+
+
+
+
+7.
+- 관리자 페이지 submit 올렷을떄  정보들 세션저장할수 있게 페이지 만들것    
+
+- 관리자 리뷰 지우는 기능 만들기                         v
+하드코딩으로 구현)
+- 디테일 html 삭제기능 탑재하기                         v 
+하드코딩으로 구현)
+
+마이페이지 원래 목표 탈퇴기능
+

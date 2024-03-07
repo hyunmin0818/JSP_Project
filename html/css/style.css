@@ -1162,6 +1162,33 @@ ol {
 	float: right; 		/* 요소를 오른쪽으로 띄움 */
     margin-left: 1px; /* 왼쪽 여백을 추가하여 다른 요소와 간격을 조절 */
 }
+  
+.product__item__text .delete {
+    padding: 1px 20px;
+    background-color: #e53637;
+    color: #ffffff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+	margin-left: 35px;
+}
+
+.delete:hover {
+    background-color: #d84315;
+}
+
+.anime__review__item__text .delete {
+	padding: 1px 20px;
+    background-color: #e53637;
+    color: #ffffff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+	margin-left: 580px;
+    /* 여기에 삭제 버튼에 대한 원하는 스타일을 지정하세요 */
+}
 
 .anime__details__review {
 	margin-bottom: 55px;
