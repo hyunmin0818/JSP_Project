@@ -51,6 +51,14 @@ h6 {
 	font-family: "Mulish", sans-serif;
 }
 
+
+
+
+.whitetext{
+
+	color: white;
+
+}
 h1 {
 	font-size: 70px;
 }
@@ -417,6 +425,13 @@ ol {
 	top: 2px;
 }
 
+ #dropdown-toggle{					 /*로그인 캐릭터 id 별도 추가  색깔 새로 추가함*/
+	color:white;
+}
+
+
+
+
 .header__right {
 	text-align: right;
 	padding: 20px 0 15px;
@@ -652,16 +667,9 @@ ol {
 }
 
 .product__item__pic {
-    height: 325px;
-    position: relative;
-    border-radius: 5px;
-    overflow: hidden; /* 이미지가 넘치지 않도록 처리 */
-    transition: transform 0.3s; /* 호버 효과를 위한 애니메이션 추가 */
-}
-
-.product__item__pic:hover {
-    cursor: pointer; /* 마우스 커서를 손가락 모양으로 변경 */
-    transform: scale(1.05); /* 호버 시 약간 확대되는 효과 */
+	height: 325px;
+	position: relative;
+	border-radius: 5px;
 }
 
 .product__item__pic .ep {
@@ -778,8 +786,6 @@ ol {
 	position: relative;
 	border-radius: 5px;
 	margin-bottom: 20px;
-	cursor: pointer; /* 마우스 커서를 손가락 모양으로 변경 */
-	
 }
 
 .product__sidebar__view__item .ep {
