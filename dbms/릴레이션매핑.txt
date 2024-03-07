@@ -1,24 +1,28 @@
 movie테이블
-movie_id (PK)
+movie_id : (PK)
 movieSeq : 등록 seq
-title_korean: 영화 한글 제목
-title_english: 영화 영문 제목
-title_origin : 영화 원제
-production_year: 제작 연도
+title: 영화 한글 제목
+titleEng: 영화 영문 제목
+titleOrg : 영화 원제
+prodYear: 제작 연도
 production_country: 제작 국가
 runtime : 상영시간
 rating : 대표관람등급
 type: 영화 유형
 genre: 영화 장르
-movie_use : 용도구분(극장용/ott)
-production_status: 제작 상태
-director_id (FK): Directors 릴레이션의 외래키 (감독 정보 연결)
-actor_id (FK): Actors 릴레이션의 외래키(배우 정보 연결)
-production_company: 제작사
-movie_plot : 영화 줄거리
-poster_URL : 포스터이미지 URL
-still_URL : 스틸이미지 URL
-vod_URL : 영화 vod URL
+use : 용도구분(극장용/ott)
+releaseDate : 개봉일자
+directorId (FK): Directors 릴레이션의 외래키 (감독 정보 연결)
+directorNm : 감독명
+actorId (FK): Actors 릴레이션의 외래키(배우 정보 연결)
+actorEnNm: 배우명
+nation : 제작국가
+company: 제작사
+plot : 영화 줄거리
+posterUrl : 포스터이미지 URL
+stillUrl	 : 스틸이미지 URL
+vodClass : vod 구분
+vodUrl : 영화 vod URL
 screenArea : 관람지역
 audiAcc : 누적 관람인원
 Awards1 : 영화제 수상내역
