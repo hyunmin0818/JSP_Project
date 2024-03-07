@@ -28,7 +28,6 @@
 - **director: 감독명**
 - **actor: 배우명**
 - **staff: 스탭명**
-- **keyword: 키워드**
 
 ## 사용자 (Users) 테이블
 
