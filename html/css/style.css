@@ -60,15 +60,29 @@ h6 {
 	font-family: "Mulish", sans-serif;
 }
 
+#youNeedLogin{			/*우측 상단 로그인 상태 확인 메시지*/
+	text-align:left;
+	font-size:9px;
 
+}
+
+.search-switch:hover,#dropdown-toggle:hover,.icon_profile:hover,#youNeedLogin:hover{			/*우측 상단 로그인 상태 확인 메시지*/
+	color:skyblue;
+
+}
 
 
 .whitetext{						/*하얀 글씨 출력 용도 */
 	color: white;
 }
 
+
+.redtext{						/*빨간 글씨 출력 용도 */
+	color: red;
+}
+
 #saveId{		/*아이디 체크박스 위치 */
-	color: wheat;
+	color: white;
 	margin-right:5px;
 }
 
@@ -375,9 +389,19 @@ ol {
 /*---------------------
   Header
 -----------------------*/
+#logo2{					/*로고 위치 수정*/
+	position: relative;
+	width: 70%;
+	height: 70%;
+	/* padding-top: 10%; */
+	/* padding-bottom: 70%; */
+	margin-top:-70px;
+	margin-bottom:-70px;
 
+}
 .header {
 	background: #070720;
+	 /* margin-bottom:-10px;  */
 }
 
 .header__logo {
@@ -412,6 +436,7 @@ ol {
 	top: 62px;
 	opacity: 1;
 	visibility: visible;
+	
 }
 
 .header__menu ul li:hover .dropdown li a {
@@ -471,7 +496,9 @@ ol {
 	color:white;
 }
 
-
+.header__menu ul li .dropdown li a:hover{		/*카테고리창 마우스 올릴시 이벤트 추가*/
+	background-color: rgb(109, 129, 149);
+}
 
 
 .header__right {
