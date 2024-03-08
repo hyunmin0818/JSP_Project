@@ -31,6 +31,9 @@
 /* Template default CSS
 /*----------------------------------------*/
 
+
+
+
 html,
 body {
 	height: 100%;
@@ -69,6 +72,14 @@ h6 {
 	color: white;
 
 }
+
+.blacktext{						/*검은 글씨 출력 용도 */
+
+	color: black;
+
+}
+
+
 h1 {
 	font-size: 70px;
 }
@@ -1799,6 +1810,76 @@ ol {
 	margin:0 auto;
 }
 
+#member_profile{			/*프로필 사진*/
+	position: relative;
+	width: 70%;
+	height: 70%;
+	padding-top: 10%;
+	padding-bottom: 70%;
+	/* object-fit: cover; */
+
+}
+
+#profile_modifybutton1,#profile_modifybutton2{		/*프로필 수정버튼*/
+	
+		font-size: 13px;
+		color: #ffffff;
+		background:blue;
+		font-weight: 700;
+		border: none;
+		border-radius: 1px;
+		letter-spacing: 2px;
+		text-transform: uppercase;
+		display: inline-block;
+		padding: 12px 30px;
+		margin-left: 30px;
+	
+}
+
+/*파일박스 추가-----------------*/
+
+.filebox input[type="file"] {
+	position: absolute;
+	width: 1px;
+	height: 1px;
+	padding: 0;
+	margin: -1px;
+	overflow: hidden;
+	clip:rect(0,0,0,0);
+	border: 0;
+  }
+  
+  .filebox label {
+	display: inline-block;
+	padding: .5em .75em;
+	color: #999;
+	font-size: inherit;
+	line-height: normal;
+	vertical-align: middle;
+	background-color: #fdfdfd;
+	cursor: pointer;
+	border: 1px solid #ebebeb;
+	border-bottom-color: #e2e2e2;
+	border-radius: .1em;
+  }
+  
+  /* named upload */
+  .filebox .upload-name {
+	display: inline-block;
+	padding: .5em .75em;  /* label의 패딩값과 일치 */
+	font-size: inherit;
+	font-family: inherit;
+	line-height: normal;
+	vertical-align: middle;
+	background-color: #f5f5f5;
+	border: 1px solid #ebebeb;
+	border-bottom-color: #e2e2e2;
+	border-radius: .25em;
+	-webkit-appearance: none; /* 네이티브 외형 감추기 */
+	-moz-appearance: none;
+	appearance: none;
+  }
+  /*출처: https://webdir.tistory.com/435 [WEBDIR:티스토리]--파일박스 끝---*/
 
 .login__form h3 {
 	color: #ffffff;
@@ -1814,6 +1895,7 @@ ol {
 }
 
 .login__form form .input__item:before {
+	
 	position: absolute;
 	left: 50px;
 	top: 10px;
