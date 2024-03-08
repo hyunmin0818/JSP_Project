@@ -44,6 +44,11 @@ body {
 }
 
 
+.forgotpassword{
+
+	color
+}
+
 h1,
 h2,
 h3,
@@ -59,7 +64,7 @@ h6 {
 
 
 
-.whitetext{
+.whitetext{						/*하얀 글씨 출력 용도 */
 
 	color: white;
 
@@ -161,6 +166,10 @@ ol {
 	padding-top: 100px;
 	padding-bottom: 100px;
 }
+#logincenter{					/* login창 하나만 나올 때 가운데 정렬로 오게 함 */
+	padding-top: -50px;
+	padding-bottom: 5px;
+}
 
 .text-white h1,
 .text-white h2,
@@ -204,6 +213,20 @@ ol {
 	text-transform: uppercase;
 	display: inline-block;
 	padding: 12px 30px;
+}
+
+#forgot_id_button {					/*아이디,비밀번호 찾기 추가 정보 출력 버튼*/
+	font-size: 11px;
+	color: #ffffff;
+	background: blue;
+	
+	font-weight: 400;
+	border: none;
+	border-radius: 3px;
+	letter-spacing: 0px;
+	text-transform: uppercase;
+	display: inline-block;
+	padding: 4px 4px;
 }
 
 /* Preloder */
@@ -1746,7 +1769,7 @@ ol {
 	padding-left: 145px;
 }
 
-.login__form:after {
+.login__form::after {
 	position: absolute;
 	right: -14px;
 	top: -40px;
@@ -1755,6 +1778,27 @@ ol {
 	background: rgba(255, 255, 255, 0.2);
 	content: "";
 }
+
+#logincenter, #logincenter2 {				/*logincenter만 가운데정렬하도록함*/
+	position: relative;
+	padding-left: 0px;
+}
+
+#logincenter::after, #logincenter2::after{	/*login__form의 가운데 중앙 회색선이 없어지지 않아서 .login__form의 css값을 복사하여 색만 수정*/
+	position: absolute;
+	right: -14px;
+	top: -40px;
+	height: 330px;
+	width: 1px;
+	background: rgba(5, 5, 5, 0);
+	content: "";
+}
+
+
+#logincenter{			/*로그인 창 가운데 정렬 */
+	margin:0 auto;
+}
+
 
 .login__form h3 {
 	color: #ffffff;
@@ -1909,6 +1953,9 @@ ol {
 /*---------------------
   Sign Up
 -----------------------*/
+
+
+
 
 .signup {
 	padding-top: 130px;
