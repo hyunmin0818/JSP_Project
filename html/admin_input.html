@@ -115,32 +115,30 @@
                             <h4>예시</h4>
                             <div class="anime__details__pic set-bg" data-setbg=""> <!--이미지-->
                             </div>
-                            <input type="file" onchange="previewImage(event)">
+                            <input type="file" onchange="previewImage(event)" id="imgfile">
                         </div>
                         <!-- 영화 세부 정보 -->
                         <div class="col-lg-9">
                             <div class="anime__details__text">
                                 <div class="anime__details__title">
-                                    <!-- 영화 제목과 일본어 제목 -->
-                                    <h3>이름</h3><input type="text" id="name">
-                                    <span>제작진</span><input type="text" id="director">
+                                    <!-- 영화 제목과 감독 -->
+                                    <h3>제목</h3><input type="text" id="title">
+                                    <span>감독</span><input type="text" id="directorNm">
                                 </div>
                                 <!-- 영화 설명 -->
-                                설명
-                                <input type="text" style="width: 1000px; height: 400px;" id="explanation">
+                                영화 줄거리
+                                <input type="text" style="width: 1000px; height: 400px;" id="plot">
                                 <!-- 영화 세부 정보 표 -->
                                 <div class="anime__details__widget">
                                     <div class="row">
                                         <div class="col-lg-6 col-md-6">
                                             <ul>
-                                                <li><span>Type:</span> <input type="text" id="Type"></li> <!--유형-->
-                                                <li><span>Studios:</span> <input type="text" id="Studios"></li>
-                                                <!--제작사-->
-                                                <li><span>Date aired:</span> <input type="date" id="Date"></li>
-                                                <!--방영일-->
-                                                <li><span>Status:</span> <input type="text" id="Status"></li> <!--상태-->
+                                                <li><span>유형:</span> <input type="text" id="Type"></li>           <!--유형-->
+                                                <li><span>제작사:</span> <input type="text" id="company"></li> <!--제작사-->
+                                                <li><span>개봉일:</span> <input type="date" id="releaseDate"></li><!--방영일-->
+                                                <li><span>국가:</span> <input type="text" id="nation"></li> <!--국가-->
                                                 <!--장르-->
-                                                <div id="genreList">
+                                                <div id="genre">
                                                     <label><input type="checkbox" value="액션"> 액션</label><br>
                                                     <label><input type="checkbox" value="로맨스"> 로맨스</label><br>
                                                     <label><input type="checkbox" value="코미디"> 코미디</label><br>
@@ -151,27 +149,22 @@
                                                     <label><input type="checkbox" value="판타지"> 판타지</label><br>
                                                     <label><input type="checkbox" value="어드벤처"> 어드벤처</label><br>
                                                 </div>
-
-
                                             </ul>
                                         </div>
                                         <div class="col-lg-6 col-md-6">
                                             <ul>
-                                                <li><span>Scores:</span><input type="text" id="Scores"></li> <!--점수-->
-                                                <li><span>Rating:</span><input type="text" id="Rating"></li> <!--평가-->
-                                                <li><span>Duration:</span> <input type="text" id="Duration"></li>
-                                                <!--재생시간-->
+                                                <li><span>배우:</span><input type="text" id="actorEnNm"></li> <!--배우-->
+                                                <li><span>평점:</span><input type="text" id="Rating"></li> <!--평가-->
+                                                <li><span>상영시간:</span> <input type="text" id="runtime"></li><!--재생시간-->
                                                 <li><span>등급:</span>
-                                                    <select id="ranked">
+                                                    <select id="film_ratings">
                                                         <option value="ALL">ALL</option>
                                                         <option value="R-12">12 관람가</option>
                                                         <option value="R-15">15 관람가</option>
                                                         <option value="R-18">청소년 관람불가</option>
-
                                                     </select>
                                                 </li>
-                                                <label for="ranked1"></label>
-                                                <li><span>예매 인원:</span><input type="text"></li> <!--예매인원-->
+                                                <li><span>예매 인원:</span><input type="text" id="audiAcc"></li> <!--예매인원-->
                                             </ul>
                                         </div>
                                     </div>
@@ -265,37 +258,82 @@
         // 양식 제출 전 값을 할당했는지 확인하는 jQuery 함수
         function submitForm(event) {
             // 각 입력 필드의 값을 가져와 변수에 할당
-            let name = $('#name').val();
-            let director = $('#director').val();
-            let type = $('#Type').val();
-            let studios = $('#Studios').val();
-            let date = $('#Date').val();
-            let status = $('#Status').val();
-            let scores = $('#Scores').val();
-            let rating = $('#Rating').val();
-            let explanation = $('#explanation').val();
-            let duration = $('#Duration').val();
-            let genreList = $('#genreList').prop('checked');
-            let ranked = $('#ranked').prop('checked');
-            let reservation = $('#reservation').val();
+            let imgfile = $ ('#imgfile').vel();                 // 파일
+            let title = $('#title').val();                         //네임
+            let directorNm = $('#directorNm').val();                //감독
+            let type = $('#Type').val();                        //영화 유형
+            let company = $('#company').val();                     //제작사
+            let releaseDate = $('#releaseDate').val();             //개봉일자
+            let nation = $('#nation').val();                       //국가
+            let actorEnNm = $('#actorEnNm').val();                 //배우   
+            let rating = $('#Rating').val();                        //평점
+            let plot = $('#plot').val();                             // 영화 줄거리       
+            let runtime = $('#runtime').val();                      //상영시간
+            let genre = $('input[name="genre"]:checked').val();    //장르
+            let film_ratings = $('#film_ratings').val();          //관람등급
+            let audiAcc = $('#audiAcc').val();                      // 누적 관람인원
 
             // 입력 필드 중 하나라도 비어 있을 경우 양식 제출 방지
-            if (name == "" || name == null ||
-                director == "" || director == null ||
-                type == "" || type == null ||
-                studios == "" || studios == null ||
-                date == "" || date == null ||
-                status == "" || status == null ||
-                scores == "" || scores == null ||
-                rating == "" || rating == null ||
-                explanation == "" || explanation == null ||
-                duration == "" || duration == null ||
-                genreList == "" || genreList == null ||
-                ranked == "" || ranked == null ||
-                reservation == "" || reservation == null) {
-                alert("모든 필드를 입력해주세요.");
+        
+            if (title == "" || title == null ) { 
+                alert("이름필드값 입력해주세요");
                 event.preventDefault()
                 return false; // 양식 제출 방지
+            }
+            if (director == "" || director == null ){
+                alert("감독필드값 입력해주세요");
+                event.preventDefault()
+                return false; 
+            }
+            if (plot == "" || plot == null ){
+                alert("영화 줄거리 필드값 입력해주세요");
+                event.preventDefault()
+                return false; 
+            }
+            if (type == "" || type == null ){ 
+                alert("영화 유형 필드값 입력해주세요");
+                event.preventDefault()
+                return false;
+            }
+            if (company == "" || company == null ){ 
+                alert("회사 유형 필드값 입력해주세요");
+                event.preventDefault()
+                return false; 
+            }
+            if (releaseDate == "" || releaseDate == null ){ 
+                alert("개봉일자 유형 필드값 입력해주세요");
+                event.preventDefault()
+                return false; 
+            }
+            if (nation == "" || nation == null ){ 
+                alert("국가 유형 필드값 입력해주세요");
+                event.preventDefault()
+                return false; 
+            }
+            if (actorEnNm == "" || actorEnNm == null ){ 
+                alert("배우명 유형 필드값 입력해주세요");
+                event.preventDefault()
+                return false; 
+            }
+            if (rating == "" || rating == null ){ 
+                alert("평점 필드값 입력해주세요");
+                event.preventDefault()
+                return false; 
+            }
+            if (genre == "" || genre == null ){ 
+                alert("장르 선택해주세요");
+                event.preventDefault()
+                return false; 
+            }
+            if (film_ratings == "" || film_ratings == null ){ 
+                alert("관람등급 선택해주세요");
+                event.preventDefault()
+                return false; 
+            }
+            if (audiAcc == "" || audiAcc == null ){ 
+                alert("관람등급 선택해주세요");
+                event.preventDefault()
+                return false; 
             }
         }
     </script>
