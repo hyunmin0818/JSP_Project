@@ -38,7 +38,7 @@
                 <div class="col-lg-2">
                     <div class="header__logo">
                         <a href="./index.html">
-                            <img src="img/logo.png" alt="">
+                            <img src="img/logo2.png" alt="">
                         </a>
                     </div>
                 </div>
@@ -103,34 +103,35 @@
                     <div class="login__form" id ="logincenter">
                         <!-- <h3 align="center" >회원가입</h3><br> -->
                         <form action="./login.html">               <!--입력창 활성화 -->
-
-                            <h5 align="left" class="whitetext">아이디 <button type="button" class="site-btn" id ="check_id_btn" align="left">중복확인</button></h5>
+                            <div>
+                            <h5 align="left" class="whitetext">아이디 <button type="button" class="site-btn" id ="check_id_btn" align="left">중복확인</button><a id="check_id_message"></a></h5>
                             
+                            </div>
                             <div class="input__item">
                                
-                                <input type="text" class ="blacktext" placeholder="아이디를 입력해주세요">
+                                <input type="text" class ="blacktext" placeholder="아이디를 입력해주세요" id="user_id">
                                 <span class="icon_mail"></span>
                                 
                             </div>
 
-                            <h5 align="left" class="whitetext">비밀번호</h5><br>
+                            <h5 align="left" class="whitetext">비밀번호<a id="check_pw_message"></a></h5><br>
                             <div class="input__item">
                                
-                                <input type="password" class ="blacktext" placeholder="비밀번호를 입력해주세요"> 
+                                <input type="password" class ="blacktext" placeholder="비밀번호를 입력해주세요" id="userpassword"> 
                                 <span class="icon_mail"></span>
                             </div>
 
-                            <h5 align="left" class="whitetext">비밀번호 확인</h5><br>
+                            <h5 align="left" class="whitetext">비밀번호 확인<a id="check_pw_message2"></a></h5><br>
                             <div class="input__item">
                                
-                                <input type="password" class ="blacktext" placeholder="비밀번호를 다시 입력해주세요"> 
+                                <input type="password" class ="blacktext" placeholder="비밀번호를 다시 입력해주세요" id="userpassword2"> 
                                 <span class="icon_mail"></span>
                             </div>
 
-                            <h5 align="left" class="whitetext">닉네임</h5><br>
+                            <h5 align="left" class="whitetext">이름</h5><br>
                             <div class="input__item">
                                
-                                <input type="text" class ="blacktext" placeholder="이름을 입력해주세요"> 
+                                <input type="text" class ="blacktext" placeholder="이름을 입력해주세요" id="username"> 
                                 <span class="icon_mail"></span>
                             </div>
                           <h5 align="left" class="whitetext">프로필 사진</h5><br>
@@ -147,19 +148,19 @@
 
                             <h5 align="left" class="whitetext">생년월일</h5><br>  
                             <div class="input__item">
-                                <input type="text" placeholder="법정생년월일 6자리를 입력해주세요">
+                                <input type="text" placeholder="법정생년월일 6자리를 입력해주세요" id="userbirth">
                                 <span class="icon_lock"></span>
                             </div>
 
                             <h5 align="left" class="whitetext">휴대번호</h5><br>
                             <div class="input__item">
                                 
-                                <input type="text" placeholder="휴대번호 뒤 7~8자리를 입력해주세요">
+                                <input type="text" placeholder="휴대번호 뒤 7~8자리를 입력해주세요" id="userphone">
                                 <span class="icon_mail"></span>
                             </div>
                             <h5 align="left" class="whitetext">이메일</h5><br>
                             <div class="input__item">
-                                <input type="text" placeholder="이메일 정보를 입력해주세요">
+                                <input type="text" placeholder="이메일 정보를 입력해주세요" id="email">
                                 <span class="icon_mail"></span>
                             </div>
  
@@ -171,7 +172,7 @@
                 
                 
                         </div>
-                    </div>     </div>
+                    </div>   
                 
             </div>
         </div>
@@ -191,7 +192,7 @@
             <div class="row">
                 <div class="col-lg-3">
                     <div class="footer__logo">
-                        <a href="./index.html"><img src="img/logo.png" alt=""></a>
+                        <a href="./index.html"><img src="img/logo2.png" alt=""></a>
                     </div>
                 </div>
                 <div class="col-lg-6">
@@ -236,7 +237,7 @@
     <script src="js/owl.carousel.min.js"></script>
     <script src="js/main.js"></script>
     <script src="js/profile_modify.js"></script>
-    
+    <script src="js/check_id.js"></script>
 
 
 </body>

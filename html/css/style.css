@@ -47,10 +47,6 @@ body {
 }
 
 
-.forgotpassword{
-
-	color
-}
 
 h1,
 h2,
@@ -68,9 +64,16 @@ h6 {
 
 
 .whitetext{						/*하얀 글씨 출력 용도 */
-
 	color: white;
+}
 
+#saveId{		/*아이디 체크박스 위치 */
+	color: wheat;
+	margin-right:5px;
+}
+
+#saveId:hover{	/*아이디 체크박스 체크할 떄*/
+	color: red;
 }
 
 .blacktext{						/*검은 글씨 출력 용도 */
@@ -1836,6 +1839,24 @@ ol {
 	
 }
 
+#check_id_btn{		/*아이디 중복체크버튼*/
+	
+	font-size: 10px;
+	color: #ffffff;
+	background:burlywood;
+	font-weight: 700;
+	border: none;
+	border-radius: 10px;
+	letter-spacing: 1.5px;
+	text-transform: uppercase;
+	display: inline-block;
+	padding: 5px 5px;
+	margin-left:5px;
+	margin-right:5px;
+	margin-bottom: 10px;
+	
+}
+
 
 #checkTicket,#cancelTicket{		/*예매확인 버튼,예매취소 버튼*/
 	
@@ -1861,8 +1882,8 @@ ol {
 	position: absolute;
 	width: 1px;
 	height: 1px;
-	padding: 0;
-	margin: -1px;
+	padding: 1px;
+	margin: 1px;
 	overflow: hidden;
 	clip:rect(0,0,0,0);
 	border: 0;
@@ -1893,7 +1914,7 @@ ol {
 	background-color: #f5f5f5;
 	border: 1px solid #ebebeb;
 	border-bottom-color: #e2e2e2;
-	border-radius: .25em;
+	border-radius: .1em;
 	-webkit-appearance: none; /* 네이티브 외형 감추기 */
 	-moz-appearance: none;
 	appearance: none;
@@ -2498,6 +2519,10 @@ ol {
 		bottom: 0;
 		margin-top: 25px;
 	}
+	#saveId{				/*아이디 저장 체크박스*/
+		background-color:white;
+	}
+
 	.header__right a {
 		margin-right: 10px;
 	}

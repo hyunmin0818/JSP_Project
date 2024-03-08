@@ -99,39 +99,53 @@
                         <h3>Login</h3>
                         <form action="./loginOk_index.html">
                             <div class="input__item">
-                                <input type="text" placeholder="Email address" id="userid">
+                                <input type="text" placeholder="아이디" id="userid" value="">
                                 <span class="icon_mail"></span>
                             </div>
                             <div class="input__item">
-                                <input type="password" placeholder="Password" id="userpw">
+                                <input type="password" placeholder="비밀번호" id="userpw">
                                 <span class="icon_lock"></span>
                             </div>
-                            <button type="submit" class="site-btn">Login Now</button>
+                           
                             
+                            <div class="findIdPw_link" align="center"> 
+                                <label><input type="checkbox" id="check_saveId"> <a class="whitetext" id="saveId">아이디 저장</a></label><t>|</t>
+                                <a href="./findId.html" >아이디 찾기 </a>| 
+                               
+                                <a href="./findPw.html">비밀번호 찾기</a>
+                            </div>
+                            <button type="submit" class="site-btn">로그인</button>
+                            
+                         
+                          
                         </form>
-                 
-                     
+                        
+                        
                     </div>
-                    <a href="#" class="forget_pass">아이디 찾기</a> <br>
-                    <a href="#" class="forget_pass">비밀번호 찾기</a> <br>
-                    <a href="./manager.html" class="forget_pass">관리자</a> 
+                    
+                    
                 </div>
+               
+        
                 <div class="col-lg-6">
-                    <div class="login__register">
+                    <div class="login__register" align="center">
                         <h3>계정이 없습니까?</h3>
-                        <a href="#" class="primary-btn">Register Now</a><br>
+                        <a href="#" class="primary-btn">회원가입</a><br>
                        
                     </div>
                     <br>
-                    <div class="login__register">
-                         <h3>계정이 없습니까?</h3> -
-                        <a href="#" class="primary-btn">관리자</a><br>
+                    <div class="login__register" align="center">
+                         <h3>관리자 로그인</h3> -
+                        <a href="./manager.html" class="primary-btn">관리자</a><br>
                        
                     </div>
-                    
+          
                 </div>
+                
             </div>
             <div class="login__social">
+             
+
                 <div class="row d-flex justify-content-center">
                     <div class="col-lg-6">
                         <div class="login__social__links">
