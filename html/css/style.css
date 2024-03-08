@@ -1827,13 +1827,32 @@ ol {
 		background:blue;
 		font-weight: 700;
 		border: none;
-		border-radius: 1px;
+		border-radius: 3px;
 		letter-spacing: 2px;
 		text-transform: uppercase;
 		display: inline-block;
 		padding: 12px 30px;
 		margin-left: 30px;
 	
+}
+
+
+#checkTicket,#cancelTicket{		/*예매확인 버튼,예매취소 버튼*/
+	
+	font-size: 13px;
+	color: #ffffff;
+	background:green;
+	font-weight: 700;
+	border: none;
+	border-radius: 3px;
+	letter-spacing: 2px;
+	text-transform: uppercase;
+	display: inline-block;
+	padding: 12px 30px;
+	margin-top: 10px;
+	margin-left: 30px;
+	margin-right: 30px;
+
 }
 
 /*파일박스 추가-----------------*/
