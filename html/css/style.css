@@ -60,13 +60,26 @@ h6 {
 	font-family: "Mulish", sans-serif;
 }
 
-#youNeedLogin{			/*우측 상단 로그인 상태 확인 메시지*/
+#youNeedLogin,#youNeedJoin,#youNeedLogout{			/*우측 상단 로그인 상태 확인 메시지*/
 	text-align:left;
 	font-size:9px;
+	margin-top:-5px;
+	margin-right:6px;
 
 }
+#youNeedMypage{			/*우측 상단 로그인 상태 확인 메시지*/
+	text-align:right;
+	font-size:8px;
+	margin-top:-50px;
+	margin-right:6px;
+	margin-bottom:-40px;
+}
+#youNeedLogout{
+	margin-top:-3px;
+	margin-bottom:-40px;
+}
 
-.search-switch:hover,#dropdown-toggle:hover,.icon_profile:hover,#youNeedLogin:hover{			/*우측 상단 로그인 상태 확인 메시지*/
+#youNeedMypage:hover,.search-switch:hover,#dropdown-toggle:hover,.icon_profile:hover,#youNeedLogin:hover,#youNeedJoin:hover,#youNeedLogout:hover{			/*우측 상단 로그인 상태 확인 메시지*/
 	color:skyblue;
 
 }
