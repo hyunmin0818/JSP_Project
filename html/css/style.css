@@ -1009,6 +1009,7 @@ ol {
 
 .anime__details__text {
 	position: relative;
+	color: darkgray;
 }
 
 .anime__details__text p {
@@ -1093,7 +1094,7 @@ ol {
 .anime__details__widget ul li {
 	list-style: none;
 	font-size: 15px;
-	color: #ffffff;
+	color: #424242;
 	line-height: 30px;
 	position: relative;
 	padding-left: 18px;

@@ -126,8 +126,8 @@
                                     <span>감독</span><input type="text" id="directorNm">
                                 </div>
                                 <!-- 영화 설명 -->
-                                영화 줄거리
-                                <input type="text" style="width: 1000px; height: 400px;" id="plot">
+                                영화 줄거리:
+                                <textarea style="width: 1000px; height: 400px; overflow: auto;" id="plot"></textarea>
                                 <!-- 영화 세부 정보 표 -->
                                 <div class="anime__details__widget">
                                     <div class="row">
@@ -159,7 +159,7 @@
                                                 <li><span>예매 인원:</span><input type="text" id="audiAcc"></li> <!--예매인원-->
                                                 <li><span>등급:</span><br>
                                                     <select id="film_ratings" >
-                                                        <option value="ALL" >ALL</option>
+                                                        <option value="ALL" style="color: black;" >ALL</option>
                                                         <option value="R-12">12 관람가</option>
                                                         <option value="R-15">15 관람가</option>
                                                         <option value="R-18">청소년 관람불가</option>
@@ -168,6 +168,7 @@
 
                                             </ul>
                                         </div>
+                                        
                                     </div>
                                 </div>
                                 <!-- 영화 관련 버튼 -->
