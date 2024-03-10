@@ -15,6 +15,7 @@
         rel="stylesheet">
 
     <!-- Css Styles -->
+    <link rel="stylesheet" href="css/notice.css" type="text/css">
     <link rel="stylesheet" href="css/bootstrap.min.css" type="text/css">
     <link rel="stylesheet" href="css/font-awesome.min.css" type="text/css">
     <link rel="stylesheet" href="css/elegant-icons.css" type="text/css">
@@ -25,7 +26,6 @@
     <link rel="stylesheet" href="css/style.css" type="text/css">
 </head>
 
-<body>
     <!-- 페이지 로딩시 보여지는 로딩 스피너 -->
     <!-- Page Preloder -->
     <div id="preloder">
@@ -93,9 +93,9 @@
                         <!-- 홈으로 이동하는 링크 -->
                         <a href="./index.html"><i class="fa fa-home"></i> Home</a>
                         <!-- 카테고리 페이지로 이동하는 링크 -->
-                        <a href="./default.html">고객센터</a>
+                        <a href="./notice.html">게시판</a>
                         <!-- 현재 페이지의 카테고리 이름을 표시하는 부분 -->
-                        <span>문의내역</span>
+                        <span>공지사항</span>
                     </div>
                 </div>
             </div>
@@ -103,48 +103,59 @@
     </div>
     <!-- Breadcrumb End -->
 
-    <!-- Anime Section Begin -->
-    <section class="anime-details spad">
-        <section class="product-page spad">
-            <div class="container">
-                <div class="anime__details__review">
-                    <div class="section-title">
-                        <h5>문의 내역</h5>
-                    </div>
-                    <!-- 리뷰 아이템 -->
-                    <div class="anime__review__item">
-                        <div class="anime_default_pic">
-                            <img src="img/anime/review-1.jpg" alt="">
-                        </div>
-                        <div class="anime_default_text">
-                            <!-- db파트 -->
-                            <h6>Chris Curry - <span>1 Hour ago</span></h6>
-                            <p>어떻게 하면 취업을 할 수 있을까요?</p>
-                        </div>
-                    </div>
+    <!-- UI Object -->
+    <section class="product-page spad">
+        <div class="container">
+            <table cellspacing="0" border="1" summary="게시판의 글제목 리스트" class="tbl_type">
+                <caption>게시판 리스트</caption>
+                <colgroup>
+                    <col width="30">
+                    <col width="80">
+                    <col>
+                    <col width="115">
+                    <col width="85">
+                    <col width="60">
+                </colgroup>
+                <thead>
+                    <tr>
+                        <th scope="col">&nbsp;</th>
+                        <th scope="col">No</th>
+                        <th scope="col">제목</th>
+                        <th scope="col">글쓴이</th>
+                        <th scope="col">날짜</th>
+                        <th scope="col">조회수</th>
+                    </tr>
+                </thead>
+                <tbody>
+                            <tr>
+                                <td class="num">4</td>
+                                <td >
+                                </td>
+                                <td class="title"><a href="#">블로그 개편 작업 일정 1</a></td>
+                                <td><a href="#">UIT랩</a></td>
+                                <td class="date">2008/02/14</td>
+                                <td class="hit">12345</td>
+                            </tr>
+                </tbody>
+            </table>
+            <textarea  id="plot">${board.boardcontents }</textarea>
+        </div>
+        </div>
+        <!-- //UI Object -->
+        <!-- 페이지 네비게이션 -->
+        <div class="product__pagination" style="text-align: center;">
+            <a href="#"><i class="fa fa-angle-double-left"></i></a>
+            <a href="#" class="current-page">1</a>
+            <a href="#">2</a>
+            <a href="#">3</a>
+            <a href="#">4</a>
+            <a href="#">5</a>
+            <a href="#"><i class="fa fa-angle-double-right"></i></a>
+        </div>
 
-                    <div class="anime__review__item">
-                        <div class="anime_request_pic">
-                            <img src="img/anime/review-6.jpg" alt="">
-                        </div>
-                        <div class="anime_request_text">
-                            <h6>admin - <span>20 Hour ago</span></h6>
-                            <p>일단 님은 못해요</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="anime__details__form">
-                    <div class="section-title">
-                        <h5>Your Comment</h5>
-                    </div>
-                    <form action="#">
-                        <textarea placeholder="Your Comment"></textarea>
-                        <button type="submit"><i class="fa fa-location-arrow"></i> Review</button>
-                    </form>
-                </div>
-            </div>
-        </section>
-        <!-- Anime Section End -->
+
+        
+
 
         <!-- Footer Section Begin -->
         <footer class="footer">
@@ -187,6 +198,7 @@
             </div>
         </footer>
         <!-- Footer Section End -->
+        
 
         <!-- Search model Begin -->
         <div class="search-model">
@@ -249,6 +261,6 @@
         <script src="js/owl.carousel.min.js"></script>
         <script src="js/main.js"></script>
 
-</body>
+        </body>
 
 </html>
