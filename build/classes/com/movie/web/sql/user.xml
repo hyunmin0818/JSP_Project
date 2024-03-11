@@ -6,23 +6,17 @@
 <select id="submit" parameterType="hashmap" resultType="_int">
 	SELECT COUNT(*) FROM user_info WHERE userid = #{userid} AND USERPassWord = #{userpassword}
 </select>
-<select id="getDetail" parameterType="_int" resultType="userdto">
-	SELECT * FROM user_info WHERE usernum = #{usernum}
+<select id="getList" parameterType="hashmap" resultType="userdto">
+	SELECT * FROM user_info WHERE userid = #{userid}
 </select>
  <insert id="join" parameterType="com.movie.web.dto.UserDTO">
-<<<<<<< HEAD
-<<<<<<< HEAD
-	INSERT INTO user_info VALUES (user_seq.nextval,#{userid},#{userpw},#{username},#{userphone},#{usermail},#{userbirth})
-=======
-	INSERT INTO user_info VALUES (#{userid},#{userpassword},#{username},#{email},#{userphone},#{userbirth})
->>>>>>> edit
+
+INSERT INTO user_info VALUES (#{userid},#{userpassword},#{username},#{email},#{userphone},#{userbirth})
+
 </insert>
 <select id="checkId" parameterType="userdto" resultType="_int">
 	SELECT COUNT(*) FROM user_info WHERE userid = #{userid}
 </select>
-=======
-	INSERT INTO user_info VALUES (#user_seq.nextval,#{userid},#{userpw},#{username},
-	#{userbirth},#{userphone},#{usermail})
-</insert>
->>>>>>> refs/remotes/sey/main
+
+
 </mapper>

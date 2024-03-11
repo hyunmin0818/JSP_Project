@@ -2,6 +2,7 @@ package com.movie.web.dao;
 
 import java.util.HashMap;
 
+
 import java.util.List;
 
 import org.apache.ibatis.session.SqlSession;
@@ -47,19 +48,7 @@ public class UserDAO {
 		return result;
 	}
 
-<<<<<<< HEAD
-	 public boolean checkId(String userId) {
-	        int count = sqlSession.selectOne("User.checkId", userId);
-	        return count > 0;
-	    }
-		
 
-	public UserDTO getDetail(int usernum ) {
-		return sqlSession.selectOne("User.getDetail", usernum);
-	}
-
-	
-=======
 	public boolean checkId(String userid) {
 		boolean result = false;
 		int cnt = 0;
@@ -72,15 +61,21 @@ public class UserDAO {
 		return result;
 	}
 
-	public List<UserDTO> getList(){
-		return sqlSession.selectList("User.getList");
+	public UserDTO getUserInfo(String userid) {
+	    HashMap<String, String> datas = new HashMap<>();
+	    datas.put("userid", userid);
+	    
+	    UserDTO userInfo = sqlSession.selectOne("User.getList", datas);
+	    
+	    return userInfo;
 	}
+	
 
 	public UserDTO searchById (String userid){
 		UserDTO udto = null;
 		return sqlSession.selectOne("User.searchById",userid);
 
 	}
->>>>>>> edit
+
 
 }
