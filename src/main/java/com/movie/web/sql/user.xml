@@ -3,22 +3,19 @@
  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
  "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="User">
-<select id="submit" parameterType="hashmap" resultType="_int">
-	SELECT COUNT(*) FROM user_info WHERE userid = #{userid} AND USERPW = #{userpw}
-</select>
-<select id="getDetail" parameterType="_int" resultType="userdto">
-	SELECT * FROM user_info WHERE usernum = #{usernum}
-</select>
- <insert id="join" parameterType="com.movie.web.dto.UserDTO">
-<<<<<<< HEAD
-	INSERT INTO user_info VALUES (user_seq.nextval,#{userid},#{userpw},#{username},#{userphone},#{usermail},#{userbirth})
-</insert>
-<select id="checkId" parameterType="userdto" resultType="_int">
-	SELECT COUNT(*) FROM user_info WHERE userid = #{userid}
-</select>
-=======
-	INSERT INTO user_info VALUES (#user_seq.nextval,#{userid},#{userpw},#{username},
-	#{userbirth},#{userphone},#{usermail})
-</insert>
->>>>>>> refs/remotes/sey/main
+	<select id="submit" parameterType="hashmap" resultType="_int">
+		SELECT COUNT(*) FROM user_info WHERE userid = #{userid} AND USERPW =
+		#{userpw}
+	</select>
+	<select id="getDetail" parameterType="_int" resultType="userdto">
+		SELECT * FROM user_info WHERE usernum = #{usernum}
+	</select>
+	<insert id="join" parameterType="com.movie.web.dto.UserDTO">
+		<!-- HEAD -->
+		INSERT INTO user_info VALUES
+		(user_seq.nextval,#{userid},#{userpw},#{username},#{userphone},#{usermail},#{userbirth})
+	</insert>
+	<select id="checkId" parameterType="userdto" resultType="_int">
+		SELECT COUNT(*) FROM user_info WHERE userid = #{userid}
+	</select>
 </mapper>
