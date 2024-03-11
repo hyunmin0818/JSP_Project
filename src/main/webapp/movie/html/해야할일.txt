@@ -1,0 +1,19 @@
+1.문서정리 v 
+
+
+2-1. categories.html 에서 카테고리 클릭시 
+    anime-details.html 연결
+    css 변경 등  v
+    
+2-2. inedx.html에서 클릭시 
+    anime-details.html 연결
+
+3.categories.html 에서 첫번쨰 상품 영화 정보로 바꾸기 v 
+
+4.anime-details.html 에서 
+    anime-watching.html 연결 v
+
+
+5.categories.html 에서 반복되는 코드 jascrpt로 DB연동해서 표기하는 방법 궁립
+
+6.blog 무슨 html인지 알아내기
