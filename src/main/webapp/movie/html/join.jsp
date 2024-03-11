@@ -120,7 +120,7 @@
                             <h5 align="left" class="whitetext">비밀번호<a id="check_pw_message"></a></h5><br>
                             <div class="input__item">
                                
-                                <input type="password" class ="blacktext" placeholder="비밀번호를 입력해주세요" id="userpassword" name="userpw"> 
+                                <input type="password" class ="blacktext" placeholder="비밀번호를 입력해주세요" id="userpassword" name="userpassword"> 
                                 <span class="icon_mail"></span>
                             </div>
 
@@ -163,7 +163,7 @@
                             </div>
                             <h5 align="left" class="whitetext">이메일</h5><br>
                             <div class="input__item">
-                                <input type="text" placeholder="이메일 정보를 입력해주세요" id="email" name="usermail">
+                                <input type="text" placeholder="이메일 정보를 입력해주세요" id="email" name="email">
                                 <span class="icon_mail"></span>
                             </div>
  

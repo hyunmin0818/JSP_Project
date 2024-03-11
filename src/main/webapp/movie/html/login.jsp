@@ -113,7 +113,7 @@
                                 <span class="icon_id"></span>
                             </div>
                             <div class="input__item">
-                                <input type="password" placeholder="비밀번호" id="userpw" name="userpw">
+                                <input type="password" placeholder="비밀번호" id="userpassword" name="userpassword">
                                 <span class="icon_lock"></span>
                             </div>
                            

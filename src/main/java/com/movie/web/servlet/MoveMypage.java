@@ -1,5 +1,7 @@
 package com.movie.web.servlet;
 
+import org.apache.catalina.Session;
+
 import com.movie.web.action.Action;
 import com.movie.web.action.ActionForward;
 import com.movie.web.dao.UserDAO;
@@ -16,11 +18,12 @@ public class MoveMypage implements Action{
 		UserDAO udao = new UserDAO();
 		UserDTO udto = new UserDTO();
 		
-		int usernum = Integer.parseInt(request.getParameter("usernum"));
-		request.setAttribute("user", udao.getDetail("usernum"));
+		String userid = request.getParameter("userid");
+		request.setAttribute("userid", userid);
+		
 		
 		forward.setRedirect(false);
-		forward.setPath("/movie/html/mypage.jsp");
+		forward.setPath("/movie/html/mypage.jsp?userid="+userid);
 		
 		
 		return forward;
