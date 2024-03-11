@@ -105,7 +105,7 @@
              
                     <div class="login__form" id ="logincenter">
                         <!-- <h3 align="center" >회원가입</h3><br> -->
-                        <form action="${pageContext.request.contextPath}/movie/joinOk.ms">               <!--입력창 활성화 -->
+                        <form action="${pageContext.request.contextPath}/movie/joinOk.ms" method="post">               <!--입력창 활성화 -->
                             <div>
                             <h5 align="left" class="whitetext">아이디 <button type="button" class="site-btn" id ="check_id_btn" align="left">중복확인</button><a id="check_id_message"></a></h5>
                             

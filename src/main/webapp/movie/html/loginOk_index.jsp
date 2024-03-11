@@ -81,11 +81,11 @@
                       <span class="icon_profile arrow fa dropdown-toggle active arrow_carrot-down" id="dropdown-toggle"
                             data-bs-toggle="dropdown" aria-expanded="false"></span>   
                        <ul class="dropup-center dropup dropdown-menu" aria-labelledby="dropdown-toggle">
-                         <li>  <a href="./mypage.html"><span class="dropdown-item">마이페이지</span></a></li>
+                         <li>  <a href="${pageContext.request.contextPath}/movie/mypage.ms"><span class="dropdown-item">마이페이지</span></a></li>
                           <li><hr class="dropdown-divider"></li>      
                        <li> <a href="./index.html"><span class="dropdown-item" id="redtext">로그아웃</span></a></li> 
                     </ul>
-                    <a href ="./mypage.html" id ="youNeedLogin">${user.userid} </a>
+                    <a href ="./mypage.jsp" id ="youNeedLogin">${user.userid} </a>
                    
                     </div>
                 </div>

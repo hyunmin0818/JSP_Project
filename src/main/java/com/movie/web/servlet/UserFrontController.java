@@ -28,11 +28,15 @@ public class UserFrontController extends HttpServlet{
 		switch (requestURI) {
 		case "/SubmitOk.ms" : 
 			forward = new SubmitOkAction().execute(req ,resp);
-		case "/mypage.ms" : 
-			
+			break;
+		case "/movie/mypage.ms" : 
 			forward = new MoveMypage().execute(req ,resp);
-		case "movie/joinOk.ms" :
+			break;
+		case "/movie/checkId.ms" : 
+			forward = new CheckIdAction().execute(req ,resp);
+		case "/movie/joinOk.ms" :
 			forward = new JoinOkAction().execute(req ,resp);
+			break;
 		}
 		
 		if(forward != null) {

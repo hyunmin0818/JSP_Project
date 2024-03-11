@@ -146,7 +146,7 @@
                     <br>
                     <div class="login__register" align="center">
                          <h3>관리자 로그인</h3> -
-                        <a href="./manager.html" class="primary-btn">관리자</a><br>
+                        <a href="./manager.jsp" class="primary-btn">관리자</a><br>
                        
                     </div>
           

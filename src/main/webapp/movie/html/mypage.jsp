@@ -85,7 +85,7 @@
                 <div class="col-lg-12 text-center">
                     <div class="normal__breadcrumb__text">
                         <h2>마이페이지</h2>
-                        <a href="${pageContext.request.contextPath}/mypage.ms?userid=${user.userid}">
+                        <a href=>
                         ${user.userid}<p> 님의 마이페이지입니다</p>   <!-- 이름 하드코딩했습니다 DB값으로 수정부탁드려요-->
                     </div>
                 </div>

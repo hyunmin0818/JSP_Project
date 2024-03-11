@@ -34,10 +34,21 @@ public class UserDAO {
 		return result;
 	}
 
-	public UserDTO getDetail(int usernum ) {
+	public UserDTO getDetail(String usernum ) {
 		return sqlSession.selectOne("User.getDetail", usernum);
 	}
 
-	
-	
+	public boolean join(UserDTO udto) {
+		boolean result = false;
+		if(sqlSession.insert("User.join",udto) == 1) {
+			result = true;
+		}
+		return result;
+	}
+
+	 public boolean checkId(String userId) {
+	        int count = sqlSession.selectOne("User.checkId", userId);
+	        return count > 0;
+	    }
+		
 }
