@@ -81,3 +81,11 @@ ALTER TABLE movie
 ADD CONSTRAINT fk_actor
 FOREIGN KEY (actorId)
 REFERENCES actor(actorid);
+
+CREATE TABLE movie_likes (
+    user_id INT,
+    movie_id INT,
+    PRIMARY KEY (user_id, movie_id),
+    FOREIGN KEY (user_id) REFERENCES user(user_id),
+    FOREIGN KEY (movie_id) REFERENCES movie(movie_id)
+);
