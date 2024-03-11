@@ -1,13 +1,13 @@
 package com.movie.web.dto;
 
 public class UserDTO {
-	private int usernum;	// DB 수정되면 같이 수정...
+		// DB 수정되면 같이 수정...
 	
 	private String userid;
-	private String userpw;
+	private String userpassword;
 	
 	private String username;
-	private String usermail;
+	private String email;
 	private String userphone;
 	private String userbirth;
 	
@@ -18,22 +18,17 @@ public class UserDTO {
 		this.userid = userid;
 	}
 	public String getUserpw() {
-		return userpw;
+		return userpassword;
 	}
-	public void setUserpw(String userpw) {
-		this.userpw = userpw;
+	public void setUserpassword(String userpassword) {
+		this.userpassword = userpassword;
 	}
-	public int getUsernum() {
-		return usernum;
+	
+	public String getEmail() {
+		return email;
 	}
-	public void setUsernum(int usernum) {
-		this.usernum = usernum;
-	}
-	public String getUsermail() {
-		return usermail;
-	}
-	public void setUsermail(String usermail) {
-		this.usermail = usermail;
+	public void setEmail(String email) {
+		this.email = email;
 	}
 	public String getUserphone() {
 		return userphone;

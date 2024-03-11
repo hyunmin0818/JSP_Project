@@ -4,14 +4,18 @@
  "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="User">
 <select id="submit" parameterType="hashmap" resultType="_int">
-	SELECT COUNT(*) FROM user_info WHERE userid = #{userid} AND USERPW = #{userpw}
+	SELECT COUNT(*) FROM user_info WHERE userid = #{userid} AND USERPassWord = #{userpassword}
 </select>
 <select id="getDetail" parameterType="_int" resultType="userdto">
 	SELECT * FROM user_info WHERE usernum = #{usernum}
 </select>
  <insert id="join" parameterType="com.movie.web.dto.UserDTO">
 <<<<<<< HEAD
+<<<<<<< HEAD
 	INSERT INTO user_info VALUES (user_seq.nextval,#{userid},#{userpw},#{username},#{userphone},#{usermail},#{userbirth})
+=======
+	INSERT INTO user_info VALUES (#{userid},#{userpassword},#{username},#{email},#{userphone},#{userbirth})
+>>>>>>> edit
 </insert>
 <select id="checkId" parameterType="userdto" resultType="_int">
 	SELECT COUNT(*) FROM user_info WHERE userid = #{userid}
