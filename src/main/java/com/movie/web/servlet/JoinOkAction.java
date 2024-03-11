@@ -1,5 +1,6 @@
 package com.movie.web.servlet;
 
+<<<<<<< HEAD
 import com.movie.web.dao.UserDAO;
 import com.movie.web.dto.UserDTO;
 import com.movie.web.action.Action;
@@ -31,6 +32,20 @@ public class JoinOkAction implements Action{
 			forward.setPath("/movie/html/join.jsp");
 		}
 		return forward;
+=======
+import com.movie.web.action.Action;
+import com.movie.web.action.ActionForward;
+
+import jakarta.servlet.http.HttpServletRequest;
+import jakarta.servlet.http.HttpServletResponse;
+
+public class JoinOkAction implements Action{
+
+	@Override
+	public ActionForward execute(HttpServletRequest request, HttpServletResponse response) {
+		
+		return null;
+>>>>>>> refs/remotes/sey/main
 	}
 
 }

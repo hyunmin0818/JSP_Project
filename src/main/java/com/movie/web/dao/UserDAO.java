@@ -51,4 +51,11 @@ public class UserDAO {
 	        return count > 0;
 	    }
 		
+
+	public UserDTO getDetail(int usernum ) {
+		return sqlSession.selectOne("User.getDetail", usernum);
+	}
+
+	
+
 }
