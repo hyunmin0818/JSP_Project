@@ -103,7 +103,7 @@
 						<c:if test="${not empty param.flag}">
 							<c:if test="${not param.flag}">
 								<script>
-									alert("아이디나 비밀번호를 확인해주세요");
+									alert("아이디나 비밀번호를 확인하세요");
 								</script>
 							</c:if>
 						</c:if>
@@ -140,7 +140,7 @@
                 <div class="col-lg-6">
                     <div class="login__register" align="center">
                         <h3>계정이 없습니까?</h3>
-                        <a href="join.html" class="primary-btn">회원가입</a><br>
+                        <a href="join.jsp" class="primary-btn">회원가입</a><br>
                        
                     </div>
                     <br>

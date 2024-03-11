@@ -31,7 +31,7 @@ public class UserFrontController extends HttpServlet{
 		case "/mypage.ms" : 
 			
 			forward = new MoveMypage().execute(req ,resp);
-		case "/joinOk.ms" :
+		case "movie/joinOk.ms" :
 			forward = new JoinOkAction().execute(req ,resp);
 		}
 		

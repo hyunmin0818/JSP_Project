@@ -41,7 +41,7 @@
                 <div class="col-lg-2">
                     <div class="header__logo">
                         <a href="./index.html">
-                            <img src="img/logo.png" alt="">
+                            <img src="img/logo2.png" alt="">
                         </a>
                     </div>
                 </div>
@@ -84,8 +84,8 @@
             <div class="row">
                 <div class="col-lg-12 text-center">
                     <div class="normal__breadcrumb__text">
-                        <h2>로그인</h2>
-                        <p>영화 사이트에 오신걸 환영합니다</p>
+                        <h2>회원가입</h2>
+                        <p>영화 사이트에 오신 걸 환영합니다</p>  
                     </div>
                 </div>
             </div>
@@ -94,84 +94,95 @@
     <!-- Normal Breadcrumb End -->
 
     <!-- Login Section Begin -->
-    <section class="login spad">
+    <div class="login__social">
+        <div class="row d-flex justify-content-center"
+    <section class="login spad" align ="center">
+        <!-- <h3 align="center" >나의 정보</h3><br> -->
+        <!-- <p>마이페이지!!!!!!!!!!!!!!!!!!!!!!!!!</p> -->
+        
         <div class="container">
-            <div class="row">
-                <div class="col-lg-6">
-                    <div class="login__form">
-                        <h3>Login</h3>
-						<c:if test="${not empty param.flag}">
-							<c:if test="${not param.flag}">
-								<script>
-									alert("아이디나 비밀번호를 확인하세요");
-								</script>
-							</c:if>
-						</c:if>
-						<form action="${pageContext.request.contextPath}/SubmitOk.ms">
-                            <div class="input__item">
-                                <input type="text" placeholder="아이디" id="userid" name="userid"value="">
-                                <span class="icon_id"></span>
+            <div class="row" >
+             
+                    <div class="login__form" id ="logincenter">
+                        <!-- <h3 align="center" >회원가입</h3><br> -->
+                        <form action="${pageContext.request.contextPath}/movie/joinOk.ms">               <!--입력창 활성화 -->
+                            <div>
+                            <h5 align="left" class="whitetext">아이디 <button type="button" class="site-btn" id ="check_id_btn" align="left">중복확인</button><a id="check_id_message"></a></h5>
+                            
                             </div>
                             <div class="input__item">
-                                <input type="password" placeholder="비밀번호" id="userpw" name="userpw">
+                               
+                                <input type="text" class ="blacktext" placeholder="아이디를 입력해주세요" id="user_id" name="userid">
+                                <span class="icon_mail"></span>
+                                
+                            </div>
+
+                            <h5 align="left" class="whitetext">비밀번호<a id="check_pw_message"></a></h5><br>
+                            <div class="input__item">
+                               
+                                <input type="password" class ="blacktext" placeholder="비밀번호를 입력해주세요" id="userpassword" name="userpw"> 
+                                <span class="icon_mail"></span>
+                            </div>
+
+                            <h5 align="left" class="whitetext">비밀번호 확인<a id="check_pw_message2"></a></h5><br>
+                            <div class="input__item">
+                               
+                                <input type="password" class ="blacktext" placeholder="비밀번호를 다시 입력해주세요" id="userpassword2"> 
+                                <span class="icon_mail"></span>
+                            </div>
+
+                            <h5 align="left" class="whitetext">이름</h5><br>
+                            <div class="input__item">
+                               
+                                <input type="text" class ="blacktext" placeholder="이름을 입력해주세요" id="username" name="username"> 
+                                <span class="icon_mail"></span>
+                            </div>
+                          <h5 align="left" class="whitetext">프로필 사진</h5><br>
+                            
+                          
+                          <div class="filebox">     <!--파일박스 추가-->
+                            <input class="upload-name" value="파일선택" disabled="disabled">
+                          
+                            <label for="ex_filename">업로드</label> 
+                            <input type="file" id="ex_filename" class="upload-hidden"> 
+                          </div>
+                          <br>  <br> 
+
+
+                            <h5 align="left" class="whitetext">생년월일</h5><br>  
+                            <div class="input__item">
+                                <input type="text" placeholder="법정생년월일 6자리를 입력해주세요" id="userbirth" name="userbirth">
                                 <span class="icon_lock"></span>
                             </div>
-                           
-                            
-                            <div class="findIdPw_link" align="center"> 
-                                <label><input type="checkbox" id="check_saveId"> <a class="whitetext" id="saveId">아이디 저장</a></label><t>|</t>
-                                <a href="./findId.html" >아이디 찾기 </a>| 
-                               
-                                <a href="./findPw.html">비밀번호 찾기</a>
+
+                            <h5 align="left" class="whitetext">휴대번호</h5><br>
+                            <div class="input__item">
+                                
+                                <input type="text" placeholder="휴대번호 뒤 7~8자리를 입력해주세요" id="userphone" name= "userphone">
+                                <span class="icon_mail"></span>
                             </div>
-                            <button type="submit" class="site-btn">로그인</button>
-                            
-                         
-                          
+                            <h5 align="left" class="whitetext">이메일</h5><br>
+                            <div class="input__item">
+                                <input type="text" placeholder="이메일 정보를 입력해주세요" id="email" name="usermail">
+                                <span class="icon_mail"></span>
+                            </div>
+ 
+
+                            <button type="submit" class="site-btn" id="profile_modifybutton2">가입</button>
                         </form>
-                        
-                        
+                       <br> <br> <br> <br> <br> <br>
                     </div>
-                    
-                    
-                </div>
-               
-        
-                <div class="col-lg-6">
-                    <div class="login__register" align="center">
-                        <h3>계정이 없습니까?</h3>
-                        <a href="join.html" class="primary-btn">회원가입</a><br>
-                       
-                    </div>
-                    <br>
-                    <div class="login__register" align="center">
-                         <h3>관리자 로그인</h3> -
-                        <a href="./manager.html" class="primary-btn">관리자</a><br>
-                       
-                    </div>
-          
-                </div>
+                
+                
+                        </div>
+                    </div>   
                 
             </div>
-            <div class="login__social">
-             
-
-                <div class="row d-flex justify-content-center">
-                    <div class="col-lg-6">
-                        <div class="login__social__links">
-                            <span>or</span>
-                            <ul>
-                                <li><a href="#" class="facebook"><i class="fa fa-facebook"></i> Sign in With
-                                Facebook</a></li>
-                                <li><a href="#" class="google"><i class="fa fa-google"></i> Sign in With Google</a></li>
-                                <li><a href="#" class="twitter"><i class="fa fa-twitter"></i> Sign in With Twitter</a>
-                                </li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-            </div>
         </div>
+    </div>
+</div>
+
+
     </section>
     <!-- Login Section End -->
 
@@ -184,7 +195,7 @@
             <div class="row">
                 <div class="col-lg-3">
                     <div class="footer__logo">
-                        <a href="./index.html"><img src="img/logo.png" alt=""></a>
+                        <a href="./index.html"><img src="img/logo2.png" alt=""></a>
                     </div>
                 </div>
                 <div class="col-lg-6">
@@ -228,7 +239,9 @@
     <script src="js/jquery.slicknav.js"></script>
     <script src="js/owl.carousel.min.js"></script>
     <script src="js/main.js"></script>
-    <script src="js/login.js"></script>
+    <script src="js/profile_modify.js"></script>
+    <script src="js/check_id.js"></script>
+
 
 </body>
 
