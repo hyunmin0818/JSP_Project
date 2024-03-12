@@ -1,16 +1,16 @@
 package com.movie.web.dto;
 
 public class DirectorDTO {
-	private int director_id;
+	private int directorId;
 	private String name;
 	private int birth_date;
 	
 	
 	public int getDirector_id() {
-		return director_id;
+		return directorId;
 	}
 	public void setDirector_id(int director_id) {
-		this.director_id = director_id;
+		this.directorId = director_id;
 	}
 	public String getName() {
 		return name;

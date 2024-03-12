@@ -2,16 +2,16 @@ package com.movie.web.dto;
 
 public class ActorDTO {
 	// actor 테이블
-		private int actorid;
+		private int actorId;
 		private String name;
 		private int birth_date;
 		
 		
 		public int getActorid() {
-			return actorid;
+			return actorId;
 		}
 		public void setActorid(int actorid) {
-			this.actorid = actorid;
+			this.actorId = actorid;
 		}
 		public String getName() {
 			return name;
