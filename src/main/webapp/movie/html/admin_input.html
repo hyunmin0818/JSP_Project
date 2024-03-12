@@ -1,0 +1,383 @@
+<!DOCTYPE html>
+<html lang="zxx">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="description" content="Anime Template">
+    <meta name="keywords" content="Anime, unica, creative, html">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Anime | Template</title>
+
+    <!-- Google Font -->
+    <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Mulish:wght@300;400;500;600;700;800;900&display=swap"
+        rel="stylesheet">
+
+    <!-- Css Styles -->
+    <link rel="stylesheet" href="css/bootstrap.min.css" type="text/css">
+    <link rel="stylesheet" href="css/font-awesome.min.css" type="text/css">
+    <link rel="stylesheet" href="css/elegant-icons.css" type="text/css">
+    <link rel="stylesheet" href="css/plyr.css" type="text/css">
+    <link rel="stylesheet" href="css/nice-select.css" type="text/css">
+    <link rel="stylesheet" href="css/owl.carousel.min.css" type="text/css">
+    <link rel="stylesheet" href="css/slicknav.min.css" type="text/css">
+    <link rel="stylesheet" href="css/style.css" type="text/css">
+</head>
+
+<body>
+    <!-- 페이지 로딩시 보여지는 로딩 스피너 -->
+    <!-- Page Preloder -->
+    <div id="preloder">
+        <div class="loader"></div>
+    </div>
+
+    <!-- Header Section Begin -->
+    <header class="header">
+        <div class="container">
+            <div class="row">
+                <!-- 로고 -->
+                <div class="col-lg-2">
+                    <div class="header__logo">
+                        <a href="./admin_index.html">
+                            <img src="img/logo.png" alt="">
+                        </a>
+                    </div>
+                </div>
+                <!-- 네비게이션 메뉴 -->
+                <div class="col-lg-8">
+                    <div class="header__nav">
+                        <nav class="header__menu mobile-menu">
+                            <ul>
+                                <!-- 홈페이지로 이동하는 링크 -->
+                                <li class="active"><a href="./admin_index.html">Homepage</a></li>
+                                <!-- 카테고리 메뉴 -->
+                                <li><a href="./admin_categories.html">Categories <span
+                                            class="arrow_carrot-down"></span></a>
+                                    <ul class="dropdown">
+                                        <!-- 카테고리 관련 페이지로 이동하는 링크 -->
+                                        <li><a href="./admin_categories.html">Categories</a></li>
+                                        <li><a href="./admin_details.html">Anime Details</a></li>
+                                        <li><a href="./anime-watching.html">Anime Watching</a></li>
+                                        <li><a href="./blog-details.html">Blog Details</a></li>
+                                        <li><a href="./signup.html">Sign Up</a></li>
+                                        <li><a href="./login.html">Login</a></li>
+                                    </ul>
+                                </li>
+                                <!-- 블로그로 이동하는 링크 -->
+                                <li><a href="./blog.html">Our Blog</a></li>
+                                <!-- 연락처로 이동하는 링크 -->
+                                <li><a href="#">Contacts</a></li>
+                            </ul>
+                        </nav>
+                    </div>
+                </div>
+                <!-- 검색 및 프로필 아이콘 -->
+                <div class="col-lg-2">
+                    <div class="header__right">
+                        <a href="#" class="search-switch"><span class="icon_search"></span></a>
+                        <a href="./login.html"><span class="icon_profile"></span></a>
+                    </div>
+                </div>
+            </div>
+            <div id="mobile-menu-wrap"></div>
+        </div>
+    </header>
+    <!-- Header End -->
+
+    <!-- Breadcrumb Begin -->
+    <div class="breadcrumb-option">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="breadcrumb__links">
+                        <!-- 홈으로 이동하는 링크 -->
+                        <a href="./admin_index.html"><i class="fa fa-home"></i> Home</a>
+                        <!-- 카테고리 페이지로 이동하는 링크 -->
+                        <a href="./admin_categories.html">Categories</a>
+                        <!-- 현재 페이지의 카테고리 이름을 표시하는 부분 -->
+                        <span>Romance</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Breadcrumb End -->
+
+    <!-- Anime Section Begin -->
+    <section class="anime-details spad">
+        <div class="container">
+            <div class="anime__details__content">
+                <div class="row">
+                    <form action="#" method="post">
+                        <!-- 영화 이미지와 관련 정보 -->
+                        <div class="col-lg-3">
+                            <h4>예시</h4>
+                            <div class="anime__details__pic set-bg" data-setbg=""> <!--이미지-->
+                            </div>
+                            <input type="file" onchange="previewImage(event)" id="imgfile">
+                        </div>
+                        <!-- 영화 세부 정보 -->
+                        <div class="col-lg-9">
+                            <div class="anime__details__text">
+                                <div class="anime__details__title">
+                                    <!-- 영화 제목과 감독 -->
+                                    <h3>제목</h3><input type="text" id="title" style="width: 400px;">
+                                    <span>감독</span><input type="text" id="directorNm">
+                                </div>
+                                <!-- 영화 설명 -->
+                                영화 줄거리:
+                                <textarea style="width: 1000px; height: 400px; overflow: auto;" id="plot"></textarea>
+                                <!-- 영화 세부 정보 표 -->
+                                <div class="anime__details__widget">
+                                    <div class="row">
+                                        <div class="col-lg-6 col-md-6">
+                                            <ul>
+                                                <li><span>유형:</span> <input type="text" id="Type"></li>           <!--유형-->
+                                                <li><span>회사:</span> <input type="text" id="company"></li> <!--제작사-->
+                                                <li><span>개봉일:</span> <input type="date" id="releaseDate"></li><!--방영일-->
+                                                <li><span>국가:</span> <input type="text" id="nation"></li> <!--국가-->
+                                                <!--장르-->
+                                                <div id="genre" style="color: darkgrey;"> 장르: <br>
+                                                    <label><input type="checkbox" name="genre" value="액션"> 액션</label><br>
+                                                    <label><input type="checkbox" name="genre" value="로맨스"> 로맨스</label><br>
+                                                    <label><input type="checkbox" name="genre" value="코미디"> 코미디</label><br>
+                                                    <label><input type="checkbox" name="genre" value="스릴러"> 스릴러</label><br>
+                                                    <label><input type="checkbox" name="genre" value="드라마"> 드라마</label><br>
+                                                    <label><input type="checkbox" name="genre" value="호러"> 호러</label><br>
+                                                    <label><input type="checkbox" name="genre" value="SF"> SF</label><br>
+                                                    <label><input type="checkbox" name="genre" value="판타지"> 판타지</label><br>
+                                                    <label><input type="checkbox" name="genre" value="어드벤처"> 어드벤처</label><br>
+                                                </div>
+                                            </ul>
+                                        </div>
+                                        <div class="col-lg-6 col-md-6">
+                                            <ul>
+                                                <li><span>배우:</span><input type="text" id="actorEnNm"></li> <!--배우-->
+                                                <li><span>평점:</span><input type="text" id="Rating"></li> <!--평가-->
+                                                <li><span>상영시간:</span> <input type="text" id="runtime"></li><!--재생시간-->
+                                                <li><span>예매 인원:</span><input type="text" id="audiAcc"></li> <!--예매인원-->
+                                                <li><span>등급:</span><br>
+                                                    <select id="film_ratings" >
+                                                        <option value="ALL" style="color: black;" >ALL</option>
+                                                        <option value="R-12">12 관람가</option>
+                                                        <option value="R-15">15 관람가</option>
+                                                        <option value="R-18">청소년 관람불가</option>
+                                                    </select>
+                                                </li>
+
+                                            </ul>
+                                        </div>
+                                        
+                                    </div>
+                                </div>
+                                <!-- 영화 관련 버튼 -->
+                                <div class="anime__details__btn">
+                                    <input type="submit" class="reservation" onclick="submitForm(event)" value="영화게시판 제출">
+                                </div>
+                                <div class="anime__details__btn">
+                                    <input type="submit" class="reservation" onclick="  noiticesubmit(event)" value="공지사항 제출">
+                                </div>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+    </section>
+    <!-- Anime Section End -->
+
+    <!-- Footer Section Begin -->
+    <footer class="footer">
+        <div class="page-up">
+            <!-- 페이지 상단으로 이동하는 버튼 -->
+            <a href="#" id="scrollToTopButton"><span class="arrow_carrot-up"></span></a>
+        </div>
+        <div class="container">
+            <div class="row">
+                <!-- 로고 -->
+                <div class="col-lg-3">
+                    <div class="footer__logo">
+                        <a href="./admin_index.html"><img src="img/logo.png" alt=""></a>
+                    </div>
+                </div>
+                <div class="col-lg-6">
+                    <!-- 푸터 내비게이션 -->
+                    <div class="footer__nav">
+                        <ul>
+                            <li class="active"><a href="./admin_index.html">Homepage</a></li>
+                            <li><a href="./admin_categories.html">Categories</a></li>
+                            <li><a href="./blog.html">Our Blog</a></li>
+                            <li><a href="#">Contacts</a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-lg-3">
+                    <!-- 저작권 정보  절대 지우지말것 -->
+                    <p><!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+                        Copyright &copy;
+                        <script>document.write(new Date().getFullYear());</script> All rights reserved | This template
+                        is made with <i class="fa fa-heart" aria-hidden="true"></i> by <a href="https://colorlib.com"
+                            target="_blank">Colorlib</a>
+                        <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+                    </p>
+
+                </div>
+            </div>
+        </div>
+    </footer>
+    <!-- Footer Section End -->
+
+    <!-- Search model Begin -->
+    <div class="search-model">
+        <div class="h-100 d-flex align-items-center justify-content-center">
+            <!-- 검색 모달 닫기 스위치 -->
+            <div class="search-close-switch"><i class="icon_close"></i></div>
+            <!-- 검색 폼 -->
+            <form class="search-model-form">
+                <input type="text" id="search-input" placeholder="Search here.....">
+            </form>
+        </div>
+    </div>
+    <!-- Search model end -->
+
+    <!-- Js Plugins -->
+    <script>
+        // 이미지를 미리보기하기 위한 JavaScript 함수
+        function previewImage(event) {
+            // FileReader 객체 생성
+            var reader = new FileReader();
+            // 파일 로드가 완료되었을 때 실행될 콜백 함수 정의
+            reader.onload = function () {
+                // 선택한 이미지를 CSS 배경 이미지로 설정하기 위한 준비
+                var backgroundImage = "url('" + reader.result + "')";
+                // 선택한 이미지를 표시할 요소 선택
+                var element = document.querySelector('.anime__details__pic');
+                // 요소의 배경 이미지를 선택한 이미지로 설정
+                element.style.backgroundImage = backgroundImage;
+            };
+            // FileReader를 사용하여 선택한 파일을 읽기 시작
+            reader.readAsDataURL(event.target.files[0]);
+        }
+    </script>
+<script>
+function noiticesubmit(event){
+    let imgfile = $('#imgfile').val();                 // 파일
+    let title = $('#title').val();                     // 네임
+    let plot = $('#plot').val();                       // 영화 줄거리  
+        if (title == "" || title == null) { 
+            alert("이름 필드값을 입력해주세요");
+            event.preventDefault();
+            return false; // 양식 제출 방지
+        }
+        if (plot == "" || plot == null) {
+            alert("영화 줄거리 필드값을 입력해주세요");
+            event.preventDefault();
+            return false; 
+        }     
+}
+
+</script>
+<script>
+    // 양식 제출 전 값을 할당했는지 확인하는 jQuery 함수
+    function submitForm(event) {
+        // 각 입력 필드의 값을 가져와 변수에 할당
+        let imgfile = $('#imgfile').val();                 // 파일
+        let title = $('#title').val();                     // 네임
+        let directorNm = $('#directorNm').val();           // 감독
+        let type = $('#Type').val();                       // 영화 유형
+        let company = $('#company').val();                 // 제작사
+        let releaseDate = $('#releaseDate').val();         // 개봉일자
+        let nation = $('#nation').val();                   // 국가
+        let actorEnNm = $('#actorEnNm').val();             // 배우   
+        let rating = $('#Rating').val();                   // 평점
+        let plot = $('#plot').val();                       // 영화 줄거리       
+        let runtime = $('#runtime').val();                 // 상영시간
+        let genre = $('input[name="genre"]:checked').val();// 장르
+        let film_ratings = $('#film_ratings').val();       // 관람등급
+        let audiAcc = $('#audiAcc').val();                 // 누적 관람인원
+
+        // 입력 필드 중 하나라도 비어 있을 경우 양식 제출 방지
+        if (imgfile == "" || imgfile == null) { 
+            alert("img 파일을 넣어주세요");
+            event.preventDefault();
+            return false; // 양식 제출 방지
+        }
+        if (title == "" || title == null) { 
+            alert("이름 필드값을 입력해주세요");
+            event.preventDefault();
+            return false; // 양식 제출 방지
+        }
+        if (directorNm == "" || directorNm == null) {
+            alert("감독 필드값을 입력해주세요");
+            event.preventDefault();
+            return false; 
+        }
+        if (plot == "" || plot == null) {
+            alert("영화 줄거리 필드값을 입력해주세요");
+            event.preventDefault();
+            return false; 
+        }
+        if (type == "" || type == null) { 
+            alert("영화 유형 필드값을 입력해주세요");
+            event.preventDefault();
+            return false;
+        }
+        if (company == "" || company == null) { 
+            alert("회사 유형 필드값을 입력해주세요");
+            event.preventDefault();
+            return false; 
+        }
+        if (releaseDate == "" || releaseDate == null) { 
+            alert("개봉일자 유형 필드값을 입력해주세요");
+            event.preventDefault();
+            return false; 
+        }
+        if (nation == "" || nation == null) { 
+            alert("국가 유형 필드값을 입력해주세요");
+            event.preventDefault();
+            return false; 
+        }
+        if (actorEnNm == "" || actorEnNm == null) { 
+            alert("배우명 유형 필드값을 입력해주세요");
+            event.preventDefault();
+            return false; 
+        }
+        if (rating == "" || rating == null) { 
+            alert("평점 필드값을 입력해주세요");
+            event.preventDefault();
+            return false; 
+        }
+        if (runtime == "" || runtime == null) { 
+            alert("상영시간 필드값을 입력해주세요");
+            event.preventDefault();
+            return false; 
+        }
+        if (audiAcc == "" || audiAcc == null) { 
+            alert("누적 관람인원 필드값을 입력해주세요");
+            event.preventDefault();
+            return false; 
+        }
+        if (film_ratings == "" || film_ratings == null) { 
+            alert("관람등급을 선택해주세요");
+            event.preventDefault();
+            return false; 
+        }
+        if (genre == "" || genre == null) { 
+            alert("장르를 선택해주세요");
+            event.preventDefault();
+            return false; 
+        }
+    }
+</script>
+    <script src="js/jquery-3.3.1.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/player.js"></script>
+    <script src="js/jquery.nice-select.min.js"></script>
+    <script src="js/mixitup.min.js"></script>
+    <script src="js/jquery.slicknav.js"></script>
+    <script src="js/owl.carousel.min.js"></script>
+    <script src="js/main.js"></script>
+
+</body>
+
+</html>
