@@ -107,7 +107,7 @@
 								</script>
 							</c:if>
 						</c:if>
-						<form action="${pageContext.request.contextPath}/SubmitOk.ms">
+						<form action="${pageContext.request.contextPath}/SubmitOk.ms" method="post">
                             <div class="input__item">
                                 <input type="text" placeholder="아이디" id="userid" name="userid"value="">
                                 <span class="icon_id"></span>

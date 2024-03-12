@@ -10,6 +10,7 @@
     <meta name="keywords" content="Anime, unica, creative, html">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests">
     <title>Anime | Template</title>
 
     <!-- Google Font -->
@@ -130,47 +131,25 @@
                 </div>
 
 
-                <div class="col-lg-2">
-                    <div class="header__right">
-                        <a href="#" class="search-switch"><span class="icon_search"></span></a>            
-                      <span class="icon_profile arrow fa dropdown-toggle active arrow_carrot-down" id="dropdown-toggle"
-                            data-bs-toggle="dropdown" aria-expanded="false"></span>   
-                       <ul class="dropup-center dropup dropdown-menu" aria-labelledby="dropdown-toggle">
-
-                         <li>  <a href="${pageContext.request.contextPath}/movie/mypage.ms"><span class="dropdown-item">마이페이지</span></a></li>
-                          <li><hr class="dropdown-divider"></li>      
-                       <li> <a href="./index.html"><span class="dropdown-item" id="redtext">로그아웃</span></a></li> 
-                    </ul>
-                    <a href ="./mypage.jsp" id ="youNeedLogin">${user.userid} </a>
-
-                         <li>  <a href="${pageContext.request.contextPath}/movie/html/mypage.jsp?userid="${param.userid}><span class="dropdown-item">마이페이지</span></a></li>
-                          <li><hr class="dropdown-divider"></li>      
-                       <li> <a href="findTicket.html"><span class="dropdown-item" id="redtext">예매내역</span></a></li> 
-                       <li> <a href="#"><span class="dropdown-item" id="redtext">팔로우</span></a></li> 
-                       <li> <a href="./request.html"><span class="dropdown-item" id="redtext">내 문의내역</span></a></li> 
-                       <li> <a href="#"><span class="dropdown-item" id="redtext">쿠폰함(미구현)</span></a></li> 
-                       <li> <a href="./index.html"><span class="dropdown-item" id="redtext">로그아웃</span></a></li> 
-                    </ul>
-                    <a href ="./mypage.jsp" id ="youNeedLogin">${param.userid} </a>
-
-
-                         <li>  <a href="./mypage.html"><span class="dropdown-item">마이페이지</span></a></li>
-                          <li><hr class="dropdown-divider"></li>      
-                       <li> <a href="${pageContext.request.contextPath}/movie/logout.ms"><span class="dropdown-item" id="redtext">로그아웃</span></a></li> 
-                    </ul>
-
-                    <a href ="./mypage.html" id ="youNeedLogin">${user.userid} </a>
-
-
-                    <a href ="./mypage.jsp" id ="youNeedLogin"></a>
-
-
-                   
-                    </div>
-                </div>
-
-
-                
+				<div class="col-lg-2">
+					<div class="header__right">
+						<a href="#" class="search-switch"><span class="icon_search"></span></a>
+						<span
+							class="icon_profile arrow fa dropdown-toggle active arrow_carrot-down"
+							id="dropdown-toggle" data-bs-toggle="dropdown"
+							aria-expanded="false"></span>
+						<ul class="dropup-center dropup dropdown-menu"
+							aria-labelledby="dropdown-toggle">
+							<li><a
+								href="${pageContext.request.contextPath}/movie/mypage.ms"><span
+									class="dropdown-item">마이페이지</span></a></li>
+							<li><hr class="dropdown-divider"></hr></li>
+							<li><a href="./index.html"><span class="dropdown-item"
+									id="redtext">로그아웃</span></a></li>
+						</ul>
+						<a href="./mypage.jsp" id="youNeedLogin">${user.userid}</a>
+					</div>
+				</div>
 
 
 
@@ -178,7 +157,10 @@
 
 
 
-            </div>
+
+
+
+			</div>
             <div id="mobile-menu-wrap"></div>
         </div>
     </header>

@@ -85,22 +85,18 @@
                 <div class="col-lg-12 text-center">
                     <div class="normal__breadcrumb__text">
                         <h2>마이페이지</h2>
-<<<<<<< HEAD
-<<<<<<< HEAD
-                        <a href=>
-=======
-                        <a href="${pageContext.request.contextPath}/mypage.ms?userid=${user.userid}">
->>>>>>> refs/remotes/sey/main
-                        ${user.userid}<p> 님의 마이페이지입니다</p>   <!-- 이름 하드코딩했습니다 DB값으로 수정부탁드려요-->
-=======
+
+                     
+
+                        <a href="${pageContext.request.contextPath}/mypage.ms?userid=${sessionScope.userinfo}">
+
+                        <p> ${sessionScope.userinfo} 님의 마이페이지입니다</p> </a>  <!-- 이름 하드코딩했습니다 DB값으로 수정부탁드려요-->
+
 
                         
 
-                        <a href="${pageContext.request.contextPath}/movie/mypage.ms?userid=${param.userid}">
+                      
 
-                        ${param.userid}<p> 님의 마이페이지입니다</p>   <!-- 이름 하드코딩했습니다 DB값으로 수정부탁드려요-->
-                    	</a>
->>>>>>> edit
                     </div>
                 </div>
             </div>
@@ -135,7 +131,7 @@
                         <form action="./loginOk_index.html">               <!--입력창 비활성화 -->
                             <h5 align="left" class="whitetext">닉네임</h5><br>
                             <div class="input__item1">
-                               <h4 class="whitetext">${userid }</h4><br>
+                               <h4 class="whitetext">${sessionScope.userid}</h4><br>
 
                                 <!-- <input type="text" class ="blacktext" placeholder="이름을 입력해주세요" value ="Nickname(이름 DB값으로 수정해주세요)" disabled> 
                                 <span class="icon_mail"></span> --> 
@@ -153,7 +149,7 @@
 
                             <h5 align="left" class="whitetext">생년월일</h5><br>  
                             
-                                <h4 class="whitetext">생년월일(DB)</h4><br>
+                                <h4 class="whitetext">${userbirth}</h4><br>
                                    <!--  <div class="input__item"></div>
                                 <input type="text" placeholder="법정생년월일 6자리를 입력해주세요" value ="0123456(생년월일 DB값으로 수정해주세요)" disabled>
                                 <span class="icon_lock"></span> -->
@@ -162,7 +158,7 @@
                             <h5 align="left" class="whitetext">휴대번호</h5><br>
 
                             <div class="input__item">  
-                            <h4 class="whitetext">휴대번호(DB)</h4><br>
+                            <h4 class="whitetext">${userphone}</h4><br>
                           <!--  <div class="input__item">
                                 
                                  <input type="text" placeholder="휴대번호 뒤 7~8자리를 입력해주세요.(01X제외)"value ="999-9999-9999(휴대전화 DB값으로 수정해주세요)" disabled>
@@ -173,7 +169,7 @@
 
                         <h5 align="left" class="whitetext">이메일</h5><br>
                         <div class="input__item">  
-                            <h4 class="whitetext">이메일(DB)</h4><br>
+                            <h4 class="whitetext">${email}</h4><br>
                           <!--  <div class="input__item">
                                 
                                  <input type="text" placeholder="휴대번호 뒤 7~8자리를 입력해주세요.(01X제외)"value ="999-9999-9999(휴대전화 DB값으로 수정해주세요)" disabled>

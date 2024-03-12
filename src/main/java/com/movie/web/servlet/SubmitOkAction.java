@@ -26,12 +26,12 @@ public class SubmitOkAction implements Action{
         // 사용자로부터 입력받은 아이디와 비밀번호
       
         
-        HttpSession session = req.getSession();
+        HttpSession session = req.getSession(true);
         session.setAttribute("userinfo", userid);
 
         System.out.println("값 받아오기 성공"); // 값 받아오기 여부 확인용
 
-        forward.setRedirect(false); // redirect
+        forward.setRedirect(true); // redirect
         
         // MemberDAO의 login 메서드를 사용하여 로그인 여부 확인
         if (udao.submit(userid, userpassword)) {
@@ -40,7 +40,7 @@ public class SubmitOkAction implements Action{
         	    // 사용자 정보가 존재하는 경우
         	    // 이후 필요한 로직을 수행
         		forward.setPath("/movie/html/loginOk_index.jsp?userid="+userid);
-        		session.getAttribute(userid);
+        		session.getAttribute("userinfo");
         	} else {
         	    // 사용자 정보가 존재하지 않는 경우
         	    // 이에 대한 처리를 수행
