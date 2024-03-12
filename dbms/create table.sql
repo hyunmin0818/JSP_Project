@@ -5,8 +5,7 @@ use bonobonomovie;
 
 -- Movie (영화) 테이블
 CREATE TABLE movie (
-    movie_id VARCHAR(255) PRIMARY KEY,     -- 영화 고유 ID
-    movieSeq VARCHAR(255),                 -- 영화 순서
+    movieSeq VARCHAR(255) PRIMARY KEY,     -- 영화 고유 ID
     title VARCHAR(255),                    -- 영화 제목
     titleEng VARCHAR(255),                 -- 영화 영문 제목
     titleOrg VARCHAR(255),                 -- 영화 원문 제목
@@ -85,10 +84,10 @@ CREATE TABLE comment (
 -- Movie_likes (영화 좋아요) 테이블
 CREATE TABLE movie_likes (
     user_id VARCHAR(255),                  -- 사용자 ID (외래 키)
-    movie_id VARCHAR(255),                 -- 영화 ID (외래 키)
-    PRIMARY KEY (user_id, movie_id),
+    movieSeq VARCHAR(255),                 -- 영화 ID (외래 키)
+    PRIMARY KEY (user_id, movieSeq),
     FOREIGN KEY (user_id) REFERENCES user(user_id),
-    FOREIGN KEY (movie_id) REFERENCES movie(movie_id)
+    FOREIGN KEY (movieSeq) REFERENCES movie(movieSeq)
 );
 
 ALTER TABLE movie
@@ -103,5 +102,5 @@ REFERENCES actor(actorid);
 
 ALTER TABLE movie_likes
 ADD CONSTRAINT fk_movie
-FOREIGN KEY (movie_id)
-REFERENCES movie(movie_id);
+FOREIGN KEY (movieSeq)
+REFERENCES movie(movieSeq);
