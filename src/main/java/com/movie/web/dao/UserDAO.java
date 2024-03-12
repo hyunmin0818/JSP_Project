@@ -66,7 +66,7 @@ public class UserDAO {
 	    datas.put("userid", userid);
 	    
 	    UserDTO userInfo = sqlSession.selectOne("User.getList", datas);
-	    
+	    System.out.println("userInfo 객체 상태: " + (userInfo != null ? "존재함" : "null"));
 	    return userInfo;
 	}
 	
