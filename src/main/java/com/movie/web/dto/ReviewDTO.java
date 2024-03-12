@@ -1,7 +1,7 @@
 package com.movie.web.dto;
 
 public class ReviewDTO {
-	// review 테이블
+	// review 테이블(review테이블 Comment 테이블과 역할이 비슷하여 하나로 합치기로 함)
 		private int review_id;
 		private int user_id;
 		private int movieid;

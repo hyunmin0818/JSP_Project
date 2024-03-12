@@ -37,6 +37,7 @@
 - **email: 사용자 이메일**
 - **userphone: 사용자 연락처**
 - **userbirth: 사용자 생년월일**
+- **movie_like: 영화 좋아요 여부**
 
 ## 운영자 (Operator) 테이블
 

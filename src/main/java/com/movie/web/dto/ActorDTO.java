@@ -6,6 +6,7 @@ public class ActorDTO {
 		private String name;
 		private int birth_date;
 		
+		
 		public int getActorid() {
 			return actorid;
 		}
@@ -24,5 +25,6 @@ public class ActorDTO {
 		public void setBirth_date(int birth_date) {
 			this.birth_date = birth_date;
 		}
+		
 		
 }

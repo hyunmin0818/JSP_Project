@@ -27,7 +27,7 @@ CREATE TABLE movie (
     audiAcc INT,                           -- 누적 관객 수
     Awards1 TEXT,                          -- 수상 내역 1
     Awards2 TEXT,                          -- 수상 내역 2
-    movie_likes TINYINT(2)                 -- 영화 좋아요 수
+    movie_likes TINYINT(2)	               -- 영화 좋아요 수
 );
 
 -- User (사용자) 테이블
@@ -57,6 +57,11 @@ CREATE TABLE actor (
     birth_date DATE                        -- 생년월일
 );
 
+ALTER TABLE actor
+CHANGE COLUMN actorid actorId INT;
+
+SELECT * from actor;
+
 -- Director (감독) 테이블
 CREATE TABLE director (
     director_id INT PRIMARY KEY,           -- 감독 ID
@@ -64,17 +69,27 @@ CREATE TABLE director (
     birth_date DATE                        -- 생년월일
 );
 
+ALTER TABLE director
+CHANGE COLUMN director_id directorId INT;
+
+
 -- Comment (댓글) 테이블
 CREATE TABLE comment (	
     comment_id INT PRIMARY KEY,            -- 댓글 ID
     user_id VARCHAR(255),                  -- 사용자 ID (외래 키)
     operator_id VARCHAR(255),              -- 운영자 ID (외래 키)
-    review_id INT,                         -- 리뷰 ID
     comment TEXT,                          -- 댓글 내용
     comment_time DATETIME,                 -- 댓글 작성 시간
     FOREIGN KEY (user_id) REFERENCES user(user_id),
     FOREIGN KEY (operator_id) REFERENCES operator(operator_id)
 );
+
+-- Comment (댓글) 테이블에 movieSeq 외래 키 추가
+ALTER TABLE comment
+ADD COLUMN movieSeq VARCHAR(255),
+ADD FOREIGN KEY (movieSeq) REFERENCES movie(movieSeq);
+
+SELECT * FROM comment;
 
 -- Movie_likes (영화 좋아요) 테이블
 CREATE TABLE movie_likes (
@@ -99,3 +114,5 @@ ALTER TABLE movie_likes
 ADD CONSTRAINT fk_movie
 FOREIGN KEY (movieSeq)
 REFERENCES movie(movieSeq);
+
+show tables;
