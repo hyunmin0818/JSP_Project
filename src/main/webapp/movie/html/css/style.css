@@ -845,6 +845,75 @@ ol {
 	font-weight: 700;
 	line-height: 26px;
 }
+/* 배우 부모 요소 */
+.acter_muri {
+    padding-top: 5px;
+    display: flex;
+    gap: 20px;
+    overflow-x: hidden; /* 스크롤 숨김 */
+    -webkit-overflow-scrolling: touch;
+    scroll-behavior: smooth;
+    scroll-snap-type: x proximity; /* 가로로 스냅되도록 설정 */
+    white-space: nowrap;
+    scroll-padding: 0 20px; /* 스크롤링 할 때 양 옆에 여백 추가 */
+    cursor: grab; /* 드래그 커서로 변경 */
+	
+}
+.acter__item {
+	height: 250px;	
+	width: 130px;
+	padding-left: 5px;
+    flex-shrink: 0; /* 요소들이 줄어들지 않도록 설정 */
+	
+}
+.acter_muri:active {
+    cursor: grabbing; /* 드래그 중에는 다른 커서로 변경 */
+}
+
+
+.acter__item__pic {
+    height: 160px;	
+	width: 120px;
+    position: relative;
+    border-radius: 5px;
+    overflow: hidden; /* 이미지가 넘치지 않도록 처리 */
+    transition: transform 0.3s; /* 호버 효과를 위한 애니메이션 추가 */
+	
+}
+
+.acter__item__pic:hover {
+    cursor: pointer; /* 마우스 커서를 손가락 모양으로 변경 */
+    transform: scale(1.05); /* 호버 시 약간 확대되는 효과 */
+}
+
+.acter__item__text {
+	padding-top: 3px;
+	overflow: hidden;
+}
+
+.acter__item__text ul {
+	margin-bottom: 2px;
+}
+
+.acter__item__text ul li {
+	list-style: none;
+	font-size: 10px;
+	color: #ffffff;
+	font-weight: 700;
+	padding: 1px 4px;
+	background: rgba(255, 255, 255, 0.2);
+	border-radius: 20px;
+	display: inline-block;
+	
+}
+
+.acter__item__text h5 a {
+	color: #ffffff;
+	font-weight: 700;
+	line-height: 26px;	
+	
+	
+}
 
 .product__sidebar .section-title h5 {
 	color: #ffffff;
