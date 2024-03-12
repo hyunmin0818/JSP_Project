@@ -37,7 +37,7 @@ CREATE TABLE movie (
 
 -- User (사용자) 테이블
 CREATE TABLE user (
-    user_id VARCHAR(255) PRIMARY KEY,      -- 사용자 ID
+    user_id VARCHAR(20) PRIMARY KEY,      -- 사용자 ID
     userpassword VARCHAR(255),             -- 사용자 비밀번호
     username VARCHAR(255),                 -- 사용자 이름
     email VARCHAR(255),                    -- 이메일
