@@ -52,26 +52,17 @@ CREATE TABLE operator (
 
 -- Actor (배우) 테이블
 CREATE TABLE actor (
-    actorid INT PRIMARY KEY,               -- 배우 ID
+    actorId INT PRIMARY KEY,               -- 배우 ID
     `name` VARCHAR(255),                   -- 배우 이름
     birth_date DATE                        -- 생년월일
 );
 
-ALTER TABLE actor
-CHANGE COLUMN actorid actorId INT;
-
-SELECT * from actor;
-
 -- Director (감독) 테이블
 CREATE TABLE director (
-    director_id INT PRIMARY KEY,           -- 감독 ID
+    directorId INT PRIMARY KEY,           -- 감독 ID
     `name` VARCHAR(255),                   -- 감독 이름
     birth_date DATE                        -- 생년월일
 );
-
-ALTER TABLE director
-CHANGE COLUMN director_id directorId INT;
-
 
 -- Comment (댓글) 테이블
 CREATE TABLE comment (	
