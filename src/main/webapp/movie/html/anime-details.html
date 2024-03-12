@@ -145,20 +145,20 @@
                                 <div class="row">
                                     <div class="col-lg-6 col-md-6">
                                         <ul>
-                                            <li><span>Type:</span> TV Series</li>                           <!--유형-->
-                                            <li><span>Studios:</span> ㈜쇼박스</li>                           <!--제작사-->
-                                            <li><span>Date aired:</span> 2024.02.22.</li>                   <!--방영일-->
-                                            <li><span>Status:</span> Airing</li>                            <!--상태-->
-                                            <li><span>Genre:</span> 미스터리,공포</li>  <!--장르-->
+                                            <li><span>유형:</span> TV Series</li>                           <!--유형-->
+                                            <li><span>회사:</span> ㈜쇼박스</li>                           <!--제작사-->
+                                            <li><span>개봉일:</span> 2024.02.22.</li>                   <!--방영일-->
+                                            <li><span>국가:</span> 한국</li>                            <!--국가-->
+                                            <li><span>장르:</span> 미스터리,공포</li>                      <!--장르-->
                                         </ul>
                                     </div>
                                     <div class="col-lg-6 col-md-6">
                                         <ul>
-                                            <li><span>Scores:</span> 7.31 / 1,515</li>      <!--점수-->
-                                            <li><span>Rating:</span> 8.5 / 161 times</li>   <!--평가-->
-                                            <li><span>Duration:</span> 134 분</li>       <!--재생시간-->
+                                            <li><span>배우:</span> 최민식,유해진,이도현,김고은</li>      <!--배우-->
+                                            <li><span>평점:</span> 8.5 / 161 times</li>   <!--평가-->
+                                            <li><span>상영시간:</span> 134 분</li>       <!--재생시간-->
                                             <li><span>등급:</span> 15세 관람가</li>               <!--등급-->
-                                            <li><span>Views:</span> 131,541</li>            <!--조회수-->
+                                            <li><span>예매 인원:</span> 131,541</li>            <!--조회수-->
                                         </ul>
                                     </div>
                                 </div>
@@ -166,9 +166,10 @@
                             <!-- 영화 관련 버튼 -->
                             <div class="anime__details__btn">
                                 <a href="#" class="follow-btn"><i class="fa fa-heart-o"></i> Follow</a>
-                                <a href="anime-watching.html" class="watch-btn"><span>Watch Now</span> <i
+                                <a href="SeatPreview-master/index.html" class="watch-btn"><span>Watch Now</span> <i
                                     class="fa fa-angle-right"></i></a>
-
+                                <a href="#" class="reservation">예 매</a>
+                                <a href="#" class="reservation" hidden>수정</a>
                                 </div>
                             </div>
                         </div>
@@ -190,6 +191,7 @@
                                     <h6>Chris Curry - <span>1 Hour ago</span></h6>
                                     <p>whachikan Just noticed that someone categorized this as belonging to the genre
                                     "demons" LOL</p>
+                                    <input type="button" value="삭제" class="delete" id="deleteButton" hidden>
                                 </div>
                                 <!-- 다른 리뷰 아이템들 -->
                                 <!-- 여기에 리뷰 아이템들이 더 있음 -->
@@ -202,6 +204,7 @@
                                 <div class="anime__review__item__text">
                                     <h6>Lewis Mann - <span>5 Hour ago</span></h6>
                                     <p>Finally it came out ages ago</p>
+                                    <input type="button" value="삭제" class="delete" id="deleteButton" >
                                 </div>
                             </div>
                             <div class="anime__review__item">
@@ -211,6 +214,7 @@
                                 <div class="anime__review__item__text">
                                     <h6>Louis Tyler - <span>20 Hour ago</span></h6>
                                     <p>Where is the episode 15 ? Slow update! Tch</p>
+                                    <input type="button" value="삭제" class="delete" id="deleteButton" >
                                 </div>
                             </div>
                             <div class="anime__review__item">
@@ -221,6 +225,7 @@
                                     <h6>Chris Curry - <span>1 Hour ago</span></h6>
                                     <p>whachikan Just noticed that someone categorized this as belonging to the genre
                                     "demons" LOL</p>
+                                    <input type="button" value="삭제" class="delete" id="deleteButton" >
                                 </div>
                             </div>
                             <div class="anime__review__item">
@@ -337,6 +342,33 @@
         <!-- Search model end -->
 
         <!-- Js Plugins -->
+        <!-- const movies = [
+    {
+        title: "파묘",         이름
+        director: "장재현",    감독
+        rating: 4,            평점?
+         image  : img/popular/popular-1.jpg
+        votes: 1515,           투표
+        type: "TV Series",      유형
+        studio: "㈜쇼박스",        제작사
+        date_aired: "2024.02.22",      방영일
+        status: "Airing",               방영중
+        genre: "미스터리,공포",         장르
+        duration: 134분,               재생시간
+        age_rating: "15세 관람가",      등급
+        description: "미국 LA, 거액의 의뢰를 받은 무당 ‘화림’(김고은)과 ‘봉길’(이도현)은 기이한 병이 대물림되는 
+                     집안의 장손을 만난다. 조상의 묫자리가 화근임을 알아챈 ‘화림’은 이장을 권하고, 돈 냄새를 맡은 최고의 풍수사 
+                     ‘상덕’(최민식)과 장의사 ‘영근’(유해진)이 합류한다. “전부 잘 알 거야… 묘 하나 잘못 건들면 어떻게 되는지” 
+                     절대 사람이 묻힐 수 없는 악지에 자리한 기이한 묘. ‘상덕’은 불길한 기운을 느끼고 제안을 거절하지만, 
+                     ‘화림’의 설득으로 결국 파묘가 시작되고… 나와서는 안될 것이 나왔다.",
+  
+         
+             
+          
+              
+         
+    -->
+
         <script src="js/jquery-3.3.1.min.js"></script>
         <script src="js/bootstrap.min.js"></script>
         <script src="js/player.js"></script>

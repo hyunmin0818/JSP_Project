@@ -125,7 +125,7 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="row">
+                        <div class="row" id="product-list">
                             <div class="col-lg-4 col-md-6 col-sm-6">
                                 <!-- 제품 항목 시작 -->
                                 <div class="product__item">
@@ -144,6 +144,8 @@
                                         <ul> <!-- 유형: 영화 -->
                                             <li>미스터리</li>
                                             <li>스릴러</li>
+                                            <!-- 삭제기능 -->
+                                            <input type="button" value="삭제" class="delete" id="deleteButton" style="display: none;" >
                                         </ul>
                                         <!-- 제목 -->
                                         <h5><a href="anime-details.html">파묘</a></h5>
@@ -162,6 +164,7 @@
                                         <ul>
                                             <li>Active</li>
                                             <li>Movie</li>
+                                            <input type="button" value="삭제" class="delete" id="deleteButton" >
                                         </ul>
                                         <h5><a href="#">Kizumonogatari III: Reiket su-hen</a></h5>
                                     </div>
@@ -178,6 +181,7 @@
                                         <ul>
                                             <li>Active</li>
                                             <li>Movie</li>
+                                            <input type="button" value="삭제" class="delete" id="deleteButton" >     
                                         </ul>
                                         <h5><a href="#">Shirogane Tamashii hen Kouhan sen</a></h5>
                                     </div>
@@ -591,18 +595,67 @@
   </footer>
   <!-- Footer Section End -->
 
-  <!-- Search model Begin -->
+  <!-- 검색어 -->
   <div class="search-model">
     <div class="h-100 d-flex align-items-center justify-content-center">
         <div class="search-close-switch"><i class="icon_close"></i></div>
         <form class="search-model-form">
-            <input type="text" id="search-input" placeholder="Search here.....">
+            <input type="text" id="search-input" autocomplete="current-search-input" placeholder="검색어 입력.." value="">
         </form>
     </div>
 </div>
 <!-- Search model end -->
 
 <!-- Js Plugins -->
+<script>  
+ const products = [
+            {
+                'image': 'img/popular/popular-1.jpg',
+                'comments': 333,
+                'views': 2222,
+                'genres': ['미스터리', '스릴러'],
+                'title': '파묘',
+                'link': 'anime-details.html'
+            }
+            // 다른 제품들도 추가
+        ];
+        //product-list 클래스를 찾음
+        const productList = document.getElementById('product-list');
+        
+        // products 배열에 있는 각 제품에 대해 반복합니다.
+        products.forEach(function(product) {
+             // 각 제품을 표시할 새로운 div 요소를 생성합니다.
+            const productItem = document.createElement('div');
+            // 부트스트랩 그리드 클래스를 추가하여 반응형 레이아웃을 만듭니다.
+            productItem.className = 'col-lg-4 col-md-6 col-sm-6';
+
+            // 각 제품에 대한 HTML을 생성합니다.
+            let productInnerHtml = 
+                 `<div class='product__item__pic set-bg' data-setbg='${product.image}' onclick="window.location.href='${product.link}'">
+                    <div class='comment'><i class='fa fa-comments'></i> ${product.comments}</div>
+                    <div class='view'><i class='fa fa-eye'></i> ${product.views}</div>
+                    <div class='product__item__text'>
+                    <ul>`;
+
+            // 제품의 장르를 반복하면서 각 장르를 리스트 아이템으로 추가합니다.
+            product.genres.forEach(function(genre) {
+                productInnerHtml += `<li>${genre}</li>`;
+            });
+            
+            productInnerHtml += `
+                        </ul>
+                        <h5><a href='${product.link}'>${product.title}</a></h5>
+                    </div>
+                </div>
+            `;
+            // 생성된 HTML을 새로운 div 요소의 내부 HTML로 설정합니다.
+            productItem.innerHTML = productInnerHtml;
+            // 생성된 제품 요소를 제품 목록을 나타내는 부모 요소에 추가합니다.
+            productList.appendChild(productItem);
+        });
+    </script>
+
+</script>
 <script src="js/jquery-3.3.1.min.js"></script>
 <script src="js/bootstrap.min.js"></script>
 <script src="js/player.js"></script>
@@ -611,6 +664,7 @@
 <script src="js/jquery.slicknav.js"></script>
 <script src="js/owl.carousel.min.js"></script>
 <script src="js/main.js"></script>
+
 
 </body>
 
