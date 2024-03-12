@@ -1,8 +1,3 @@
-drop database bonobonomovie;
-create database bonobonomovie;
-use bonobonomovie;
-
-
 -- Movie (영화) 테이블
 CREATE TABLE movie (
     movieSeq VARCHAR(255) PRIMARY KEY,     -- 영화 고유 ID

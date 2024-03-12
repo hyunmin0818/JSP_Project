@@ -59,3 +59,11 @@
 ## API정보
 
 - **https://www.kmdb.or.kr/info/api/apiDetail/6**
+
+# dbeaver 연결
+
+- **Connect to a database > MySQL > URL > ServerHost > port >
+  database > username > Password(Save password) > Test Connection > 완료**
+- **URL: jdbc:mysql://database-2.c9iqq0es8tfn.ap-northeast-2.rds.amazonaws.com:3306/bonobonomovie**
+- **ServerHost: database-2.c9iqq0es8tfn.ap-northeast-2.rds.amazonaws.com**
+- **Database: bonobonomovie**
