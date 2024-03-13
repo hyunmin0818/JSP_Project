@@ -1,14 +1,14 @@
 - 테이블 정리 및 만들기
-    - 릴레이션매핑 정리
-    - insert select문 만들기
-    - pk fk 설정
+    - 릴레이션매핑 정리 ✓
+    - insert select문 만들기✓ 
+    - pk fk 설정 ✓
 - JSON 파싱하여 DB저장
     - action에 기능구현
     - dao만들기
-    - dto만들기(table)
+    - dto만들기(table) ✓
     - mybatis 연결해서 집어넣기 
     - movie dao
-    - 운영자 운영테이블 만들기
+    - 운영자 운영테이블 만들기✓
     - 좋아요 dao - 목요일
 - 유저 및 리뷰 db연결
 - 페이지 넘기기 구현
