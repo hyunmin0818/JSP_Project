@@ -195,10 +195,10 @@
                             <button type="button" class="site-btn" id="checkTicket">예매정보 확인</button>
  
 
-                            <button type="submit" class="site-btn">확인</button>
+                            <button type="submit" class="site-btn" href = "${pageContext.request.contextPath}/movie/returnPage">확인</button>
                            
                         <!-- </form> -->
-                        <button type="button" class="site-btn" id="profile_modifybutton1" href ="mypage_modify.html">수정</button>
+                        <button type="button" class="site-btn" id="profile_modifybutton1" href ="${pageContext.request.contextPath}/movie/updateMypage.ms">수정</button>
                        <br> <br> <br> <br> <br> <br>
                     </div>
                 

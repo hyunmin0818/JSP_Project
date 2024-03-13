@@ -2,6 +2,7 @@ package com.movie.web.dao;
 
 import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 import org.apache.ibatis.session.SqlSession;
 import org.apache.ibatis.session.SqlSessionFactory;
@@ -18,6 +19,11 @@ public class MovieDAO {
 	   public MovieDAO (){
 	      sqlSession = factory.openSession(true);
 	   }
+	   public void insertMovie(Map<String, Object> map) {
+	        sqlSession.insert("mapper.movieinsert", map);
+	    }
+		
+	
 
 	public List<MovieDAO> searchMovies(String parameter) {
 		

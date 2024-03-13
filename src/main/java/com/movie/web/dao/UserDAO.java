@@ -77,9 +77,41 @@ public class UserDAO {
 		return sqlSession.selectOne("User.searchById",user_id);
 
 	}
+	public boolean updateUserinfo(String user_id , String username, String userphone, String userbirth , String email  ) {
+		boolean result = false;
+		
+		HashMap<String, Object> datas = new HashMap<String, Object>();
+		datas.put("user_id", user_id);
+		datas.put("username", username);
+		datas.put("userphone", userphone);
+		datas.put("userbirth",userbirth);
+		datas.put("email", email);
+		
+		if(sqlSession.update("User.updateUserinfo", datas )==1) {
+			result = true;
+		}
+		
+		return result;
 
-	public void insertMovie(Map<String, Object> map) {
-        sqlSession.insert("mapper.movieinsert", map);
-    }
+}
+	// 사용자 아이디 찾기 메서드
+		public String searchId(String username, String userbirth, String userphone) {
+			HashMap<String, Object> params = new HashMap<String, Object>();
+			params.put("username", username);
+			params.put("userbirth", userbirth);
+			params.put("userphone", userphone);
+			
+			// MyBatis를 사용하여 SQL 실행
+			return sqlSession.selectOne("User.findUserId", params);
+		}
+		 // 사용자 비밀번호 찾기 메서드
+	    public String searchPw(String user_id) {
+	        HashMap<String, Object> params = new HashMap<String, Object>();
+	        params.put("user_id", user_id);
+
+	        // MyBatis를 사용하여 SQL 실행
+	        return sqlSession.selectOne("User.findUserPassword", params);
+	    }
 	
+
 }

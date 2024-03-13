@@ -39,20 +39,36 @@ public class UserFrontController extends HttpServlet{
 //	        return;
 //	    }
 		switch (requestURI) {
+		
 		case "/SubmitOk.ms" : 
 			forward = new SubmitOkAction().execute(request ,response);
 			break;
 		case "/movie/mypage.ms" : 
 			forward = new MoveMypage().execute(request ,response);
 			break;
+		case "/movie/updateMypage.ms" :
+			forward = new UpdateMyPageAction().execute(request ,response);
+			break;
 		case "/movie/checkId.ms" : 
 			forward = new CheckIdAction().execute(request ,response);
+			break;
 		case "/movie/joinOk.ms" :
 			forward = new JoinOkAction().execute(request ,response);
 			break;
+		case "/movie/returnPage" : 
+			forward = new ReturnPageAction().execute(request ,response);
+			break;				// 세션정보 include
 		case "/movie/logout.ms" : 
 			forward = new LogOutAction().execute(request ,response);
+			break;
+		case "/movie/searchId.ms" :
+			forward = new SearchIdAction().execute(request ,response);
+			break;
+		case "/movie/searchPw.ms" : 
+			forward = new SearchPwAction().execute(request ,response);
+			break;
 		}
+		
 		
 		if(forward != null) {
 			if(forward.isRedirect()) {		// Redirect 방식

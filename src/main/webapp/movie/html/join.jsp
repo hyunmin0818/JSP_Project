@@ -165,7 +165,7 @@
                             </div>
  
 
-                            <button type="submit" class="site-btn" id="profile_modifybutton2">가입</button>
+                            <button type="submit" class="site-btn" id="join_button">가입</button>
                         </form>
                        <br> <br> <br> <br> <br> <br>
                     </div>
