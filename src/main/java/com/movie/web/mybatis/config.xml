@@ -26,11 +26,3 @@
 		<mapper resource="com/movie/web/movieinfo.xml"/>
 	</mappers>
 </configuration>
-
-
-
-
-
-
-
-
