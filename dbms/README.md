@@ -49,13 +49,13 @@
 - **op_email: 운영자 이메일**
 - **operatorphone: 운영자 전화번호**
 
-## actor (배우) 테이블
+## actor (배우) 테이블(임시삭제)
 
 - **actorId (Primary Key): 배우 ID**
 - **actor_name: 배우 이름**
 - **birth_date: 생년월일**
 
-## director (감독) 테이블
+## director (감독) 테이블(임시삭제)
 
 - **directorId (Primary Key): 감독 ID**
 - **director_name: 감독 이름**
