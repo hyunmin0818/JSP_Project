@@ -6,7 +6,6 @@ import com.movie.web.action.ActionForward;
 import com.movie.web.dao.UserDAO;
 import com.movie.web.dto.UserDTO;
 
-import jakarta.servlet.ServletRequest;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 import jakarta.servlet.http.HttpSession;

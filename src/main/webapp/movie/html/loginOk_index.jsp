@@ -18,15 +18,15 @@
     <link href="https://fonts.googleapis.com/css2?family=Mulish:wght@300;400;500;600;700;800;900&display=swap"
     rel="stylesheet">
 
-    <!-- Css Styles -->
-    <link rel="stylesheet" href="css/bootstrap.min.css" type="text/css">
-    <link rel="stylesheet" href="css/font-awesome.min.css" type="text/css">
-    <link rel="stylesheet" href="css/elegant-icons.css" type="text/css">
-    <link rel="stylesheet" href="css/plyr.css" type="text/css">
-    <link rel="stylesheet" href="css/nice-select.css" type="text/css">
-    <link rel="stylesheet" href="css/owl.carousel.min.css" type="text/css">
-    <link rel="stylesheet" href="css/slicknav.min.css" type="text/css">
-    <link rel="stylesheet" href="css/style.css" type="text/css">
+    <!-- Css Styles test -->
+    <link rel="stylesheet" href="${pageContext.request.contextPath}/css/bootstrap.min.css" type="text/css">
+    <link rel="stylesheet" href="${pageContext.request.contextPath}/css/font-awesome.min.css" type="text/css">
+    <link rel="stylesheet" href="${pageContext.request.contextPath}/css/elegant-icons.css" type="text/css">
+    <link rel="stylesheet" href="${pageContext.request.contextPath}/css/plyr.css" type="text/css">
+    <link rel="stylesheet" href="${pageContext.request.contextPath}/css/nice-select.css" type="text/css">
+    <link rel="stylesheet" href="${pageContext.request.contextPath}/css/owl.carousel.min.css" type="text/css">
+    <link rel="stylesheet" href="${pageContext.request.contextPath}/css/slicknav.min.css" type="text/css">
+    <link rel="stylesheet" href="${pageContext.request.contextPath}/css/style.css" type="text/css">
 
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js" integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r" crossorigin="anonymous"></script>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.min.js" integrity="sha384-0pUGZvbkm6XF6gxjEnlmuGrJXVbNuzT9qBBavbLwCsOGabYfZo0T0to5eqruptLy" crossorigin="anonymous"></script>
@@ -830,14 +830,14 @@
 <!-- Search model end -->
 
 <!-- Js Plugins -->
-<script src="js/jquery-3.3.1.min.js"></script>
-<script src="js/bootstrap.min.js"></script>
-<script src="js/player.js"></script>
-<script src="js/jquery.nice-select.min.js"></script>
-<script src="js/mixitup.min.js"></script>
-<script src="js/jquery.slicknav.js"></script>
-<script src="js/owl.carousel.min.js"></script>
-<script src="js/main.js"></script>
+<script src="${pageContext.request.contextPath}/js/jquery-3.3.1.min.js"></script>
+<script src="${pageContext.request.contextPath}/js/bootstrap.min.js"></script>
+<script src="${pageContext.request.contextPath}/js/player.js"></script>
+<script src="${pageContext.request.contextPath}/js/jquery.nice-select.min.js"></script>
+<script src="${pageContext.request.contextPath}/js/mixitup.min.js"></script>
+<script src="${pageContext.request.contextPath}/js/jquery.slicknav.js"></script>
+<script src="${pageContext.request.contextPath}/js/owl.carousel.min.js"></script>
+<script src="${pageContext.request.contextPath}/js/main.js"></script>
 
 
 </body>

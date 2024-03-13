@@ -1,3 +1,4 @@
+<%@page import="com.movie.web.dto.UserDTO"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
@@ -18,15 +19,19 @@
     rel="stylesheet">
 
     <!-- Css Styles -->
-    <link rel="stylesheet" href="css/bootstrap.min.css" type="text/css">
-    <link rel="stylesheet" href="css/font-awesome.min.css" type="text/css">
-    <link rel="stylesheet" href="css/elegant-icons.css" type="text/css">
-    <link rel="stylesheet" href="css/plyr.css" type="text/css">
-    <link rel="stylesheet" href="css/nice-select.css" type="text/css">
-    <link rel="stylesheet" href="css/owl.carousel.min.css" type="text/css">
-    <link rel="stylesheet" href="css/slicknav.min.css" type="text/css">
-    <link rel="stylesheet" href="css/style.css" type="text/css">
+    <link rel="stylesheet" href="${pageContext.request.contextPath}/movie/html/css/bootstrap.min.css" type="text/css">
+    <link rel="stylesheet" href="${pageContext.request.contextPath}/movie/html/css/font-awesome.min.css" type="text/css">
+    <link rel="stylesheet" href="${pageContext.request.contextPath}/movie/html/css/elegant-icons.css" type="text/css">
+    <link rel="stylesheet" href="${pageContext.request.contextPath}/movie/html/css/plyr.css" type="text/css">
+    <link rel="stylesheet" href="${pageContext.request.contextPath}/movie/html/css/nice-select.css" type="text/css">
+    <link rel="stylesheet" href="${pageContext.request.contextPath}/movie/html/css/owl.carousel.min.css" type="text/css">
+    <link rel="stylesheet" href="${pageContext.request.contextPath}/movie/html/css/slicknav.min.css" type="text/css">
+    <link rel="stylesheet" href="${pageContext.request.contextPath}/movie/html/css/style.css" type="text/css">
 </head>
+<%
+ 	UserDTO uto =  (UserDTO)session.getAttribute("userinfo");
+%>
+<%=uto.getUserid() %>
 
 <body>
     <!-- Page Preloder -->
@@ -90,7 +95,7 @@
 
                         <a href="${pageContext.request.contextPath}/mypage.ms?userid=${sessionScope.userinfo}">
 
-                        <p> ${sessionScope.userinfo} 님의 마이페이지입니다</p> </a>  <!-- 이름 하드코딩했습니다 DB값으로 수정부탁드려요-->
+                        <p> ${sessionScope.userinfo.getUsername()} 님의 마이페이지입니다</p> </a>  <!-- 이름 하드코딩했습니다 DB값으로 수정부탁드려요-->
 
 
                         
@@ -127,7 +132,7 @@
 
                 <div class="col-lg-6">
                     <div class="login__form" id ="logincenter">
-                        <h3 align="center" >나의 정보</h3><br>
+                        <h3 align="center" >나의 정보 </h3><br>
                         <form action="./loginOk_index.html">               <!--입력창 비활성화 -->
                             <h5 align="left" class="whitetext">닉네임</h5><br>
                             <div class="input__item1">
@@ -255,15 +260,15 @@
     <!-- Search model end -->
 
     <!-- Js Plugins -->
-    <script src="js/jquery-3.3.1.min.js"></script>
-    <script src="js/bootstrap.min.js"></script>
-    <script src="js/player.js"></script>
-    <script src="js/jquery.nice-select.min.js"></script>
-    <script src="js/mixitup.min.js"></script>
-    <script src="js/jquery.slicknav.js"></script>
-    <script src="js/owl.carousel.min.js"></script>
-    <script src="js/main.js"></script>
-    <script src="js/profile_modify.js"></script>
+    <script src="${pageContext.request.contextPath}/movie/html/js/jquery-3.3.1.min.js"></script>
+    <script src="${pageContext.request.contextPath}/movie/html/js/bootstrap.min.js"></script>
+    <script src="${pageContext.request.contextPath}/movie/html/js/player.js"></script>
+    <script src="${pageContext.request.contextPath}/movie/html/js/jquery.nice-select.min.js"></script>
+    <script src="${pageContext.request.contextPath}/movie/html/js/mixitup.min.js"></script>
+    <script src="${pageContext.request.contextPath}/movie/html/js/jquery.slicknav.js"></script>
+    <script src="${pageContext.request.contextPath}/movie/html/js/owl.carousel.min.js"></script>
+    <script src="${pageContext.request.contextPath}/movie/html/js/main.js"></script>
+    <script src="${pageContext.request.contextPath}/movie/html/js/profile_modify.js"></script>
     
 
 

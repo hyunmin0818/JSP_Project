@@ -25,17 +25,19 @@ public class UserFrontController extends HttpServlet{
 	protected void doProcess(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		String requestURI = request.getRequestURI();
 		ActionForward forward = null;
+	    
+	    System.out.println("requestURI : " + requestURI);
 		 
 		// 세션 확인
 	    HttpSession session = request.getSession(false); // 기존에 존재하는 세션 반환, 없으면 null 반환
-	    boolean isLoggedIn = (session != null && session.getAttribute("userinfo") != null);
-
-	    if (!isLoggedIn && !requestURI.endsWith("login.ms") && !requestURI.endsWith("joinOk.ms")) {
-	        // 사용자가 로그인하지 않았고, 로그인 또는 회원가입 요청이 아닌 경우 로그인 페이지로 리다이렉트
-	    	response.sendRedirect("/login.ms");
-	        return;
-	    }
-	    
+	    // 조건확인할것 kjh
+//	    boolean isLoggedIn = (session != null && session.getAttribute("userinfo") != null);
+//
+//	    if (!isLoggedIn && !requestURI.endsWith("login.ms") && !requestURI.endsWith("joinOk.ms")) {
+//	        // 사용자가 로그인하지 않았고, 로그인 또는 회원가입 요청이 아닌 경우 로그인 페이지로 리다이렉트
+//	    	response.sendRedirect("/login.ms");
+//	        return;
+//	    }
 		switch (requestURI) {
 		case "/SubmitOk.ms" : 
 			forward = new SubmitOkAction().execute(request ,response);
