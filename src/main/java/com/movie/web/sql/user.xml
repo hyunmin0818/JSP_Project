@@ -5,31 +5,31 @@
 <mapper namespace="User">
 
 <select id="submit" parameterType="hashmap" resultType="_int">
-	SELECT COUNT(*) FROM user_info WHERE userid = #{user_id} AND USERPassWord = #{userpassword}
+	SELECT COUNT(*) FROM user_info WHERE user_id = #{user_id} AND USERPassWord = #{userpassword}
 </select>
 
 <select id="getList" parameterType="hashmap" resultType="userdto">
-	SELECT * FROM user_info WHERE userid = #{user_id}
+	SELECT * FROM user_info WHERE user_id = #{user_id}
 </select>
 
  <insert id="join" parameterType="com.movie.web.dto.UserDTO">
-INSERT INTO user_info VALUES (#{user_id},#{userpassword},#{username},#{email},#{userphone},#{userbirth})
+INSERT INTO user_info VALUES (#{user_id},#{userpassword},#{username},#{email},#{userphone},#{userbirth},#{movie_like})
 </insert>
 
 <select id="checkId" parameterType="userdto" resultType="_int">
-	SELECT COUNT(*) FROM user_info WHERE userid = #{user_id}
+	SELECT COUNT(*) FROM user_info WHERE user_id = #{user_id}
 </select>
 
 <select id="checkmovie" parameterType="hashmap" resultType="movieDTO">
 SELECT * FROM movie
 </select>
 
-<select id="userLikeSearch" parameterType="string" resultType="java.lang.String">
-    SELECT m.title
-    FROM user u
-    JOIN movie_likes ml ON u.user_id = ml.user_id
-    JOIN movie m ON ml.movieSeq = m.movieSeq
-    WHERE u.user_id = #{user_id};
-</select>
+<!-- <select id="userLikeSearch" parameterType="string" resultType="java.lang.String"> -->
+<!--     SELECT m.title -->
+<!--     FROM user u -->
+<!--     JOIN movie_likes ml ON u.user_id = ml.user_id -->
+<!--     JOIN movie m ON ml.movieSeq = m.movieSeq -->
+<!--     WHERE u.user_id = #{user_id}; -->
+<!-- </select> -->
 
 </mapper>

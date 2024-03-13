@@ -137,15 +137,12 @@
                                 <input type="text" class ="blacktext" placeholder="이름을 입력해주세요" id="username" name="username"> 
                                 <span class="icon_mail"></span>
                             </div>
-                          <h5 align="left" class="whitetext">프로필 사진</h5><br>
+           
                             
                           
-                          <div class="filebox">     <!--파일박스 추가-->
-                            <input class="upload-name" value="파일선택" disabled="disabled">
                           
-                            <label for="ex_filename">업로드</label> 
-                            <input type="file" id="ex_filename" class="upload-hidden"> 
-                          </div>
+                          
+                          
                           <br>  <br> 
 
 

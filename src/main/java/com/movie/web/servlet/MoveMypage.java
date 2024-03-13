@@ -28,7 +28,7 @@ public class MoveMypage implements Action{
 	        if (userInfo != null) {
 	            System.out.println("정보 받아오기 성공!!");
 	            // 조회된 사용자 정보를 request 객체에 설정
-	            request.setAttribute("userid", userInfo.getUserid());
+	            request.setAttribute("user_id", userInfo.getUser_id());
 	            request.setAttribute("email", userInfo.getEmail());
 	            request.setAttribute("username", userInfo.getUsername());
 	            request.setAttribute("userphone", userInfo.getUserphone());

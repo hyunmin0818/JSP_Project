@@ -147,7 +147,7 @@
 							<li><a href="./index.html"><span class="dropdown-item"
 									id="redtext">로그아웃</span></a></li>
 						</ul>
-						<a href="./mypage.jsp" id="youNeedLogin">${user.userid}</a>
+						<a href="./mypage.jsp" id="youNeedLogin">${sessionscope.userinfo.user_id}</a>
 					</div>
 				</div>
 

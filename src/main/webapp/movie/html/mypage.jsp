@@ -31,7 +31,7 @@
 <%
  	UserDTO uto =  (UserDTO)session.getAttribute("userinfo");
 %>
-<%=uto.getUserid() %>
+<%=uto.getUser_id() %>
 
 <body>
     <!-- Page Preloder -->
@@ -136,7 +136,7 @@
                         <form action="./loginOk_index.html">               <!--입력창 비활성화 -->
                             <h5 align="left" class="whitetext">닉네임</h5><br>
                             <div class="input__item1">
-                               <h4 class="whitetext">${sessionScope.userid}</h4><br>
+                               <h4 class="whitetext">${sessionScope.userinfo.getUsername()}</h4><br>
 
                                 <!-- <input type="text" class ="blacktext" placeholder="이름을 입력해주세요" value ="Nickname(이름 DB값으로 수정해주세요)" disabled> 
                                 <span class="icon_mail"></span> --> 
@@ -154,7 +154,7 @@
 
                             <h5 align="left" class="whitetext">생년월일</h5><br>  
                             
-                                <h4 class="whitetext">${userbirth}</h4><br>
+                                <h4 class="whitetext">${sessionScope.userinfo.getUserbirth()}</h4><br>
                                    <!--  <div class="input__item"></div>
                                 <input type="text" placeholder="법정생년월일 6자리를 입력해주세요" value ="0123456(생년월일 DB값으로 수정해주세요)" disabled>
                                 <span class="icon_lock"></span> -->
@@ -163,7 +163,7 @@
                             <h5 align="left" class="whitetext">휴대번호</h5><br>
 
                             <div class="input__item">  
-                            <h4 class="whitetext">${userphone}</h4><br>
+                            <h4 class="whitetext">${sessionScope.userinfo.getUserphone()}</h4><br>
                           <!--  <div class="input__item">
                                 
                                  <input type="text" placeholder="휴대번호 뒤 7~8자리를 입력해주세요.(01X제외)"value ="999-9999-9999(휴대전화 DB값으로 수정해주세요)" disabled>
@@ -174,7 +174,7 @@
 
                         <h5 align="left" class="whitetext">이메일</h5><br>
                         <div class="input__item">  
-                            <h4 class="whitetext">${email}</h4><br>
+                            <h4 class="whitetext">${sessionScope.userinfo.getEmail()}</h4><br>
                           <!--  <div class="input__item">
                                 
                                  <input type="text" placeholder="휴대번호 뒤 7~8자리를 입력해주세요.(01X제외)"value ="999-9999-9999(휴대전화 DB값으로 수정해주세요)" disabled>
