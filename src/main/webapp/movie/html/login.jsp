@@ -18,17 +18,18 @@
     rel="stylesheet">
 
     <!-- Css Styles -->
-    <link rel="stylesheet" href="css/bootstrap.min.css" type="text/css">
-    <link rel="stylesheet" href="css/font-awesome.min.css" type="text/css">
-    <link rel="stylesheet" href="css/elegant-icons.css" type="text/css">
-    <link rel="stylesheet" href="css/plyr.css" type="text/css">
-    <link rel="stylesheet" href="css/nice-select.css" type="text/css">
-    <link rel="stylesheet" href="css/owl.carousel.min.css" type="text/css">
-    <link rel="stylesheet" href="css/slicknav.min.css" type="text/css">
-    <link rel="stylesheet" href="css/style.css" type="text/css">
+    <link rel="stylesheet" href="${pageContext.request.contextPath}/movie/html/css/bootstrap.min.css" type="text/css">
+    <link rel="stylesheet" href="${pageContext.request.contextPath}/movie/html/css/font-awesome.min.css" type="text/css">
+    <link rel="stylesheet" href="${pageContext.request.contextPath}/movie/html/css/elegant-icons.css" type="text/css">
+    <link rel="stylesheet" href="${pageContext.request.contextPath}/movie/html/css/plyr.css" type="text/css">
+    <link rel="stylesheet" href="${pageContext.request.contextPath}/movie/html/css/nice-select.css" type="text/css">
+    <link rel="stylesheet" href="${pageContext.request.contextPath}/movie/html/css/owl.carousel.min.css" type="text/css">
+    <link rel="stylesheet" href="${pageContext.request.contextPath}/movie/html/css/slicknav.min.css" type="text/css">
+    <link rel="stylesheet" href="${pageContext.request.contextPath}/movie/html/css/style.css" type="text/css">
 </head>
 
 <body>
+
     <!-- Page Preloder -->
     <div id="preloder">
         <div class="loader"></div>
@@ -107,13 +108,13 @@
 								</script>
 							</c:if>
 						</c:if>
-						<form action="${pageContext.request.contextPath}/SubmitOk.ms">
+						<form action="${pageContext.request.contextPath}/SubmitOk.ms" method="post">
                             <div class="input__item">
-                                <input type="text" placeholder="아이디" id="userid" name="userid"value="">
+                                <input type="text" placeholder="아이디" id="userid" name="userid" value="">
                                 <span class="icon_id"></span>
                             </div>
                             <div class="input__item">
-                                <input type="password" placeholder="비밀번호" id="userpw" name="userpw">
+                                <input type="password" placeholder="비밀번호" id="userpassword" name="userpassword">
                                 <span class="icon_lock"></span>
                             </div>
                            
@@ -124,8 +125,7 @@
                                
                                 <a href="./findPw.html">비밀번호 찾기</a>
                             </div>
-                            <button type="submit" class="site-btn">로그인</button>
-                            
+                            <button type="submit" class="site-btn">로그인</button>                 
                          
                           
                         </form>
@@ -220,15 +220,15 @@
     <!-- Search model end -->
 
     <!-- Js Plugins -->
-    <script src="js/jquery-3.3.1.min.js"></script>
-    <script src="js/bootstrap.min.js"></script>
-    <script src="js/player.js"></script>
-    <script src="js/jquery.nice-select.min.js"></script>
-    <script src="js/mixitup.min.js"></script>
-    <script src="js/jquery.slicknav.js"></script>
-    <script src="js/owl.carousel.min.js"></script>
-    <script src="js/main.js"></script>
-    <script src="js/login.js"></script>
+    <script src="${pageContext.request.contextPath}/movie/html/js/jquery-3.3.1.min.js"></script>
+    <script src="${pageContext.request.contextPath}/movie/html/js/bootstrap.min.js"></script>
+    <script src="${pageContext.request.contextPath}/movie/html/js/player.js"></script>
+    <script src="${pageContext.request.contextPath}/movie/html/js/jquery.nice-select.min.js"></script>
+    <script src="${pageContext.request.contextPath}/movie/html/js/mixitup.min.js"></script>
+    <script src="${pageContext.request.contextPath}/movie/html/js/jquery.slicknav.js"></script>
+    <script src="${pageContext.request.contextPath}/movie/html/js/owl.carousel.min.js"></script>
+    <script src="${pageContext.request.contextPath}/movie/html/js/main.js"></script>
+    <script src="${pageContext.request.contextPath}/movie/html/js/login.js"></script>
 
 </body>
 

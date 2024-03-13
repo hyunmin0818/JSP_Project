@@ -351,7 +351,31 @@ ol {
 	text-align: center;
 	cursor: pointer;
 }
-
+#logincenter{             
+  /* login창 하나만 나올 때 가운데 정렬로 오게 함 */
+	padding-top: 5px;
+	padding-bottom: 500px;
+ }
+ #logincenter, #logincenter2 {            /*logincenter만 가운데정렬하도록함*/
+	position: relative;
+	padding-left: 0px;
+ }
+ 
+ #logincenter::after, #logincenter2::after{   /*login__form의 가운데 중앙 회색선이 없어지지 않아서 .login__form의 css값을 복사하여 색만 수정*/
+	position: absolute;
+	right: -14px;
+	top: -40px;
+	height: 330px;
+	width: 1px;
+	background: rgba(5, 5, 5, 0);
+	content: "";
+ }
+ 
+ 
+ #logincenter{         /*로그인 창 가운데 정렬 */
+	margin:0 auto;
+ }
+ 
 .search-model {
 	display: none;
 	position: fixed;
@@ -749,9 +773,16 @@ ol {
 }
 
 .product__item__pic {
-	height: 325px;
-	position: relative;
-	border-radius: 5px;
+    height: 325px;
+    position: relative;
+    border-radius: 5px;
+    overflow: hidden; /* 이미지가 넘치지 않도록 처리 */
+    transition: transform 0.3s; /* 호버 효과를 위한 애니메이션 추가 */
+}
+
+.product__item__pic:hover {
+    cursor: pointer; /* 마우스 커서를 손가락 모양으로 변경 */
+    transform: scale(1.05); /* 호버 시 약간 확대되는 효과 */
 }
 
 .product__item__pic .ep {
@@ -814,6 +845,75 @@ ol {
 	font-weight: 700;
 	line-height: 26px;
 }
+/* 배우 부모 요소 */
+.acter_muri {
+    padding-top: 5px;
+    display: flex;
+    gap: 20px;
+    overflow-x: hidden; /* 스크롤 숨김 */
+    -webkit-overflow-scrolling: touch;
+    scroll-behavior: smooth;
+    scroll-snap-type: x proximity; /* 가로로 스냅되도록 설정 */
+    white-space: nowrap;
+    scroll-padding: 0 20px; /* 스크롤링 할 때 양 옆에 여백 추가 */
+    cursor: grab; /* 드래그 커서로 변경 */
+	
+}
+.acter__item {
+	height: 250px;	
+	width: 130px;
+	padding-left: 5px;
+    flex-shrink: 0; /* 요소들이 줄어들지 않도록 설정 */
+	
+}
+.acter_muri:active {
+    cursor: grabbing; /* 드래그 중에는 다른 커서로 변경 */
+}
+
+
+.acter__item__pic {
+    height: 160px;	
+	width: 120px;
+    position: relative;
+    border-radius: 5px;
+    overflow: hidden; /* 이미지가 넘치지 않도록 처리 */
+    transition: transform 0.3s; /* 호버 효과를 위한 애니메이션 추가 */
+	
+}
+
+.acter__item__pic:hover {
+    cursor: pointer; /* 마우스 커서를 손가락 모양으로 변경 */
+    transform: scale(1.05); /* 호버 시 약간 확대되는 효과 */
+}
+
+.acter__item__text {
+	padding-top: 3px;
+	overflow: hidden;
+}
+
+.acter__item__text ul {
+	margin-bottom: 2px;
+}
+
+.acter__item__text ul li {
+	list-style: none;
+	font-size: 10px;
+	color: #ffffff;
+	font-weight: 700;
+	padding: 1px 4px;
+	background: rgba(255, 255, 255, 0.2);
+	border-radius: 20px;
+	display: inline-block;
+	
+}
+
+.acter__item__text h5 a {
+	color: #ffffff;
+	font-weight: 700;
+	line-height: 26px;	
+	
+	
+}
 
 .product__sidebar .section-title h5 {
 	color: #ffffff;
@@ -838,6 +938,8 @@ ol {
 .product__sidebar__view {
 	position: relative;
 	margin-bottom: 80px;
+	cursor: pointer;
+
 }
 
 .product__sidebar__view .filter__controls {
@@ -918,6 +1020,7 @@ ol {
 }
 
 .product__sidebar__comment__item__pic {
+	cursor: pointer; /* 마우스 커서를 손가락 모양으로 변경 */
 	float: left;
 	margin-right: 15px;
 }
@@ -1052,7 +1155,25 @@ ol {
 
 .anime__details__text {
 	position: relative;
+	color: darkgray;
 }
+.anime__default {
+	position: relative;
+	color: darkgray;
+}
+.anime__default .anime__details__btn{
+	font-size: 13px;
+	color: #ffffff;
+	display: inline-block;
+	font-weight: 700;
+	letter-spacing: 2px;
+	text-transform: uppercase;
+	padding: 14px 20px;
+	border-radius: 4px;
+	margin-left: 886px; /* 왼쪽 여백을 추가하여 다른 요소와 간격을 조절 */
+	margin-right: 11px;
+}
+
 
 .anime__details__text p {
 	color: #b7b7b7;
@@ -1136,7 +1257,7 @@ ol {
 .anime__details__widget ul li {
 	list-style: none;
 	font-size: 15px;
-	color: #ffffff;
+	color: #424242;
 	line-height: 30px;
 	position: relative;
 	padding-left: 18px;
@@ -1191,6 +1312,59 @@ ol {
 	padding: 11px 5px 16px 8px;
 	color: #ffffff;
 	border-radius: 0 4px 4px 0;
+}
+.anime__details__btn .reservation{   /*예매 버튼 */
+	font-size: 13px;
+	color: #ffffff;
+	background: #e53637;
+	display: inline-block;
+	font-weight: 700;
+	letter-spacing: 2px;
+	text-transform: uppercase;
+	padding: 14px 30px;
+	border-radius: 4px 4px 4px 4px;
+	float: right; 		/* 요소를 오른쪽으로 띄움 */
+    margin-left: 1px; /* 왼쪽 여백을 추가하여 다른 요소와 간격을 조절 */
+}
+.col-lg-12 .reservation{
+	font-size: 13px;
+	color: #ffffff;
+	background: #e53637;
+	display: inline-block;
+	font-weight: 700;
+	letter-spacing: 2px;
+	text-transform: uppercase;
+	padding: 14px 30px;
+	border-radius: 4px 4px 4px 4px;
+	float: right; 		/* 요소를 오른쪽으로 띄움 */
+    margin-left: 1px; /* 왼쪽 여백을 추가하여 다른 요소와 간격을 조절 */
+}
+  
+.product__item__text .delete {
+    padding: 1px 20px;
+    background-color: #e53637;
+    color: #ffffff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+	margin-left: 35px;
+}
+
+.delete:hover {
+    background-color: #d84315;
+}
+
+.anime__review__item__text .delete {
+	padding: 1px 20px;
+    background-color: #e53637;
+    color: #ffffff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+	margin-left: 580px;
+    /* 여기에 삭제 버튼에 대한 원하는 스타일을 지정하세요 */
 }
 
 .anime__details__review {
@@ -1249,7 +1423,102 @@ ol {
 	line-height: 23px;
 	margin-bottom: 0;
 }
+/**/
+.anime_default_pic {
+	float: left;
+	margin-right: 20px;
+	position: relative;
+}
 
+.anime_default_pic:before {
+	position: absolute;
+	right: -30px;
+	top: 15px;
+	border-top: 15px solid transparent;
+	border-left: 15px solid #1d1e39;
+	content: "";
+	-webkit-transform: rotate(45deg);
+	-ms-transform: rotate(45deg);
+	transform: rotate(45deg);
+}
+
+.anime_default_pic img {
+	height: 50px;
+	width: 50px;
+	border-radius: 50%;
+}
+
+.anime_default_text {
+	overflow: hidden;
+	background: #1d1e39;
+	padding: 18px 30px 16px 20px;
+	border-radius: 10px;
+}
+
+.anime_default_text h6 {
+	color: #ffffff;
+	font-weight: 700;
+	margin-bottom: 10px;
+}
+
+.anime_default_text h6 span {
+	color: #b7b7b7;
+	font-weight: 400;
+}
+
+.anime_default_text p {
+	color: #b7b7b7;
+	line-height: 23px;
+	margin-bottom: 0;
+}
+/**//**//**//**//**/
+.anime_request_pic {
+	float: right; /* 우측으로 정렬됨 */
+	margin-left: 20px; /* margin-right 대신 margin-left 사용 */
+	position: relative;
+}
+
+.anime_request_pic:before {
+	position: absolute;
+	left: -30px; /* 우측으로 이동 */
+	top: 15px;
+	border-bottom: 15px solid transparent;
+	border-right: 15px solid #1d1e39; /* border-left 대신 border-right 사용 */
+	content: "";
+	-webkit-transform: rotate(45deg);
+	-ms-transform: rotate(45deg);
+	transform: rotate(45deg);
+}
+
+.anime_request_pic img {
+	height: 50px;
+	width: 50px;
+	border-radius: 50%;
+}
+
+.anime_request_text {
+	overflow: hidden;
+	background: #1d1e39;
+	padding: 18px 20px 16px 30px; /* padding-right 대신 padding-left 사용 */
+	border-radius: 10px;
+	text-align: right; /* 텍스트를 우측으로 정렬 */
+	direction: rtl; /* 텍스트의 방향을 우측에서 왼쪽으로 변경 */
+}
+
+.anime_request_text h6 {
+	color: #ffffff;
+	font-weight: 700;
+	margin-bottom: 10px;
+	text-align: right; /* 헤더 텍스트는 다시 좌측으로 정렬 */
+}
+
+.anime_request_text p {
+	color: #b7b7b7;
+	line-height: 23px;
+	margin-bottom: 0;
+	text-align: right; /* 본문 텍스트도 다시 좌측으로 정렬 */
+}
+/**/
 .anime__details__form form textarea {
 	width: 100%;
 	font-size: 15px;

@@ -1,3 +1,4 @@
+<%@page import="com.movie.web.dto.UserDTO"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
@@ -18,15 +19,19 @@
     rel="stylesheet">
 
     <!-- Css Styles -->
-    <link rel="stylesheet" href="css/bootstrap.min.css" type="text/css">
-    <link rel="stylesheet" href="css/font-awesome.min.css" type="text/css">
-    <link rel="stylesheet" href="css/elegant-icons.css" type="text/css">
-    <link rel="stylesheet" href="css/plyr.css" type="text/css">
-    <link rel="stylesheet" href="css/nice-select.css" type="text/css">
-    <link rel="stylesheet" href="css/owl.carousel.min.css" type="text/css">
-    <link rel="stylesheet" href="css/slicknav.min.css" type="text/css">
-    <link rel="stylesheet" href="css/style.css" type="text/css">
+    <link rel="stylesheet" href="${pageContext.request.contextPath}/movie/html/css/bootstrap.min.css" type="text/css">
+    <link rel="stylesheet" href="${pageContext.request.contextPath}/movie/html/css/font-awesome.min.css" type="text/css">
+    <link rel="stylesheet" href="${pageContext.request.contextPath}/movie/html/css/elegant-icons.css" type="text/css">
+    <link rel="stylesheet" href="${pageContext.request.contextPath}/movie/html/css/plyr.css" type="text/css">
+    <link rel="stylesheet" href="${pageContext.request.contextPath}/movie/html/css/nice-select.css" type="text/css">
+    <link rel="stylesheet" href="${pageContext.request.contextPath}/movie/html/css/owl.carousel.min.css" type="text/css">
+    <link rel="stylesheet" href="${pageContext.request.contextPath}/movie/html/css/slicknav.min.css" type="text/css">
+    <link rel="stylesheet" href="${pageContext.request.contextPath}/movie/html/css/style.css" type="text/css">
 </head>
+<%
+ 	UserDTO uto =  (UserDTO)session.getAttribute("userinfo");
+%>
+<%=uto.getUserid() %>
 
 <body>
     <!-- Page Preloder -->
@@ -85,12 +90,18 @@
                 <div class="col-lg-12 text-center">
                     <div class="normal__breadcrumb__text">
                         <h2>마이페이지</h2>
-<<<<<<< HEAD
-                        <a href=>
-=======
-                        <a href="${pageContext.request.contextPath}/mypage.ms?userid=${user.userid}">
->>>>>>> refs/remotes/sey/main
-                        ${user.userid}<p> 님의 마이페이지입니다</p>   <!-- 이름 하드코딩했습니다 DB값으로 수정부탁드려요-->
+
+                     
+
+                        <a href="${pageContext.request.contextPath}/mypage.ms?userid=${sessionScope.userinfo}">
+
+                        <p> ${sessionScope.userinfo.getUsername()} 님의 마이페이지입니다</p> </a>  <!-- 이름 하드코딩했습니다 DB값으로 수정부탁드려요-->
+
+
+                        
+
+                      
+
                     </div>
                 </div>
             </div>
@@ -100,7 +111,7 @@
 
     <!-- Login Section Begin -->
     <div class="login__social">
-        <div class="row d-flex justify-content-center"
+        <div class="row d-flex justify-content-center">
     <section class="login spad" align ="center">
         <!-- <h3 align="center" >나의 정보</h3><br> -->
         <!-- <p>마이페이지!!!!!!!!!!!!!!!!!!!!!!!!!</p> -->
@@ -121,11 +132,11 @@
 
                 <div class="col-lg-6">
                     <div class="login__form" id ="logincenter">
-                        <h3 align="center" >나의 정보</h3><br>
+                        <h3 align="center" >나의 정보 </h3><br>
                         <form action="./loginOk_index.html">               <!--입력창 비활성화 -->
                             <h5 align="left" class="whitetext">닉네임</h5><br>
                             <div class="input__item1">
-                               <h4 class="whitetext">${userid }</h4><br>
+                               <h4 class="whitetext">${sessionScope.userid}</h4><br>
 
                                 <!-- <input type="text" class ="blacktext" placeholder="이름을 입력해주세요" value ="Nickname(이름 DB값으로 수정해주세요)" disabled> 
                                 <span class="icon_mail"></span> --> 
@@ -143,7 +154,7 @@
 
                             <h5 align="left" class="whitetext">생년월일</h5><br>  
                             
-                                <h4 class="whitetext">생년월일(DB)</h4><br>
+                                <h4 class="whitetext">${userbirth}</h4><br>
                                    <!--  <div class="input__item"></div>
                                 <input type="text" placeholder="법정생년월일 6자리를 입력해주세요" value ="0123456(생년월일 DB값으로 수정해주세요)" disabled>
                                 <span class="icon_lock"></span> -->
@@ -152,7 +163,7 @@
                             <h5 align="left" class="whitetext">휴대번호</h5><br>
 
                             <div class="input__item">  
-                            <h4 class="whitetext">휴대번호(DB)</h4><br>
+                            <h4 class="whitetext">${userphone}</h4><br>
                           <!--  <div class="input__item">
                                 
                                  <input type="text" placeholder="휴대번호 뒤 7~8자리를 입력해주세요.(01X제외)"value ="999-9999-9999(휴대전화 DB값으로 수정해주세요)" disabled>
@@ -163,7 +174,7 @@
 
                         <h5 align="left" class="whitetext">이메일</h5><br>
                         <div class="input__item">  
-                            <h4 class="whitetext">이메일(DB)</h4><br>
+                            <h4 class="whitetext">${email}</h4><br>
                           <!--  <div class="input__item">
                                 
                                  <input type="text" placeholder="휴대번호 뒤 7~8자리를 입력해주세요.(01X제외)"value ="999-9999-9999(휴대전화 DB값으로 수정해주세요)" disabled>
@@ -249,15 +260,15 @@
     <!-- Search model end -->
 
     <!-- Js Plugins -->
-    <script src="js/jquery-3.3.1.min.js"></script>
-    <script src="js/bootstrap.min.js"></script>
-    <script src="js/player.js"></script>
-    <script src="js/jquery.nice-select.min.js"></script>
-    <script src="js/mixitup.min.js"></script>
-    <script src="js/jquery.slicknav.js"></script>
-    <script src="js/owl.carousel.min.js"></script>
-    <script src="js/main.js"></script>
-    <script src="js/profile_modify.js"></script>
+    <script src="${pageContext.request.contextPath}/movie/html/js/jquery-3.3.1.min.js"></script>
+    <script src="${pageContext.request.contextPath}/movie/html/js/bootstrap.min.js"></script>
+    <script src="${pageContext.request.contextPath}/movie/html/js/player.js"></script>
+    <script src="${pageContext.request.contextPath}/movie/html/js/jquery.nice-select.min.js"></script>
+    <script src="${pageContext.request.contextPath}/movie/html/js/mixitup.min.js"></script>
+    <script src="${pageContext.request.contextPath}/movie/html/js/jquery.slicknav.js"></script>
+    <script src="${pageContext.request.contextPath}/movie/html/js/owl.carousel.min.js"></script>
+    <script src="${pageContext.request.contextPath}/movie/html/js/main.js"></script>
+    <script src="${pageContext.request.contextPath}/movie/html/js/profile_modify.js"></script>
     
 
 
