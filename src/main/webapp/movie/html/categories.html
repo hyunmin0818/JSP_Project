@@ -430,9 +430,10 @@
                         </div>
                     </div>
                      <!-- 페이지 네비게이션 -->
-                    <div class="product__pagination">
+                     <div class="product__pagination" style="right: 50%;">
+                        <a href="#"><i class="fa fa-angle-double-left"></i></a>
                         <a href="#" class="current-page">1</a>
-                        <a href="#">2</a>
+                        <a href="#" >2</a>
                         <a href="#">3</a>
                         <a href="#">4</a>
                         <a href="#">5</a>
@@ -601,6 +602,7 @@
         <div class="search-close-switch"><i class="icon_close"></i></div>
         <form class="search-model-form">
             <input type="text" id="search-input" autocomplete="current-search-input" placeholder="검색어 입력.." value="">
+            <input type="hidden" name="boardnum" value=${boardnum } >
         </form>
     </div>
 </div>
@@ -608,54 +610,98 @@
 
 <!-- Js Plugins -->
 <script>  
- const products = [
-            {
-                'image': 'img/popular/popular-1.jpg',
-                'comments': 333,
-                'views': 2222,
-                'genres': ['미스터리', '스릴러'],
-                'title': '파묘',
-                'link': 'anime-details.html'
-            }
-            // 다른 제품들도 추가
-        ];
-        //product-list 클래스를 찾음
-        const productList = document.getElementById('product-list');
-        
-        // products 배열에 있는 각 제품에 대해 반복합니다.
-        products.forEach(function(product) {
-             // 각 제품을 표시할 새로운 div 요소를 생성합니다.
-            const productItem = document.createElement('div');
-            // 부트스트랩 그리드 클래스를 추가하여 반응형 레이아웃을 만듭니다.
-            productItem.className = 'col-lg-4 col-md-6 col-sm-6';
 
-            // 각 제품에 대한 HTML을 생성합니다.
-            let productInnerHtml = 
-                 `<div class='product__item__pic set-bg' data-setbg='${product.image}' onclick="window.location.href='${product.link}'">
-                    <div class='comment'><i class='fa fa-comments'></i> ${product.comments}</div>
-                    <div class='view'><i class='fa fa-eye'></i> ${product.views}</div>
-                    <div class='product__item__text'>
-                    <ul>`;
+const hostIndex = location.href.indexOf(location.host) + location.host.length;
+const contextPath = location.href.substring(hostIndex, location.href.indexOf('/', hostIndex + 1));
+// [검색 요청] 버튼 클릭 시 실행할 메서드를 정의합니다.
+$(function() {
+   $('#search-input').click(function() {
+      loadResults(1); // 기본적으로 첫 페이지 로드
+   });
+});
 
-            // 제품의 장르를 반복하면서 각 장르를 리스트 아이템으로 추가합니다.
-            product.genres.forEach(function(genre) {
-                productInnerHtml += `<li>${genre}</li>`;
-            });
-            
-            productInnerHtml += `
-                        </ul>
-                        <h5><a href='${product.link}'>${product.title}</a></h5>
-                    </div>
-                </div>
-            `;
-            // 생성된 HTML을 새로운 div 요소의 내부 HTML로 설정합니다.
-            productItem.innerHTML = productInnerHtml;
-            // 생성된 제품 요소를 제품 목록을 나타내는 부모 요소에 추가합니다.
-            productList.appendChild(productItem);
-        });
-    </script>
+function loadResults(startNum) {
 
-</script>
+   $.ajax({
+      url: "/search/SearchDb.api",
+      type: "get",
+      data: {
+         keyword: $('#keyword').val(),
+         startNum: startNum
+         //         displayPage: displayPage
+      },
+      dataType: "json",
+      success: function(data) {
+         sucFuncJson(data); // 성공 함수 호출
+         createPagination((data.total / 12), startNum); // 페이지네이션 생성, 여기서 5는 총 페이지 수를 의미
+      },
+      error: errFunc
+   });
+   return false;
+
+   function sucFuncJson(d) {
+   var str = "";
+   $.each(d.items, function(index, item) {
+      // item.discount의 돈 단위로 서식 바꾸기
+      console.log("index : " + index);
+      // 화폐 정규식 표현
+      const discount = item.discount;
+      const discount1 = discount.toString().replace(/\B(?<!\.\d*)(?=(\d{3})+(?!\d))/g, ",");
+      const pubdate = item.pubdate;
+      const pubdate1 = pubdate.replace(/(\d{4})(\d{2})(\d{2})/g, '$1-$2-$3');
+      str += "<ul>";
+      str += "   <input type='hidden' name='isbn' value=" + item.isbn + ">";
+      str += '   <input type="hidden" name="description" value="' + item.description + '">';
+      str += "    <img name='image' id='image' src='" + item.image + "'width='304' height='228' >";
+      str += "    <li name='title' id='title'> 제목 : " + item.title + "</li>";
+      str += "    <li name='author' id='author' > 저자 : " + item.author + "</li>";
+      str += "    <li name='publisher' id='publisher'> 출판사 : " + item.publisher + "</li>";
+      str += "    <li name='discount' id='discount'> 가격 : " + discount1 + "원</li>";
+      str += "    <li name='pubdate' id='pubdate'> 출간일 : " + pubdate1 + "</li>";
+      str += "</ul>";
+   });
+   $('#searchResult').html(str);
+}
+// 실패 시 경고창을 띄워줍니다.
+function errFunc(e) {
+   alert("실패: " + e.status);
+}
+// ul 태그 안의 내용을 form 태그를 만들어 보냄
+$(document).on('click', 'ul', function() {
+   var ulElement = $(this); // 클릭된 ul 요소를 가져옵니다.
+   // ul 요소 안에 있는 정보들을 가져옵니다.
+    var isbn = ulElement.find('input[name="isbn"]').val();
+    var description = ulElement.find('input[name="description"]').val();
+    var imageSrc = ulElement.find('img').attr('src');
+    var title = ulElement.find('li[name="title"]').text().replace('제목 : ', '');
+    var author = ulElement.find('li[name="author"]').text().replace('저자 : ', '');
+    var publisher = ulElement.find('li[name="publisher"]').text().replace('출판사 : ', '');
+    var discount = ulElement.find('li[name="discount"]').text().replace('가격 : ', '');
+    var pubdate = ulElement.find('li[name="pubdate"]').text().replace('출간일 : ', '');
+   // 새 form 엘리먼트를 생성합니다.
+   var form = $('<form></form>');
+
+   // form 속성을 설정합니다.
+   form.attr('method', 'post');
+   form.attr('action',  '/search/bookDetails.se');
+
+   // 필드를 생성하고 값을 설정합니다.
+   form.append('<input type="hidden" name="isbn" value="' + isbn + '">');
+   form.append('<input type="hidden" name="description" value="' + description + '">');
+   form.append('<input type="hidden" name="imageSrc" value="' + imageSrc + '">');
+   form.append('<input type="hidden" name="title" value="' + title + '">');
+   form.append('<input type="hidden" name="author" value="' + author + '">');
+   form.append('<input type="hidden" name="publisher" value="' + publisher + '">');
+   form.append('<input type="hidden" name="discount" value="' + discount + '">');
+   form.append('<input type="hidden" name="pubdate" value="' + pubdate + '">');
+
+   // form을 body에 추가하고 submit 합니다.
+   $('body').append(form);
+   form.submit();
+
+});
+}
+ </script>
 <script src="js/jquery-3.3.1.min.js"></script>
 <script src="js/bootstrap.min.js"></script>
 <script src="js/player.js"></script>

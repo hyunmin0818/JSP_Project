@@ -1,27 +1,31 @@
 package com.movie.web.dto;
 
 public class DirectorDTO {
-	private int directorid;
-	private String name2;
-	private int birth_date2;
-	public int getDirectorid() {
-		return directorid;
+	private int directorId;
+	private String director_name;
+	private int birth_date;
+	
+	
+	public int getDirector_id() {
+		return directorId;
 	}
-	public void setDirectorid(int directorid) {
-		this.directorid = directorid;
+	public void setDirector_id(int director_id) {
+		this.directorId = director_id;
 	}
-	public String getName2() {
-		return name2;
+	public String getName() {
+		return director_name;
 	}
-	public void setName2(String name2) {
-		this.name2 = name2;
+	public void setName(String name) {
+		this.director_name = name;
 	}
-	public int getBirth_date2() {
-		return birth_date2;
+	public int getBirth_date() {
+		return birth_date;
 	}
-	public void setBirth_date2(int birth_date2) {
-		this.birth_date2 = birth_date2;
+	public void setBirth_date(int birth_date) {
+		this.birth_date = birth_date;
 	}
+	
+	
 	
 	
 }

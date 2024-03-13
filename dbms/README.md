@@ -1,60 +1,80 @@
 # DBMS 릴레이션 매핑
 
-## 감독 (Directors) 테이블
+## movie (영화) 테이블
 
-- **director_id (PK)**
-- **name: 감독 이름**
-- **birth_date: 감독 생년월일**
-
-## 배우 (Actors) 테이블
-
-- **actor_id (PK)**
-- **actor: 배우 이름**
-- **birth_date: 배우 생년월일**
-
-## 영화 (Movies) 테이블
-
-- **movie_id (PK)**
-- **createDts: 제작시작 년도**
-- **createDte: 제작종료 년도**
-- **releaseDts: 개봉시작일**
-- **releaseDte: 개봉종료일**
-- **nation: 제작국가명**
-- **company: 제작사명**
+- **movieSeq (Primary Key): 영화 고유 ID**
+- **title: 영화 제목**
+- **titleEng: 영화 영문 제목**
+- **titleOrg: 영화 원문 제목**
+- **prodYear: 제작 연도**
+- **production_country: 제작 국가**
+- **runtime: 상영 시간**
+- **rating: 평점**
+- **type: 영화 유형**
 - **genre: 장르**
+- **use: 사용 여부**
+- **releaseDate: 개봉일**
+- **directorId (Foreign Key): 감독 ID (director 테이블의 directorId와 연결)**
+- **directorNm: 감독 이름**
+- **actorId (Foreign Key): 배우 ID (actor 테이블의 actorId와 연결)**
+- **actorEnNm: 배우 영문 이름**
+- **nation: 국가**
+- **company: 제작사**
 - **plot: 줄거리**
-- **runtime: 상영시간**
-- **type: 영화유형**
-- **director: 감독명**
-- **actor: 배우명**
-- **staff: 스탭명**
+- **posterUrl: 포스터 URL**
+- **stillUrl: 스틸컷 URL**
+- **vodClass: 티저예고편**
+- **vodUrl: VOD URL**
+- **screenArea: 상영 지역**
+- **audiAcc: 누적 관객 수**
+- **Awards1: 수상 내역 1**
+- **Awards2: 수상 내역 2**
+- **movie_likes: 영화 좋아요 수 (movie_likes 테이블과 연결)**
 
-## 사용자 (Users) 테이블
+## user (사용자) 테이블
 
-- **user_id (PK)**
+- **user_id (Primary Key): 사용자 ID**
 - **userpassword: 사용자 비밀번호**
 - **username: 사용자 이름**
-- **email: 사용자 이메일**
-- **userphone: 사용자 연락처**
-- **userbirth: 사용자 생년월일**
+- **email: 이메일**
+- **userphone: 전화번호**
+- **userbirth: 생년월일**
+- **movie_like: 영화 좋아요 여부 (movie_likes 테이블과 연결)**
 
-## 운영자 (Operator) 테이블
+## operator (운영자) 테이블
 
-- **operator_id (PK)**
-- **username: 운영자 이름**
-- **operator_password: 운영자 비밀번호**
-- **email: 운영자 이메일**
-- **operator_phone: 운영자 연락처**
+- **operator_id (Primary Key): 운영자 ID**
+- **operatorpassword: 운영자 비밀번호**
+- **operatorname: 운영자 이름**
+- **op_email: 운영자 이메일**
+- **operatorphone: 운영자 전화번호**
 
-## 리뷰 (Reviews) 테이블
+## actor (배우) 테이블(임시삭제)
 
-- **review_id (PK)**
-- **user_id (FK): Users 릴레이션의 외래키 (사용자 정보 연결)**
-- **movie_id (FK): Movies 릴레이션의 외래키 (영화 정보 연결)**
-- **operator_id: Operator 릴레이션의 외래키 (운영자 정보 연결)**
-- **rating: 평점**
-- **comment: 리뷰 내용**
-- **review_time: 리뷰 작성 시간**
+- **actorId (Primary Key): 배우 ID**
+- **actor_name: 배우 이름**
+- **birth_date: 생년월일**
+
+## director (감독) 테이블(임시삭제)
+
+- **directorId (Primary Key): 감독 ID**
+- **director_name: 감독 이름**
+- **birth_date: 생년월일**
+
+## comment (댓글) 테이블
+
+- **comment_id (Primary Key): 댓글 ID**
+- **user_id (Foreign Key): 사용자 ID (user 테이블의 user_id와 연결)**
+- **operator_id (Foreign Key): 운영자 ID (operator 테이블의 operator_id와 연결)**
+- **comment: 댓글 내용**
+- **comment_time: 댓글 작성 시간**
+- **movieSeq (Foreign Key): 영화 ID (movie 테이블의 movieSeq와 연결)**
+
+## movie_likes (영화 좋아요) 테이블
+
+- **user_id (Foreign Key): 사용자 ID (user 테이블의 user_id와 연결)**
+- **movieSeq (Foreign Key): 영화 ID (movie 테이블의 movieSeq와 연결)**
+- **(Primary Key): (user_id, movieSeq) 조합으로 사용자별 영화 좋아요 여부를 나타냄**
 
 ## API정보
 
