@@ -2,11 +2,11 @@
 <!DOCTYPE mapper
   PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" 
  "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
-<mapper namespace="mapper">
+<mapper namespace="Movie">
 	
 	<insert id="addmovie" parameterType="moviedto">
 		INSERT INTO user_info VALUES 
-		(#{userid},#{userpassword},#{username},
+		(#{user_id},#{userpassword},#{username},
 		#{email},#{userphone},#{userbirth})
 	</insert>
 	
@@ -21,5 +21,5 @@
         )
    		</foreach>
 	</insert>
- 
+
 </mapper>

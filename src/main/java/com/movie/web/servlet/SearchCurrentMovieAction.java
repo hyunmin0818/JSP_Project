@@ -8,13 +8,10 @@ import jakarta.servlet.http.HttpServletResponse;
 
 public class SearchCurrentMovieAction implements Action{
 
-	   @Override
-	   public ActionForward execute(HttpServletRequest request, HttpServletResponse response) {
-	      ActionForward forward = new ActionForward();
-	      
-	      forward.setRedirect(false);
-	      forward.setPath("/movie/html/categories.jsp");
-	      return forward;
-	   }
-
+	@Override
+	public ActionForward execute(HttpServletRequest request, HttpServletResponse response) {
+		
+		return null;
 	}
+
+}

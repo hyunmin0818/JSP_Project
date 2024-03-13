@@ -33,7 +33,7 @@ public class MovieDAO {
 	}
 
 	public int getMovieCnt() {
-			return sqlSession.selectOne("Board.getBoardCnt");
+			return sqlSession.selectOne("Movie.getCoListCnt");
 			
 			
 		}
