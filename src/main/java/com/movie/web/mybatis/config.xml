@@ -16,8 +16,8 @@
 			<dataSource type="POOLED">
 				<property name="driver" value="oracle.jdbc.driver.OracleDriver" />
 				<property name="url" value="jdbc:oracle:thin:@localhost:1521:xe" />
-				<property name="username" value="test" />	<!-- 사용중인 로컬 db 계정 -->
-				<property name="password" value="test" />
+				<property name="username" value="admin" />
+				<property name="password" value="limhm0818" />
 			</dataSource>
 		</environment>
 	</environments>
