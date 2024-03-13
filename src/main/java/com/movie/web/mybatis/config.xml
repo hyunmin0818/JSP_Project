@@ -20,7 +20,7 @@
 	</environments>
 	<mappers>
 		<mapper resource="com/movie/web/sql/user.xml"/>
-		
+		<mapper resource="com/movie/web/movieinfo.xml"/>
 	</mappers>
 </configuration>
 

@@ -10,7 +10,7 @@
 		#{email},#{userphone},#{userbirth})
 	</insert>
 	
-	<insert id="movieinsert" parametertype="java.util.Map">
+	<insert id="movieinsert" parameterType="java.util.Map">
 	    insert into movie(movieSeq, title, titleEng, titleOrg, prodYear, production_contry, runtime, rating, type, genre, use, releaseDate, directorId, directorNm,
 	        actorId, adtorEnNm, nation, company, plot, posterUrl, stillUrl, vodClass, vodUrl, screenArea, audiAcc, Awards1, Awards2, movie_likes)
    		 values

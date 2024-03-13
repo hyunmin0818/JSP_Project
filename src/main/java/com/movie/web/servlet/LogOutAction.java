@@ -1,10 +1,7 @@
 package com.movie.web.servlet;
 
-import org.apache.catalina.Session;
-
 import com.movie.web.action.Action;
 import com.movie.web.action.ActionForward;
-
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 import jakarta.servlet.http.HttpSession;
