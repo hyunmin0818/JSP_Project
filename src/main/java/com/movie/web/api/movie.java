@@ -71,8 +71,25 @@ public class movie {
                 System.out.println("Title: " + title);
                 System.out.println("English Title: " + titleEng);
                 System.out.println("Production Year: " + prodYear);
-                System.out.println("Directors:");
+                System.out.println("Nation: " + nation);
+                System.out.println("Genre: " + genre);
+                System.out.println("Runtime: " + runtime + " minutes");
+                System.out.println("titleOrg: " + titleOrg);
+                System.out.println("production_country: " + production_country);
+                System.out.println("type: " + type);
+                System.out.println("use: " + use);
+                System.out.println("company: " + company);
+                System.out.println("posterUrl: " + posterUrl);
+                System.out.println("stillUrl: " + stillUrl);
+                System.out.println("vodClass: " + vodClass);
+                System.out.println("vodUrl: " + vodUrl);
+                System.out.println("screenArea: " + screenArea);
+                System.out.println("Awards1: " + Awards1);
+                System.out.println("Awards2: " + Awards2);
+                System.out.println("rating: " + rating);
                 
+                
+                System.out.println("Directors:");
                 for (Object director : directors) {
                     JSONObject dir = (JSONObject) director;
                     System.out.println("  " + dir.get("directorNm") + " (" + dir.get("directorEnNm") + ")");
@@ -82,13 +99,12 @@ public class movie {
                     JSONObject act = (JSONObject) actor;
                     System.out.println("  " + act.get("actorNm") + " (" + act.get("actorEnNm") + ")");
                 }
+                System.out.println("plots:");
                 for (Object plot : plots) {
                 	JSONObject act = (JSONObject) plot;
                 	System.out.println("  " + act.get("plotLang") + " (" + act.get("plotText") + ")");
                 }
-                System.out.println("Nation: " + nation);
-                System.out.println("Genre: " + genre);
-                System.out.println("Runtime: " + runtime + " minutes");
+                
             }
         } catch (Exception e) {
             e.printStackTrace();
