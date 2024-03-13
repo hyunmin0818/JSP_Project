@@ -1,3 +1,6 @@
 AWS/*.ppk
 putty
 /.metadata/
+*.class
+*.project
+*.jar
