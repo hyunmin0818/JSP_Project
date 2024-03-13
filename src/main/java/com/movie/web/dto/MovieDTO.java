@@ -34,7 +34,7 @@ public class MovieDTO {
 				String production_country, int runtime, String rating, String type, String genre, String use,
 				int directorId, String directorNm, String actorId, String actorEnNm, String nation, String company,
 				String plot, String posterUrl, String stillUrl, String vodClass, String vodUrl, String screenArea,
-				int audiAcc, String awards1, String awards2, int movie_likes) {
+				int audiAcc, String awards1, String awards2) {
 			this.movieSeq = movieSeq;
 			this.title = title;
 			this.titleEng = titleEng;
@@ -61,7 +61,6 @@ public class MovieDTO {
 			this.audiAcc = audiAcc;
 			Awards1 = awards1;
 			Awards2 = awards2;
-			this.movie_likes = movie_likes;
 		}
 		
 		
