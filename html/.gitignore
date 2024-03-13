@@ -1,7 +1,6 @@
-webapp
 프론트 예시
 Servers
 *.txt
 /.metadata/
-jsp/*
-!jsp/src
+.settings
+!jsp/webapp
