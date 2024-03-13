@@ -18,7 +18,7 @@ public class JoinOkAction implements Action{
 		UserDTO udto = new UserDTO();
 		ActionForward forward = new ActionForward(); 
 		
-		udto.setUserid(request.getParameter("userid"));
+		udto.setUser_id(request.getParameter("user_id"));
 		udto.setUserpassword(request.getParameter("userpassword"));
 		udto.setUsername(request.getParameter("username"));
 		udto.setUserphone(request.getParameter("userphone"));

@@ -1,10 +1,13 @@
 package com.movie.web.dao;
 
+import java.util.HashMap;
 import java.util.List;
 
 import org.apache.ibatis.session.SqlSession;
 import org.apache.ibatis.session.SqlSessionFactory;
 
+
+import com.movie.web.dto.MovieDTO;
 import com.movie.web.mybatis.SqlMapConfig;
 
 public class MovieDAO {
@@ -20,5 +23,21 @@ public class MovieDAO {
 		
 		return null;
 	}
-	   
+	public List<MovieDTO> getMovieList(int startRow, int endRow) {
+		HashMap<String, Integer> datas = new HashMap<>();
+		datas.put("startRow", startRow);
+		datas.put("endRow", endRow);
+		List <MovieDTO> MovieList
+			= sqlSession.selectList("Movie.getMovieList", datas);
+		return MovieList;
 	}
+
+	public int getMovieCnt() {
+			return sqlSession.selectOne("Board.getBoardCnt");
+			
+			
+		}
+	
+	}
+	   
+	

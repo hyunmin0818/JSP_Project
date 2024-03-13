@@ -110,7 +110,7 @@
 						</c:if>
 						<form action="${pageContext.request.contextPath}/SubmitOk.ms" method="post">
                             <div class="input__item">
-                                <input type="text" placeholder="아이디" id="userid" name="userid" value="">
+                                <input type="text" placeholder="아이디" id="user_id" name="user_id" value="">
                                 <span class="icon_id"></span>
                             </div>
                             <div class="input__item">
