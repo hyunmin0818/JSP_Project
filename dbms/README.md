@@ -52,13 +52,13 @@
 ## actor (배우) 테이블
 
 - **actorId (Primary Key): 배우 ID**
-- **name: 배우 이름**
+- **actor_name: 배우 이름**
 - **birth_date: 생년월일**
 
 ## director (감독) 테이블
 
 - **directorId (Primary Key): 감독 ID**
-- **name: 감독 이름**
+- **director_name: 감독 이름**
 - **birth_date: 생년월일**
 
 ## comment (댓글) 테이블

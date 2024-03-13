@@ -30,14 +30,11 @@ public class MovieDTO {
 		private String Awards2; 	 // 기타 수상내역
 		private int movie_likes; 	 // 영화 좋아요
 		
-		
-		
 		public MovieDTO(String movieSeq, String title, String titleEng, String titleOrg, int prodYear,
 				String production_country, int runtime, String rating, String type, String genre, String use,
 				int directorId, String directorNm, String actorId, String actorEnNm, String nation, String company,
 				String plot, String posterUrl, String stillUrl, String vodClass, String vodUrl, String screenArea,
 				int audiAcc, String awards1, String awards2, int movie_likes) {
-			super();
 			this.movieSeq = movieSeq;
 			this.title = title;
 			this.titleEng = titleEng;

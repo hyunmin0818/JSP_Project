@@ -3,7 +3,7 @@ package com.movie.web.dto;
 public class ActorDTO {
 	// actor 테이블
 		private int actorId;
-		private String name;
+		private String actor_name;
 		private int birth_date;
 		
 		
@@ -14,10 +14,10 @@ public class ActorDTO {
 			this.actorId = actorid;
 		}
 		public String getName() {
-			return name;
+			return actor_name;
 		}
 		public void setName(String name) {
-			this.name = name;
+			this.actor_name = name;
 		}
 		public int getBirth_date() {
 			return birth_date;
