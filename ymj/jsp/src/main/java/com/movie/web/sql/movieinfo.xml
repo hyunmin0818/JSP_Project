@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" 
+ "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="Movie">
+	
+	<insert id="addmovie" parameterType="moviedto">
+		INSERT INTO user_info VALUES 
+		(#{user_id},#{userpassword},#{username},
+		#{email},#{userphone},#{userbirth})
+	</insert>
+	
+	<insert id="movieinsert" parameterType="java.util.Map">
+	    insert into movie(movieSeq, title, titleEng, titleOrg, prodYear, production_contry, runtime, rating, type, genre, use, releaseDate, directorId, directorNm,
+	        actorId, adtorEnNm, nation, company, plot, posterUrl, stillUrl, vodClass, vodUrl, screenArea, audiAcc, Awards1, Awards2, movie_likes)
+   		 values
+    	<foreach collection="list" item="item" separator=" , ">
+        (
+        #{item.movieSeq}, #{item.title}, #{item.titleEng}, #{item.titleOrg}, #{item.prodYear}, #{item.production_contry}, #{item.runtime}, #{item.rating}, #{item.type}, #{item.genre}, #{item.use}, #{item.releaseDate}, #{item.directorId}, #{item.directorNm},
+        #{item.actorId}, #{item.actorEnNm}, #{item.nation}, #{item.company}, #{item.plot}, #{item.posterUrl}, #{item.stillUrl}, #{item.vodClass}, #{item.vodUrl}, #{item.screenArea}, #{item.audiAcc}, #{item.Awards1}, #{item.Awards2}, #{item.movie_likes}
+        )
+   		</foreach>
+	</insert>
+
+</mapper>
