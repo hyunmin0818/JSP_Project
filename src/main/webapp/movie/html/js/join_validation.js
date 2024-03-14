@@ -55,13 +55,13 @@
 
 
 let flag ={
-	user_id,
-	userpassword,
-	userpassword2,
-	username,
-	userbirth ,
-	userphone,
-	email	
+	user_id : false,
+	userpassword  : false,
+	userpassword2  : false,
+	username  : false,
+	userbirth  : false ,
+	userphone  : false,
+	email : false	
 };
 
 let new_word="";
@@ -106,36 +106,85 @@ $("#user_id").on("input", function(e) {
 	
 		else {
 			// ajax
-			let xhr = new XMLHttpRequest();
-			xhr.open("GET","${pageContext.request.contextPath}/movie/idcheck.jsp?user_id="+user_id,true);
-			xhr.send();
-			xhr.onreadystatechange = function(){
-				if( xhr.readyState == XMLHttpRequest.DONE
-						&& xhr.status == 200 ){
-					// 만약 회원가입이 가능한 아이디라면
-					// id가 text영역에 "사용할 수 있는 아이디입니다" 출력
-					// 그렇지 않다면
-					// id가 text영역에 "중복된 아이디입니다" 출력
-					//alert(xhr.responseText.trim());
-					
-						
-					if(xhr.responseText.trim() == "ok"){
+//			let xhr = new XMLHttpRequest();
+//			xhr.open("GET","${pageContext.request.contextPath}/movie/idcheck.jsp?user_id="+user_id,true);
+//			xhr.send();
+//			xhr.onreadystatechange = function(){
+//				if( xhr.readyState == XMLHttpRequest.DONE
+//						&& xhr.status == 200 ){
+//					// 만약 회원가입이 가능한 아이디라면
+//					// id가 text영역에 "사용할 수 있는 아이디입니다" 출력
+//					// 그렇지 않다면
+//					// id가 text영역에 "중복된 아이디입니다" 출력
+//					//alert(xhr.responseText.trim());
+//					
+//						
+//					if(xhr.responseText.trim() == "ok"){
+//						 $("#check_id_message").css("color", "yellow");
+//	      				  $("#check_id_message").html("사용가능한 아이디입니다");
+//	         				flag[0]=true;
+//	         				
+//					}
+//	         				
+//					else {
+//						  $("#check_id_message").css("color", "red");
+//					        $("#check_id_message").html("이미 존재하는 아이디입니다");
+//					         flag[0]=false;
+//						}
+//				}	
+//				}
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+			/*function checkId3(userid){
+	
+				if(userid == ""){
+					  $("#check_id_message").css("color", "red");
+					        $("#check_id_message").html("아이디를 입력해주세요");
+					         flag[0]=false;
+				}else{*/
+					//jQuery ajax
+					$.ajax({
+						type : 'post', //타입
+						url : 'idcheck.jsp',
+						data : {'user_id' : user_id},
+						async : true, 		//비동기화여부 (비동기: true)
+						success : function(result){
+							if(result.trim() == "ok"){
 						 $("#check_id_message").css("color", "yellow");
 	      				  $("#check_id_message").html("사용가능한 아이디입니다");
 	         				flag[0]=true;
 	         				
+								} else {
+									 $("#check_id_message").css("color", "red");
+					       			 $("#check_id_message").html("아이디를 입력해주세요");
+					         		flag[0]=false;
+										}
+									},
+							
+						error : function(result,status,error){
+							console.log(error);
+							
+								}
+							
+						});	
+					
+					
+						
 					}
-	         				
-					else {
-						  $("#check_id_message").css("color", "red");
-					        $("#check_id_message").html("이미 존재하는 아이디입니다");
-					         flag[0]=false;
-						}
-				}	
-				}	
-			}
+				};
+									
+				
+				
+				
 			
-		}
 	 
 	
 
@@ -577,13 +626,14 @@ $("#email").blur(function(e){
 let index_position;
  
 $("#join_submit").submit(function(e){
-	
+	alert('asdf');
 	for(let i =0; i<flag.length;i++){
-		if(flag[i]==false){
+		if(flag[i]===false){
 			index_position=i;
-			new_word="#"+flag1[index_position];
+			new_word="#"+flag[index_position];
 			$(new_word).focus();
-			alert('asdfasdf');
+			alert(flag[index_position]+'을 수정해주세요');
+			return false;
 		}
 			else{
 				
