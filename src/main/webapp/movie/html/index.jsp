@@ -27,7 +27,7 @@
     <link rel="stylesheet" href="css/slicknav.min.css" type="text/css">
     <link rel="stylesheet" href="css/style.css" type="text/css">
 
-    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js" integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js" integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r" crossorigin="anonymous"></script>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.min.js" integrity="sha384-0pUGZvbkm6XF6gxjEnlmuGrJXVbNuzT9qBBavbLwCsOGabYfZo0T0to5eqruptLy" crossorigin="anonymous"></script>
 </head>
 
@@ -46,8 +46,8 @@
             <div class="row">
                 <div class="col-lg-2">
                     <div class="header__logo">
-                        <a href="./index.html">
-                            <img src="img/logo2.png" id="logo2" alt="">
+                        <a href="./index.jsp">
+                            <img src="img/logo.png" id="logo" alt="">
                         </a>
                     </div>
                 </div>
@@ -56,17 +56,16 @@
                         <nav class="header__menu mobile-menu">
                             <ul>
 
-                                <li class="active"><a href="./index.html">홈</a></li>    
-                                <li><a href="./categories.html">영화<span class="arrow_carrot-down"></span></a>
+                                <li class="active"><a href="./index.jsp">홈</a></li>    
+                                <li><a href="./categories.jsp">영화<span class="arrow_carrot-down"></span></a>
                                     <ul class="dropdown">
-                                        <li><a href="./categories.html">현재 상영작</a></li>
-                                        <li><a href="./categories.html">상영 예정작</a></li>
-                                        <li><a href="./anime-watching.html">트레일러 </a></li>
-                                       
+                                        <li><a href="./categories.jsp">현재 상영작</a></li>
+                                        <li><a href="./categories.jsp">상영 예정작</a></li>
+                                        <!-- <li><a href="./anime-watching.html">트레일러 </a></li> -->
                                     </ul>
                                 </li>
 
-                                <li><a href="./anime-details.html">극장정보</a></li>
+                      <!--           <li><a href="./anime-details.html">극장정보</a></li>
 
                                 <li><a href="./categories.html">예매<span class="arrow_carrot-down"></span></a>
                                     <ul class="dropdown">
@@ -75,12 +74,13 @@
                                         <li><a href="#">빠른예매</a></li>
                                         <li><a href="#">상영시간표</a></li>    
                                     </ul>   
+                                     -->
                                     
-                                    
-                                <li><a href="./categories.html">게시판<span class="arrow_carrot-down"></span></a>
+                                <li><a href="${pageContext.request.contextPath}/movie/html/notice.jsp">게시판<span class="arrow_carrot-down"></span></a>
                                     <ul class="dropdown">
-                                        <li><a href="#">공지사항</a></li>
-                                        <li><a href="#">리뷰</a></li>
+                                        <li><a href="${pageContext.request.contextPath}/movie/html/notice.jsp">공지사항</a></li>
+                                        <li><a href="${pageContext.request.contextPath}/movie/html/notice.jsp">이벤트</a></li>
+                       <!--                  <li><a href="#">리뷰</a></li> -->
                                  
                                        
                                     </ul>
@@ -88,9 +88,9 @@
 
 
 
-                                <li><a href="./categories.html">고객문의<span class="arrow_carrot-down"></span></a>
+                                <li><a href="${pageContext.request.contextPath}/movie/html/default.jsp">고객문의<span class="arrow_carrot-down"></span></a>
                                     <ul class="dropdown">
-                                        <li><a href="#">고객센터</a></li>
+                                        <li><a href="${pageContext.request.contextPath}/movie/html/default.jsp">고객센터</a></li>
                                         <li><a href="#">주변 영화관 찾기</a></li>
                                     </ul>
                                 </li>
@@ -151,14 +151,14 @@
     <section class="hero">
         <div class="container">
             <div class="hero__slider owl-carousel">
-                <div class="hero__items set-bg" data-setbg="img/hero/hero-1.jpg">
+                <div class="hero__items set-bg" data-setbg="img/hero/pamyo.jpg">
                     <div class="row">
                         <div class="col-lg-6">
                             <div class="hero__text">
                                 <div class="label">Adventure</div>
-                                <h2>Fate / Stay Night: Unlimited Blade Works</h2>
-                                <p>After 30 days of travel across the world...</p>
-                                <a href="#"><span>Watch Now</span> <i class="fa fa-angle-right"></i></a>
+                                <h2>파묘</h2>
+                                <p>험한 것이 나왔다 . . .</p>
+                                <a href="${pageContext.request.contextPath}/movie/html/SeatPreview-master/index.jsp"><span>Watch Now</span> <i class="fa fa-angle-right"></i></a>
                             </div>
                         </div>
                     </div>
