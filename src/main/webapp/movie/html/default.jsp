@@ -1,7 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
-
 <!DOCTYPE html>
 <html lang="zxx">
 
@@ -19,7 +18,6 @@
         rel="stylesheet">
 
     <!-- Css Styles -->
-    <link rel="stylesheet" href="${pageContext.request.contextPath}/movie/html/css/notice.css" type="text/css">
     <link rel="stylesheet" href="${pageContext.request.contextPath}/movie/html/css/bootstrap.min.css" type="text/css">
     <link rel="stylesheet" href="${pageContext.request.contextPath}/movie/html/css/font-awesome.min.css" type="text/css">
     <link rel="stylesheet" href="${pageContext.request.contextPath}/movie/html/css/elegant-icons.css" type="text/css">
@@ -30,6 +28,7 @@
     <link rel="stylesheet" href="${pageContext.request.contextPath}/movie/html/css/style.css" type="text/css">
 </head>
 
+<body>
     <!-- 페이지 로딩시 보여지는 로딩 스피너 -->
     <!-- Page Preloder -->
     <div id="preloder">
@@ -152,9 +151,9 @@
                         <!-- 홈으로 이동하는 링크 -->
                         <a href="${pageContext.request.contextPath}/movie/html/index.jsp"><i class="fa fa-home"></i> Home</a>
                         <!-- 카테고리 페이지로 이동하는 링크 -->
-                        <a href="${pageContext.request.contextPath}/movie/html/notice.jsp">게시판</a>
+                        <a href="${pageContext.request.contextPath}/movie/html/default.jsp">고객센터</a>
                         <!-- 현재 페이지의 카테고리 이름을 표시하는 부분 -->
-                        <span>공지사항</span>
+                        <span>문의</span>
                     </div>
                 </div>
             </div>
@@ -162,69 +161,34 @@
     </div>
     <!-- Breadcrumb End -->
 
-    <!-- UI Object -->
-    <section class="product-page spad">
+    <!-- Anime Section Begin -->
+    <section class="anime-details spad">
         <div class="container">
-            <table cellspacing="0" border="1" summary="게시판의 글제목 리스트" class="tbl_type">
-                <caption>게시판 리스트</caption>
-                <colgroup>
-                    <col width="30">
-                    <col width="80">
-                    <col>
-                    <col width="115">
-                    <col width="85">
-                    <col width="60">
-                </colgroup>
-                <thead>
-                    <tr>
-                        <th scope="col">&nbsp;</th>
-                        <th scope="col">No</th>
-                        <th scope="col">제목</th>
-                        <th scope="col">글쓴이</th>
-                        <th scope="col">날짜</th>
-                        <th scope="col">조회수</th>
-                    </tr>
-                </thead>
-                <tbody>
-                            <tr>
-                                <td class="num">4</td>
-                                <td >
-                                </td>
-                                <td class="title"><a href="#">블로그 개편 작업 일정 1</a></td>
-                                <td><a href="#">UIT랩</a></td>
-                                <td class="date">2008/02/14</td>
-                                <td class="hit">12345</td>
-                            </tr>
-                </tbody>
-            </table>
-            <textarea  id="plot">${board.boardcontents }</textarea>
-              <!-- 버튼 2개 운영자 전용입니다. hiden 일시적으러 안넣었습니다 -->
-              <div class="anime__details__btn">
-                <input type="submit" class="reservation" onclick="noiticesubmit(event)" value="삭제">
+            <div class="anime__details__content">
+                <div class="row">
+                    <form action="#" method="post">
+                        <div class="col-lg-9">
+                            <div class="anime__default">
+                                <div class="anime__details__title">
+                                    <!-- 고객센터 문의내역-->
+                                    <h3>제목</h3><input type="text" id="title" style="width: 1000px;">
+                                <!-- 상세내용 -->
+                                상세 내용:
+                                <textarea style="width: 1000px; height: 400px; overflow: auto;" id="plot"></textarea>
+                                <div class="anime__details__pic set-bg" data-setbg=""> <!--이미지-->
+                                <!--     -->
+                                <div class="anime__details__btn">
+                                    <input type="submit" class="reservation" onclick="submitForm(event)">
+                                </div>
+                            </div>
+                        </div>
+                    </form>
+                </div>
             </div>
-            <div class="anime__details__btn">
-                <input type="submit" class="reservation" onclick="submitForm(event)" value="수정">
-            </div>
-        </div>
-        <!-- //UI Object -->
-        <!-- 페이지 네비게이션 -->
-         <div class="product__pagination" style="text-align: center;">
-         </div>
-        <div class="product__pagination" style="text-align: center;">
-            <a href="#"><i class="fa fa-angle-double-left"></i></a>
-            <a href="#" class="current-page">1</a>
-            <a href="#">2</a>
-            <a href="#">3</a>
-            <a href="#">4</a>
-            <a href="#">5</a>
-            <a href="#"><i class="fa fa-angle-double-right"></i></a>
-        </div>
+    </section>
+    <!-- Anime Section End -->
 
-
-        
-
-
-        <!-- Footer Section Begin -->
+    <!-- Footer Section Begin -->
 <footer class="footer">
     <div class="page-up">
         <a href="#" id="scrollToTopButton"><span class="arrow_carrot-up"></span></a>
@@ -256,69 +220,68 @@
       </div>
   </footer>
   <!-- Footer Section End -->
-        
 
-        <!-- Search model Begin -->
-        <div class="search-model">
-            <div class="h-100 d-flex align-items-center justify-content-center">
-                <!-- 검색 모달 닫기 스위치 -->
-                <div class="search-close-switch"><i class="icon_close"></i></div>
-                <!-- 검색 폼 -->
-                <form class="search-model-form">
-                    <input type="text" id="search-input" placeholder="Search here.....">
-                </form>
-            </div>
+    <!-- Search model Begin -->
+    <div class="search-model">
+        <div class="h-100 d-flex align-items-center justify-content-center">
+            <!-- 검색 모달 닫기 스위치 -->
+            <div class="search-close-switch"><i class="icon_close"></i></div>
+            <!-- 검색 폼 -->
+            <form class="search-model-form">
+                <input type="text" id="search-input" placeholder="Search here.....">
+            </form>
         </div>
-        <!-- Search model end -->
+    </div>
+    <!-- Search model end -->
 
-        <!-- Js Plugins -->
-        <script>
-            // 이미지를 미리보기하기 위한 JavaScript 함수
-            function previewImage(event) {
-                // FileReader 객체 생성
-                var reader = new FileReader();
-                // 파일 로드가 완료되었을 때 실행될 콜백 함수 정의
-                reader.onload = function () {
-                    // 선택한 이미지를 CSS 배경 이미지로 설정하기 위한 준비
-                    var backgroundImage = "url('" + reader.result + "')";
-                    // 선택한 이미지를 표시할 요소 선택
-                    var element = document.querySelector('.anime__details__pic');
-                    // 요소의 배경 이미지를 선택한 이미지로 설정
-                    element.style.backgroundImage = backgroundImage;
-                };
-                // FileReader를 사용하여 선택한 파일을 읽기 시작
-                reader.readAsDataURL(event.target.files[0]);
-            }
-        </script>
-        <script>
-            // 양식 제출 전 값을 할당했는지 확인하는 jQuery 함수
-            function submitForm(event) {
-                // 각 입력 필드의 값을 가져와 변수에 할당
-                let title = $('#title').val();                     // 네임
-                let plot = $('#plot').val();
+    <!-- Js Plugins -->
+    <script>
+        // 이미지를 미리보기하기 위한 JavaScript 함수
+        function previewImage(event) {
+            // FileReader 객체 생성
+            var reader = new FileReader();
+            // 파일 로드가 완료되었을 때 실행될 콜백 함수 정의
+            reader.onload = function () {
+                // 선택한 이미지를 CSS 배경 이미지로 설정하기 위한 준비
+                var backgroundImage = "url('" + reader.result + "')";
+                // 선택한 이미지를 표시할 요소 선택
+                var element = document.querySelector('.anime__details__pic');
+                // 요소의 배경 이미지를 선택한 이미지로 설정
+                element.style.backgroundImage = backgroundImage;
+            };
+            // FileReader를 사용하여 선택한 파일을 읽기 시작
+            reader.readAsDataURL(event.target.files[0]);
+        }
+    </script>
+<script>
+    // 양식 제출 전 값을 할당했는지 확인하는 jQuery 함수
+    function submitForm(event) {
+        // 각 입력 필드의 값을 가져와 변수에 할당
+        let title = $('#title').val();                     // 네임
+        let plot = $('#plot').val();                              
 
-                if (title == "" || title == null) {
-                    alert("이름 필드값을 입력해주세요");
-                    event.preventDefault();
-                    return false; // 양식 제출 방지
-                }
-                if (plot == "" || plot == null) {
-                    alert("영화 줄거리 필드값을 입력해주세요");
-                    event.preventDefault();
-                    return false;
-                }
+        if (title == "" || title == null) { 
+            alert("이름 필드값을 입력해주세요");
+            event.preventDefault();
+            return false; // 양식 제출 방지
+        }
+        if (plot == "" || plot == null) {
+            alert("영화 줄거리 필드값을 입력해주세요");
+            event.preventDefault();
+            return false; 
+        }
 
-            }
-        </script>
-        <script src="${pageContext.request.contextPath}/movie/html/js/jquery-3.3.1.min.js"></script>
-        <script src="${pageContext.request.contextPath}/movie/html/js/bootstrap.min.js"></script>
-        <script src="${pageContext.request.contextPath}/movie/html/js/player.js"></script>
-        <script src="${pageContext.request.contextPath}/movie/html/js/jquery.nice-select.min.js"></script>
-        <script src="${pageContext.request.contextPath}/movie/html/js/mixitup.min.js"></script>
-        <script src="${pageContext.request.contextPath}/movie/html/js/jquery.slicknav.js"></script>
-        <script src="${pageContext.request.contextPath}/movie/html/js/owl.carousel.min.js"></script>
-        <script src="${pageContext.request.contextPath}/movie/html/js/main.js"></script>
+    }
+</script>
+    <script src="${pageContext.request.contextPath}/movie/html/js/jquery-3.3.1.min.js"></script>
+    <script src="${pageContext.request.contextPath}/movie/html/js/bootstrap.min.js"></script>
+    <script src="${pageContext.request.contextPath}/movie/html/js/player.js"></script>
+    <script src="${pageContext.request.contextPath}/movie/html/js/jquery.nice-select.min.js"></script>
+    <script src="${pageContext.request.contextPath}/movie/html/js/mixitup.min.js"></script>
+    <script src="${pageContext.request.contextPath}/movie/html/js/jquery.slicknav.js"></script>
+    <script src="${pageContext.request.contextPath}/movie/html/js/owl.carousel.min.js"></script>
+    <script src="${pageContext.request.contextPath}/movie/html/js/main.js"></script>
 
-        </body>
+</body>
 
 </html>

@@ -11,9 +11,9 @@
 		<meta name="keywords" content="cinema, seat booking, seating plan, perspective, 3d" />
 		<meta name="author" content="Codrops" />
 		<link rel="shortcut icon" href="favicon.ico">
-		<link rel="stylesheet" type="text/css" href="css/normalize.css" />
-		<link rel="stylesheet" type="text/css" href="css/demo.css" />
-		<link rel="stylesheet" type="text/css" href="css/component.css" />
+		<link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/movie/html/SeatPreview-master/css/normalize.css" />
+		<link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/movie/html/SeatPreview-master/css/demo.css" />
+		<link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/movie/html/SeatPreview-master/css/component.css" />
 		<script src="js/modernizr-custom.js"></script>
 	</head>
 	<body>
@@ -792,7 +792,7 @@
 			</ul>
 		</div><!-- /plan -->
 		<button class="action action--lookaround action--disabled" arial-label="Unlook View"></button>
-		<script src="js/classie.js"></script>
-		<script src="js/main.js"></script>
+		<script src="${pageContext.request.contextPath}/movie/html/SeatPreview-master/js/classie.js"></script>
+		<script src="${pageContext.request.contextPath}/movie/html/SeatPreview-master/js/main.js"></script>
 	</body>
 </html>

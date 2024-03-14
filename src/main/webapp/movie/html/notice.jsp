@@ -51,7 +51,7 @@
                         <nav class="header__menu mobile-menu">
                             <ul>
 
-                                <li class="active"><a href="./index.jsp">홈</a></li>    
+                                <li ><a href="./index.jsp">홈</a></li>    
                                 <li><a href="./categories.jsp">영화<span class="arrow_carrot-down"></span></a>
                                     <ul class="dropdown">
                                         <li><a href="./categories.jsp">현재 상영작</a></li>
@@ -71,7 +71,7 @@
                                     </ul>   
                                      -->
                                     
-                                <li><a href="${pageContext.request.contextPath}/movie/html/notice.jsp">게시판<span class="arrow_carrot-down"></span></a>
+                                <li class="active"><a href="${pageContext.request.contextPath}/movie/html/notice.jsp">게시판<span class="arrow_carrot-down"></span></a>
                                     <ul class="dropdown">
                                         <li><a href="${pageContext.request.contextPath}/movie/html/notice.jsp">공지사항</a></li>
                                         <li><a href="${pageContext.request.contextPath}/movie/html/notice.jsp">이벤트</a></li>
@@ -149,9 +149,9 @@
                 <div class="col-lg-12">
                     <div class="breadcrumb__links">
                         <!-- 홈으로 이동하는 링크 -->
-                        <a href="./index.html"><i class="fa fa-home"></i> Home</a>
+                        <a href="${pageContext.request.contextPath}/movie/html/index.jsp"><i class="fa fa-home"></i> Home</a>
                         <!-- 카테고리 페이지로 이동하는 링크 -->
-                        <a href="./notice.html">게시판</a>
+                        <a href="${pageContext.request.contextPath}/movie/html/notice.jsp">게시판</a>
                         <!-- 현재 페이지의 카테고리 이름을 표시하는 부분 -->
                         <span>공지사항</span>
                     </div>
@@ -287,7 +287,7 @@
                                         for="chk_sel10">선택</label>
                                 </td>
                                 <td class="num">4</td>
-                                <td class="title"><a href="./notice_open.html">블로그 개편 작업 일정 1</a></td>
+                                <td class="title"><a href="${pageContext.request.contextPath}/movie/html/notice_open.jsp">블로그 개편 작업 일정 1</a></td>
                                 <td><a href="#">UIT랩</a></td>
                                 <td class="date">2008/02/14</td>
                                 <td class="hit">12345</td>
@@ -309,46 +309,37 @@
         </div>
 
         <!-- Footer Section Begin -->
-        <footer class="footer">
-            <div class="page-up">
-                <!-- 페이지 상단으로 이동하는 버튼 -->
-                <a href="#" id="scrollToTopButton"><span class="arrow_carrot-up"></span></a>
-            </div>
-            <div class="container">
-                <div class="row">
-                    <!-- 로고 -->
-                    <div class="col-lg-3">
-                        <div class="footer__logo">
-                            <a href="index.html"><img src="img/logo.png" alt=""></a>
-                        </div>
-                    </div>
-                    <div class="col-lg-6">
-                        <!-- 푸터 내비게이션 -->
-                        <div class="footer__nav">
-                            <ul>
-                                <li class="active"><a href="index.html">Homepage</a></li>
-                                <li><a href="categories.html">Categories</a></li>
-                                <li><a href="./blog.html">Our Blog</a></li>
-                                <li><a href="#">Contacts</a></li>
-                            </ul>
-                        </div>
-                    </div>
-                    <div class="col-lg-3">
-                        <!-- 저작권 정보  절대 지우지말것 -->
-                        <p><!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
-                            Copyright &copy;
-                            <script>document.write(new Date().getFullYear());</script> All rights reserved | This
-                            template
-                            is made with <i class="fa fa-heart" aria-hidden="true"></i> by <a
-                                href="https://colorlib.com" target="_blank">Colorlib</a>
-                            <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
-                        </p>
-
-                    </div>
+<footer class="footer">
+    <div class="page-up">
+        <a href="#" id="scrollToTopButton"><span class="arrow_carrot-up"></span></a>
+    </div>
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-3">
+                <div class="footer__logo">
+                    <a href="${pageContext.request.contextPath}/movie/html/index.jsp"><img src="img/logo2.png" alt=""></a>
                 </div>
             </div>
-        </footer>
-        <!-- Footer Section End -->
+            <div class="col-lg-6">
+                <div class="footer__nav">
+                    <ul>
+                        <li class="active"><a href="${pageContext.request.contextPath}/movie/html/index.jsp">홈</a></li>
+                        <li><a href="${pageContext.request.contextPath}/movie/html/default.jsp">고객센터</a></li>
+                        <li><a href="#">블로그</a></li>
+                       
+                    </ul>
+                </div>
+            </div>
+            <div class="col-lg-3">
+                <p><!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+                  Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved | This template is made with <i class="fa fa-heart" aria-hidden="true"></i> by <a href="https://colorlib.com" target="_blank">Colorlib</a>
+                  <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. --></p>
+
+              </div>
+          </div>
+      </div>
+  </footer>
+  <!-- Footer Section End -->
 
         <!-- Search model Begin -->
         <div class="search-model">
