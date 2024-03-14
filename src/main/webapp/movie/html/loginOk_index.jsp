@@ -48,7 +48,7 @@
                 <!-- 로고 -->
                 <div class="col-lg-2">
                     <div class="header__logo">
-                        <a href="./index.html">
+                        <a href="${pageContext.request.contextPath}/movie/html/index.jsp">
                             <img src="img/logo2.png" id="logo2" alt="">
                         </a>
                     </div>
@@ -59,18 +59,18 @@
                         <nav class="header__menu mobile-menu">
                             <ul>
                                 <!-- 홈페이지로 이동하는 링크 -->
-                                <li class="active"><a href="./index.html">홈</a></li>
+                                <li class="active"><a href="${pageContext.request.contextPath}/movie/html/index.jsp">홈</a></li>
                                 <!-- 카테고리 메뉴 -->
-                                <li><a href="./categories.html">영화<span class="arrow_carrot-down"></span></a>
+                                <li><a href="${pageContext.request.contextPath}/movie/html/categories.jsp">영화<span class="arrow_carrot-down"></span></a>
                                     <ul class="dropdown">
-                                        <li><a href="./categories.html">현재 상영작</a></li>
-                                        <li><a href="./categories.html">상영 예정작</a></li>
+                                        <li><a href="${pageContext.request.contextPath}/movie/html//categories.jsp">현재 상영작</a></li>
+                                        <li><a href="${pageContext.request.contextPath}/movie/html//categories.jsp">상영 예정작</a></li>
                                         <!-- <li><a href="./anime-watching.html">트레일러 </a></li> -->
                                        
                                     </ul>
                                 </li>
                                 
-                                <li><a href="./anime-details.html">극장정보</a></li>
+                               <!--  <li><a href="./anime-details.html">극장정보</a></li> -->
 
                                 <!-- <li><a href="./categories.html">예매<span class="arrow_carrot-down"></span></a>
                                     <ul class="dropdown">
@@ -81,10 +81,10 @@
                                     </ul>    -->
                                     
                                     
-                                <li><a href="#">게시판<span class="arrow_carrot-down"></span></a>
+                                <li><a href="${pageContext.request.contextPath}/movie/html/notice.jsp">게시판<span class="arrow_carrot-down"></span></a>
                                     <ul class="dropdown">
-                                        <li><a href="#">공지사항</a></li>
-                                        <li><a href="#">이벤트</a></li>
+                                        <li><a href="${pageContext.request.contextPath}/movie/html/notice.jsp">공지사항</a></li>
+                                        <li><a href="${pageContext.request.contextPath}/movie/html/notice.jsp">이벤트</a></li>
                                  
                                        
                                         <!-- 카테고리 관련 페이지로 이동하는 링크
@@ -99,9 +99,9 @@
 
 
 
-                                <li><a href="./categories.html">고객문의<span class="arrow_carrot-down"></span></a>
+                                <li><a href="${pageContext.request.contextPath}/movie/html/default.jsp">고객문의<span class="arrow_carrot-down"></span></a>
                                     <ul class="dropdown">
-                                        <li><a href="#">고객센터</a></li>
+                                        <li><a href="${pageContext.request.contextPath}/movie/html/defaut.jsp">고객센터</a></li>
                                         <li><a href="#">주변 영화관 찾기</a></li>
                                     </ul>
                                 </li>
@@ -144,10 +144,14 @@
 								href="${pageContext.request.contextPath}/movie/mypage.ms"><span
 									class="dropdown-item">마이페이지</span></a></li>
 							<li><hr class="dropdown-divider"></hr></li>
-							<li><a href="./index.html"><span class="dropdown-item"
+							<li> <a href="${pageContext.request.contextPath}/movie/html/findTicket.jsp"><span class="dropdown-item" id="redtext">예매내역</span></a></li> 
+                       <!--  <li> <a href="#"><span class="dropdown-item" id="redtext">팔로우</span></a></li>  -->
+                        <li> <a href="${pageContext.request.contextPath}/movie/html/request.jsp"><span class="dropdown-item" id="redtext">내 문의내역</span></a></li> 
+                        <!-- <li> <a href="#"><span class="dropdown-item" id="redtext">쿠폰함(미구현)</span></a></li>  -->
+							<li><a href="${pageContext.request.contextPath}/movie/logout.ms"><span class="dropdown-item"
 									id="redtext">로그아웃</span></a></li>
 						</ul>
-						<a href="./mypage.jsp" id="youNeedLogin">${sessionscope.userinfo.user_id}</a>
+						<a href="${pageContext.request.contextPath}/movie/mypage.ms" id="youNeedLogin">${sessionscope.userinfo.user_id}</a>
 					</div>
 				</div>
 
