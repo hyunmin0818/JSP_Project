@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" 
+ "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="Movie">
+<select id="getCommentList" parameterType="int" resultType="commentdto">
+	SELECT c.comment_id, c.user_id, u.username, c.comment, c.commentTime, c.movieSeq
+    FROM comment AS c
+    JOIN user AS u ON c.user_id = u.user_id
+    WHERE c.movieSeq = #{movieSeq}
+    ORDER BY c.commentTime DESC
+</select>
+<insert id="insertComment"  parameterType="hashmap">
+	INSERT INTO comment (comment_id, user_id, operator_id, comment, comment_time, movieSeq)
+        VALUES (#{comment_id},#{user_id},null, #{comment}, NOW(), #{movieSeq})
+</insert>
+<delete id="deleteCoIfUserIsOperator" parameterType="map">
+    DELETE FROM comment
+    WHERE comment_id = #{comment_id}
+    AND operator_id = #{user_id} 
+    <!-- 여기서 operator_id와 user_id가 일치하는 조건을 확인 -->
+</delete>
+</mapper>

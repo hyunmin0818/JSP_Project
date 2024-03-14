@@ -50,7 +50,7 @@ public class MovieDAO {
 
 	// 영화의 총 개수를 가져오는 메서드
 	public int getMovieCnt() {
-		return sqlSession.selectOne("Movie.getCoListCnt");
+		return sqlSession.selectOne("Movie.getMovieCnt");
 	}
 	
 	

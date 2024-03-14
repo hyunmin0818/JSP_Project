@@ -10,9 +10,17 @@
 		#{email},#{userphone},#{userbirth})
 	</insert>
 	
-	<select id="getCoListCnt" resultType="MovieDTO" parameterType="moviedto">
-	SELECT COUNT(*) AS total_count
+	<select id="getMovieCnt"  resultType="int">
+	SELECT COUNT(*) FROM movie
+	</select>
+	<select id="getMovieList" resultType="moviedto" parameterType="hashmap">
+	SELECT *
+	FROM (
+	SELECT movie.*,
+	ROW_NUMBER() OVER (ORDER BY releaseDate DESC) AS rownum
 	FROM movie
+	) AS ranked_movies
+	WHERE rownum BETWEEN #{startRow} AND #{endRow}
 	</select>
 	
 	<select id="searchMovies" resultType="MovieDTO" parameterType="java.util.HashMap">
