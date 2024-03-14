@@ -42,8 +42,8 @@
                 <!-- 로고 -->
                 <div class="col-lg-2">
                     <div class="header__logo">
-                        <a href="./index.html">
-                            <img src="img/logo.png" alt="">
+                        <a href="${pageContext.request.contextPath}/movie/html/index.jsp">
+                            <img src="img/logo2.png" id="logo2" alt="">
                         </a>
                     </div>
                 </div>
@@ -53,38 +53,118 @@
                         <nav class="header__menu mobile-menu">
                             <ul>
                                 <!-- 홈페이지로 이동하는 링크 -->
-                                <li class="active"><a href="index.html">Homepage</a></li>
+                                <li class="active"><a href="${pageContext.request.contextPath}/movie/html/index.jsp">홈</a></li>
                                 <!-- 카테고리 메뉴 -->
-                                <li><a href="categories.html">Categories <span class="arrow_carrot-down"></span></a>
+                                <li><a href="${pageContext.request.contextPath}/movie/html/categories.jsp">영화<span class="arrow_carrot-down"></span></a>
                                     <ul class="dropdown">
-                                        <!-- 카테고리 관련 페이지로 이동하는 링크 -->
-                                        <li><a href="./categories.html">Categories</a></li>
-                                        <li><a href="./details.html">Anime Details</a></li>
-                                        <li><a href="./anime-watching.html">Anime Watching</a></li>
-                                        <li><a href="./blog-details.html">Blog Details</a></li>
-                                        <li><a href="./signup.html">Sign Up</a></li>
-                                        <li><a href="./login.html">Login</a></li>
+                                        <li><a href="${pageContext.request.contextPath}/movie/html//categories.jsp">현재 상영작</a></li>
+                                        <li><a href="${pageContext.request.contextPath}/movie/html//categories.jsp">상영 예정작</a></li>
+                                        <!-- <li><a href="./anime-watching.html">트레일러 </a></li> -->
+                                       
                                     </ul>
                                 </li>
-                                <!-- 블로그로 이동하는 링크 -->
-                                <li><a href="./blog.html">Our Blog</a></li>
-                                <!-- 연락처로 이동하는 링크 -->
-                                <li><a href="#">Contacts</a></li>
+                                
+                               <!--  <li><a href="./anime-details.html">극장정보</a></li> -->
+
+                                <!-- <li><a href="./categories.html">예매<span class="arrow_carrot-down"></span></a>
+                                    <ul class="dropdown">
+                                        <li><a href="#">예매하기</a></li>
+                                        <li><a href="#">예매내역</a></li>
+                                        <li><a href="#">빠른예매</a></li>
+                                        <li><a href="#">상영시간표</a></li>    
+                                    </ul>    -->
+                                    
+                                    
+                                <li><a href="${pageContext.request.contextPath}/movie/html/notice.jsp">게시판<span class="arrow_carrot-down"></span></a>
+                                    <ul class="dropdown">
+                                        <li><a href="${pageContext.request.contextPath}/movie/html/notice.jsp">공지사항</a></li>
+                                        <li><a href="${pageContext.request.contextPath}/movie/html/notice.jsp">이벤트</a></li>
+                                 
+                                       
+                                        <!-- 카테고리 관련 페이지로 이동하는 링크
+                                        <li><a href="./categories.html">차트/상영예정작</a></li>
+                                        <li><a href="./blog-details.html">예매</a></li>
+                                        <li><a href="./anime-details.html">상세정보</a></li>
+                                        <li><a href="./anime-watching.html">티저</a></li>
+                                        <li><a href="./signup.html">회원가입</a></li>
+                                        <li><a href="./login.html">로그인</a></li> -->
+                                    </ul>
+                                </li>
+
+
+
+                                <li><a href="${pageContext.request.contextPath}/movie/html/default.jsp">고객문의<span class="arrow_carrot-down"></span></a>
+                                    <ul class="dropdown">
+                                        <li><a href="${pageContext.request.contextPath}/movie/html/defaut.jsp">고객센터</a></li>
+                                        <li><a href="#">주변 영화관 찾기</a></li>
+                                    </ul>
+                                </li>
+
+
+                              <!-- 대형 영화 사이트 참고한 양식 (스토어, 이벤트, 혜택)-->
+                              <!-- 시간이 남으면 추가해보는걸로 -->
+
+
+                                <!-- <li><a href="#">스토어</a></li>      
+
+                                <li><a href="./categories.html">이벤트<span class="arrow_carrot-down"></span></a>
+                                    <ul class="dropdown">
+                                        <li><a href="#">이벤트</a></li>
+                                        <li><a href="#">당첨자</a></li>
+                                    </ul>
+                                </li>
+
+
+
+                                <li><a href="./blog.html">혜택</a></li> -->
+
+
                             </ul>
                         </nav>
                     </div>
                 </div>
-                <!-- 검색 및 프로필 아이콘 -->
-                <div class="col-lg-2">
-                    <div class="header__right">
-                        <a href="#" class="search-switch"><span class="icon_search"></span></a>
-                        <a href="./login.html"><span class="icon_profile"></span></a>
-                    </div>
-                </div>
-            </div>
+
+
+				<div class="col-lg-2">
+					<div class="header__right">
+						<a href="#" class="search-switch"><span class="icon_search"></span></a>
+						<span
+							class="icon_profile arrow fa dropdown-toggle active arrow_carrot-down"
+							id="dropdown-toggle" data-bs-toggle="dropdown"
+							aria-expanded="false"></span>
+						<ul class="dropup-center dropup dropdown-menu"
+							aria-labelledby="dropdown-toggle">
+							<li><a
+								href="${pageContext.request.contextPath}/movie/mypage.ms"><span
+									class="dropdown-item">마이페이지</span></a></li>
+							<li><hr class="dropdown-divider"></hr></li>
+							<li> <a href="${pageContext.request.contextPath}/movie/html/findTicket.jsp"><span class="dropdown-item" id="redtext">예매내역</span></a></li> 
+                       <!--  <li> <a href="#"><span class="dropdown-item" id="redtext">팔로우</span></a></li>  -->
+                        <li> <a href="${pageContext.request.contextPath}/movie/html/request.jsp"><span class="dropdown-item" id="redtext">내 문의내역</span></a></li> 
+                        <!-- <li> <a href="#"><span class="dropdown-item" id="redtext">쿠폰함(미구현)</span></a></li>  -->
+							<li><a href="${pageContext.request.contextPath}/movie/logout.ms"><span class="dropdown-item"
+									id="redtext">로그아웃</span></a></li>
+						</ul>
+						<a href="${pageContext.request.contextPath}/movie/mypage.ms" id="youNeedLogin">${sessionscope.userinfo.user_id}</a>
+					</div>
+				</div>
+
+
+
+
+
+
+
+
+
+
+			</div>
             <div id="mobile-menu-wrap"></div>
         </div>
     </header>
+
+
+
     <!-- Header End -->
 
     <!-- Breadcrumb Begin -->
@@ -94,9 +174,9 @@
                 <div class="col-lg-12">
                     <div class="breadcrumb__links">
                         <!-- 홈으로 이동하는 링크 -->
-                        <a href="./index.html"><i class="fa fa-home"></i> Home</a>
+                        <a href="${pageContext.request.contextPath}/movie/html/index.html"><i class="fa fa-home"></i> Home</a>
                         <!-- 카테고리 페이지로 이동하는 링크 -->
-                        <a href="./default.html">고객센터</a>
+                        <a href="${pageContext.request.contextPath}/movie/html/default.html">고객센터</a>
                         <!-- 현재 페이지의 카테고리 이름을 표시하는 부분 -->
                         <span>문의내역</span>
                     </div>
@@ -150,46 +230,37 @@
         <!-- Anime Section End -->
 
         <!-- Footer Section Begin -->
-        <footer class="footer">
-            <div class="page-up">
-                <!-- 페이지 상단으로 이동하는 버튼 -->
-                <a href="#" id="scrollToTopButton"><span class="arrow_carrot-up"></span></a>
-            </div>
-            <div class="container">
-                <div class="row">
-                    <!-- 로고 -->
-                    <div class="col-lg-3">
-                        <div class="footer__logo">
-                            <a href="index.html"><img src="img/logo.png" alt=""></a>
-                        </div>
-                    </div>
-                    <div class="col-lg-6">
-                        <!-- 푸터 내비게이션 -->
-                        <div class="footer__nav">
-                            <ul>
-                                <li class="active"><a href="index.html">Homepage</a></li>
-                                <li><a href="categories.html">Categories</a></li>
-                                <li><a href="./blog.html">Our Blog</a></li>
-                                <li><a href="#">Contacts</a></li>
-                            </ul>
-                        </div>
-                    </div>
-                    <div class="col-lg-3">
-                        <!-- 저작권 정보  절대 지우지말것 -->
-                        <p><!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
-                            Copyright &copy;
-                            <script>document.write(new Date().getFullYear());</script> All rights reserved | This
-                            template
-                            is made with <i class="fa fa-heart" aria-hidden="true"></i> by <a
-                                href="https://colorlib.com" target="_blank">Colorlib</a>
-                            <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
-                        </p>
-
-                    </div>
+<footer class="footer">
+    <div class="page-up">
+        <a href="#" id="scrollToTopButton"><span class="arrow_carrot-up"></span></a>
+    </div>
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-3">
+                <div class="footer__logo">
+                    <a href="${pageContext.request.contextPath}/movie/html/index.jsp"><img src="img/logo2.png" alt=""></a>
                 </div>
             </div>
-        </footer>
-        <!-- Footer Section End -->
+            <div class="col-lg-6">
+                <div class="footer__nav">
+                    <ul>
+                        <li class="active"><a href="${pageContext.request.contextPath}/movie/html/index.jsp">홈</a></li>
+                        <li><a href="${pageContext.request.contextPath}/movie/html/default.jsp">고객센터</a></li>
+                        <li><a href="#">블로그</a></li>
+                       
+                    </ul>
+                </div>
+            </div>
+            <div class="col-lg-3">
+                <p><!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+                  Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved | This template is made with <i class="fa fa-heart" aria-hidden="true"></i> by <a href="https://colorlib.com" target="_blank">Colorlib</a>
+                  <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. --></p>
+
+              </div>
+          </div>
+      </div>
+  </footer>
+  <!-- Footer Section End -->
 
         <!-- Search model Begin -->
         <div class="search-model">

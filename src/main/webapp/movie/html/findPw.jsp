@@ -41,7 +41,7 @@
                 <div class="col-lg-2">
                     <div class="header__logo">
                         <a href="./index.jsp">
-                            <img src="img/logo.png" id="logo" alt="">
+                            <img src="img/logo2.png" id="logo2" alt="">
                         </a>
                     </div>
                 </div>
@@ -187,8 +187,8 @@
                         
             
                  <br>
-                    <a href="./findId.html" class="forget_pass" align="center">아이디 찾기</a><br><br>
-                    <a href="./login.html" class="forget_pass" align="center">로그인</a>
+                    <a href="./findId.jsp" class="forget_pass" align="center">아이디 찾기</a><br><br>
+                    <a href="./login.jsp" class="forget_pass" align="center">로그인</a>
                 </div>
             <div class="login__social" align="center">
                 <div class="row d-flex justify-content-center">
@@ -214,37 +214,37 @@
     <!-- Login Section End -->
 
     <!-- Footer Section Begin -->
-    <footer class="footer">
-        <div class="page-up">
-            <a href="#" id="scrollToTopButton"><span class="arrow_carrot-up"></span></a>
-        </div>
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-3">
-                    <div class="footer__logo">
-                        <a href="./index.html"><img src="img/logo.png" alt=""></a>
-                    </div>
+<footer class="footer">
+    <div class="page-up">
+        <a href="#" id="scrollToTopButton"><span class="arrow_carrot-up"></span></a>
+    </div>
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-3">
+                <div class="footer__logo">
+                    <a href="${pageContext.request.contextPath}/movie/html/index.jsp"><img src="img/logo2.png" alt=""></a>
                 </div>
-                <div class="col-lg-6">
-                    <div class="footer__nav">
-                        <ul>
-                            <li class="active"><a href="./index.html">Homepage</a></li>
-                            <li><a href="./categories.html">Categories</a></li>
-                            <li><a href="./blog.html">Our Blog</a></li>
-                            <li><a href="#">Contacts</a></li>
-                        </ul>
-                    </div>
+            </div>
+            <div class="col-lg-6">
+                <div class="footer__nav">
+                    <ul>
+                        <li class="active"><a href="${pageContext.request.contextPath}/movie/html/index.jsp">홈</a></li>
+                        <li><a href="${pageContext.request.contextPath}/movie/html/default.jsp">고객센터</a></li>
+                        <li><a href="#">블로그</a></li>
+                       
+                    </ul>
                 </div>
-                <div class="col-lg-3">
-                    <p><!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
-                      Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved | This template is made with <i class="fa fa-heart" aria-hidden="true"></i> by <a href="https://colorlib.com" target="_blank">Colorlib</a>
-                      <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. --></p>
+            </div>
+            <div class="col-lg-3">
+                <p><!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+                  Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved | This template is made with <i class="fa fa-heart" aria-hidden="true"></i> by <a href="https://colorlib.com" target="_blank">Colorlib</a>
+                  <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. --></p>
 
-                  </div>
               </div>
           </div>
-      </footer>
-      <!-- Footer Section End -->
+      </div>
+  </footer>
+  <!-- Footer Section End -->
 
       <!-- Search model Begin -->
       <div class="search-model">

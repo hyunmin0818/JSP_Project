@@ -148,11 +148,11 @@
                 <div class="col-lg-12">
                     <div class="breadcrumb__links">
                         <!-- 홈 링크 -->
-                        <a href="./index.jsp"><i class="fa fa-home"></i> Home</a>
+                        <a href="${pageContext.request.contextPath}/movie/html/index.jsp"><i class="fa fa-home"></i> Home</a>
                         <!-- 카테고리 링크 -->
-                        <a href="./categories.jsp">Categories</a>
+                        <a href="${pageContext.request.contextPath}/movie/html/categories.jsp">Categories</a>
                         <!-- 현재 페이지 -->
-                        <span>Romance</span>
+                        <span>Movie</span>
                     </div>
                 </div>
             </div>
@@ -172,7 +172,7 @@
                             <div class="row">
                                 <div class="col-lg-8 col-md-8 col-sm-6">
                                     <div class="section-title">
-                                        <h4>Romance</h4>
+                                        <h4>Movie</h4>
                                     </div>
                                 </div>
                                 <div class="col-lg-4 col-md-4 col-sm-6">
@@ -623,31 +623,26 @@
 
 <!-- Footer Section Begin -->
 <footer class="footer">
-    <!-- 페이지 위로 이동 버튼 -->
     <div class="page-up">
         <a href="#" id="scrollToTopButton"><span class="arrow_carrot-up"></span></a>
     </div>
     <div class="container">
         <div class="row">
-            <!-- 로고 -->
             <div class="col-lg-3">
                 <div class="footer__logo">
-                    <a href="./index.html"><img src="img/logo.png" alt=""></a>
+                    <a href="${pageContext.request.contextPath}/movie/html/index.jsp"><img src="img/logo2.png" alt=""></a>
                 </div>
             </div>
-            <!-- 푸터 내비게이션 -->
             <div class="col-lg-6">
                 <div class="footer__nav">
                     <ul>
-                        <!-- 활성화된 페이지 -->
-                        <li class="active"><a href="./index.html">Homepage</a></li>
-                        <li><a href="./categories.html">Categories</a></li>
-                        <li><a href="./blog.html">Our Blog</a></li>
-                        <li><a href="#">Contacts</a></li>
+                        <li class="active"><a href="${pageContext.request.contextPath}/movie/html/index.jsp">홈</a></li>
+                        <li><a href="${pageContext.request.contextPath}/movie/html/default.jsp">고객센터</a></li>
+                        <li><a href="#">블로그</a></li>
+                       
                     </ul>
                 </div>
             </div>
-            <!-- 저작권 정보  절대 지우지말것 -->
             <div class="col-lg-3">
                 <p><!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
                   Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved | This template is made with <i class="fa fa-heart" aria-hidden="true"></i> by <a href="https://colorlib.com" target="_blank">Colorlib</a>

@@ -5,11 +5,11 @@
 <mapper namespace="User">
 
 <select id="submit" parameterType="hashmap" resultType="_int">
-	SELECT COUNT(*) FROM user WHERE user_id = #{user_id} AND USERPassWord = #{userpassword}
+   SELECT COUNT(*) FROM user WHERE user_id = #{user_id} AND USERPassWord = #{userpassword}
 </select>
 
 <select id="getList" parameterType="hashmap" resultType="userdto">
-	SELECT * FROM user WHERE user_id = #{user_id}
+   SELECT * FROM user WHERE user_id = #{user_id}
 </select>
 
  <insert id="join" parameterType="com.movie.web.dto.UserDTO">
@@ -17,7 +17,7 @@ INSERT INTO user VALUES (#{user_id},#{userpassword},#{username},#{email},#{userp
 </insert>
 
 <select id="checkId" parameterType="userdto" resultType="_int">
-	SELECT COUNT(*) FROM user WHERE user_id = #{user_id}
+   SELECT COUNT(*) FROM user WHERE user_id = #{user_id}
 </select>
 
 <select id="checkmovie" parameterType="hashmap" resultType="movieDTO">

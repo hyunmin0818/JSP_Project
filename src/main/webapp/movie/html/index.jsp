@@ -764,15 +764,15 @@
         <div class="row">
             <div class="col-lg-3">
                 <div class="footer__logo">
-                    <a href="./index.html"><img src="img/logo2.png" alt=""></a>
+                    <a href="./index.jsp"><img src="img/logo2.png" alt=""></a>
                 </div>
             </div>
             <div class="col-lg-6">
                 <div class="footer__nav">
                     <ul>
-                        <li class="active"><a href="./index.html">홈</a></li>
-                        <li><a href="#">고객센터</a></li>
-                        <li><a href="./blog.html">블로그</a></li>
+                        <li class="active"><a href="./index.jsp">홈</a></li>
+                        <li><a href="./default.jsp">고객센터</a></li>
+                        <li><a href="./blog.jsp">블로그</a></li>
                        
                     </ul>
                 </div>
