@@ -1,0 +1,10 @@
+/com/
+*.class
+*.classpath
+.settings/
+AWS/*.ppk
+putty
+/.metadata/
+*.class
+*.project
+*.jar
