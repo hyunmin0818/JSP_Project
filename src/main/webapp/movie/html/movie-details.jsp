@@ -1,5 +1,6 @@
 <%@page import="com.movie.web.dto.UserDTO"%>
 <%@page import="com.movie.web.dto.CommentDTO"%>
+<%@page import="com.movie.web.dto.MovieDTO"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
@@ -21,14 +22,14 @@
         rel="stylesheet">
 
     <!-- Css Styles -->
-    <link rel="stylesheet" href="css/bootstrap.min.css" type="text/css">
-    <link rel="stylesheet" href="css/font-awesome.min.css" type="text/css">
-    <link rel="stylesheet" href="css/elegant-icons.css" type="text/css">
-    <link rel="stylesheet" href="css/plyr.css" type="text/css">
-    <link rel="stylesheet" href="css/nice-select.css" type="text/css">
-    <link rel="stylesheet" href="css/owl.carousel.min.css" type="text/css">
-    <link rel="stylesheet" href="css/slicknav.min.css" type="text/css">
-    <link rel="stylesheet" href="css/style.css" type="text/css">
+    <link rel="stylesheet" href="${pageContext.request.contextPath}/css/bootstrap.min.css" type="text/css">
+    <link rel="stylesheet" href="${pageContext.request.contextPath}/css/font-awesome.min.css" type="text/css">
+    <link rel="stylesheet" href="${pageContext.request.contextPath}/css/elegant-icons.css" type="text/css">
+    <link rel="stylesheet" href="${pageContext.request.contextPath}/css/plyr.css" type="text/css">
+    <link rel="stylesheet" href="${pageContext.request.contextPath}/css/nice-select.css" type="text/css">
+    <link rel="stylesheet" href="${pageContext.request.contextPath}/css/owl.carousel.min.css" type="text/css">
+    <link rel="stylesheet" href="${pageContext.request.contextPath}/css/slicknav.min.css" type="text/css">
+    <link rel="stylesheet" href="${pageContext.request.contextPath}/css/style.css" type="text/css">
 </head>
 
 <body>
@@ -110,258 +111,48 @@
     <!-- Breadcrumb End -->
 
     <!-- Anime Section Begin -->
+    
     <section class="anime-details spad">
         <div class="container">
             <div class="anime__details__content">
+             <c:choose>
+             <c:when test="${movieInfo != null and fn:length(movieInfo) > 0 }">
+             <c:forEach var="movie" items="${movieList}">
                 <div class="row">
-                    <!-- 영화 이미지와 관련 정보 -->
                     <div class="col-lg-3">
-                        <div class="anime__details__pic set-bg" data-setbg="img/anime/popular-1.jpg"> <!--이미지-->
-                            <div class="comment"><i class="fa fa-comments"></i> 6</div> <!-- 댓글-->
-                            <div class="view"><i class="fa fa-eye"></i> 9141</div> <!-- 조회수-->
+                        <div class="anime__details__pic set-bg" data-setbg="movie${movie.movieSeq },${movie.posterUrl}">
+                            <div class="comment"><i class="fa fa-comments"></i> ${movie.comment }</div>
+                            <div class="view"><i class="fa fa-eye"></i> ${movie.views}</div>
                         </div>
                     </div>
-                    <!-- 영화 세부 정보 -->
                     <div class="col-lg-9">
                         <div class="anime__details__text">
                             <div class="anime__details__title">
-                                <!-- 영화 제목과 일본어 제목 -->
-                                <h3>파묘</h3>
-                                <span>장재현</span>
+                                <h3>${movie.title}</h3>
+                                <span>${movie.subtitle}</span>
                             </div>
-                            <!-- 영화 평점과 투표 수 -->
                             <div class="anime__details__rating">
                                 <div class="rating">
-                                    <a href="#"><i class="fa fa-star"></i></a>
-                                    <a href="#"><i class="fa fa-star"></i></a>
-                                    <a href="#"><i class="fa fa-star"></i></a>
-                                    <a href="#"><i class="fa fa-star"></i></a>
-                                    <a href="#"><i class="fa fa-star-half-o"></i></a>
+                                    <!-- 평점 별 표시 로직 -->
                                 </div>
-                                <span>1.029 Votes</span>
+                                <span>${movie.votes} Votes</span>
                             </div>
-                            <!-- 영화 설명 -->
-                            <p>미국 LA, 거액의 의뢰를 받은 무당 ‘화림’(김고은)과 ‘봉길’(이도현)은 기이한 병이 대물림되는 집안의 장손을 만난다.
-                                조상의 묫자리가 화근임을 알아챈 ‘화림’은 이장을 권하고, 돈 냄새를 맡은 최고의 풍수사 ‘상덕’(최민식)과 장의사
-                                ‘영근’(유해진)이 합류한다. “전부 잘 알 거야… 묘 하나 잘못 건들면 어떻게 되는지” 절대 사람이 묻힐 수 없는 악지에
-                                자리한 기이한 묘. ‘상덕’은 불길한 기운을 느끼고 제안을 거절하지만, ‘화림’의 설득으로 결국 파묘가 시작되고…
-                                나와서는 안될 것이 나왔다.</p>
-                            <!-- 영화 세부 정보 표 -->
-                            <div class="anime__details__widget">
-                                <div class="row">
-                                    <div class="col-lg-6 col-md-6">
-                                        <ul>
-                                            <li><span>유형:</span> TV Series</li> <!--유형-->
-                                            <li><span>회사:</span> ㈜쇼박스</li> <!--제작사-->
-                                            <li><span>개봉일:</span> 2024.02.22.</li> <!--방영일-->
-                                            <li><span>국가:</span> 한국</li> <!--국가-->
-                                            <li><span>장르:</span> 미스터리,공포</li> <!--장르-->
-                                        </ul>
-                                    </div>
-                                    <div class="col-lg-6 col-md-6">
-                                        <ul>
-                                            <li><span>배우:</span> 최민식,유해진,이도현,김고은</li> <!--배우-->
-                                            <li><span>평점:</span> 8.5 / 161 times</li> <!--평가-->
-                                            <li><span>상영시간:</span> 134 분</li> <!--재생시간-->
-                                            <li><span>등급:</span> 15세 관람가</li> <!--등급-->
-                                            <li><span>예매 인원:</span> 131,541</li> <!--조회수-->
-                                        </ul>
-                                    </div>
-                                </div>
-                            </div>
+                            <p>${movie.description}</p>
+                            <!-- 세부 정보 표시 -->
                             <!-- 영화 관련 버튼 -->
-                            <div class="anime__details__btn">
-                                <a href="#" class="follow-btn"><i class="fa fa-heart-o"></i> Follow</a>
-                                <a href="SeatPreview-master/index.html" class="watch-btn"><span>Watch Now</span> <i
-                                        class="fa fa-angle-right"></i></a>
-                                <a href="#" class="reservation">예 매</a>
-                                <a href="#" class="reservation" hidden>수정</a>
-                            </div>
                         </div>
                     </div>
                 </div>
-                <hr style=" border: none; border-top: 1px solid #08052e; width: 100%;   ">
-
-                <input type="button"  onclick="toggleList()" style="background-color: #e53637; margin-left: 50%; border-radius: 20px; " value="   +   ">
-                <ul id="list" style="display: none;"> <!-- 12 지우기-->
-                    <div class="dd" style="padding-top: 20px;"></div>
-                    
-                    <div class="container">
-                        <div class="col-lg-8">
-                            <div class="row">
-                                <div class="col-lg-8 col-md-8 col-sm-8">
-                                    <div class="section-title">
-                                        <h4>배우 </h4>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="acter_muri">
-                            
-                            <!-- 제품 아이템 -->
-                            <div class="acter__item">
-                                <!-- 제품 이미지 -->
-                                <div class="acter__item__pic set-bg" data-setbg="https://i.namu.wiki/i/-Vwf70AB-rZOm1EAfUEwPUXegg9e4G4EFNHp_ujJ7ouvRDrkFkuQMdKcSa-GfAM0sUhwGbonOdxNPnPtmXkgetUDkb5JSYj3kwqM6qiXu1tbrRoPks0BOyZflMeIeE6v-YG8yIr0WR-2CCVvt_lW8g.webp">
-                                </div>
-                                <!-- 제품 텍스트 -->
-                                <div class="acter__item__text">
-                                    <ul>
-                                        <li>Acter</li>
-                                        <li>Movie</li>
-                                    </ul>
-                                    <h5><a href="#">이도현 / 봉길</a></h5>
-                                </div>
-                            </div>
-                            <!-- 제품 아이템 -->
-                            <div class="acter__item">
-                                <!-- 제품 이미지 -->
-                                <div class="acter__item__pic set-bg" data-setbg="https://image.cine21.com/resize/cine21/person/2020/0812/2262[X252,310].jpg">
-                                </div>
-                                <!-- 제품 텍스트 -->
-                                <div class="acter__item__text">
-                                    <ul>
-                                        <li>Acter</li>
-                                        <li>Movie</li>
-                                    </ul>
-                                    <h5><a href="#">최만식 / 김상덕</a></h5>
-                                </div>
-                            </div>
-                            <!-- 제품 아이템 -->
-                            <div class="acter__item">
-                                <!-- 제품 이미지 -->
-                                <div class="acter__item__pic set-bg" data-setbg="img/trending/trend-1.jpg">
-                                </div>
-                                <!-- 제품 텍스트 -->
-                                <div class="acter__item__text">
-                                    <ul>
-                                        <li>Actr</li>
-                                        <li>Movie</li>
-                                        
-                                    </ul>
-                                    <h5><a href="#">이도현ㄴㄴㄴㄴ / 봉길ㄴㄴㄴㄴㄴㄴㄴㄴ</a></h5>
-                                </div>
-                            </div>
-                            <!-- 제품 아이템 -->
-                            <div class="acter__item">
-                                <!-- 제품 이미지 -->
-                                <div class="acter__item__pic set-bg" data-setbg="img/trending/trend-1.jpg">
-                                </div>
-                                <!-- 제품 텍스트 -->
-                                <div class="acter__item__text">
-                                    <ul>
-                                        <li>Acter</li>
-                                        <li>Movie</li>
-                                    </ul>
-                                    <h5><a href="#">이도현 / 봉길</a></h5>
-                                </div>
-                            </div>
-                            <!-- 제품 아이템 -->
-                            <div class="acter__item">
-                                <!-- 제품 이미지 -->
-                                <div class="acter__item__pic set-bg" data-setbg="img/trending/trend-1.jpg">
-                                </div>
-                                <!-- 제품 텍스트 -->
-                                <div class="acter__item__text">
-                                    <ul>
-                                        <li>Acter</li>
-                                        <li>Movie</li>
-                                    </ul>
-                                    <h5><a href="#">이도현 / 봉길</a></h5>
-                                </div>
-                            </div>
-                            <!-- 제품 아이템 -->
-                            <div class="acter__item">
-                                <!-- 제품 이미지 -->
-                                <div class="acter__item__pic set-bg" data-setbg="img/trending/trend-1.jpg">
-                                </div>
-                                <!-- 제품 텍스트 -->
-                                <div class="acter__item__text">
-                                    <ul>
-                                        <li>Acter</li>
-                                        <li>Movie</li>
-                                    </ul>
-                                    <h5><a href="#">이도현 / 봉길</a></h5>
-                                </div>
-                            </div>
-                            <!-- 제품 아이템 -->
-                            <div class="acter__item">
-                                <!-- 제품 이미지 -->
-                                <div class="acter__item__pic set-bg" data-setbg="img/trending/trend-1.jpg">
-                                </div>
-                                <!-- 제품 텍스트 -->
-                                <div class="acter__item__text">
-                                    <ul>
-                                        <li>Acter</li>
-                                        <li>Movie</li>
-                                    </ul>
-                                    <h5><a href="#">이도현 / 봉길</a></h5>
-                                </div>
-                            </div>
-                            <!-- 제품 아이템 -->
-                            <div class="acter__item">
-                                <!-- 제품 이미지 -->
-                                <div class="acter__item__pic set-bg" data-setbg="img/trending/trend-1.jpg">
-                                </div>
-                                <!-- 제품 텍스트 -->
-                                <div class="acter__item__text">
-                                    <ul>
-                                        <li>Acter</li>
-                                        <li>Movie</li>
-                                    </ul>
-                                    <h5><a href="#">이도현 / 봉길</a></h5>
-                                </div>
-                            </div>
-                            <!-- 제품 아이템 -->
-                            <div class="acter__item">
-                                <!-- 제품 이미지 -->
-                                <div class="acter__item__pic set-bg" data-setbg="img/trending/trend-1.jpg">
-                                </div>
-                                <!-- 제품 텍스트 -->
-                                <div class="acter__item__text">
-                                    <ul>
-                                        <li>Acter</li>
-                                        <li>Movie</li>
-                                    </ul>
-                                    <h5><a href="#">이도현 / 봉길</a></h5>
-                                </div>
-                            </div>
-                            <!-- 제품 아이템 -->
-                            <div class="acter__item">
-                                <!-- 제품 이미지 -->
-                                <div class="acter__item__pic set-bg" data-setbg="img/trending/trend-1.jpg">
-                                </div>
-                                <!-- 제품 텍스트 -->
-                                <div class="acter__item__text">
-                                    <ul>
-                                        <li>Acter</li>
-                                        <li>Movie</li>
-                                    </ul>
-                                    <h5><a href="#">이도현 / 봉길</a></h5>
-                                </div>
-                            </div>
-                            <!-- 제품 아이템 -->
-                            <div class="acter__item">
-                                <!-- 제품 이미지 -->
-                                <div class="acter__item__pic set-bg" data-setbg="img/trending/trend-1.jpg">
-                                </div>
-                                <!-- 제품 텍스트 -->
-                                <div class="acter__item__text">
-                                    <ul>
-                                        <li>Acter</li>
-                                        <li>Movie</li>
-                                    </ul>
-                                    <h5><a href="#">이도현 / 봉길</a></h5>
-                                </div>
-                            </div>
-
-                            
-                            
-
-                        </div>
-                    </div>
-                </ul>
-            </div>
+                <hr style="border: none; border-top: 1px solid #08052e; width: 100%;">
+            </c:forEach> <!-- 반복 종료 -->
+            </c:when>
+            <c:otherwise>
+            	<hr style="border: none; border-top: 1px solid #08052e; width: 100%;"><span style ="color:white">상세 정보가 없습니다.</span></hr>
+            </c:otherwise>
+            </c:choose>
+        </div>
+    </div>
+</div>
         <!-- 리뷰 목록 -->
         <div class="row">
             <div class="col-lg-8 col-md-8">
@@ -379,8 +170,8 @@
                         </div>
                         <div class="movie__review__item__text">
                             <h6> ${comment.user_id}<span>${comment.commentTime}</span></h6>
-                            <p>${comment.comment }</p>
-                            <input type="button" value="삭제" class="delete" id="deleteButton" hidden>
+                            <p>${comment.comment}</p>
+                            <input type="button" value="삭제" class="delete" id="deleteButton" hidden=>
                         </div>
                         <!-- 컨텐츠 있으면 뽑아오기 -->
                  	</div>
@@ -389,7 +180,7 @@
                 	</c:forEach>
                 	</c:when>
                 	<c:otherwise>
-                		<div class="anime__review__item__text">
+                		<div class="movie__review__item__text">
                             <h6 align="center"> 댓글이 없습니다. </h6>
                        
                     	</div>
@@ -555,14 +346,14 @@ document.querySelector('.acter_muri').addEventListener('mousemove', (e) => {
         
     
     </script>
-    <script src="js/jquery-3.3.1.min.js"></script>
-    <script src="js/bootstrap.min.js"></script>
-    <script src="js/player.js"></script>
-    <script src="js/jquery.nice-select.min.js"></script>
-    <script src="js/mixitup.min.js"></script>
-    <script src="js/jquery.slicknav.js"></script>
-    <script src="js/owl.carousel.min.js"></script>
-    <script src="js/main.js"></script>
+    <script src="${pageContext.request.contextPath}/js/jquery-3.3.1.min.js"></script>
+    <script src="${pageContext.request.contextPath}/js/bootstrap.min.js"></script>
+    <script src="${pageContext.request.contextPath}/js/player.js"></script>
+    <script src="${pageContext.request.contextPath}/js/jquery.nice-select.min.js"></script>
+    <script src="${pageContext.request.contextPath}/js/mixitup.min.js"></script>
+    <script src="${pageContext.request.contextPath}/js/jquery.slicknav.js"></script>
+    <script src="${pageContext.request.contextPath}/js/owl.carousel.min.js"></script>
+    <script src="${pageContext.request.contextPath}/js/main.js"></script>
 
 </body>
 

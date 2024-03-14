@@ -43,7 +43,20 @@ public class MovieDAO {
 			
 			
 		}
+	public List<MovieDTO> getMovieInfo(String movieSeq){
+		List<MovieDTO> movieInfo = null;
+		try {
+			movieInfo = sqlSession.selectList("Movie.getMovieInfo", movieSeq);
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+		
+		return movieInfo;
+		
+	}
+	
 	
 	}
+	
 	   
 	

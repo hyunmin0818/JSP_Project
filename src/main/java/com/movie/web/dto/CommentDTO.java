@@ -7,7 +7,7 @@ public class CommentDTO {
 	private String user_id;
 	private String operator_id;
 	private String comment;
-    private LocalDateTime commentTime;
+    private LocalDateTime comment_time;
     private String movieSeq;
     
 	public int getComment_id() {
@@ -35,10 +35,10 @@ public class CommentDTO {
 		this.comment = comment;
 	}
 	public LocalDateTime getCommentTime() {
-		return commentTime;
+		return comment_time;
 	}
-	public void setCommentTime(LocalDateTime commentTime) {
-		this.commentTime = commentTime;
+	public void setCommentTime(LocalDateTime comment_time) {
+		this.comment_time = comment_time;
 	}
 	public String getMovieSeq() {
 		return movieSeq;

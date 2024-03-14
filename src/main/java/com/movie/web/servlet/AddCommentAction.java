@@ -30,7 +30,7 @@ public class AddCommentAction implements Action{
 
             // CommentDAO의 insertComment 메서드를 호출하여 댓글 추가
             CommentDAO commentDAO = new CommentDAO(); 
-            boolean result = commentDAO.insertComment(1, user_id, comment);
+            boolean result = commentDAO.insertComment( user_id, comment);
 
             if (result) {
                 // 댓글 추가 성공 시, 원래 페이지로 리다이렉트

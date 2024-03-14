@@ -11,8 +11,8 @@
     ORDER BY c.commentTime DESC
 </select>
 <insert id="insertComment"  parameterType="hashmap">
-	 INSERT INTO comment (comment_id, user_id, operator_id, comment, comment_time, movieSeq)
-        VALUES (#{comment_id},#{user_id}, #{operator_id}, #{comment}, NOW(), #{movieSeq})
+	INSERT INTO comment (comment_id, user_id, operator_id, comment, comment_time, movieSeq)
+        VALUES (#{comment_id},#{user_id},null, #{comment}, NOW(), #{movieSeq})
 </insert>
 <delete id="deleteCoIfUserIsOperator" parameterType="map">
     DELETE FROM comment
