@@ -50,13 +50,13 @@
                         <nav class="header__menu mobile-menu">
                             <ul>
 
-                                <li class="active"><a href="./index.jsp">홈</a></li>    
-                                <li><a href="./categories.jsp">영화<span class="arrow_carrot-down"></span></a>
-                                    <ul class="dropdown">
+                                <li ><a href="./index.jsp">홈</a></li>    
+                                <li class="active"><a href="./categories.jsp">영화</span></a>
+                                    <!-- <ul class="dropdown">
                                         <li><a href="./categories.jsp">현재 상영작</a></li>
                                         <li><a href="./categories.jsp">상영 예정작</a></li>
-                                        <!-- <li><a href="./anime-watching.html">트레일러 </a></li> -->
-                                    </ul>
+                                        <li><a href="./anime-watching.html">트레일러 </a></li>
+                                    </ul> -->
                                 </li>
 
                       <!--           <li><a href="./anime-details.html">극장정보</a></li>
@@ -194,7 +194,7 @@
                                 <div class="product__item">
                                      <!-- 제품 이미지 -->
                                     <div class="product__item__pic set-bg" data-setbg="img/popular/popular-1.jpg"
-                                    onclick="window.location.href='anime-details.html'">
+                                    onclick="window.location.href='movie-details.jsp'">
                                         <!-- 댓글 수 -->
                                         <div class="comment"><i class="fa fa-comments"></i> 6</div>
                                         <!-- 조회 수 -->
@@ -211,7 +211,7 @@
                                             <input type="button" value="삭제" class="delete" id="deleteButton" style="display: none;" >
                                         </ul>
                                         <!-- 제목 -->
-                                        <h5><a href="anime-details.html">파묘</a></h5>
+                                        <h5><a href="movie-details.jsp">파묘</a></h5>
                                     </div>
                                 </div>
                                 <!-- 제품 항목 끝 -->

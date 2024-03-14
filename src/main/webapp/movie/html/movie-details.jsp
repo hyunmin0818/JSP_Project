@@ -325,94 +325,7 @@
                                     <h5><a href="#">이도현 / 봉길</a></h5>
                                 </div>
                             </div>
-                            <!-- 제품 아이템 -->
-                            <div class="acter__item">
-                                <!-- 제품 이미지 -->
-                                <div class="acter__item__pic set-bg" data-setbg="img/trending/trend-1.jpg">
-                                </div>
-                                <!-- 제품 텍스트 -->
-                                <div class="acter__item__text">
-                                    <ul>
-                                        <li>Acter</li>
-                                        <li>Movie</li>
-                                    </ul>
-                                    <h5><a href="#">이도현 / 봉길</a></h5>
-                                </div>
-                            </div>
-                            <!-- 제품 아이템 -->
-                            <div class="acter__item">
-                                <!-- 제품 이미지 -->
-                                <div class="acter__item__pic set-bg" data-setbg="img/trending/trend-1.jpg">
-                                </div>
-                                <!-- 제품 텍스트 -->
-                                <div class="acter__item__text">
-                                    <ul>
-                                        <li>Acter</li>
-                                        <li>Movie</li>
-                                    </ul>
-                                    <h5><a href="#">이도현 / 봉길</a></h5>
-                                </div>
-                            </div>
-                            <!-- 제품 아이템 -->
-                            <div class="acter__item">
-                                <!-- 제품 이미지 -->
-                                <div class="acter__item__pic set-bg" data-setbg="img/trending/trend-1.jpg">
-                                </div>
-                                <!-- 제품 텍스트 -->
-                                <div class="acter__item__text">
-                                    <ul>
-                                        <li>Acter</li>
-                                        <li>Movie</li>
-                                    </ul>
-                                    <h5><a href="#">이도현 / 봉길</a></h5>
-                                </div>
-                            </div>
-                            <!-- 제품 아이템 -->
-                            <div class="acter__item">
-                                <!-- 제품 이미지 -->
-                                <div class="acter__item__pic set-bg" data-setbg="img/trending/trend-1.jpg">
-                                </div>
-                                <!-- 제품 텍스트 -->
-                                <div class="acter__item__text">
-                                    <ul>
-                                        <li>Acter</li>
-                                        <li>Movie</li>
-                                    </ul>
-                                    <h5><a href="#">이도현 / 봉길</a></h5>
-                                </div>
-                            </div>
-                            <!-- 제품 아이템 -->
-                            <div class="acter__item">
-                                <!-- 제품 이미지 -->
-                                <div class="acter__item__pic set-bg" data-setbg="img/trending/trend-1.jpg">
-                                </div>
-                                <!-- 제품 텍스트 -->
-                                <div class="acter__item__text">
-                                    <ul>
-                                        <li>Acter</li>
-                                        <li>Movie</li>
-                                    </ul>
-                                    <h5><a href="#">이도현 / 봉길</a></h5>
-                                </div>
-                            </div>
-                            <!-- 제품 아이템 -->
-                            <div class="acter__item">
-                                <!-- 제품 이미지 -->
-                                <div class="acter__item__pic set-bg" data-setbg="img/trending/trend-1.jpg">
-                                </div>
-                                <!-- 제품 텍스트 -->
-                                <div class="acter__item__text">
-                                    <ul>
-                                        <li>Acter</li>
-                                        <li>Movie</li>
-                                    </ul>
-                                    <h5><a href="#">이도현 / 봉길</a></h5>
-                                </div>
-                            </div>
-
-                            
-                            
-
+         
                         </div>
                     </div>
                 </ul>
@@ -463,7 +376,7 @@
                 </div>
             </div>
             <!-- 사이드바 영역 -->
-            <div class="col-lg-4 col-md-4">
+            <div class="col-lg-4 col-md-4" style="width: 100%;">
                 <div class="anime__details__sidebar">
                     <div class="section-title">
                         <h5>you might like...</h5>
