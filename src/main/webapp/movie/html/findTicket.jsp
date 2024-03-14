@@ -54,47 +54,136 @@
 	</div>
 
 	<!-- Header Section Begin -->
-	<header class="header">
-		<div class="container">
-			<div class="row">
-				<div class="col-lg-2">
-					<div class="header__logo">
-						<a href="./index.html"> <img src="img/logo2.png" alt="">
-						</a>
-					</div>
-				</div>
-				<div class="col-lg-8">
-					<div class="header__nav">
-						<nav class="header__menu mobile-menu">
-							<ul>
-								<li><a href="./index.html">Homepage</a></li>
-								<li><a href="./categories.html">Categories <span
-										class="arrow_carrot-down"></span></a>
-									<ul class="dropdown">
-										<li><a href="./categories.html">Categories</a></li>
-										<li><a href="./anime-details.html">Anime Details</a></li>
-										<li><a href="./anime-watching.html">Anime Watching</a></li>
-										<li><a href="./blog-details.html">Blog Details</a></li>
-										<li><a href="./signup.html">Sign Up</a></li>
-										<li><a href="./login.html">Login</a></li>
-									</ul></li>
-								<li><a href="./blog.html">Our Blog</a></li>
-								<li><a href="#">Contacts</a></li>
-							</ul>
-						</nav>
-					</div>
-				</div>
+    <header class="header">
+        <div class="container">
+            <div class="row">
+                <!-- 로고 -->
+                <div class="col-lg-2">
+                    <div class="header__logo">
+                        <a href="${pageContext.request.contextPath}/movie/html/loginOk_index.jsp">
+                            <img src="img/logo2.png" id="logo2" alt="">
+                        </a>
+                    </div>
+                </div>
+                <!-- 네비게이션 메뉴 -->
+                <div class="col-lg-8">
+                    <div class="header__nav">
+                        <nav class="header__menu mobile-menu">
+                            <ul>
+                                <!-- 홈페이지로 이동하는 링크 -->
+                                <li class="active"><a href="${pageContext.request.contextPath}/movie/html/loginOk_index.jsp">홈</a></li>
+                                <!-- 카테고리 메뉴 -->
+                                <li><a href="${pageContext.request.contextPath}/movie/html/categories.jsp">영화<span class="arrow_carrot-down"></span></a>
+                                    <ul class="dropdown">
+                                        <li><a href="${pageContext.request.contextPath}/movie/html//categories.jsp">현재 상영작</a></li>
+                                        <li><a href="${pageContext.request.contextPath}/movie/html//categories.jsp">상영 예정작</a></li>
+                                        <!-- <li><a href="./anime-watching.html">트레일러 </a></li> -->
+                                       
+                                    </ul>
+                                </li>
+                                
+                               <!--  <li><a href="./anime-details.html">극장정보</a></li> -->
+
+                                <!-- <li><a href="./categories.html">예매<span class="arrow_carrot-down"></span></a>
+                                    <ul class="dropdown">
+                                        <li><a href="#">예매하기</a></li>
+                                        <li><a href="#">예매내역</a></li>
+                                        <li><a href="#">빠른예매</a></li>
+                                        <li><a href="#">상영시간표</a></li>    
+                                    </ul>    -->
+                                    
+                                    
+                                <li><a href="${pageContext.request.contextPath}/movie/html/notice.jsp">게시판<span class="arrow_carrot-down"></span></a>
+                                    <ul class="dropdown">
+                                        <li><a href="${pageContext.request.contextPath}/movie/html/notice.jsp">공지사항</a></li>
+                                        <li><a href="${pageContext.request.contextPath}/movie/html/notice.jsp">이벤트</a></li>
+                                 
+                                       
+                                        <!-- 카테고리 관련 페이지로 이동하는 링크
+                                        <li><a href="./categories.html">차트/상영예정작</a></li>
+                                        <li><a href="./blog-details.html">예매</a></li>
+                                        <li><a href="./anime-details.html">상세정보</a></li>
+                                        <li><a href="./anime-watching.html">티저</a></li>
+                                        <li><a href="./signup.html">회원가입</a></li>
+                                        <li><a href="./login.html">로그인</a></li> -->
+                                    </ul>
+                                </li>
+
+
+
+                                <li><a href="${pageContext.request.contextPath}/movie/html/default.jsp">고객문의<span class="arrow_carrot-down"></span></a>
+                                    <ul class="dropdown">
+                                        <li><a href="${pageContext.request.contextPath}/movie/html/defaut.jsp">고객센터</a></li>
+                                        <li><a href="#">주변 영화관 찾기</a></li>
+                                    </ul>
+                                </li>
+
+
+                              <!-- 대형 영화 사이트 참고한 양식 (스토어, 이벤트, 혜택)-->
+                              <!-- 시간이 남으면 추가해보는걸로 -->
+
+
+                                <!-- <li><a href="#">스토어</a></li>      
+
+                                <li><a href="./categories.html">이벤트<span class="arrow_carrot-down"></span></a>
+                                    <ul class="dropdown">
+                                        <li><a href="#">이벤트</a></li>
+                                        <li><a href="#">당첨자</a></li>
+                                    </ul>
+                                </li>
+
+
+
+                                <li><a href="./blog.html">혜택</a></li> -->
+
+
+                            </ul>
+                        </nav>
+                    </div>
+                </div>
+
+
 				<div class="col-lg-2">
 					<div class="header__right">
 						<a href="#" class="search-switch"><span class="icon_search"></span></a>
-						<a href="./login.html"><span class="icon_profile"></span></a>
+						<span
+							class="icon_profile arrow fa dropdown-toggle active arrow_carrot-down"
+							id="dropdown-toggle" data-bs-toggle="dropdown"
+							aria-expanded="false"></span>
+						<ul class="dropup-center dropup dropdown-menu"
+							aria-labelledby="dropdown-toggle">
+							<li><a
+								href="${pageContext.request.contextPath}/movie/mypage.ms"><span
+									class="dropdown-item">마이페이지</span></a></li>
+							<li><hr class="dropdown-divider"></hr></li>
+							<li> <a href="${pageContext.request.contextPath}/movie/html/findTicket.jsp"><span class="dropdown-item" id="redtext">예매내역</span></a></li> 
+                       <!--  <li> <a href="#"><span class="dropdown-item" id="redtext">팔로우</span></a></li>  -->
+                        <li> <a href="${pageContext.request.contextPath}/movie/html/request.jsp"><span class="dropdown-item" id="redtext">내 문의내역</span></a></li> 
+                        <!-- <li> <a href="#"><span class="dropdown-item" id="redtext">쿠폰함(미구현)</span></a></li>  -->
+							<li><a href="${pageContext.request.contextPath}/movie/logout.ms"><span class="dropdown-item"
+									id="redtext">로그아웃</span></a></li>
+						</ul>
+						<a href="${pageContext.request.contextPath}/movie/mypage.ms" id="youNeedLogin">${sessionscope.userinfo.user_id}</a>
 					</div>
 				</div>
+
+
+
+
+
+
+
+
+
+
 			</div>
-			<div id="mobile-menu-wrap"></div>
-		</div>
-	</header>
-	<!-- Header End -->
+            <div id="mobile-menu-wrap"></div>
+        </div>
+    </header>
+
+
+
+    <!-- Header End -->
 
 	<!-- Normal Breadcrumb Begin -->
 	<section class="normal-breadcrumb set-bg" data-setbg="img/cinema.jpg">
@@ -162,7 +251,7 @@
 									<br>
 									<div class="input__item1">
 										<h5 class="whitetext">극장(DB)</h5>
-										ㅇ
+									
 										<!--  <div class="input__item"></div>
                             <input type="text" placeholder="법정생년월일 6자리를 입력해주세요" value ="0123456(생년월일 DB값으로 수정해주세요)" disabled>
                             <span class="icon_lock"></span> -->
@@ -256,7 +345,7 @@
 			<div class="row">
 				<div class="col-lg-3">
 					<div class="footer__logo">
-						<a href="${pageContext.request.contextPath}/movie/html/index.jsp"><img
+						<a href="${pageContext.request.contextPath}/movie/html/loginOk_index.jsp"><img
 							src="img/logo2.png" alt=""></a>
 					</div>
 				</div>
@@ -264,7 +353,7 @@
 					<div class="footer__nav">
 						<ul>
 							<li class="active"><a
-								href="${pageContext.request.contextPath}/movie/html/index.jsp">홈</a></li>
+								href="${pageContext.request.contextPath}/movie/html/loginOk_index.jsp">홈</a></li>
 							<li><a
 								href="${pageContext.request.contextPath}/movie/html/default.jsp">고객센터</a></li>
 							<li><a href="#">블로그</a></li>

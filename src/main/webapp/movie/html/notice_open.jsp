@@ -198,11 +198,12 @@
                 </tbody>
             </table>
             <textarea  id="plot">${board.boardcontents }</textarea>
+              <!-- 버튼 2개 운영자 전용입니다. hiden 일시적으러 안넣었습니다 -->
               <div class="anime__details__btn">
-                <input type="submit" class="reservation" onclick="submitForm(event)" value="삭제">
+                <input type="submit" class="reservation" onclick="noiticesubmit(event)" value="삭제">
             </div>
             <div class="anime__details__btn">
-                <input type="submit" class="reservation" onclick="noiticesubmit(event)" value="수정">
+                <input type="submit" class="reservation" onclick="submitForm(event)" value="수정">
             </div>
         </div>
         <!-- //UI Object -->

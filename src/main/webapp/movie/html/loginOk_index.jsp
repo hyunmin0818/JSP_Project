@@ -191,7 +191,7 @@
                                 <!-- 내용 -->
                                <p>험한 것이 나왔다...</p>
                                <!-- 시청 버튼 -->  
-                               <a href="SeatPreview-master/index.html"><span>Watch Now</span> <i class="fa fa-angle-right"></i></a>
+                               <a href="${pageContext.request.contextPath}/movie/html/SeatPreview-master/index.jsp"><span>Watch Now</span> <i class="fa fa-angle-right"></i></a>
                            </div>
                        </div>
                    </div>

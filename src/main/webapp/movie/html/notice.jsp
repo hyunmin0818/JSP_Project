@@ -287,7 +287,7 @@
                                         for="chk_sel10">선택</label>
                                 </td>
                                 <td class="num">4</td>
-                                <td class="title"><a href="./notice_open.html">블로그 개편 작업 일정 1</a></td>
+                                <td class="title"><a href="${pageContext.request.contextPath}/movie/html/notice_open.jsp">블로그 개편 작업 일정 1</a></td>
                                 <td><a href="#">UIT랩</a></td>
                                 <td class="date">2008/02/14</td>
                                 <td class="hit">12345</td>
