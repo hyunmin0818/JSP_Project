@@ -112,7 +112,7 @@
                             </div>
                             <div class="input__item">
                                
-                                <input type="text" class ="blacktext" placeholder="아이디를 입력해주세요" id="user_id" name="userid">
+                                <input type="text" class ="blacktext" placeholder="아이디를 입력해주세요" id="user_id" name="user_id">
                                 <span class="icon_mail"></span>
                                 
                             </div>

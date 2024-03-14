@@ -50,7 +50,7 @@ public class UserFrontController extends HttpServlet{
 			forward = new UpdateMyPageAction().execute(request ,response);
 			break;
 		case "/movie/checkId.ms" : 
-			forward = new CheckIdAction().execute(request ,response);
+			//forward = new CheckIdAction().execute(request ,response);
 			break;
 		case "/movie/joinOk.ms" :
 			forward = new JoinOkAction().execute(request ,response);
