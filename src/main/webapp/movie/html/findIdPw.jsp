@@ -29,20 +29,19 @@
 </head>
 
 <body>
-
     <!-- Page Preloder -->
     <div id="preloder">
         <div class="loader"></div>
     </div>
 
-    <!-- Header Section Begin -->
+   <!-- Header Section Begin -->
     <header class="header">
         <div class="container">
             <div class="row">
                 <div class="col-lg-2">
                     <div class="header__logo">
                         <a href="./index.jsp">
-                            <img src="img/logo2.png" id="logo2" alt="">
+                            <img src="img/logo.png" id="logo" alt="">
                         </a>
                     </div>
                 </div>
@@ -148,7 +147,7 @@
             <div class="row">
                 <div class="col-lg-12 text-center">
                     <div class="normal__breadcrumb__text">
-                        <h2>로그인</h2>
+                        <h2>아이디/비밀번호 찾기</h2>
                         <p>영화 사이트에 오신걸 환영합니다</p>
                     </div>
                 </div>
@@ -158,67 +157,82 @@
     <!-- Normal Breadcrumb End -->
 
     <!-- Login Section Begin -->
-    <section class="login spad">
+    <section class="login spad" align ="center">
         <div class="container">
-            <div class="row">
+            <div class="row" >
                 <div class="col-lg-6">
                     <div class="login__form">
-                        <h3>Login</h3>
-						<c:if test="${not empty param.flag}">
-							<c:if test="${not param.flag}">
-								<script>
-									alert("아이디나 비밀번호를 확인하세요");
-								</script>
-							</c:if>
-						</c:if>
-						<form action="${pageContext.request.contextPath}/SubmitOk.ms" method="post">
+                        <h3>아이디 찾기</h3>
+                        <form action="#">
                             <div class="input__item">
-                                <input type="text" placeholder="아이디" id="user_id" name="user_id" value="">
-                                <span class="icon_id"></span>
+                                <input type="text" placeholder="이름을 입력해주세요"> 
+                                <span class="icon_mail"></span>
                             </div>
                             <div class="input__item">
-                                <input type="password" placeholder="비밀번호" id="userpassword" name="userpassword">
+                                <input type="text" placeholder="법정생년월일 6자리를 입력해주세요">
                                 <span class="icon_lock"></span>
                             </div>
-                           
-                            
-                            <div class="findIdPw_link" align="center"> 
-                                <label><input type="checkbox" id="check_saveId"> <a class="whitetext" id="saveId">아이디 저장</a></label><t>|</t>
-                                <a href="./findId.jsp" >아이디 찾기 </a>| 
-                               
-                                <a href="./findPw.jsp">비밀번호 찾기</a>
+
+                            <div class="input__item">
+                                <input type="text" placeholder="휴대번호 뒤 7~8자리를 입력해주세요.(01X제외)">
+                                <span class="icon_mail"></span>
                             </div>
-                            <button type="submit" class="site-btn">로그인</button>                 
-                         
-                          
+                            
+ 
+
+                            <button type="submit" class="site-btn">가입</button>
                         </form>
-                        
-                        
+                     <br>
+                     
                     </div>
-                    
-                    
+                    <a href="#" class="forget_pass" align="center">Forgot Your Password?</a>
+                  
                 </div>
-               
-        
+
+
                 <div class="col-lg-6">
-                    <div class="login__register" align="center">
-                        <h3>계정이 없습니까?</h3>
-                        <a href="join.jsp" class="primary-btn">회원가입</a><br>
-                       
+                    <div class="login__form">
+                        <h3>비밀번호 찾기</h3>
+                        <form action="#">
+                            <div class="input__item">
+                                <input type="text" placeholder="이름을 입력해주세요"> 
+                                <span class="icon_mail"></span>
+                            </div>
+                            <div class="input__item">
+                                <input type="text" placeholder="법정생년월일 6자리를 입력해주세요">
+                                <span class="icon_lock"></span>
+                            </div>
+
+                            <div class="input__item">
+                                <input type="text" placeholder="휴대번호 뒤 7~8자리를 입력해주세요.(01X제외)">
+                                <span class="icon_mail"></span>
+                            </div>
+                            
+ 
+
+                            <button type="submit" class="site-btn">가입</button>
+                        </form>
+                     <br>
+                     
                     </div>
-                    <br>
-                    <div class="login__register" align="center">
-                         <h3>관리자 로그인</h3> -
-                        <a href="./manager.jsp" class="primary-btn">관리자</a><br>
-                       
-                    </div>
-          
+                    <a href="#" class="forget_pass" align="center">Forgot Your Password?</a>
+                  
                 </div>
                 
-            </div>
-            <div class="login__social">
-             
+            
 
+                
+            </div>
+
+
+         
+                
+
+
+
+
+
+            <div class="login__social">
                 <div class="row d-flex justify-content-center">
                     <div class="col-lg-6">
                         <div class="login__social__links">
@@ -238,38 +252,38 @@
     </section>
     <!-- Login Section End -->
 
-    <!-- Footer Section Begin -->
-    <footer class="footer">
-        <div class="page-up">
-            <a href="#" id="scrollToTopButton"><span class="arrow_carrot-up"></span></a>
-        </div>
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-3">
-                    <div class="footer__logo">
-                        <a href="./index.html"><img src="img/logo.png" alt=""></a>
-                    </div>
+  <!-- Footer Section Begin -->
+<footer class="footer">
+    <div class="page-up">
+        <a href="#" id="scrollToTopButton"><span class="arrow_carrot-up"></span></a>
+    </div>
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-3">
+                <div class="footer__logo">
+                    <a href="${pageContext.request.contextPath}/movie/html/index.jsp"><img src="img/logo2.png" alt=""></a>
                 </div>
-                <div class="col-lg-6">
-                    <div class="footer__nav">
-                        <ul>
-                            <li class="active"><a href="./index.html">Homepage</a></li>
-                            <li><a href="./categories.html">Categories</a></li>
-                            <li><a href="./blog.html">Our Blog</a></li>
-                            <li><a href="#">Contacts</a></li>
-                        </ul>
-                    </div>
+            </div>
+            <div class="col-lg-6">
+                <div class="footer__nav">
+                    <ul>
+                        <li class="active"><a href="${pageContext.request.contextPath}/movie/html/index.jsp">홈</a></li>
+                        <li><a href="${pageContext.request.contextPath}/movie/html/default.jsp">고객센터</a></li>
+                        <li><a href="#">블로그</a></li>
+                       
+                    </ul>
                 </div>
-                <div class="col-lg-3">
-                    <p><!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
-                      Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved | This template is made with <i class="fa fa-heart" aria-hidden="true"></i> by <a href="https://colorlib.com" target="_blank">Colorlib</a>
-                      <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. --></p>
+            </div>
+            <div class="col-lg-3">
+                <p><!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+                  Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved | This template is made with <i class="fa fa-heart" aria-hidden="true"></i> by <a href="https://colorlib.com" target="_blank">Colorlib</a>
+                  <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. --></p>
 
-                  </div>
               </div>
           </div>
-      </footer>
-      <!-- Footer Section End -->
+      </div>
+  </footer>
+  <!-- Footer Section End -->
 
       <!-- Search model Begin -->
       <div class="search-model">
@@ -291,7 +305,7 @@
     <script src="${pageContext.request.contextPath}/movie/html/js/jquery.slicknav.js"></script>
     <script src="${pageContext.request.contextPath}/movie/html/js/owl.carousel.min.js"></script>
     <script src="${pageContext.request.contextPath}/movie/html/js/main.js"></script>
-    <script src="${pageContext.request.contextPath}/movie/html/js/login.js"></script>
+
 
 </body>
 

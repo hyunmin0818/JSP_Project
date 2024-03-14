@@ -15,7 +15,7 @@
     <!-- Google Font -->
     <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Mulish:wght@300;400;500;600;700;800;900&display=swap"
-    rel="stylesheet">
+        rel="stylesheet">
 
     <!-- Css Styles -->
     <link rel="stylesheet" href="${pageContext.request.contextPath}/movie/html/css/bootstrap.min.css" type="text/css">
@@ -29,7 +29,7 @@
 </head>
 
 <body>
-
+    <!-- 페이지 로딩시 보여지는 로딩 스피너 -->
     <!-- Page Preloder -->
     <div id="preloder">
         <div class="loader"></div>
@@ -142,139 +142,91 @@
 
     <!-- Header End -->
 
-    <!-- Normal Breadcrumb Begin -->
-    <section class="normal-breadcrumb set-bg" data-setbg="img/cinema.jpg">
+    <!-- Breadcrumb Begin -->
+    <div class="breadcrumb-option">
         <div class="container">
             <div class="row">
-                <div class="col-lg-12 text-center">
-                    <div class="normal__breadcrumb__text">
-                        <h2>로그인</h2>
-                        <p>영화 사이트에 오신걸 환영합니다</p>
+                <div class="col-lg-12">
+                    <div class="breadcrumb__links">
+                        <!-- 홈으로 이동하는 링크 -->
+                        <a href="${pageContext.request.contextPath}/movie/html/index.jsp"><i class="fa fa-home"></i> Home</a>
+                        <!-- 카테고리 페이지로 이동하는 링크 -->
+                        <a href="${pageContext.request.contextPath}/movie/html/default.jsp">고객센터</a>
+                        <!-- 현재 페이지의 카테고리 이름을 표시하는 부분 -->
+                        <span>문의</span>
                     </div>
                 </div>
             </div>
         </div>
-    </section>
-    <!-- Normal Breadcrumb End -->
+    </div>
+    <!-- Breadcrumb End -->
 
-    <!-- Login Section Begin -->
-    <section class="login spad">
+    <!-- Anime Section Begin -->
+    <section class="anime-details spad">
         <div class="container">
-            <div class="row">
-                <div class="col-lg-6">
-                    <div class="login__form">
-                        <h3>Login</h3>
-						<c:if test="${not empty param.flag}">
-							<c:if test="${not param.flag}">
-								<script>
-									alert("아이디나 비밀번호를 확인하세요");
-								</script>
-							</c:if>
-						</c:if>
-						<form action="${pageContext.request.contextPath}/SubmitOk.ms" method="post">
-                            <div class="input__item">
-                                <input type="text" placeholder="아이디" id="user_id" name="user_id" value="">
-                                <span class="icon_id"></span>
+            <div class="anime__details__content">
+                <div class="row">
+                    <form action="#" method="post">
+                        <div class="col-lg-9">
+                            <div class="anime__default">
+                                <div class="anime__details__title">
+                                    <!-- 고객센터 문의내역-->
+                                    <h3>제목</h3><input type="text" id="title" style="width: 1000px;">
+                                <!-- 상세내용 -->
+                                상세 내용:
+                                <textarea style="width: 1000px; height: 400px; overflow: auto;" id="plot"></textarea>
+                                <div class="anime__details__pic set-bg" data-setbg=""> <!--이미지-->
+                                <!--     -->
+                                <div class="anime__details__btn">
+                                    <input type="submit" class="reservation" onclick="submitForm(event)">
+                                </div>
                             </div>
-                            <div class="input__item">
-                                <input type="password" placeholder="비밀번호" id="userpassword" name="userpassword">
-                                <span class="icon_lock"></span>
-                            </div>
-                           
-                            
-                            <div class="findIdPw_link" align="center"> 
-                                <label><input type="checkbox" id="check_saveId"> <a class="whitetext" id="saveId">아이디 저장</a></label><t>|</t>
-                                <a href="./findId.jsp" >아이디 찾기 </a>| 
-                               
-                                <a href="./findPw.jsp">비밀번호 찾기</a>
-                            </div>
-                            <button type="submit" class="site-btn">로그인</button>                 
-                         
-                          
-                        </form>
-                        
-                        
-                    </div>
-                    
-                    
-                </div>
-               
-        
-                <div class="col-lg-6">
-                    <div class="login__register" align="center">
-                        <h3>계정이 없습니까?</h3>
-                        <a href="join.jsp" class="primary-btn">회원가입</a><br>
-                       
-                    </div>
-                    <br>
-                    <div class="login__register" align="center">
-                         <h3>관리자 로그인</h3> -
-                        <a href="./manager.jsp" class="primary-btn">관리자</a><br>
-                       
-                    </div>
-          
-                </div>
-                
-            </div>
-            <div class="login__social">
-             
-
-                <div class="row d-flex justify-content-center">
-                    <div class="col-lg-6">
-                        <div class="login__social__links">
-                            <span>or</span>
-                            <ul>
-                                <li><a href="#" class="facebook"><i class="fa fa-facebook"></i> Sign in With
-                                Facebook</a></li>
-                                <li><a href="#" class="google"><i class="fa fa-google"></i> Sign in With Google</a></li>
-                                <li><a href="#" class="twitter"><i class="fa fa-twitter"></i> Sign in With Twitter</a>
-                                </li>
-                            </ul>
                         </div>
-                    </div>
+                    </form>
                 </div>
             </div>
-        </div>
     </section>
-    <!-- Login Section End -->
+    <!-- Anime Section End -->
 
     <!-- Footer Section Begin -->
-    <footer class="footer">
-        <div class="page-up">
-            <a href="#" id="scrollToTopButton"><span class="arrow_carrot-up"></span></a>
-        </div>
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-3">
-                    <div class="footer__logo">
-                        <a href="./index.html"><img src="img/logo.png" alt=""></a>
-                    </div>
+<footer class="footer">
+    <div class="page-up">
+        <a href="#" id="scrollToTopButton"><span class="arrow_carrot-up"></span></a>
+    </div>
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-3">
+                <div class="footer__logo">
+                    <a href="${pageContext.request.contextPath}/movie/html/index.jsp"><img src="img/logo2.png" alt=""></a>
                 </div>
-                <div class="col-lg-6">
-                    <div class="footer__nav">
-                        <ul>
-                            <li class="active"><a href="./index.html">Homepage</a></li>
-                            <li><a href="./categories.html">Categories</a></li>
-                            <li><a href="./blog.html">Our Blog</a></li>
-                            <li><a href="#">Contacts</a></li>
-                        </ul>
-                    </div>
+            </div>
+            <div class="col-lg-6">
+                <div class="footer__nav">
+                    <ul>
+                        <li class="active"><a href="${pageContext.request.contextPath}/movie/html/index.jsp">홈</a></li>
+                        <li><a href="${pageContext.request.contextPath}/movie/html/default.jsp">고객센터</a></li>
+                        <li><a href="#">블로그</a></li>
+                       
+                    </ul>
                 </div>
-                <div class="col-lg-3">
-                    <p><!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
-                      Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved | This template is made with <i class="fa fa-heart" aria-hidden="true"></i> by <a href="https://colorlib.com" target="_blank">Colorlib</a>
-                      <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. --></p>
+            </div>
+            <div class="col-lg-3">
+                <p><!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+                  Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved | This template is made with <i class="fa fa-heart" aria-hidden="true"></i> by <a href="https://colorlib.com" target="_blank">Colorlib</a>
+                  <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. --></p>
 
-                  </div>
               </div>
           </div>
-      </footer>
-      <!-- Footer Section End -->
+      </div>
+  </footer>
+  <!-- Footer Section End -->
 
-      <!-- Search model Begin -->
-      <div class="search-model">
+    <!-- Search model Begin -->
+    <div class="search-model">
         <div class="h-100 d-flex align-items-center justify-content-center">
+            <!-- 검색 모달 닫기 스위치 -->
             <div class="search-close-switch"><i class="icon_close"></i></div>
+            <!-- 검색 폼 -->
             <form class="search-model-form">
                 <input type="text" id="search-input" placeholder="Search here.....">
             </form>
@@ -283,6 +235,44 @@
     <!-- Search model end -->
 
     <!-- Js Plugins -->
+    <script>
+        // 이미지를 미리보기하기 위한 JavaScript 함수
+        function previewImage(event) {
+            // FileReader 객체 생성
+            var reader = new FileReader();
+            // 파일 로드가 완료되었을 때 실행될 콜백 함수 정의
+            reader.onload = function () {
+                // 선택한 이미지를 CSS 배경 이미지로 설정하기 위한 준비
+                var backgroundImage = "url('" + reader.result + "')";
+                // 선택한 이미지를 표시할 요소 선택
+                var element = document.querySelector('.anime__details__pic');
+                // 요소의 배경 이미지를 선택한 이미지로 설정
+                element.style.backgroundImage = backgroundImage;
+            };
+            // FileReader를 사용하여 선택한 파일을 읽기 시작
+            reader.readAsDataURL(event.target.files[0]);
+        }
+    </script>
+<script>
+    // 양식 제출 전 값을 할당했는지 확인하는 jQuery 함수
+    function submitForm(event) {
+        // 각 입력 필드의 값을 가져와 변수에 할당
+        let title = $('#title').val();                     // 네임
+        let plot = $('#plot').val();                              
+
+        if (title == "" || title == null) { 
+            alert("이름 필드값을 입력해주세요");
+            event.preventDefault();
+            return false; // 양식 제출 방지
+        }
+        if (plot == "" || plot == null) {
+            alert("영화 줄거리 필드값을 입력해주세요");
+            event.preventDefault();
+            return false; 
+        }
+
+    }
+</script>
     <script src="${pageContext.request.contextPath}/movie/html/js/jquery-3.3.1.min.js"></script>
     <script src="${pageContext.request.contextPath}/movie/html/js/bootstrap.min.js"></script>
     <script src="${pageContext.request.contextPath}/movie/html/js/player.js"></script>
@@ -291,7 +281,6 @@
     <script src="${pageContext.request.contextPath}/movie/html/js/jquery.slicknav.js"></script>
     <script src="${pageContext.request.contextPath}/movie/html/js/owl.carousel.min.js"></script>
     <script src="${pageContext.request.contextPath}/movie/html/js/main.js"></script>
-    <script src="${pageContext.request.contextPath}/movie/html/js/login.js"></script>
 
 </body>
 

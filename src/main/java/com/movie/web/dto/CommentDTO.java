@@ -8,6 +8,7 @@ public class CommentDTO {
 	private String operator_id;
 	private String comment;
     private LocalDateTime commentTime;
+    private String movieSeq;
     
 	public int getComment_id() {
 		return comment_id;
@@ -38,6 +39,12 @@ public class CommentDTO {
 	}
 	public void setCommentTime(LocalDateTime commentTime) {
 		this.commentTime = commentTime;
+	}
+	public String getMovieSeq() {
+		return movieSeq;
+	}
+	public void setmovieSeq(String movieSeq) {
+		this.movieSeq = movieSeq;
 	}
 	
     

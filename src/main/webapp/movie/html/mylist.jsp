@@ -18,14 +18,14 @@
     rel="stylesheet">
 
     <!-- Css Styles -->
-    <link rel="stylesheet" href="css/bootstrap.min.css" type="text/css">
-    <link rel="stylesheet" href="css/font-awesome.min.css" type="text/css">
-    <link rel="stylesheet" href="css/elegant-icons.css" type="text/css">
-    <link rel="stylesheet" href="css/plyr.css" type="text/css">
-    <link rel="stylesheet" href="css/nice-select.css" type="text/css">
-    <link rel="stylesheet" href="css/owl.carousel.min.css" type="text/css">
-    <link rel="stylesheet" href="css/slicknav.min.css" type="text/css">
-    <link rel="stylesheet" href="css/style.css" type="text/css">
+    <link rel="stylesheet" href="${pageContext.request.contextPath}/movie/html/css/bootstrap.min.css" type="text/css">
+    <link rel="stylesheet" href="${pageContext.request.contextPath}/movie/html/css/font-awesome.min.css" type="text/css">
+    <link rel="stylesheet" href="${pageContext.request.contextPath}/movie/html/css/elegant-icons.css" type="text/css">
+    <link rel="stylesheet" href="${pageContext.request.contextPath}/movie/html/css/plyr.css" type="text/css">
+    <link rel="stylesheet" href="${pageContext.request.contextPath}/movie/html/css/nice-select.css" type="text/css">
+    <link rel="stylesheet" href="${pageContext.request.contextPath}/movie/html/css/owl.carousel.min.css" type="text/css">
+    <link rel="stylesheet" href="${pageContext.request.contextPath}/movie/html/css/slicknav.min.css" type="text/css">
+    <link rel="stylesheet" href="${pageContext.request.contextPath}/movie/html/css/style.css" type="text/css">
 </head>
 
 <body>
@@ -41,7 +41,7 @@
                 <div class="col-lg-2">
                     <div class="header__logo">
                         <a href="./index.html">
-                            <img src="img/logo2.png" alt="">
+                            <img src="img/logo.png" alt="">
                         </a>
                     </div>
                 </div>
@@ -79,13 +79,13 @@
     <!-- Header End -->
 
     <!-- Normal Breadcrumb Begin -->
-    <section class="normal-breadcrumb set-bg" data-setbg="img/cinema.jpg">
+    <section class="normal-breadcrumb set-bg" data-setbg="img/normal-breadcrumb.jpg">
         <div class="container">
             <div class="row">
                 <div class="col-lg-12 text-center">
                     <div class="normal__breadcrumb__text">
                         <h2>회원가입</h2>
-                        <p>영화 사이트에 오신 걸 환영합니다</p>  
+                        <p>영화 사이트에 오신걸 환영합니다</p>
                     </div>
                 </div>
             </div>
@@ -94,93 +94,59 @@
     <!-- Normal Breadcrumb End -->
 
     <!-- Login Section Begin -->
-    <div class="login__social">
-        <div class="row d-flex justify-content-center">
     <section class="login spad" align ="center">
-        <!-- <h3 align="center" >나의 정보</h3><br> -->
-        <!-- <p>마이페이지!!!!!!!!!!!!!!!!!!!!!!!!!</p> -->
-        
         <div class="container">
             <div class="row" >
-             
-                    <div class="login__form" id ="logincenter">
-                        <!-- <h3 align="center" >회원가입</h3><br> -->
-                        <form action="${pageContext.request.contextPath}/movie/joinOk.ms" method="post">               <!--입력창 활성화 -->
-                            <div>
-                            <h5 align="left" class="whitetext">아이디 <button type="button" class="site-btn" id ="check_id_btn" align="left">중복확인</button><a id="check_id_message"></a></h5>
-                            
-                            </div>
+                <div class="col-lg-6">
+                    <div class="login__form">
+                        <h3>회원가입</h3>
+                        <form action="#">
                             <div class="input__item">
-                               
-                                <input type="text" class ="blacktext" placeholder="아이디를 입력해주세요" id="user_id" name="user_id">
-                                <span class="icon_mail"></span>
-                                
-                            </div>
-
-                            <h5 align="left" class="whitetext">비밀번호<a id="check_pw_message"></a></h5><br>
-                            <div class="input__item">
-                               
-                                <input type="password" class ="blacktext" placeholder="비밀번호를 입력해주세요" id="userpassword" name="userpassword"> 
+                                <input type="text" placeholder="이름을 입력해주세요"> 
                                 <span class="icon_mail"></span>
                             </div>
-
-                            <h5 align="left" class="whitetext">비밀번호 확인<a id="check_pw_message2"></a></h5><br>
                             <div class="input__item">
-                               
-                                <input type="password" class ="blacktext" placeholder="비밀번호를 다시 입력해주세요" id="userpassword2"> 
-                                <span class="icon_mail"></span>
-                            </div>
-
-                            <h5 align="left" class="whitetext">이름</h5><br>
-                            <div class="input__item">
-                               
-                                <input type="text" class ="blacktext" placeholder="이름을 입력해주세요" id="username" name="username"> 
-                                <span class="icon_mail"></span>
-                            </div>
-           
-                            
-                          
-                          
-                          
-                          
-                          <br>  <br> 
-
-
-                            <h5 align="left" class="whitetext">생년월일</h5><br>  
-                            <div class="input__item">
-                                <input type="text" placeholder="법정생년월일 6자리를 입력해주세요" id="userbirth" name="userbirth">
+                                <input type="text" placeholder="법정생년월일 6자리를 입력해주세요">
                                 <span class="icon_lock"></span>
                             </div>
 
-                            <h5 align="left" class="whitetext">휴대번호</h5><br>
                             <div class="input__item">
-                                
-                                <input type="text" placeholder="휴대번호 뒤 7~8자리를 입력해주세요" id="userphone" name= "userphone">
+                                <input type="text" placeholder="휴대번호 뒤 7~8자리를 입력해주세요.(01X제외)">
                                 <span class="icon_mail"></span>
                             </div>
-                            <h5 align="left" class="whitetext">이메일</h5><br>
-                            <div class="input__item">
-                                <input type="text" placeholder="이메일 정보를 입력해주세요" id="email" name="email">
-                                <span class="icon_mail"></span>
-                            </div>
+                            
  
 
-                            <button type="submit" class="site-btn" id="join_button">가입</button>
+                            <button type="submit" class="site-btn">가입</button>
                         </form>
-                       <br> <br> <br> <br> <br> <br>
+                     <br>
+                     
                     </div>
-                
-                
-                        </div>
-                    </div>   
+                    <a href="#" class="forget_pass" align="center">Forgot Your Password?</a>
+                  
+                </div>
                 
             </div>
+            <div class="login__social">
+                <div class="row d-flex justify-content-center">
+                    <div class="col-lg-6">
+                        <div class="login__social__links">
+                            <span>or</span>
+                            <ul>
+                                <li><a href="#" class="facebook"><i class="fa fa-facebook"></i> Sign in With
+                                Facebook</a></li>
+                                <li><a href="#" class="google"><i class="fa fa-google"></i> Sign in With Google</a></li>
+                                <li><a href="#" class="twitter"><i class="fa fa-twitter"></i> Sign in With Twitter</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
-    </div>
-</div>
-
-
     </section>
+    <!-- Login Section End -->
+
     <!-- Footer Section Begin -->
 <footer class="footer">
     <div class="page-up">
@@ -226,16 +192,14 @@
     <!-- Search model end -->
 
     <!-- Js Plugins -->
-    <script src="js/jquery-3.3.1.min.js"></script>
-    <script src="js/bootstrap.min.js"></script>
-    <script src="js/player.js"></script>
-    <script src="js/jquery.nice-select.min.js"></script>
-    <script src="js/mixitup.min.js"></script>
-    <script src="js/jquery.slicknav.js"></script>
-    <script src="js/owl.carousel.min.js"></script>
-    <script src="js/main.js"></script>
-    <script src="js/profile_modify.js"></script>
-    <script src="js/check_id.js"></script>
+    <script src="${pageContext.request.contextPath}/movie/html/js/jquery-3.3.1.min.js"></script>
+    <script src="${pageContext.request.contextPath}/movie/html/js/bootstrap.min.js"></script>
+    <script src="${pageContext.request.contextPath}/movie/html/js/player.js"></script>
+    <script src="${pageContext.request.contextPath}/movie/html/js/jquery.nice-select.min.js"></script>
+    <script src="${pageContext.request.contextPath}/movie/html/js/mixitup.min.js"></script>
+    <script src="${pageContext.request.contextPath}/movie/html/js/jquery.slicknav.js"></script>
+    <script src="${pageContext.request.contextPath}/movie/html/js/owl.carousel.min.js"></script>
+    <script src="${pageContext.request.contextPath}/movie/html/js/main.js"></script>
 
 
 </body>
