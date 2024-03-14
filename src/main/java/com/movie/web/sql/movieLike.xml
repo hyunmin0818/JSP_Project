@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" 
+ "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="Movie">
+	<update id="incrementMovieLikes">
+        UPDATE movie
+        SET movie_likes = movie_likes + 1
+        WHERE movieSeq = #{movieSeq}
+    </update>
+
+    <update id="decrementMovieLikes">
+        UPDATE movie
+        SET movie_likes = movie_likes - 1
+        WHERE movieSeq = #{movieSeq}
+    </update>
+</mapper>
