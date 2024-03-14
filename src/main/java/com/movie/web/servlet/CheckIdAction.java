@@ -15,9 +15,9 @@ public class CheckIdAction implements Action{
 		ActionForward forward = new ActionForward();
 		UserDTO udto = new UserDTO();
 		UserDAO udao = new UserDAO();
-		String userid = request.getParameter("userid");
+		String user_id = request.getParameter("user_id");
 		
-		if(udao.checkId(userid)) {
+		if(udao.checkId(user_id)) {
 			 forward.setPath("");
         } 
 

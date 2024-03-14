@@ -365,7 +365,7 @@
                                             <li>Active</li>
                                             <li>Movie</li>
                                         </ul>
-                                        <h5><a href="#">Sen to Chihiro no Kamikakushi</a></h5>
+                                        <h5><a href="${pageContext.request.contextPath}/movie/html/movie-details.jsp">Sen to Chihiro no Kamikakushi</a></h5>
                                     </div>
                                 </div>
                             </div>

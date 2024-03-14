@@ -1,7 +1,9 @@
 <%@page import="com.movie.web.dto.UserDTO"%>
+<%@page import="com.movie.web.dto.CommentDTO"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+<%@taglib uri="http://java.sun.com/jsp/jstl/functions" prefix="fn"%>
 <!DOCTYPE html>
 <html lang="zxx">
 
@@ -363,81 +365,44 @@
         <!-- 리뷰 목록 -->
         <div class="row">
             <div class="col-lg-8 col-md-8">
-                <div class="anime__details__review">
+                <div class="movie__details__review">
                     <div class="section-title">
                         <h5>Reviews</h5>
                     </div>
                     <!-- 리뷰 아이템 -->
-                    <div class="anime__review__item">
-                        <div class="anime__review__item__pic">
+                    <c:choose>
+                    	<c:when test="${commentList != null and fn:length(commentList) > 0}">
+                    		<c:forEach var="comment" items="${commentList }">
+                    <div class="movie__review__item">
+                        <div class="movie__review__item__pic">
                             <img src="img/anime/review-1.jpg" alt="">
                         </div>
-                        <div class="anime__review__item__text">
-                            <h6>Chris Curry - <span>1 Hour ago</span></h6>
-                            <p>whachikan Just noticed that someone categorized this as belonging to the genre
-                                "demons" LOL</p>
+                        <div class="movie__review__item__text">
+                            <h6> ${comment.user_id}<span>${comment.commentTime}</span></h6>
+                            <p>${comment.comment }</p>
                             <input type="button" value="삭제" class="delete" id="deleteButton" hidden>
                         </div>
-                        <!-- 다른 리뷰 아이템들 -->
-                        <!-- 여기에 리뷰 아이템들이 더 있음 -->
-                    </div>
+                        <!-- 컨텐츠 있으면 뽑아오기 -->
+                 	</div>
                     <!-- 사용자 리뷰 입력 폼 -->
-                    <div class="anime__review__item">
-                        <div class="anime__review__item__pic">
-                            <img src="img/anime/review-2.jpg" alt="">
-                        </div>
-                        <div class="anime__review__item__text">
-                            <h6>Lewis Mann - <span>5 Hour ago</span></h6>
-                            <p>Finally it came out ages ago</p>
-                            <input type="button" value="삭제" class="delete" id="deleteButton">
-                        </div>
-                    </div>
-                    <div class="anime__review__item">
-                        <div class="anime__review__item__pic">
-                            <img src="img/anime/review-3.jpg" alt="">
-                        </div>
-                        <div class="anime__review__item__text">
-                            <h6>Louis Tyler - <span>20 Hour ago</span></h6>
-                            <p>Where is the episode 15 ? Slow update! Tch</p>
-                            <input type="button" value="삭제" class="delete" id="deleteButton">
-                        </div>
-                    </div>
-                    <div class="anime__review__item">
-                        <div class="anime__review__item__pic">
-                            <img src="img/anime/review-4.jpg" alt="">
-                        </div>
-                        <div class="anime__review__item__text">
-                            <h6>Chris Curry - <span>1 Hour ago</span></h6>
-                            <p>whachikan Just noticed that someone categorized this as belonging to the genre
-                                "demons" LOL</p>
-                            <input type="button" value="삭제" class="delete" id="deleteButton">
-                        </div>
-                    </div>
-                    <div class="anime__review__item">
-                        <div class="anime__review__item__pic">
-                            <img src="img/anime/review-5.jpg" alt="">
-                        </div>
-                        <div class="anime__review__item__text">
-                            <h6>Lewis Mann - <span>5 Hour ago</span></h6>
-                            <p>Finally it came out ages ago</p>
-                        </div>
-                    </div>
-                    <div class="anime__review__item">
-                        <div class="anime__review__item__pic">
-                            <img src="img/anime/review-6.jpg" alt="">
-                        </div>
-                        <div class="anime__review__item__text">
-                            <h6>Louis Tyler - <span>20 Hour ago</span></h6>
-                            <p>Where is the episode 15 ? Slow update! Tch</p>
-                        </div>
-                    </div>
-                </div>
+                
+                	</c:forEach>
+                	</c:when>
+                	<c:otherwise>
+                		<div class="anime__review__item__text">
+                            <h6 align="center"> 댓글이 없습니다. </h6>
+                       
+                    	</div>
+                	</c:otherwise>
+                </c:choose>
                 <div class="anime__details__form">
                     <div class="section-title">
                         <h5>Your Comment</h5>
                     </div>
-                    <form action="#">
-                        <textarea placeholder="Your Comment"></textarea>
+                    <form name="commentForm" method="post"
+                    action="${pageContext.request.contextPath}/movie/addComment.mo">
+                    <input type="hidden" name="comment_id" value="${comment.comment_id }">
+                        <textarea placeholder="Comment 를 작성해주세요">${comment.comment }</textarea>
                         <button type="submit"><i class="fa fa-location-arrow"></i> Review</button>
                     </form>
                 </div>
