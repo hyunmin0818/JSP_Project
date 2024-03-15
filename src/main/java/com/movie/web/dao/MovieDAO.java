@@ -31,8 +31,8 @@ public class MovieDAO {
             HashMap<String, Object> paramMap = new HashMap<>();
             paramMap.put("parameter", "%" + parameter + "%"); // 부분 일치 검색을 위해 '%' 추가
 
-            movieList = sqlSession.selectList("Movie.searchMovies", paramMap);
-        } catch (Exception e) {
+            movieList = sqlSession.selectList("Movie.searchMovies", parameter);
+        } catch (Exception e) { 
             e.printStackTrace();
         }
         return movieList;

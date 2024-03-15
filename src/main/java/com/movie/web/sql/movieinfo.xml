@@ -23,9 +23,10 @@
 	WHERE rownum BETWEEN #{startRow} AND #{endRow}
 	</select>
 	
-	<select id="searchMovies" resultType="MovieDTO" parameterType="java.util.HashMap">
-        SELECT *
-        FROM movies
-        WHERE title LIKE #{parameter}
+	<select id="searchMovies" resultType="MovieDTO" parameterType="string">
+		SELECT *
+	FROM movie
+	WHERE title LIKE CONCAT('%', #{parameter}, '%');
     </select>
+    
 </mapper>

@@ -23,6 +23,7 @@ public class UserFrontController extends HttpServlet{
 		doProcess(request,response);
 	}
 	protected void doProcess(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		System.out.println("=========================================================");
 		String requestURI = request.getRequestURI();
 		ActionForward forward = null;
 	    
@@ -38,6 +39,8 @@ public class UserFrontController extends HttpServlet{
 //	    	response.sendRedirect("/login.ms");
 //	        return;
 //	    }
+	    
+	    System.out.println("requestURI : " + requestURI);
 		switch (requestURI) {
 		
 		case "/SubmitOk.ms" : 

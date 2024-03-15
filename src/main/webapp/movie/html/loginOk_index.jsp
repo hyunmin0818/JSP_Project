@@ -35,7 +35,7 @@
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.min.js" integrity="sha384-0pUGZvbkm6XF6gxjEnlmuGrJXVbNuzT9qBBavbLwCsOGabYfZo0T0to5eqruptLy" crossorigin="anonymous"></script>
 </head>
 
-<body>
+<body data-context-path="${pageContext.request.contextPath}">
 
   
 
@@ -100,10 +100,10 @@
                     </div>
                 </div>
 
-
+				
 				<div class="col-lg-2">
 					<div class="header__right">
-						<a href="#" class="search-switch"><span class="icon_search"></span></a>
+						<a class="search-switch"><span class="icon_search"></span></a>
 						<span
 							class="icon_profile arrow fa dropdown-toggle active arrow_carrot-down"
 							id="dropdown-toggle" data-bs-toggle="dropdown"
@@ -337,6 +337,9 @@
 <script src="${pageContext.request.contextPath}/movie/html/js/jquery.slicknav.js"></script>
 <script src="${pageContext.request.contextPath}/movie/html/js/owl.carousel.min.js"></script>
 <script src="${pageContext.request.contextPath}/movie/html/js/main.js"></script>
+<script type="text/javascript">
+    var contextPath = "<%=request.getContextPath()%>";
+</script>
 
 
 </body>

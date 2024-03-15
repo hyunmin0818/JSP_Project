@@ -1,6 +1,7 @@
 package com.movie.web.dao;
 
 import java.time.LocalDateTime;
+import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 
@@ -19,11 +20,12 @@ public class CommentDAO {
 	      sqlSession = factory.openSession(true);
 	   }   
 	   private static int commentIdCounter = 1;				// comment_id 증가 변수 선언
-	      // movie_seq를 기준으로 모든 댓글 정보를 가져오는 메서드
-	      public List<CommentDTO> getCommentList(String movieSeq) {
-	          List<CommentDTO> commentList = null;
+	      
+	   // movie 파라미터를 기준으로 모든 댓글 정보를 가져오는 메서드
+	      public List<CommentDTO> getCommentList(String title) {
+	          List<CommentDTO> commentList = new ArrayList<CommentDTO>();
 	          try {
-	        	  commentList = sqlSession.selectList("Movie.getCommentList", movieSeq);
+	        	  commentList = sqlSession.selectList("Movie.getCommentList", title);
 	          } catch (Exception e) {
 	              e.printStackTrace();
 	          }
@@ -50,13 +52,13 @@ public class CommentDAO {
 	      }
 	      
 	      // 댓글 수정
-	      public boolean updateComment(int comment_id, String comment, LocalDateTime commentTime) {
+	      public boolean updateComment(int comment_id, String comment, LocalDateTime comment_time) {
 	          boolean result = false;
 	          
 	          HashMap<String, Object> params = new HashMap<>();
 	          params.put("comment_id", comment_id);
 	          params.put("comment", comment);
-	          params.put("commentTime", commentTime);
+	          params.put("comment_time", comment_time);
 	          
 	          if(sqlSession.update("Movie.updateComment", params) == 1) {
 	              result = true;
@@ -96,4 +98,5 @@ public class CommentDAO {
 
 	    	    return result;
 	    	}
+		
 }

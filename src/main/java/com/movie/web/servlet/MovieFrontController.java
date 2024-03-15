@@ -25,11 +25,13 @@ public class MovieFrontController extends HttpServlet{
       String requestURI = req.getRequestURI();
       ActionForward forward = null;
       
+      System.out.println("requestURI : " + requestURI);
+      
       switch (requestURI) {
       case "/current/categori.mo" : 
          forward = new SearchCurrentMovieAction().execute(req, resp);
          break;
-      case "" : 
+      case "/movie/searchMovie.mo" : 
          forward = new SearchMovieInfoAction().execute(req, resp);
          break;
       case "/movie/detailInfo/mo" : 
