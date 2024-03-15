@@ -116,28 +116,28 @@
         <div class="container">
             <div class="anime__details__content">
              <c:choose>
-             <c:when test="${movieInfo != null and fn:length(movieInfo) > 0 }">
+             <c:when test="${movieList != null and fn:length(movieList) > 0 }">
              <c:forEach var="movie" items="${movieList}">
                 <div class="row">
                     <div class="col-lg-3">
-                        <div class="anime__details__pic set-bg" data-setbg="movie${movie.movieSeq },${movie.posterUrl}">
-                            <div class="comment"><i class="fa fa-comments"></i> ${movie.comment }</div>
-                            <div class="view"><i class="fa fa-eye"></i> ${movie.views}</div>
+                        <div class="anime__details__pic set-bg" data-setbg="movieList${movie.movieSeq },${movie.posterUrl}">
+                            <div class="comment"><i class="fa fa-comments"></i> </div>
+                            <div class="view"><i class="fa fa-eye"></i> </div>
                         </div>
                     </div>
                     <div class="col-lg-9">
                         <div class="anime__details__text">
                             <div class="anime__details__title">
                                 <h3>${movie.title}</h3>
-                                <span>${movie.subtitle}</span>
+                                <span>${movie.titleEng}</span>
                             </div>
                             <div class="anime__details__rating">
                                 <div class="rating">
                                     <!-- 평점 별 표시 로직 -->
                                 </div>
-                                <span>${movie.votes} Votes</span>
+                                <span> Votes</span>
                             </div>
-                            <p>${movie.description}</p>
+                            <p></p>
                             <!-- 세부 정보 표시 -->
                             <!-- 영화 관련 버튼 -->
                         </div>

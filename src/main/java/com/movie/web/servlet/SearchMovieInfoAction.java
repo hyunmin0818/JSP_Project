@@ -35,7 +35,7 @@ public class SearchMovieInfoAction implements Action{
         
         // JSP 페이지로 포워딩
         ActionForward forward = new ActionForward();
-        forward.setPath("movie/html/movie-detail.jsp?parameter="+parameter); // 검색 결과를 표시할 JSP 페이지 경로 설정필
+        forward.setPath("/movie/html/movie-details.jsp?parameter="+parameter); // 검색 결과를 표시할 JSP 페이지 경로 설정필
         forward.setRedirect(false); // 포워딩이므로 false로 설정
         return forward;
 	}
