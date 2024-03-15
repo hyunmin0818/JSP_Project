@@ -18,7 +18,6 @@ public class CommentDAO {
 	   public CommentDAO(){
 	      sqlSession = factory.openSession(true);
 	   }   
-	   private static int commentIdCounter = 1;				// comment_id 증가 변수 선언
 	      // movie_seq를 기준으로 모든 댓글 정보를 가져오는 메서드
 	      public List<CommentDTO> getCommentList(String movieSeq) {
 	          List<CommentDTO> commentList = null;
@@ -30,12 +29,12 @@ public class CommentDAO {
 	          return commentList;
 	         
 	   }
-	      public boolean insertComment( String user_id, String comment) {
+	      public boolean insertComment(int comment_id, String user_id, String comment) {
 	          boolean result = false;
 	          
 	          // 댓글 추가를 위한 정보를 HashMap에 저장
 	          HashMap<String, Object> params = new HashMap<>();
-	          int comment_id = commentIdCounter++;
+	          params.put("comment_id", 1);
 	          params.put("user_id", user_id);
 	          params.put("operator_id", null); // 고정값 나중에 테이블에 insert된 정보에 따라 수정
 	          params.put("comment", comment);
