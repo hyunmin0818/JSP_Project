@@ -50,6 +50,9 @@
 <link rel="stylesheet"
 	href="${pageContext.request.contextPath}/movie/html/css/style.css"
 	type="text/css">
+	<link rel="stylesheet"
+	href="${pageContext.request.contextPath}/movie/html/css/search.css"
+	type="text/css">
 
 <script
 	src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"
@@ -88,51 +91,19 @@
 				<div class="col-lg-8">
 					<div class="header__nav">
 						<nav class="header__menu mobile-menu">
-							<ul>
-								<!-- 홈페이지로 이동하는 링크 -->
-								<li class="active"><a
-									href="${pageContext.request.contextPath}/movie/html/index.jsp">홈</a></li>
-								<!-- 카테고리 메뉴 -->
-								<li><a
-									href="${pageContext.request.contextPath}/movie/html/categories.jsp">영화<span
-										class="arrow_carrot-down"></span></a>
-									<ul class="dropdown">
-										<li><a
-											href="${pageContext.request.contextPath}/movie/html//categories.jsp">현재
-												상영작</a></li>
-										<li><a
-											href="${pageContext.request.contextPath}/movie/html//categories.jsp">상영
-												예정작</a></li>
-										<!-- <li><a href="./anime-watching.html">트레일러 </a></li> -->
-
-									</ul></li>
-
-
-								<li><a
-									href="${pageContext.request.contextPath}/movie/html/notice.jsp">게시판<span
-										class="arrow_carrot-down"></span></a>
-									<ul class="dropdown">
-										<li><a
-											href="${pageContext.request.contextPath}/movie/html/notice.jsp">공지사항</a></li>
-										<li><a
-											href="${pageContext.request.contextPath}/movie/html/notice.jsp">이벤트</a></li>
-
-
-									</ul></li>
-
-
-
-								<li><a
-									href="${pageContext.request.contextPath}/movie/html/default.jsp">고객문의<span
-										class="arrow_carrot-down"></span></a>
-									<ul class="dropdown">
-										<li><a
-											href="${pageContext.request.contextPath}/movie/html/defaut.jsp">고객센터</a></li>
-										<li><a href="#">주변 영화관 찾기</a></li>
-									</ul></li>
-
-
-							</ul>
+							 <div id="cover">
+                            <form method="get" action="">
+                              <div class="tb">
+                                <div class="td"><input type="text" placeholder="Search" required></div>
+                                <div class="td" id="s-cover">
+                                  <button type="submit">
+                                    <div id="s-circle"></div>
+                                    <span></span>
+                                  </button>
+                                </div>
+                              </div>
+                            </form>
+                          </div>
 						</nav>
 					</div>
 				</div>
@@ -140,7 +111,7 @@
 
 				<div class="col-lg-2">
 					<div class="header__right">
-						<a href="#" class="search-switch"><span class="icon_search"></span></a>
+                        <!-- 입력창  -->
 						<span
 							class="icon_profile arrow fa dropdown-toggle active arrow_carrot-down"
 							id="dropdown-toggle" data-bs-toggle="dropdown"
@@ -151,14 +122,6 @@
 								href="${pageContext.request.contextPath}/movie/mypage.ms"><span
 									class="dropdown-item">마이페이지</span></a></li>
 							<li><hr class="dropdown-divider"></hr></li>
-							<li><a
-								href="${pageContext.request.contextPath}/movie/html/findTicket.jsp"><span
-									class="dropdown-item" id="redtext">예매내역</span></a></li>
-							<!--  <li> <a href="#"><span class="dropdown-item" id="redtext">팔로우</span></a></li>  -->
-							<li><a
-								href="${pageContext.request.contextPath}/movie/html/request.jsp"><span
-									class="dropdown-item" id="redtext">내 문의내역</span></a></li>
-							<!-- <li> <a href="#"><span class="dropdown-item" id="redtext">쿠폰함(미구현)</span></a></li>  -->
 							<li><a
 								href="${pageContext.request.contextPath}/movie/logout.ms"><span
 									class="dropdown-item" id="redtext">로그아웃</span></a></li>
@@ -198,14 +161,14 @@
 							<!-- 히어로 텍스트 -->
 							<div class="hero__text">
 								<!-- 라벨 -->
-								<div class="label">Mystery</div>
+								<div class="label"></div>
 								<!-- 제목 -->
 								<h2>파묘</h2>
 								<!-- 내용 -->
 								<p>험한 것이 나왔다...</p>
 								<!-- 시청 버튼 -->
 								<a
-									href="${pageContext.request.contextPath}/movie/html/SeatPreview-master/index.jsp"><span>Watch
+									href="${pageContext.request.contextPath}/movie/html/movie-details.jsp"><span>Watch
 										Now</span> <i class="fa fa-angle-right"></i></a>
 							</div>
 						</div>
@@ -259,10 +222,7 @@
                         </div>
                      </div>
                      <div class="col-lg-4 col-md-4 col-sm-4">
-                        <div class="btn__all">
-                           <a href="${pageContext.request.contextPath}/movie/html/categories.jsp" class="primary-btn">View All <span
-                              class="arrow_right"></span></a>
-                        </div>
+                       
                      </div>
                   </div>
                   <div class="row">
@@ -394,20 +354,25 @@
 	<!-- Footer Section End -->
 
 	<!-- Search model Begin -->
-	<div class="search-model">
-		<div class="h-100 d-flex align-items-center justify-content-center">
-			<div class="search-close-switch">
-				<i class="icon_close"></i>
-			</div>
-			<form class="search-model-form">
-				<input type="text" id="search-input" placeholder="Search here.....">
-			</form>
-		</div>
-	</div>
 	<!-- Search model end -->
 
 	<!-- Js Plugins -->
-
+	<script>
+	document.addEventListener('DOMContentLoaded', function() {
+	    var form = document.querySelector('#cover form'); // 검색 폼 선택
+	    var input = form.querySelector('input[type="text"]'); // 입력 필드 선택
+	    form.addEventListener('submit', function(event) {
+	        event.preventDefault(); // 기본 제출 동작 방지
+	        var searchTerm = input.value.trim(); // 입력값 얻기 및 공백 제거
+	        if (searchTerm !== '') {
+	            // 여기에 검색 기능을 실행하는 코드를 추가할 수 있습니다.
+	            alert('검색어: ' + searchTerm); // 예시로 검색어를 경고창으로 출력합니다.
+	        } else {
+	            alert('검색어를 입력하세요.');
+	        }
+	    });
+	});
+	</script>
 	<script
 		src="${pageContext.request.contextPath}/movie/html/js/jquery-3.3.1.min.js"></script>
 	<script

@@ -79,7 +79,7 @@ h6 {
 	margin-bottom:-40px;
 }
 
-#youNeedMypage:hover,.search-switch:hover,#dropdown-toggle:hover,.icon_profile:hover,#youNeedLogin:hover,#youNeedJoin:hover,#youNeedLogout:hover{			/*우측 상단 로그인 상태 확인 메시지*/
+#youNeedMypage:hover,#dropdown-toggle:hover,.icon_profile:hover,#youNeedLogin:hover,#youNeedJoin:hover,#youNeedLogout:hover{			/*우측 상단 로그인 상태 확인 메시지*/
 	color:skyblue;
 
 }
@@ -377,52 +377,10 @@ ol {
 	margin:0 auto;
  }
  
-.search-model {
-	display: none;
-	position: fixed;
-	width: 100%;
-	height: 100%;
-	left: 0;
-	top: 0;
-	background: #000;
-	z-index: 99999;
-}
 
-.search-model-form {
-	padding: 0 15px;
-}
 
-.search-model-form input {
-	width: 500px;
-	font-size: 40px;
-	border: none;
-	border-bottom: 2px solid #333;
-	background: 0 0;
-	color: #999;
-}
 
-.search-close-switch {
-	position: absolute;
-	width: 50px;
-	height: 50px;
-	background: #333;
-	color: #fff;
-	text-align: center;
-	border-radius: 50%;
-	font-size: 28px;
-	line-height: 28px;
-	top: 30px;
-	cursor: pointer;
-	display: -webkit-box;
-	display: -ms-flexbox;
-	display: flex;
-	-webkit-box-align: center;
-	-ms-flex-align: center;
-	align-items: center;
-	-webkit-box-pack: center;
-	-ms-flex-pack: center;
-	justify-content: center;
-}
+
 
 /*---------------------
   Header
