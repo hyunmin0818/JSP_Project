@@ -25,7 +25,13 @@
 	
 	<select id="searchMovies" resultType="MovieDTO" parameterType="java.util.HashMap">
         SELECT *
-        FROM movies
+        FROM movie
         WHERE title LIKE #{parameter}
     </select>
+	
+	<select id="TheLatestMovie" resultType="moviedto" parameterType="java.util.HashMap">
+		SELECT *
+		FROM movie
+		ORDER BY releaseDate DESC;
+	</select>
 </mapper>
