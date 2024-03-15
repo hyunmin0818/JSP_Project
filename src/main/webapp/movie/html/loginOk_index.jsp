@@ -38,61 +38,7 @@
 <body>
 
   
-<%
-    MovieDAO mdao = new MovieDAO();
-    int totalCnt = mdao.getMovieCnt();
 
-    String temp = request.getParameter("page");
-    int pageIndex = 0;
-    try {
-    	pageIndex = temp == null ? 1 : Integer.parseInt(temp);
-    } catch(NumberFormatException e) {
-    	pageIndex = 1; // 잘못된 파라미터 값이 전달될 경우 기본값으로 설정
-    }
-
-    int pageSize = 10;
-    int endRow = pageIndex * pageSize; // 여기서 수정이 필요했음
-    int startRow = endRow - pageSize + 1;
-
-    int startPage = ((pageIndex-1)/pageSize) * pageSize+1;
-    int endPage = startPage + pageSize-1;
-    int totalPage = (totalCnt-1)/pageSize + 1;
-
-    endPage = endPage > totalPage ? totalPage : endPage;
-
-    List<MovieDTO> movieList = mdao.getMovieList(startRow, endRow);
-
-    for (MovieDTO movie : movieList) {
-%>
-        <div>
-            <h2><%= movie.getTitle() %></h2>
-            <p>포스터 url: <%= movie.getPosterUrl() %></p>
-            <p>제작 연도: <%= movie.getProdYear() %></p>
-            <p>장르: <%= movie.getGenre() %></p>
-            <p>배우: <%= movie.getActorEnNm() %></p>
-            <p>평점: <%= movie.getRating() %></p>
-            <!-- 추가적으로 필요한 정보를 여기에 출력 -->
-        </div>
-<%
-// 전체 목록에서 상위 3개의 항목만 추출
-List<MovieDTO> displayList = movieList.size() > 3 ? movieList.subList(0, 3) : movieList;
-    }
-%>
-    
-
-
-<!-- 페이지 처리 부분 -->
-<div>
-    <% if(startPage > 1) { %>
-        <a href="?page=<%=startPage-1%>">이전</a>
-    <% } %>
-    <% for(int i=startPage; i<=endPage; i++) { %>
-        <a href="?page=<%=i%>"><%=i%></a>
-    <% } %>
-    <% if(endPage < totalPage) { %>
-        <a href="?page=<%=endPage+1%>">다음</a>
-    <% } %>
-</div>
 
 
     <!-- Page Preloder -->
@@ -258,7 +204,7 @@ List<MovieDTO> displayList = movieList.size() > 3 ? movieList.subList(0, 3) : mo
     <div class="container">
     <div class="row">
         <!-- DB에서 가져온 데이터를 여기에 반복적으로 표시 -->
-			<c:forEach var="movie" items="${movieList}">
+	<c:forEach var="movie" items="${movieList}">
     <div class="col-lg-4 col-md-6 col-sm-6">
         <div class="product__item">
             <div class="product__item__pic set-bg"
@@ -283,6 +229,58 @@ List<MovieDTO> displayList = movieList.size() > 3 ? movieList.subList(0, 3) : mo
         </div>
     </div>
 </c:forEach>
+<%
+    MovieDAO mdao = new MovieDAO();
+    int totalCnt = mdao.getMovieCnt();
+
+    String temp = request.getParameter("page");
+    int pageIndex = 0;
+    try {
+    	pageIndex = temp == null ? 1 : Integer.parseInt(temp);
+    } catch(NumberFormatException e) {
+    	pageIndex = 1; // 잘못된 파라미터 값이 전달될 경우 기본값으로 설정
+    }
+
+    int pageSize = 10;
+    int endRow = pageIndex * pageSize; // 여기서 수정이 필요했음
+    int startRow = endRow - pageSize + 1;
+
+    int startPage = ((pageIndex-1)/pageSize) * pageSize+1;
+    int endPage = startPage + pageSize-1;
+    int totalPage = (totalCnt-1)/pageSize + 1;
+
+    endPage = endPage > totalPage ? totalPage : endPage;
+
+    List<MovieDTO> movieList = mdao.getMovieList(startRow, endRow);
+
+    for (MovieDTO movie : movieList) {
+%>
+        <div>
+            <h2><%= movie.getTitle() %></h2>
+            <p>포스터 url: <%= movie.getPosterUrl() %></p>
+            <p>제작 연도: <%= movie.getProdYear() %></p>
+            <p>장르: <%= movie.getGenre() %></p>
+            <p>배우: <%= movie.getActorEnNm() %></p>
+            <p>평점: <%= movie.getRating() %></p>
+            <!-- 추가적으로 필요한 정보를 여기에 출력 -->
+        </div>
+<%
+   
+    }
+%>
+
+<!-- 페이지 처리 부분 -->
+<div class="pagination-container">
+<div>
+    <% if(startPage > 1) { %>
+        <a href="?page=<%=startPage-1%>">이전</a>
+    <% } %>
+    <% for(int i=startPage; i<=endPage; i++) { %>
+        <a href="?page=<%=i%>"><%=i%></a>
+    <% } %>
+    <% if(endPage < totalPage) { %>
+        <a href="?page=<%=endPage+1%>">다음</a>
+    <% } %>
 		</div>
 </div>
 <!-- Footer Section Begin -->

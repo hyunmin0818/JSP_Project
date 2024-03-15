@@ -13,26 +13,42 @@ import jakarta.servlet.http.HttpServletResponse;
 public class SearchCurrentMovieAction implements Action{
 
 	@Override
-    public ActionForward execute(HttpServletRequest request, HttpServletResponse response) {
-        try {
-            // 서비스 레이어 접근을 위한 MovieService 객체 초기화 (가정)
-            MovieService movieService = new MovieServiceImpl();
+	public ActionForward execute(HttpServletRequest request, HttpServletResponse response) {
+		MovieDAO mdao = new MovieDAO();
+		ActionForward forward = new ActionForward();
+		int totalCnt = mdao.getMovieCnt();
+	
+		
+		
+		
+		String temp = request.getParameter("page");
+		int page = 0;
+		page = temp == null ? 1 : Integer.parseInt(temp);
+		
+		int pageSize = 10;
+		int endRow = page * 10;  
+		int startRow = endRow - 9;	
+		
+		// [1][2]..[10]:[1], [11],[12]...[20] : [11]
+		int startPage = (page-1)/pageSize * pageSize+1;
+		int endPage = startPage + pageSize-1;
+		int totalPage = (totalCnt-1)/pageSize + 1;
+		
+		endPage = endPage> totalPage ? totalPage : endPage;
+		
+		request.setAttribute("movieList", mdao.getMovieList(startRow, endRow));
+		
+		request.setAttribute("totalCnt", totalCnt);
+		
+		request.setAttribute("totalPage", totalPage);
+		request.setAttribute("nowPage", page);
+		request.setAttribute("startPage", startPage);
+		request.setAttribute("endPage", endPage);
+		
 
-            LocalDate startDate = LocalDate.of(2024, 2, 13);
-            LocalDate endDate = LocalDate.of(2024, 3, 13);
-            List<Movie> movies = movieService.findMoviesByReleaseDateBetween(startDate, endDate);
-
-            // 조회한 영화 목록을 request 속성에 추가
-            request.setAttribute("movies", movies);
-
-            // ActionForward 객체를 통해 이동할 페이지와 리다이렉트 여부 설정
-            ActionForward forward = new ActionForward();
-            forward.setPath("movies.jsp"); // 영화 목록을 표시할 JSP 페이지 경로 설정
-            forward.setRedirect(false); // Dispatcher 방식으로 포워드
-            return forward;
-        } catch (Exception e) {
-            // 예외 처리
-            throw new RuntimeException(e);
-        }
-    }
+		forward.setRedirect(false);
+		forward.setPath(request.getContextPath() + "/movie/html/index.jsp");
+		return forward;
+	}
+	
 }

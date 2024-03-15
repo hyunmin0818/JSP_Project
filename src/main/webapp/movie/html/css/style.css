@@ -59,7 +59,7 @@ h6 {
 	font-weight: 400;
 	font-family: "Mulish", sans-serif;
 }
-
+g
 #youNeedLogin,#youNeedJoin,#youNeedLogout{			/*우측 상단 로그인 상태 확인 메시지*/
 	text-align:left;
 	font-size:9px;
@@ -2841,4 +2841,10 @@ ol {
 	.anime__review__item__text {
 		padding: 18px 20px 20px;
 	}
+}
+	.pagination-container {
+    /* 페이지 처리 부분 스타일링 */
+    /* 예시: 페이지 하단에 고정 */
+    margin-bottom: 20px; /* 푸터와의 간격 조정 */
+    text-align: center; /* 페이지 번호 중앙 정렬 */
 }
