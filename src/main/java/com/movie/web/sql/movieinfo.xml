@@ -14,13 +14,13 @@
 	SELECT COUNT(*) FROM movie
 	</select>
 	<select id="getMovieList" resultType="moviedto" parameterType="hashmap">
-	SELECT *
-	FROM (
-	SELECT movie.*,
-	ROW_NUMBER() OVER (ORDER BY releaseDate DESC) AS rownum
-	FROM movie
-	) AS ranked_movies
-	WHERE rownum BETWEEN #{startRow} AND #{endRow}
+		SELECT * FROM (
+		SELECT m.*,
+		(@row_number:=@row_number + 1) AS rownum
+		FROM movie m, (SELECT @row_number:=0) AS t
+		ORDER BY releaseDate DESC
+		) AS ranked_movies
+		WHERE rownum BETWEEN #{startRow} AND #{endRow}
 	</select>
 	
 	<select id="searchMovies" resultType="MovieDTO" parameterType="java.util.HashMap">
