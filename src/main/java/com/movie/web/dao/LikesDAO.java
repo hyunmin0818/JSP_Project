@@ -37,8 +37,8 @@ public class LikesDAO {
     }
 
     // 특정 영화에 대한 좋아요 수 조회
-    public int getLikesCount(String movieSeq) {
-        return sqlsession.selectOne("Movie.getLikesCount", movieSeq);
+    public int getLikesCount(int movie_likes) {
+        return sqlsession.selectOne("Movie.getLikesCount", movie_likes);
     }
     
     // 영화 좋아요 수를 내림차순으로 페이징하여 가져오기

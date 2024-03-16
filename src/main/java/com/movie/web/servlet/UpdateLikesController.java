@@ -38,6 +38,7 @@ public class UpdateLikesController extends HttpServlet{
 		case "/LikeDecrease.lk" :
 			forward = new LikeDecreaseAction().execute(req, resp);
 			break;
+			
 		}
 	
 	}
