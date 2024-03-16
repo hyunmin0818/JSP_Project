@@ -31,15 +31,19 @@
 /* Template default CSS
 /*----------------------------------------*/
 
-
-
-
+a{
+	
+	color : black;
+	
+}
 html,
 body {
+	font-color:white;
 	height: 100%;
 	font-family: "Mulish", sans-serif;
 	-webkit-font-smoothing: antialiased;
-	background: #0b0c2a;
+	background-color: white;
+	
 }
 
  #dropdown-toggle{					 /*로그인 캐릭터 id 별도 추가  색깔 새로 추가함*/
@@ -65,6 +69,7 @@ h6 {
 	font-size:9px;
 	margin-top:-5px;
 	margin-right:6px;
+	color:black;
 
 }
 #youNeedMypage{			/*우측 상단 로그인 상태 확인 메시지*/
@@ -73,13 +78,15 @@ h6 {
 	margin-top:-50px;
 	margin-right:6px;
 	margin-bottom:-40px;
+	color:black;
 }
 #youNeedLogout{
 	margin-top:-3px;
 	margin-bottom:-40px;
+	color:black;
 }
 
-#youNeedMypage:hover,#dropdown-toggle:hover,.icon_profile:hover,#youNeedLogin:hover,#youNeedJoin:hover,#youNeedLogout:hover{			/*우측 상단 로그인 상태 확인 메시지*/
+#youNeedMypage:hover,.search-switch:hover,#dropdown-toggle:hover,.icon_profile:hover,#youNeedLogin:hover,#youNeedJoin:hover,#youNeedLogout:hover{			/*우측 상단 로그인 상태 확인 메시지*/
 	color:skyblue;
 
 }
@@ -95,7 +102,7 @@ h6 {
 }
 
 #saveId{		/*아이디 체크박스 위치 */
-	color: white;
+	color: black;;
 	margin-right:5px;
 }
 
@@ -103,9 +110,9 @@ h6 {
 	color: red;
 }
 
-.blacktext{						/*검은 글씨 출력 용도 */
+.blacktext,#p_blacktext,#h2_blacktext{						/*검은 글씨 출력 용도 */
 
-	color: black;
+	color: black;;
 
 }
 
@@ -147,7 +154,7 @@ img {
 	max-width: 100%;
 }
 
-input:focus,
+input:fㅉocus,
 select:focus,
 button:focus,
 textarea:focus {
@@ -158,7 +165,7 @@ a:hover,
 a:focus {
 	text-decoration: none;
 	outline: none;
-	color: #ffffff;
+	color: gray;
 }
 
 ul,
@@ -178,8 +185,8 @@ ol {
 
 .section-title h4,
 .section-title h5 {
-	color: #ffffff;
-	font-weight: 600;
+	color: black;;
+	font-weight: 600px;
 	line-height: 21px;
 	text-transform: uppercase;
 	padding-left: 20px;
@@ -201,13 +208,16 @@ ol {
 .set-bg {
 	background-repeat: no-repeat;
 	background-size: cover;
-	background-position: top center;
+ 	background-position: top center; 
 }
 
-.spad {
-	padding-top: 100px;
-	padding-bottom: 100px;
-}
+ .spad {			
+	
+
+ 	padding-top: 100px; 
+ 	padding-bottom: 100px; 
+ } 
+
 #logincenter{					/* login창 하나만 나올 때 가운데 정렬로 오게 함 */
 	padding-top: -50px;
 	padding-bottom: 5px;
@@ -233,8 +243,8 @@ ol {
 	font-size: 13px;
 	font-weight: 700;
 	text-transform: uppercase;
-	color: #ffffff;
-	letter-spacing: 2px;
+	color: black;;
+	letter-spacing : 2px;
 }
 
 .primary-btn span {
@@ -246,7 +256,7 @@ ol {
 
 .site-btn {
 	font-size: 13px;
-	color: #ffffff;
+	color: white;
 	background: #e53637;
 	font-weight: 700;
 	border: none;
@@ -259,7 +269,7 @@ ol {
 
 #forgot_id_button {					/*아이디,비밀번호 찾기 추가 정보 출력 버튼*/
 	font-size: 11px;
-	color: #ffffff;
+	color: white;
 	background: blue;
 	
 	font-weight: 400;
@@ -354,8 +364,8 @@ ol {
 }
 #logincenter{             
   /* login창 하나만 나올 때 가운데 정렬로 오게 함 */
-	padding-top: 5px;
-	padding-bottom: 500px;
+	padding-top: -300px;
+	padding-bottom: 0px;
  }
  #logincenter, #logincenter2 {            /*logincenter만 가운데정렬하도록함*/
 	position: relative;
@@ -377,10 +387,52 @@ ol {
 	margin:0 auto;
  }
  
+.search-model {
+	display: none;
+	position: fixed;
+	width: 100%;
+	height: 100%;
+	left: 0;
+	top: 0;
+	background: #000;
+	z-index: 99999;
+}
 
+.search-model-form {
+	padding: 0 15px;
+}
 
+.search-model-form input {
+	width: 500px;
+	font-size: 40px;
+	border: none;
+	border-bottom: 2px solid #333;
+	background: 0 0;
+	color: #999;
+}
 
-
+.search-close-switch {
+	position: absolute;
+	width: 50px;
+	height: 50px;
+	background: #333;
+	color: #fff;
+	text-align: center;
+	border-radius: 50%;
+	font-size: 28px;
+	line-height: 28px;
+	top: 30px;
+	cursor: pointer;
+	display: -webkit-box;
+	display: -ms-flexbox;
+	display: flex;
+	-webkit-box-align: center;
+	-ms-flex-align: center;
+	align-items: center;
+	-webkit-box-pack: center;
+	-ms-flex-pack: center;
+	justify-content: center;
+}
 
 /*---------------------
   Header
@@ -396,7 +448,7 @@ ol {
 
 }
 .header {
-	background: #070720;
+	background: white;
 	 /* margin-bottom:-10px;  */
 }
 
@@ -421,11 +473,11 @@ ol {
 
 .header__menu ul li.active a {
 	background: #e53637;
-	color: #ffffff;
+	color: black;
 }
 
 .header__menu ul li:hover a {
-	color: #ffffff;
+	color: black;
 }
 
 .header__menu ul li:hover .dropdown {
@@ -448,7 +500,7 @@ ol {
 	left: 0;
 	top: 82px;
 	width: 150px;
-	background: #ffffff;
+	background: black;
 	text-align: left;
 	padding: 5px 0;
 	z-index: 9;
@@ -489,7 +541,7 @@ ol {
 }
 
  #dropdown-toggle{					 /*로그인 캐릭터 id 별도 추가  색깔 새로 추가함*/
-	color:white;
+	color:black;
 }
 
 .header__menu ul li .dropdown li a:hover{		/*카테고리창 마우스 올릴시 이벤트 추가*/
@@ -505,7 +557,7 @@ ol {
 .header__right a {
 	display: inline-block;
 	font-size: 18px;
-	color: #ffffff;
+	color: black;;
 	margin-right: 30px;
 }
 
@@ -538,7 +590,7 @@ ol {
 .hero__text .label {
 	font-size: 13px;
 	color: #e53637;
-	background: #ffffff;
+	background: black;
 	padding: 5px 14px 3px;
 	display: inline-block;
 	position: relative;
@@ -550,7 +602,7 @@ ol {
 }
 
 .hero__text h2 {
-	color: #ffffff;
+	color: black;;
 	font-size: 42px;
 	font-family: "Oswald", sans-serif;
 	font-weight: 700;
@@ -566,7 +618,7 @@ ol {
 }
 
 .hero__text p {
-	color: #ffffff;
+	color: black;;
 	font-size: 16px;
 	margin-bottom: 40px;
 	position: relative;
@@ -588,7 +640,7 @@ ol {
 
 .hero__text a span {
 	font-size: 13px;
-	color: #ffffff;
+	color: black;;
 	background: #e53637;
 	display: inline-block;
 	font-weight: 700;
@@ -604,7 +656,7 @@ ol {
 	display: inline-block;
 	background: #e53637;
 	padding: 11px 5px 16px 8px;
-	color: #ffffff;
+	color: black;;
 	border-radius: 0 4px 4px 0;
 }
 
@@ -645,7 +697,7 @@ ol {
 }
 
 .hero__slider.owl-carousel .owl-dots button.active {
-	background: #ffffff;
+	background: black
 }
 
 .hero__slider.owl-carousel .owl-dots button:last-child {
@@ -659,7 +711,7 @@ ol {
 	background: #0b0c2a;
 	line-height: 66px;
 	text-align: center;
-	color: #ffffff;
+	color: black;;
 	-webkit-transform: rotate(45deg);
 	-ms-transform: rotate(45deg);
 	transform: rotate(45deg);
@@ -746,7 +798,7 @@ ol {
 
 .product__item__pic .ep {
 	font-size: 13px;
-	color: #ffffff;
+	color: black;;
 	background: #e53637;
 	display: inline-block;
 	padding: 2px 12px;
@@ -758,7 +810,7 @@ ol {
 
 .product__item__pic .comment {
 	font-size: 13px;
-	color: #ffffff;
+	color: black;;
 	background: #3d3d3d;
 	display: inline-block;
 	padding: 2px 10px;
@@ -770,7 +822,7 @@ ol {
 
 .product__item__pic .view {
 	font-size: 13px;
-	color: #ffffff;
+	color: black;;
 	background: #3d3d3d;
 	display: inline-block;
 	padding: 2px 10px;
@@ -791,7 +843,7 @@ ol {
 .product__item__text ul li {
 	list-style: none;
 	font-size: 10px;
-	color: #ffffff;
+	color: black;;
 	font-weight: 700;
 	padding: 1px 10px;
 	background: rgba(255, 255, 255, 0.2);
@@ -800,7 +852,7 @@ ol {
 }
 
 .product__item__text h5 a {
-	color: #ffffff;
+	color: black;;
 	font-weight: 700;
 	line-height: 26px;
 }
@@ -857,7 +909,7 @@ ol {
 .acter__item__text ul li {
 	list-style: none;
 	font-size: 10px;
-	color: #ffffff;
+	color: black;;
 	font-weight: 700;
 	padding: 1px 4px;
 	background: rgba(255, 255, 255, 0.2);
@@ -867,7 +919,7 @@ ol {
 }
 
 .acter__item__text h5 a {
-	color: #ffffff;
+	color: black;;
 	font-weight: 700;
 	line-height: 26px;	
 	
@@ -875,7 +927,7 @@ ol {
 }
 
 .product__sidebar .section-title h5 {
-	color: #ffffff;
+	color: black;;
 	font-weight: 600;
 	font-family: "Oswald", sans-serif;
 	line-height: 21px;
@@ -917,7 +969,7 @@ ol {
 }
 
 .product__sidebar__view .filter__controls li.active {
-	color: #ffffff;
+	color: black;
 }
 
 .product__sidebar__view .filter__controls li:last-child {
@@ -933,7 +985,7 @@ ol {
 
 .product__sidebar__view__item .ep {
 	font-size: 13px;
-	color: #ffffff;
+	color: black;;
 	background: #e53637;
 	display: inline-block;
 	padding: 2px 12px;
@@ -945,7 +997,7 @@ ol {
 
 .product__sidebar__view__item .view {
 	font-size: 13px;
-	color: #ffffff;
+	color: black;;
 	background: #3d3d3d;
 	display: inline-block;
 	padding: 2px 10px;
@@ -964,7 +1016,7 @@ ol {
 }
 
 .product__sidebar__view__item h5 a {
-	color: #ffffff;
+	color: black;;
 	font-weight: 700;
 	line-height: 26px;
 }
@@ -995,7 +1047,7 @@ ol {
 .product__sidebar__comment__item__text ul li {
 	list-style: none;
 	font-size: 10px;
-	color: #ffffff;
+	color: black;;
 	font-weight: 700;
 	padding: 1px 10px;
 	background: rgba(255, 255, 255, 0.2);
@@ -1008,7 +1060,7 @@ ol {
 }
 
 .product__sidebar__comment__item__text h5 a {
-	color: #ffffff;
+	color: black;;
 	font-weight: 700;
 	line-height: 26px;
 }
@@ -1034,7 +1086,7 @@ ol {
 }
 
 .product__page__title .product__page__filter p {
-	color: #ffffff;
+	color: black;;
 	display: inline-block;
 	margin-bottom: 0;
 	margin-right: 16px;
@@ -1088,11 +1140,11 @@ ol {
 }
 
 .product__pagination a:hover {
-	color: #ffffff;
+	color: black;
 }
 
 .product__pagination a.current-page {
-	border: 1px solid #ffffff;
+	border: 1px solid black
 }
 
 .product__pagination a i {
@@ -1122,7 +1174,7 @@ ol {
 }
 .anime__default .anime__details__btn{
 	font-size: 13px;
-	color: #ffffff;
+	color: black;;
 	display: inline-block;
 	font-weight: 700;
 	letter-spacing: 2px;
@@ -1148,7 +1200,7 @@ ol {
 
 .anime__details__pic .comment {
 	font-size: 13px;
-	color: #ffffff;
+	color: black;;
 	background: #3d3d3d;
 	display: inline-block;
 	padding: 2px 10px;
@@ -1160,7 +1212,7 @@ ol {
 
 .anime__details__pic .view {
 	font-size: 13px;
-	color: #ffffff;
+	color: black;;
 	background: #3d3d3d;
 	display: inline-block;
 	padding: 2px 10px;
@@ -1175,7 +1227,7 @@ ol {
 }
 
 .anime__details__title h3 {
-	color: #ffffff;
+	color: black;;
 	font-weight: 700;
 	margin-bottom: 13px;
 }
@@ -1240,7 +1292,7 @@ ol {
 
 .anime__details__btn .follow-btn {
 	font-size: 13px;
-	color: #ffffff;
+	color: black;;
 	background: #e53637;
 	display: inline-block;
 	font-weight: 700;
@@ -1253,7 +1305,7 @@ ol {
 
 .anime__details__btn .watch-btn span {
 	font-size: 13px;
-	color: #ffffff;
+	color: black;;;
 	background: #e53637;
 	display: inline-block;
 	font-weight: 700;
@@ -1269,12 +1321,12 @@ ol {
 	display: inline-block;
 	background: #e53637;
 	padding: 11px 5px 16px 8px;
-	color: #ffffff;
+	color: black;
 	border-radius: 0 4px 4px 0;
 }
 .anime__details__btn .reservation{   /*예매 버튼 */
 	font-size: 13px;
-	color: #ffffff;
+	color: black;
 	background: #e53637;
 	display: inline-block;
 	font-weight: 700;
@@ -1287,7 +1339,7 @@ ol {
 }
 .col-lg-12 .reservation{
 	font-size: 13px;
-	color: #ffffff;
+	color: black;
 	background: #e53637;
 	display: inline-block;
 	font-weight: 700;
@@ -1302,7 +1354,7 @@ ol {
 .product__item__text .delete {
     padding: 1px 20px;
     background-color: #e53637;
-    color: #ffffff;
+    color: black;
     border: none;
     border-radius: 5px;
     cursor: pointer;
@@ -1317,7 +1369,7 @@ ol {
 .anime__review__item__text .delete {
 	padding: 1px 20px;
     background-color: #e53637;
-    color: #ffffff;
+    color: black;
     border: none;
     border-radius: 5px;
     cursor: pointer;
@@ -1367,7 +1419,7 @@ ol {
 }
 
 .anime__review__item__text h6 {
-	color: #ffffff;
+	color: black;
 	font-weight: 700;
 	margin-bottom: 10px;
 }
@@ -1415,7 +1467,7 @@ ol {
 }
 
 .anime_default_text h6 {
-	color: #ffffff;
+	color: black;
 	font-weight: 700;
 	margin-bottom: 10px;
 }
@@ -1465,7 +1517,7 @@ ol {
 }
 
 .anime_request_text h6 {
-	color: #ffffff;
+	color: black;
 	font-weight: 700;
 	margin-bottom: 10px;
 	text-align: right; /* 헤더 텍스트는 다시 좌측으로 정렬 */
@@ -1493,7 +1545,7 @@ ol {
 
 .anime__details__form form button {
 	font-size: 11px;
-	color: #ffffff;
+	color: black;
 	font-weight: 700;
 	letter-spacing: 2px;
 	text-transform: uppercase;
@@ -1541,7 +1593,7 @@ ol {
 }
 
 .anime__video__player .plyr--full-ui input[type=range] {
-	color: #ffffff;
+	color: black;
 }
 
 .anime__video__player .plyr__controls .plyr__controls__item.plyr__progress__container {
@@ -1597,7 +1649,7 @@ ol {
 .anime__details__episodes a {
 	display: inline-block;
 	font-size: 15px;
-	color: #ffffff;
+	color: black;
 	background: rgba(255, 255, 255, 0.2);
 	padding: 10px 20px;
 	border-radius: 4px;
@@ -1610,7 +1662,7 @@ ol {
 
 .anime__details__episodes a:hover {
 	color: #000000;
-	background: #ffffff;
+	background: black
 }
 
 /*---------------------
@@ -1623,7 +1675,7 @@ ol {
 
 .breadcrumb__links a {
 	font-size: 15px;
-	color: #ffffff;
+	color: black;
 	margin-right: 18px;
 	display: inline-block;
 	position: relative;
@@ -1666,7 +1718,7 @@ ol {
 }
 
 .normal__breadcrumb__text h2 {
-	color: #ffffff;
+	color: black;
 	font-size: 48px;
 	font-family: "Oswald", sans-serif;
 	font-weight: 700;
@@ -1674,7 +1726,7 @@ ol {
 }
 
 .normal__breadcrumb__text p {
-	color: #ffffff;
+	color: black;
 	font-size: 24px;
 	margin-bottom: 0;
 }
@@ -1723,7 +1775,7 @@ ol {
 }
 
 .blog__item__text p {
-	color: #ffffff;
+	color: black;
 	margin-bottom: 12px;
 }
 
@@ -1733,7 +1785,7 @@ ol {
 }
 
 .blog__item__text h4 a {
-	color: #ffffff;
+	color: black;
 	line-height: 34px;
 }
 
@@ -1752,7 +1804,7 @@ ol {
 
 .blog__details__title h6 {
 	font-size: 15px;
-	color: #ffffff;
+	color: black;
 	font-weight: 700;
 	text-transform: uppercase;
 	margin-bottom: 30px;
@@ -1765,7 +1817,7 @@ ol {
 }
 
 .blog__details__title h2 {
-	color: #ffffff;
+	color: black;
 	font-size: 48px;
 	font-weight: 700;
 	line-height: 60px;
@@ -1775,7 +1827,7 @@ ol {
 .blog__details__title .blog__details__social a {
 	display: inline-block;
 	font-size: 15px;
-	color: #ffffff;
+	color: black;
 	padding: 16px 35px 14px 20px;
 	border-radius: 2px;
 	margin-right: 6px;
@@ -1818,7 +1870,7 @@ ol {
 }
 
 .blog__details__text p {
-	color: #ffffff;
+	color: black;
 	font-size: 17px;
 	line-height: 30px;
 }
@@ -1828,7 +1880,7 @@ ol {
 }
 
 .blog__details__item__text h4 {
-	color: #ffffff;
+	color: black;
 	font-weight: 700;
 	margin-bottom: 35px;
 }
@@ -1839,7 +1891,7 @@ ol {
 }
 
 .blog__details__item__text p {
-	color: #ffffff;
+	color: black;
 	font-size: 17px;
 	line-height: 30px;
 	margin-bottom: 0;
@@ -1885,7 +1937,7 @@ ol {
 .blog__details__btns__item h5 a {
 	font-size: 17px;
 	letter-spacing: 2px;
-	color: #ffffff;
+	color: black;
 }
 
 .blog__details__btns__item h5 a span {
@@ -1901,7 +1953,7 @@ ol {
 }
 
 .blog__details__comment h4 {
-	color: #ffffff;
+	color: black;
 	font-weight: 700;
 	margin-bottom: 26px;
 }
@@ -1932,7 +1984,7 @@ ol {
 }
 
 .blog__details__comment__item__text h5 {
-	color: #ffffff;
+	color: black;
 	font-weight: 700;
 	margin-bottom: 10px;
 }
@@ -1946,7 +1998,7 @@ ol {
 
 .blog__details__comment__item__text a {
 	display: inline-block;
-	color: #ffffff;
+	color: black;
 	background: rgba(255, 255, 255, 0.1);
 	padding: 6px 20px;
 	letter-spacing: 2px;
@@ -1966,7 +2018,7 @@ ol {
 }
 
 .blog__details__form h4 {
-	color: #ffffff;
+	color: black;
 	font-weight: 700;
 	margin-bottom: 26px;
 }
@@ -1974,7 +2026,7 @@ ol {
 .blog__details__form form input {
 	height: 50px;
 	width: 100%;
-	background: #ffffff;
+	background: black;
 	font-size: 15px;
 	color: #a6a6a6;
 	padding-left: 20px;
@@ -2006,7 +2058,7 @@ ol {
 .blog__details__form form textarea {
 	height: 115px;
 	width: 100%;
-	background: #ffffff;
+	background: black;
 	font-size: 15px;
 	color: #a6a6a6;
 	padding-left: 20px;
@@ -2094,7 +2146,7 @@ ol {
 #profile_modifybutton1,#profile_modifybutton2{		/*프로필 수정버튼*/
 	
 		font-size: 13px;
-		color: #ffffff;
+		color: black;
 		background:blue;
 		font-weight: 700;
 		border: none;
@@ -2110,7 +2162,7 @@ ol {
 #check_id_btn{		/*아이디 중복체크버튼*/
 	
 	font-size: 10px;
-	color: #ffffff;
+	color: black;
 	background:burlywood;
 	font-weight: 700;
 	border: none;
@@ -2129,7 +2181,7 @@ ol {
 #checkTicket,#cancelTicket{		/*예매확인 버튼,예매취소 버튼*/
 	
 	font-size: 13px;
-	color: #ffffff;
+	color: black;
 	background:green;
 	font-weight: 700;
 	border: none;
@@ -2190,7 +2242,7 @@ ol {
   /*출처: https://webdir.tistory.com/435 [WEBDIR:티스토리]--파일박스 끝---*/
 
 .login__form h3 {
-	color: #ffffff;
+	color: black;
 	font-weight: 700;
 	font-family: "Oswald", sans-serif;
 	margin-bottom: 30px;
@@ -2217,8 +2269,8 @@ ol {
 	height: 50px;
 	width: 100%;
 	font-size: 15px;
-	color: black;		/*로그인 텍스트 검은색으로 수정 */
-	background: #ffffff;
+	color: black;;		/*로그인 텍스트 검은색으로 수정 */
+	background: black;
 	border: none;
 	padding-left: 76px;
 }
@@ -2258,7 +2310,7 @@ ol {
 
 .login__form .forget_pass {
 	font-size: 15px;
-	color: #ffffff;
+	color: black;;
 	display: inline-block;
 	position: absolute;
 	right: 60px;
@@ -2270,7 +2322,7 @@ ol {
 }
 
 .login__register h3 {
-	color: #ffffff;
+	color: black;
 	font-weight: 700;
 	font-family: "Oswald", sans-serif;
 	margin-bottom: 30px;
@@ -2290,7 +2342,7 @@ ol {
 }
 
 .login__social__links span {
-	color: #ffffff;
+	color: black;
 	display: block;
 	font-size: 13px;
 	font-weight: 700;
@@ -2309,7 +2361,7 @@ ol {
 }
 
 .login__social__links ul li a {
-	color: #ffffff;
+	color: black;
 	display: block;
 	font-size: 13px;
 	font-weight: 700;
@@ -2358,7 +2410,7 @@ ol {
 
 .signup .login__form h5 {
 	font-size: 15px;
-	color: #ffffff;
+	color: black;
 	margin-top: 36px;
 }
 
@@ -2373,7 +2425,7 @@ ol {
 }
 
 .signup .login__social__links h3 {
-	color: #ffffff;
+	color: black;
 	font-weight: 700;
 	font-family: "Oswald", sans-serif;
 	margin-bottom: 30px;
@@ -2389,7 +2441,7 @@ ol {
 -----------------------*/
 
 .footer {
-	background: #070720;
+	background: black;
 	padding-top: 60px;
 	padding-bottom: 40px;
 	position: relative;
@@ -2405,7 +2457,7 @@ ol {
 .page-up a {
 	display: inline-block;
 	font-size: 36px;
-	color: #ffffff;
+	color: black;
 	height: 50px;
 	width: 50px;
 	background: #e53637;
@@ -2515,7 +2567,7 @@ ol {
 		left: 0;
 		top: 60px;
 		width: 100%;
-		background: #ffffff;
+		background: black;
 		padding: 15px 30px;
 		z-index: 9;
 	}
@@ -2620,7 +2672,7 @@ ol {
 		left: 0;
 		top: 60px;
 		width: 100%;
-		background: #ffffff;
+		background: black;
 		padding: 15px 30px;
 		z-index: 9;
 	}
@@ -2728,7 +2780,6 @@ ol {
 	.search-model-form input {
 		width: 100%;
 	}
-}
 
 /* Small Device = 320px */
 
@@ -2800,4 +2851,5 @@ ol {
 	.anime__review__item__text {
 		padding: 18px 20px 20px;
 	}
+}
 }
