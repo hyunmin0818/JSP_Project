@@ -10,10 +10,6 @@
                     success: function(response) {
                         // 성공적으로 처리된 경우의 동작
                         console.log('Likes added successfully.');
-                    },
-                    error: function(xhr, status, error) {
-                        // 오류가 발생한 경우의 동작
-                        console.error('Error occurred while adding likes:', error);
                     }
                 });
             }
@@ -27,10 +23,6 @@
                     success: function(response) {
                         // 성공적으로 처리된 경우의 동작
                         console.log('Likes removed successfully.');
-                    },
-                    error: function(xhr, status, error) {
-                        // 오류가 발생한 경우의 동작
-                        console.error('Error occurred while removing likes:', error);
                     }
                 });
             }
@@ -44,10 +36,6 @@
                     success: function(response) {
                         // 성공적으로 처리된 경우의 동작
                         console.log('Likes count:', response);
-                    },
-                    error: function(xhr, status, error) {
-                        // 오류가 발생한 경우의 동작
-                        console.error('Error occurred while getting likes count:', error);
                     }
                 });
             }
@@ -61,10 +49,6 @@
                     success: function(response) {
                         // 성공적으로 처리된 경우의 동작
                         console.log('Likes count (desc) with paging:', response);
-                    },
-                    error: function(xhr, status, error) {
-                        // 오류가 발생한 경우의 동작
-                        console.error('Error occurred while getting likes count (desc) with paging:', error);
                     }
                 });
             }
