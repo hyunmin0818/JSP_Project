@@ -29,7 +29,8 @@ public class MovieDTO {
 		private String Awards1; 	 // 영화제 수상내역
 		private String Awards2; 	 // 기타 수상내역
 		private int movie_likes;	 // 영화 좋아요
-		private int releaseDate;	 
+		private int releaseDate;	// 개봉일
+		private int movieView;		 // 영화 조회수
 		 
 		
 
@@ -200,6 +201,12 @@ public class MovieDTO {
 		}
 		public void setReleaseDate(int releaseDate) {
 			this.releaseDate = releaseDate;
+		}
+		public int getMovieView() {
+			return movieView;
+		}
+		public void setMovieView(int movieView) {
+			this.movieView = movieView;
 		}
 		
 		
