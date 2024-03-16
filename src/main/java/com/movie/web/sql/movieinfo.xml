@@ -13,6 +13,7 @@
 	<select id="getMovieCnt"  resultType="int">
 	SELECT COUNT(*) FROM movie
 	</select>
+
 	<select id="getMovieList" resultType="moviedto" parameterType="hashmap">
 		SELECT * FROM (
 		SELECT m.*,
@@ -22,6 +23,7 @@
 		) AS ranked_movies
 		WHERE rownum BETWEEN #{startRow} AND #{endRow}
 	</select>
+
 	
 	<select id="searchMovies" resultType="MovieDTO" parameterType="java.util.HashMap">
         SELECT *
@@ -29,9 +31,10 @@
         WHERE title LIKE #{parameter}
     </select>
 	
-	<select id="TheLatestMovie" resultType="moviedto" parameterType="java.util.HashMap">
+	<select id="getLatestMovie" resultType="moviedto" parameterType="java.util.HashMap">
 		SELECT *
 		FROM movie
-		ORDER BY releaseDate DESC;
+		ORDER BY releaseDate DESC
+		LIMIT 15;
 	</select>
 </mapper>

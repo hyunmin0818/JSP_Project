@@ -67,6 +67,9 @@ public class UserFrontController extends HttpServlet{
 		case "/movie/searchPw.ms" : 
 			forward = new SearchPwAction().execute(request ,response);
 			break;
+		case "/movie/html/loginOk_index.ms":
+			forward = new LoginOkIndexAction().execute(request ,response);
+			break;
 		}
 		
 		
