@@ -31,7 +31,31 @@
 /* Template default CSS
 /*----------------------------------------*/
 
+.css-nb4a5b-StyledImageWrapper {
+	display: -webkit-box;
+	display: -webkit-flex;
+	display: -ms-flexbox;
+	display: flex;
+	position: relative;
+	-webkit-box-pack: center;
+	-ms-flex-pack: center;
+	-webkit-justify-content: center;
+	justify-content: center;
+	-webkit-align-items: center;
+	-webkit-box-align: center;
+	-ms-flex-align: center;
+	align-items: center;
+	max-width: 728px;
+	height: 90px;
+	margin: 0 auto;
+}
 
+.css-jxv74f-StyledWrapper {
+	position: relative;
+	border-radius: 5px;
+	overflow: hidden;
+
+}
 
 
 html,
@@ -42,8 +66,9 @@ body {
 	background: #0b0c2a;
 }
 
- #dropdown-toggle{					 /*로그인 캐릭터 id 별도 추가  색깔 새로 추가함*/
-	color:white;
+#dropdown-toggle {
+	/*로그인 캐릭터 id 별도 추가  색깔 새로 추가함*/
+	color: white;
 }
 
 
@@ -60,50 +85,68 @@ h6 {
 	font-family: "Mulish", sans-serif;
 }
 
-#youNeedLogin,#youNeedJoin,#youNeedLogout{			/*우측 상단 로그인 상태 확인 메시지*/
-	text-align:left;
-	font-size:9px;
-	margin-top:-5px;
-	margin-right:6px;
-
-}
-#youNeedMypage{			/*우측 상단 로그인 상태 확인 메시지*/
-	text-align:right;
-	font-size:8px;
-	margin-top:-50px;
-	margin-right:6px;
-	margin-bottom:-40px;
-}
-#youNeedLogout{
-	margin-top:-3px;
-	margin-bottom:-40px;
-}
-
-#youNeedMypage:hover,#dropdown-toggle:hover,.icon_profile:hover,#youNeedLogin:hover,#youNeedJoin:hover,#youNeedLogout:hover{			/*우측 상단 로그인 상태 확인 메시지*/
-	color:skyblue;
+#youNeedLogin,
+#youNeedJoin,
+#youNeedLogout {
+	/*우측 상단 로그인 상태 확인 메시지*/
+	text-align: left;
+	font-size: 9px;
+	margin-top: -5px;
+	margin-right: 6px;
 
 }
 
+#youNeedMypage {
+	/*우측 상단 로그인 상태 확인 메시지*/
+	text-align: right;
+	font-size: 8px;
+	margin-top: -50px;
+	margin-right: 6px;
+	margin-bottom: -40px;
+}
 
-.whitetext{						/*하얀 글씨 출력 용도 */
+#youNeedLogout {
+	margin-top: -3px;
+	margin-bottom: -40px;
+}
+
+#youNeedMypage:hover,
+.search-switch:hover,
+#dropdown-toggle:hover,
+.icon_profile:hover,
+#youNeedLogin:hover,
+#youNeedJoin:hover,
+#youNeedLogout:hover {
+	/*우측 상단 로그인 상태 확인 메시지*/
+	color: skyblue;
+
+}
+
+
+.whitetext {
+	/*하얀 글씨 출력 용도 */
 	color: white;
 }
 
 
-.redtext{						/*빨간 글씨 출력 용도 */
+.redtext {
+	/*빨간 글씨 출력 용도 */
 	color: red;
 }
 
-#saveId{		/*아이디 체크박스 위치 */
+#saveId {
+	/*아이디 체크박스 위치 */
 	color: white;
-	margin-right:5px;
+	margin-right: 5px;
 }
 
-#saveId:hover{	/*아이디 체크박스 체크할 떄*/
+#saveId:hover {
+	/*아이디 체크박스 체크할 떄*/
 	color: red;
 }
 
-.blacktext{						/*검은 글씨 출력 용도 */
+.blacktext {
+	/*검은 글씨 출력 용도 */
 
 	color: black;
 
@@ -204,11 +247,13 @@ ol {
 	background-position: top center;
 }
 
-.spad {
+/* .spad {
 	padding-top: 100px;
 	padding-bottom: 100px;
-}
-#logincenter{					/* login창 하나만 나올 때 가운데 정렬로 오게 함 */
+} */
+
+#logincenter {
+	/* login창 하나만 나올 때 가운데 정렬로 오게 함 */
 	padding-top: -50px;
 	padding-bottom: 5px;
 }
@@ -257,11 +302,12 @@ ol {
 	padding: 12px 30px;
 }
 
-#forgot_id_button {					/*아이디,비밀번호 찾기 추가 정보 출력 버튼*/
+#forgot_id_button {
+	/*아이디,비밀번호 찾기 추가 정보 출력 버튼*/
 	font-size: 11px;
 	color: #ffffff;
 	background: blue;
-	
+
 	font-weight: 400;
 	border: none;
 	border-radius: 3px;
@@ -303,12 +349,14 @@ ol {
 		border: 4px solid #f44336;
 		border-left-color: transparent;
 	}
+
 	50% {
 		-webkit-transform: rotate(180deg);
 		transform: rotate(180deg);
 		border: 4px solid #673ab7;
 		border-left-color: transparent;
 	}
+
 	100% {
 		-webkit-transform: rotate(360deg);
 		transform: rotate(360deg);
@@ -323,11 +371,13 @@ ol {
 		border: 4px solid #f44336;
 		border-left-color: transparent;
 	}
+
 	50% {
 		-webkit-transform: rotate(180deg);
 		border: 4px solid #673ab7;
 		border-left-color: transparent;
 	}
+
 	100% {
 		-webkit-transform: rotate(360deg);
 		border: 4px solid #f44336;
@@ -352,17 +402,19 @@ ol {
 	text-align: center;
 	cursor: pointer;
 }
-#logincenter{             
-  /* login창 하나만 나올 때 가운데 정렬로 오게 함 */
-	padding-top: 5px;
-	padding-bottom: 500px;
- }
- #logincenter, #logincenter2 {            /*logincenter만 가운데정렬하도록함*/
+
+
+
+#logincenter,
+#logincenter2 {
+	/*logincenter만 가운데정렬하도록함*/
 	position: relative;
 	padding-left: 0px;
- }
- 
- #logincenter::after, #logincenter2::after{   /*login__form의 가운데 중앙 회색선이 없어지지 않아서 .login__form의 css값을 복사하여 색만 수정*/
+}
+
+#logincenter::after,
+#logincenter2::after {
+	/*login__form의 가운데 중앙 회색선이 없어지지 않아서 .login__form의 css값을 복사하여 색만 수정*/
 	position: absolute;
 	right: -14px;
 	top: -40px;
@@ -370,34 +422,79 @@ ol {
 	width: 1px;
 	background: rgba(5, 5, 5, 0);
 	content: "";
- }
- 
- 
- #logincenter{         /*로그인 창 가운데 정렬 */
-	margin:0 auto;
- }
- 
+}
 
 
+#logincenter {
+	/*로그인 창 가운데 정렬 */
+	margin: 0 auto;
+}
 
+.search-model {
+	display: none;
+	position: fixed;
+	width: 100%;
+	height: 100%;
+	left: 0;
+	top: 0;
+	background: #000;
+	z-index: 99999;
+}
 
+.search-model-form {
+	padding: 0 15px;
+}
+
+.search-model-form input {
+	width: 500px;
+	font-size: 40px;
+	border: none;
+	border-bottom: 2px solid #333;
+	background: 0 0;
+	color: #999;
+}
+
+.search-close-switch {
+	position: absolute;
+	width: 50px;
+	height: 50px;
+	background: #333;
+	color: #fff;
+	text-align: center;
+	border-radius: 50%;
+	font-size: 28px;
+	line-height: 28px;
+	top: 30px;
+	cursor: pointer;
+	display: -webkit-box;
+	display: -ms-flexbox;
+	display: flex;
+	-webkit-box-align: center;
+	-ms-flex-align: center;
+	align-items: center;
+	-webkit-box-pack: center;
+	-ms-flex-pack: center;
+	justify-content: center;
+}
 
 /*---------------------
   Header
 -----------------------*/
-#logo2{					/*로고 위치 수정*/
+#logo2 {
+	/*로고 위치 수정*/
 	position: relative;
 	width: 70%;
 	height: 70%;
 	/* padding-top: 10%; */
 	/* padding-bottom: 70%; */
-	margin-top:-70px;
-	margin-bottom:-70px;
+	margin-top: -70px;
+	margin-bottom: -70px;
 
 }
+
 .header {
 	background: #070720;
-	 /* margin-bottom:-10px;  */
+	/* margin-bottom:-10px;  */
 }
 
 .header__logo {
@@ -432,7 +529,7 @@ ol {
 	top: 62px;
 	opacity: 1;
 	visibility: visible;
-	
+
 }
 
 .header__menu ul li:hover .dropdown li a {
@@ -488,11 +585,13 @@ ol {
 	top: 2px;
 }
 
- #dropdown-toggle{					 /*로그인 캐릭터 id 별도 추가  색깔 새로 추가함*/
-	color:white;
+#dropdown-toggle {
+	/*로그인 캐릭터 id 별도 추가  색깔 새로 추가함*/
+	color: white;
 }
 
-.header__menu ul li .dropdown li a:hover{		/*카테고리창 마우스 올릴시 이벤트 추가*/
+.header__menu ul li .dropdown li a:hover {
+	/*카테고리창 마우스 올릴시 이벤트 추가*/
 	background-color: rgb(109, 129, 149);
 }
 
@@ -732,16 +831,20 @@ ol {
 }
 
 .product__item__pic {
-    height: 325px;
-    position: relative;
-    border-radius: 5px;
-    overflow: hidden; /* 이미지가 넘치지 않도록 처리 */
-    transition: transform 0.3s; /* 호버 효과를 위한 애니메이션 추가 */
+	height: 325px;
+	position: relative;
+	border-radius: 5px;
+	overflow: hidden;
+	/* 이미지가 넘치지 않도록 처리 */
+	transition: transform 0.3s;
+	/* 호버 효과를 위한 애니메이션 추가 */
 }
 
 .product__item__pic:hover {
-    cursor: pointer; /* 마우스 커서를 손가락 모양으로 변경 */
-    transform: scale(1.05); /* 호버 시 약간 확대되는 효과 */
+	cursor: pointer;
+	/* 마우스 커서를 손가락 모양으로 변경 */
+	transform: scale(1.05);
+	/* 호버 시 약간 확대되는 효과 */
 }
 
 .product__item__pic .ep {
@@ -804,50 +907,67 @@ ol {
 	font-weight: 700;
 	line-height: 26px;
 }
+
 /* 배우 부모 요소 */
 .acter_muri {
-    padding-top: 5px;
-    display: flex;
-    gap: 20px;
-    overflow-x: hidden; /* 스크롤 숨김 */
-    -webkit-overflow-scrolling: touch;
-    scroll-behavior: smooth;
-    scroll-snap-type: x proximity; /* 가로로 스냅되도록 설정 */
-    white-space: nowrap;
-    scroll-padding: 0 20px; /* 스크롤링 할 때 양 옆에 여백 추가 */
-    cursor: grab; /* 드래그 커서로 변경 */
-	
+	padding-top: 5px;
+	display: flex;
+	gap: 20px;
+	overflow-x: hidden;
+	/* 스크롤 숨김 */
+	-webkit-overflow-scrolling: touch;
+	scroll-behavior: smooth;
+	scroll-snap-type: x proximity;
+	/* 가로로 스냅되도록 설정 */
+	white-space: nowrap;
+	scroll-padding: 0 20px;
+	/* 스크롤링 할 때 양 옆에 여백 추가 */
+	cursor: grab;
+	/* 드래그 커서로 변경 */
+
 }
+
 .acter__item {
-	height: 250px;	
+	height: 250px;
 	width: 130px;
 	padding-left: 5px;
-    flex-shrink: 0; /* 요소들이 줄어들지 않도록 설정 */
-	
+	flex-shrink: 0;
+	/* 요소들이 줄어들지 않도록 설정 */
+
 }
+
 .acter_muri:active {
-    cursor: grabbing; /* 드래그 중에는 다른 커서로 변경 */
+	cursor: grabbing;
+	/* 드래그 중에는 다른 커서로 변경 */
 }
 
 
 .acter__item__pic {
-    height: 160px;	
+	height: 160px;
 	width: 120px;
-    position: relative;
-    border-radius: 5px;
-    overflow: hidden; /* 이미지가 넘치지 않도록 처리 */
-    transition: transform 0.3s; /* 호버 효과를 위한 애니메이션 추가 */
-	
+	position: relative;
+	border-radius: 5px;
+	overflow: hidden;
+	/* 이미지가 넘치지 않도록 처리 */
+	transition: transform 0.3s;
+	/* 호버 효과를 위한 애니메이션 추가 */
+
 }
 
 .acter__item__pic:hover {
-    cursor: pointer; /* 마우스 커서를 손가락 모양으로 변경 */
-    transform: scale(1.05); /* 호버 시 약간 확대되는 효과 */
+	cursor: pointer;
+	/* 마우스 커서를 손가락 모양으로 변경 */
+	transform: scale(1.05);
+	/* 호버 시 약간 확대되는 효과 */
 }
 
 .acter__item__text {
 	padding-top: 3px;
 	overflow: hidden;
+	text-align: center;
+	/* 텍스트 중앙 정렬 */
+	font-size: 1.1em;
+	/* 글자 크기 약간 키우기 */
 }
 
 .acter__item__text ul {
@@ -863,16 +983,85 @@ ol {
 	background: rgba(255, 255, 255, 0.2);
 	border-radius: 20px;
 	display: inline-block;
-	
+
 }
 
-.acter__item__text h5 a {
+
+.acter__item__text h5 {
 	color: #ffffff;
 	font-weight: 700;
-	line-height: 26px;	
-	
-	
+	line-height: 26px;
+	text-align: center;
+	/* 텍스트 중앙 정렬 */
+	line-height: 160px;
+
 }
+
+
+.css-stilcut {
+    display: flex;
+    position: absolute;
+    top: 55px;
+    left: 0;
+    width: 100%;
+    height: 80%;
+    overflow: hidden;
+    justify-content: center;
+    align-items: center;
+}
+
+.css-sdsdsd {
+    bottom: 60px;
+    flex-direction: row;
+    align-items: end;
+    min-width: 600px;
+    margin-top: 300px;
+    margin-right: 400px;
+}
+@media only screen and (max-width: 768px) {
+    .css-stilcut {
+        height: auto; /* 높이 자동 조정 */
+    }
+
+    .css-sdsdsd {
+        flex-direction: column; /* 컬럼 방향으로 변경 */
+        align-items: center; /* 가운데 정렬 */
+        min-width: auto; /* 최소 너비 자동 조정 */
+        margin: 50px; /* 여백 조정 */
+    }
+}
+
+.css-Title {
+	font-size: 36px;
+	font-weight: 700;
+	line-height: 36px;
+	color: white;
+}
+
+.css-qnwpahr {
+	margin-top: 16px;
+	color: white;
+}
+
+.css-roqhddlf {
+	font-size: 14px;
+	line-height: 18px;
+	margin-top: 8px;
+	color: white;
+}
+
+.css-qkdduddlfwkdfmrnrrk {
+	font-size: 14px;
+	line-height: 18px;
+	margin-top: 8px;
+	color: white;
+}
+
+.css-tkd {
+	line-height: 14px;
+	color: white;
+}
+
 
 .product__sidebar .section-title h5 {
 	color: #ffffff;
@@ -979,7 +1168,8 @@ ol {
 }
 
 .product__sidebar__comment__item__pic {
-	cursor: pointer; /* 마우스 커서를 손가락 모양으로 변경 */
+	cursor: pointer;
+	/* 마우스 커서를 손가락 모양으로 변경 */
 	float: left;
 	margin-right: 15px;
 }
@@ -1116,11 +1306,13 @@ ol {
 	position: relative;
 	color: darkgray;
 }
+
 .anime__default {
 	position: relative;
 	color: darkgray;
 }
-.anime__default .anime__details__btn{
+
+.anime__default .anime__details__btn {
 	font-size: 13px;
 	color: #ffffff;
 	display: inline-block;
@@ -1129,8 +1321,10 @@ ol {
 	text-transform: uppercase;
 	padding: 14px 20px;
 	border-radius: 4px;
-	margin-left: 886px; /* 왼쪽 여백을 추가하여 다른 요소와 간격을 조절 */
+	margin-left: 886px;
+	/* 왼쪽 여백을 추가하여 다른 요소와 간격을 조절 */
 	margin-right: 11px;
+
 }
 
 
@@ -1248,7 +1442,8 @@ ol {
 	text-transform: uppercase;
 	padding: 14px 20px;
 	border-radius: 4px;
-	margin-right: 11px;
+	margin-left: 80%;
+
 }
 
 .anime__details__btn .watch-btn span {
@@ -1272,7 +1467,9 @@ ol {
 	color: #ffffff;
 	border-radius: 0 4px 4px 0;
 }
-.anime__details__btn .reservation{   /*예매 버튼 */
+
+.anime__details__btn .reservation {
+	/*예매 버튼 */
 	font-size: 13px;
 	color: #ffffff;
 	background: #e53637;
@@ -1282,10 +1479,13 @@ ol {
 	text-transform: uppercase;
 	padding: 14px 30px;
 	border-radius: 4px 4px 4px 4px;
-	float: right; 		/* 요소를 오른쪽으로 띄움 */
-    margin-left: 1px; /* 왼쪽 여백을 추가하여 다른 요소와 간격을 조절 */
+	float: right;
+	/* 요소를 오른쪽으로 띄움 */
+	margin-left: 1px;
+	/* 왼쪽 여백을 추가하여 다른 요소와 간격을 조절 */
 }
-.col-lg-12 .reservation{
+
+.col-lg-12 .reservation {
 	font-size: 13px;
 	color: #ffffff;
 	background: #e53637;
@@ -1295,35 +1495,37 @@ ol {
 	text-transform: uppercase;
 	padding: 14px 30px;
 	border-radius: 4px 4px 4px 4px;
-	float: right; 		/* 요소를 오른쪽으로 띄움 */
-    margin-left: 1px; /* 왼쪽 여백을 추가하여 다른 요소와 간격을 조절 */
+	float: right;
+	/* 요소를 오른쪽으로 띄움 */
+	margin-left: 1px;
+	/* 왼쪽 여백을 추가하여 다른 요소와 간격을 조절 */
 }
-  
+
 .product__item__text .delete {
-    padding: 1px 20px;
-    background-color: #e53637;
-    color: #ffffff;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
+	padding: 1px 20px;
+	background-color: #e53637;
+	color: #ffffff;
+	border: none;
+	border-radius: 5px;
+	cursor: pointer;
+	transition: background-color 0.3s ease;
 	margin-left: 35px;
 }
 
 .delete:hover {
-    background-color: #d84315;
+	background-color: #d84315;
 }
 
 .anime__review__item__text .delete {
 	padding: 1px 20px;
-    background-color: #e53637;
-    color: #ffffff;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
+	background-color: #e53637;
+	color: #ffffff;
+	border: none;
+	border-radius: 5px;
+	cursor: pointer;
+	transition: background-color 0.3s ease;
 	margin-left: 580px;
-    /* 여기에 삭제 버튼에 대한 원하는 스타일을 지정하세요 */
+	/* 여기에 삭제 버튼에 대한 원하는 스타일을 지정하세요 */
 }
 
 .anime__details__review {
@@ -1382,6 +1584,7 @@ ol {
 	line-height: 23px;
 	margin-bottom: 0;
 }
+
 /**/
 .anime_default_pic {
 	float: left;
@@ -1430,19 +1633,28 @@ ol {
 	line-height: 23px;
 	margin-bottom: 0;
 }
-/**//**//**//**//**/
+
+/**/
+/**/
+/**/
+/**/
+/**/
 .anime_request_pic {
-	float: right; /* 우측으로 정렬됨 */
-	margin-left: 20px; /* margin-right 대신 margin-left 사용 */
+	float: right;
+	/* 우측으로 정렬됨 */
+	margin-left: 20px;
+	/* margin-right 대신 margin-left 사용 */
 	position: relative;
 }
 
 .anime_request_pic:before {
 	position: absolute;
-	left: -30px; /* 우측으로 이동 */
+	left: -30px;
+	/* 우측으로 이동 */
 	top: 15px;
 	border-bottom: 15px solid transparent;
-	border-right: 15px solid #1d1e39; /* border-left 대신 border-right 사용 */
+	border-right: 15px solid #1d1e39;
+	/* border-left 대신 border-right 사용 */
 	content: "";
 	-webkit-transform: rotate(45deg);
 	-ms-transform: rotate(45deg);
@@ -1458,25 +1670,31 @@ ol {
 .anime_request_text {
 	overflow: hidden;
 	background: #1d1e39;
-	padding: 18px 20px 16px 30px; /* padding-right 대신 padding-left 사용 */
+	padding: 18px 20px 16px 30px;
+	/* padding-right 대신 padding-left 사용 */
 	border-radius: 10px;
-	text-align: right; /* 텍스트를 우측으로 정렬 */
-	direction: rtl; /* 텍스트의 방향을 우측에서 왼쪽으로 변경 */
+	text-align: right;
+	/* 텍스트를 우측으로 정렬 */
+	direction: rtl;
+	/* 텍스트의 방향을 우측에서 왼쪽으로 변경 */
 }
 
 .anime_request_text h6 {
 	color: #ffffff;
 	font-weight: 700;
 	margin-bottom: 10px;
-	text-align: right; /* 헤더 텍스트는 다시 좌측으로 정렬 */
+	text-align: right;
+	/* 헤더 텍스트는 다시 좌측으로 정렬 */
 }
 
 .anime_request_text p {
 	color: #b7b7b7;
 	line-height: 23px;
 	margin-bottom: 0;
-	text-align: right; /* 본문 텍스트도 다시 좌측으로 정렬 */
+	text-align: right;
+	/* 본문 텍스트도 다시 좌측으로 정렬 */
 }
+
 /**/
 .anime__details__form form textarea {
 	width: 100%;
@@ -2041,10 +2259,7 @@ ol {
   Login
 -----------------------*/
 
-.login {
-	padding-top: 130px;
-	padding-bottom: 120px;
-}
+
 
 .login__form {
 	position: relative;
@@ -2061,12 +2276,16 @@ ol {
 	content: "";
 }
 
-#logincenter, #logincenter2 {				/*logincenter만 가운데정렬하도록함*/
+#logincenter,
+#logincenter2 {
+	/*logincenter만 가운데정렬하도록함*/
 	position: relative;
 	padding-left: 0px;
 }
 
-#logincenter::after, #logincenter2::after{	/*login__form의 가운데 중앙 회색선이 없어지지 않아서 .login__form의 css값을 복사하여 색만 수정*/
+#logincenter::after,
+#logincenter2::after {
+	/*login__form의 가운데 중앙 회색선이 없어지지 않아서 .login__form의 css값을 복사하여 색만 수정*/
 	position: absolute;
 	right: -14px;
 	top: -40px;
@@ -2077,11 +2296,13 @@ ol {
 }
 
 
-#logincenter{			/*로그인 창 가운데 정렬 */
-	margin:0 auto;
+#logincenter {
+	/*로그인 창 가운데 정렬 */
+	margin: 0 auto;
 }
 
-#member_profile{			/*프로필 사진*/
+#member_profile {
+	/*프로필 사진*/
 	position: relative;
 	width: 70%;
 	height: 70%;
@@ -2091,27 +2312,30 @@ ol {
 
 }
 
-#profile_modifybutton1,#profile_modifybutton2{		/*프로필 수정버튼*/
-	
-		font-size: 13px;
-		color: #ffffff;
-		background:blue;
-		font-weight: 700;
-		border: none;
-		border-radius: 3px;
-		letter-spacing: 2px;
-		text-transform: uppercase;
-		display: inline-block;
-		padding: 12px 30px;
-		margin-left: 30px;
-	
+#profile_modifybutton1,
+#profile_modifybutton2 {
+	/*프로필 수정버튼*/
+
+	font-size: 13px;
+	color: #ffffff;
+	background: blue;
+	font-weight: 700;
+	border: none;
+	border-radius: 3px;
+	letter-spacing: 2px;
+	text-transform: uppercase;
+	display: inline-block;
+	padding: 12px 30px;
+	margin-left: 30px;
+
 }
 
-#check_id_btn{		/*아이디 중복체크버튼*/
-	
+#check_id_btn {
+	/*아이디 중복체크버튼*/
+
 	font-size: 10px;
 	color: #ffffff;
-	background:burlywood;
+	background: burlywood;
 	font-weight: 700;
 	border: none;
 	border-radius: 10px;
@@ -2119,18 +2343,20 @@ ol {
 	text-transform: uppercase;
 	display: inline-block;
 	padding: 5px 5px;
-	margin-left:5px;
-	margin-right:5px;
+	margin-left: 5px;
+	margin-right: 5px;
 	margin-bottom: 10px;
-	
+
 }
 
 
-#checkTicket,#cancelTicket{		/*예매확인 버튼,예매취소 버튼*/
-	
+#checkTicket,
+#cancelTicket {
+	/*예매확인 버튼,예매취소 버튼*/
+
 	font-size: 13px;
 	color: #ffffff;
-	background:green;
+	background: green;
 	font-weight: 700;
 	border: none;
 	border-radius: 3px;
@@ -2153,11 +2379,11 @@ ol {
 	padding: 1px;
 	margin: 1px;
 	overflow: hidden;
-	clip:rect(0,0,0,0);
+	clip: rect(0, 0, 0, 0);
 	border: 0;
-  }
-  
-  .filebox label {
+}
+
+.filebox label {
 	display: inline-block;
 	padding: .5em .75em;
 	color: #999;
@@ -2169,12 +2395,13 @@ ol {
 	border: 1px solid #ebebeb;
 	border-bottom-color: #e2e2e2;
 	border-radius: .1em;
-  }
-  
-  /* named upload */
-  .filebox .upload-name {
+}
+
+/* named upload */
+.filebox .upload-name {
 	display: inline-block;
-	padding: .5em .75em;  /* label의 패딩값과 일치 */
+	padding: .5em .75em;
+	/* label의 패딩값과 일치 */
 	font-size: inherit;
 	font-family: inherit;
 	line-height: normal;
@@ -2183,11 +2410,13 @@ ol {
 	border: 1px solid #ebebeb;
 	border-bottom-color: #e2e2e2;
 	border-radius: .1em;
-	-webkit-appearance: none; /* 네이티브 외형 감추기 */
+	-webkit-appearance: none;
+	/* 네이티브 외형 감추기 */
 	-moz-appearance: none;
 	appearance: none;
-  }
-  /*출처: https://webdir.tistory.com/435 [WEBDIR:티스토리]--파일박스 끝---*/
+}
+
+/*출처: https://webdir.tistory.com/435 [WEBDIR:티스토리]--파일박스 끝---*/
 
 .login__form h3 {
 	color: #ffffff;
@@ -2203,7 +2432,7 @@ ol {
 }
 
 .login__form form .input__item:before {
-	
+
 	position: absolute;
 	left: 50px;
 	top: 10px;
@@ -2217,7 +2446,8 @@ ol {
 	height: 50px;
 	width: 100%;
 	font-size: 15px;
-	color: black;		/*로그인 텍스트 검은색으로 수정 */
+	color: black;
+	/*로그인 텍스트 검은색으로 수정 */
 	background: #ffffff;
 	border: none;
 	padding-left: 76px;
@@ -2236,7 +2466,8 @@ ol {
 }
 
 .login__form form .input__item input::-ms-input-placeholder {
-	color: #b7b7b7;;
+	color: #b7b7b7;
+	;
 }
 
 .login__form form .input__item input::placeholder {
@@ -2281,9 +2512,7 @@ ol {
 	padding: 12px 42px;
 }
 
-.login__social {
-	padding-top: 52px;
-}
+
 
 .login__social__links {
 	text-align: center;
@@ -2472,13 +2701,16 @@ ol {
 	.hero {
 		overflow: hidden;
 	}
+
 	.login__form {
 		position: relative;
 		padding-left: 32px;
 	}
+
 	.login__social__links ul li a {
 		width: 380px;
 	}
+
 	.blog__item__text {
 		padding: 0 50px;
 	}
@@ -2490,26 +2722,32 @@ ol {
 	.hero {
 		overflow: hidden;
 	}
+
 	.header {
 		position: relative;
 	}
+
 	.header .container {
 		position: relative;
 	}
+
 	.header__right {
 		position: absolute;
 		right: 120px;
 		top: -42px;
 		padding: 0;
 	}
+
 	.header__menu {
 		display: none;
 	}
+
 	.slicknav_menu {
 		background: transparent;
 		padding: 0;
 		display: block;
 	}
+
 	.slicknav_nav {
 		position: absolute;
 		left: 0;
@@ -2519,9 +2757,11 @@ ol {
 		padding: 15px 30px;
 		z-index: 9;
 	}
+
 	.slicknav_nav ul {
 		margin: 0;
 	}
+
 	.slicknav_nav .slicknav_row,
 	.slicknav_nav a {
 		padding: 7px 0;
@@ -2529,6 +2769,7 @@ ol {
 		color: #111111;
 		font-weight: 600;
 	}
+
 	.slicknav_btn {
 		border-radius: 0;
 		background-color: #222;
@@ -2536,54 +2777,69 @@ ol {
 		right: 0;
 		top: 9px;
 	}
+
 	.slicknav_nav .slicknav_arrow {
 		color: #111111;
 	}
+
 	.slicknav_nav .slicknav_row:hover {
 		border-radius: 0;
 		background: transparent;
 		color: #111111;
 	}
+
 	.slicknav_nav a:hover {
 		border-radius: 0;
 		background: transparent;
 		color: #111111;
 	}
+
 	.product__sidebar {
 		padding-top: 50px;
 	}
+
 	.footer__logo {
 		text-align: center;
 		margin-bottom: 20px;
 	}
+
 	.footer__nav {
 		margin-bottom: 15px;
 	}
+
 	.footer__copyright__text {
 		text-align: center;
 	}
+
 	.anime__details__widget ul li span {
 		width: 90px;
 	}
+
 	.anime__details__pic {
 		margin-bottom: 40px;
 	}
+
 	.anime__details__sidebar {
 		padding-top: 50px;
 	}
+
 	.login__form {
 		padding-left: 0;
 		margin-bottom: 40px;
 	}
+
 	.login__form:after {
 		display: none;
 	}
+
 	.login__form form .input__item {
 		width: auto;
 	}
+
 	.login__register {
 		padding-left: 0;
 	}
+
 	.signup .login__social__links {
 		padding-left: 0;
 	}
@@ -2595,26 +2851,32 @@ ol {
 	.hero {
 		overflow: hidden;
 	}
+
 	.header {
 		position: relative;
 	}
+
 	.header .container {
 		position: relative;
 	}
+
 	.header__right {
 		position: absolute;
 		right: 120px;
 		top: -42px;
 		padding: 0;
 	}
+
 	.header__menu {
 		display: none;
 	}
+
 	.slicknav_menu {
 		background: transparent;
 		padding: 0;
 		display: block;
 	}
+
 	.slicknav_nav {
 		position: absolute;
 		left: 0;
@@ -2624,9 +2886,11 @@ ol {
 		padding: 15px 30px;
 		z-index: 9;
 	}
+
 	.slicknav_nav ul {
 		margin: 0;
 	}
+
 	.slicknav_nav .slicknav_row,
 	.slicknav_nav a {
 		padding: 7px 0;
@@ -2634,6 +2898,7 @@ ol {
 		color: #111111;
 		font-weight: 600;
 	}
+
 	.slicknav_btn {
 		border-radius: 0;
 		background-color: #222;
@@ -2641,90 +2906,115 @@ ol {
 		right: 0;
 		top: 9px;
 	}
+
 	.slicknav_nav .slicknav_arrow {
 		color: #111111;
 	}
+
 	.slicknav_nav .slicknav_row:hover {
 		border-radius: 0;
 		background: transparent;
 		color: #111111;
 	}
+
 	.slicknav_nav a:hover {
 		border-radius: 0;
 		background: transparent;
 		color: #111111;
 	}
+
 	.product__sidebar {
 		padding-top: 50px;
 	}
+
 	.footer__logo {
 		text-align: center;
 		margin-bottom: 20px;
 	}
+
 	.footer__nav {
 		margin-bottom: 15px;
 	}
+
 	.footer__copyright__text {
 		text-align: center;
 	}
+
 	.blog__details__title h2 {
 		font-size: 34px;
 		line-height: normal;
 	}
+
 	.anime__details__pic {
 		margin-bottom: 40px;
 	}
+
 	.anime__details__sidebar {
 		padding-top: 50px;
 	}
+
 	.btn__all {
 		text-align: left;
 	}
+
 	.product__page__title .section-title {
 		margin-bottom: 30px;
 	}
+
 	.product__page__title .product__page__filter {
 		text-align: left;
 	}
+
 	.anime__details__rating {
 		text-align: left;
 		position: relative;
 		margin-bottom: 20px;
 	}
+
 	.blog__details__social {
 		overflow: hidden;
 	}
+
 	.blog__details__title .blog__details__social a {
 		margin-right: 10px;
 		margin-bottom: 10px;
 		width: calc(50% - 10px);
 		float: left;
 	}
+
 	.login__form {
 		padding-left: 0;
 		margin-bottom: 40px;
 	}
+
 	.login__form:after {
 		display: none;
 	}
+
 	.login__form form .input__item {
 		width: auto;
 	}
+
 	.signup .login__social__links {
 		padding-left: 0;
 	}
+
 	.login__social__links ul li a {
 		width: auto;
 	}
+
 	.blog__item__text {
 		padding: 0 30px;
 	}
+
 	.login__register {
 		padding-left: 0;
 	}
+
 	.product__sidebar__view .filter__controls li {
 		margin-right: 2px;
 	}
+
 	.search-model-form input {
 		width: 100%;
 	}
@@ -2736,67 +3026,80 @@ ol {
 	.hero__slider.owl-carousel .owl-nav {
 		display: none;
 	}
+
 	.hero__items {
 		padding: 250px 0 42px 15px;
 	}
+
 	.hero__text h2 {
 		font-size: 32px;
 	}
+
 	.footer__nav ul li {
 		margin-right: 10px;
 	}
-	.anime__details__btn .follow-btn {
-		padding: 14px 26px;
-		margin-right: 11px;
-		margin-bottom: 25px;
-	}
+
 	.anime__details__widget ul li span {
 		width: 85px;
 	}
+
 	.anime__video__player .plyr__volume {
 		left: 65px;
 	}
+
 	.anime__video__player .plyr__controls .plyr__controls__item.plyr__time {
 		left: 95px;
 	}
+
 	.anime__video__player .plyr__menu {
 		margin-right: 60px;
 	}
+
 	.blog__details__title h2 {
 		font-size: 30px;
 		line-height: normal;
 	}
+
 	.blog__details__title .blog__details__social a {
 		padding: 16px 25px 14px 20px;
 	}
+
 	.blog__details__comment__item.blog__details__comment__item--reply {
 		padding-left: 0;
 	}
+
 	.blog__details__comment__item__pic {
 		margin-right: 25px;
 	}
+
 	.blog__details__comment__item__text a {
 		margin-right: 6px;
 	}
+
 	.login__social__links ul li a i {
 		left: 20px;
 	}
+
 	.login__form .forget_pass {
 		position: relative;
 		left: 0;
 		bottom: 0;
 		margin-top: 25px;
 	}
-	#saveId{				/*아이디 저장 체크박스*/
-		background-color:white;
+
+	#saveId {
+		/*아이디 저장 체크박스*/
+		background-color: white;
 	}
 
 	.header__right a {
 		margin-right: 10px;
 	}
+
 	.anime__review__item__text h6 span {
 		font-size: 12px;
 	}
+
 	.anime__review__item__text {
 		padding: 18px 20px 20px;
 	}

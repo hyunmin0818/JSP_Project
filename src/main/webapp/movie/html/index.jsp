@@ -1,5 +1,5 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
-<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+    <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
         <!DOCTYPE html>
         <html lang="zxx">
 
@@ -60,7 +60,7 @@
                                 <nav class="header__menu mobile-menu">
                                     <ul>
 
-                                       <!-- <li class="active"><a href="./index.jsp">홈</a></li>
+                                        <!-- <li class="active"><a href="./index.jsp">홈</a></li>
                                         <li><a href="./categories.jsp">영화</span></a>
                                         <ul class="dropdown">
                                                 <li><a href="./categories.jsp">현재 상영작</a></li>
@@ -224,7 +224,7 @@
                                         <div class="product__item">
                                             <div class="product__item__pic set-bg"
                                                 data-setbg="img/trending/trend-1.jpg">
-                                                
+
                                                 <div class="comment"><i class="fa fa-comments"></i> 11</div>
                                                 <div class="view"><i class="fa fa-eye"></i> 9141</div>
                                             </div>
@@ -241,7 +241,7 @@
                                         <div class="product__item">
                                             <div class="product__item__pic set-bg"
                                                 data-setbg="img/trending/trend-2.jpg">
-                                                
+
                                                 <div class="comment"><i class="fa fa-comments"></i> 11</div>
                                                 <div class="view"><i class="fa fa-eye"></i> 9141</div>
                                             </div>
@@ -259,7 +259,7 @@
                                         <div class="product__item">
                                             <div class="product__item__pic set-bg"
                                                 data-setbg="img/trending/trend-3.jpg">
-                                                
+
                                                 <div class="comment"><i class="fa fa-comments"></i> 11</div>
                                                 <div class="view"><i class="fa fa-eye"></i> 9141</div>
                                             </div>
@@ -276,7 +276,7 @@
                                         <div class="product__item">
                                             <div class="product__item__pic set-bg"
                                                 data-setbg="img/trending/trend-4.jpg">
-                                                
+
                                                 <div class="comment"><i class="fa fa-comments"></i> 11</div>
                                                 <div class="view"><i class="fa fa-eye"></i> 9141</div>
                                             </div>
@@ -293,7 +293,7 @@
                                         <div class="product__item">
                                             <div class="product__item__pic set-bg"
                                                 data-setbg="img/trending/trend-5.jpg">
-                                                
+
                                                 <div class="comment"><i class="fa fa-comments"></i> 11</div>
                                                 <div class="view"><i class="fa fa-eye"></i> 9141</div>
                                             </div>
@@ -310,7 +310,7 @@
                                         <div class="product__item">
                                             <div class="product__item__pic set-bg"
                                                 data-setbg="img/trending/trend-6.jpg">
-                                                
+
                                                 <div class="comment"><i class="fa fa-comments"></i> 11</div>
                                                 <div class="view"><i class="fa fa-eye"></i> 9141</div>
                                             </div>
@@ -344,7 +344,7 @@
                                         <div class="product__item">
                                             <div class="product__item__pic set-bg"
                                                 data-setbg="img/popular/popular-1.jpg">
-                                                
+
                                                 <div class="comment"><i class="fa fa-comments"></i> 11</div>
                                                 <div class="view"><i class="fa fa-eye"></i> 9141</div>
                                             </div>
@@ -361,7 +361,7 @@
                                         <div class="product__item">
                                             <div class="product__item__pic set-bg"
                                                 data-setbg="img/popular/popular-2.jpg">
-                                                
+
                                                 <div class="comment"><i class="fa fa-comments"></i> 11</div>
                                                 <div class="view"><i class="fa fa-eye"></i> 9141</div>
                                             </div>
@@ -378,7 +378,7 @@
                                         <div class="product__item">
                                             <div class="product__item__pic set-bg"
                                                 data-setbg="img/popular/popular-3.jpg">
-                                                
+
                                                 <div class="comment"><i class="fa fa-comments"></i> 11</div>
                                                 <div class="view"><i class="fa fa-eye"></i> 9141</div>
                                             </div>
@@ -395,7 +395,7 @@
                                         <div class="product__item">
                                             <div class="product__item__pic set-bg"
                                                 data-setbg="img/popular/popular-4.jpg">
-                                                
+
                                                 <div class="comment"><i class="fa fa-comments"></i> 11</div>
                                                 <div class="view"><i class="fa fa-eye"></i> 9141</div>
                                             </div>
@@ -412,7 +412,7 @@
                                         <div class="product__item">
                                             <div class="product__item__pic set-bg"
                                                 data-setbg="img/popular/popular-5.jpg">
-                                                
+
                                                 <div class="comment"><i class="fa fa-comments"></i> 11</div>
                                                 <div class="view"><i class="fa fa-eye"></i> 9141</div>
                                             </div>
@@ -429,7 +429,7 @@
                                         <div class="product__item">
                                             <div class="product__item__pic set-bg"
                                                 data-setbg="img/popular/popular-6.jpg">
-                                                
+
                                                 <div class="comment"><i class="fa fa-comments"></i> 11</div>
                                                 <div class="view"><i class="fa fa-eye"></i> 9141</div>
                                             </div>
@@ -451,59 +451,59 @@
                                     <div class="section-title">
                                         <h5>Top Views</h5>
                                     </div>
-                                 
+
                                     <div class="filter__gallery">
                                         <div class="product__sidebar__view__item set-bg mix day years"
                                             data-setbg="img/sidebar/tv-1.jpg">
-                                            
+
                                             <div class="view"><i class="fa fa-eye"></i> 9141</div>
                                             <h5><a href="#">Boruto: Naruto next generations</a></h5>
                                         </div>
                                         <div class="product__sidebar__view__item set-bg mix month week"
                                             data-setbg="img/sidebar/tv-2.jpg">
-                                            
+
                                             <div class="view"><i class="fa fa-eye"></i> 9141</div>
                                             <h5><a href="#">The Seven Deadly Sins: Wrath of the Gods</a></h5>
                                         </div>
                                         <div class="product__sidebar__view__item set-bg mix week years"
                                             data-setbg="img/sidebar/tv-3.jpg">
-                                            
+
                                             <div class="view"><i class="fa fa-eye"></i> 9141</div>
                                             <h5><a href="#">Sword art online alicization war of underworld</a></h5>
                                         </div>
                                         <div class="product__sidebar__view__item set-bg mix years month"
                                             data-setbg="img/sidebar/tv-4.jpg">
-                                            
+
                                             <div class="view"><i class="fa fa-eye"></i> 9141</div>
                                             <h5><a href="#">Fate/stay night: Heaven's Feel I. presage flower</a></h5>
                                         </div>
                                         <div class="product__sidebar__view__item set-bg mix day"
                                             data-setbg="img/sidebar/tv-5.jpg">
-                                            
+
                                             <div class="view"><i class="fa fa-eye"></i> 9141</div>
                                             <h5><a href="#">Fate stay night unlimited blade works</a></h5>
                                         </div>
                                         <div class="product__sidebar__view__item set-bg mix week years"
                                             data-setbg="img/sidebar/tv-3.jpg">
-                                            
+
                                             <div class="view"><i class="fa fa-eye"></i> 9141</div>
                                             <h5><a href="#">Sword art online alicization war of underworld</a></h5>
                                         </div>
                                         <div class="product__sidebar__view__item set-bg mix years month"
                                             data-setbg="img/sidebar/tv-4.jpg">
-                                            
+
                                             <div class="view"><i class="fa fa-eye"></i> 9141</div>
                                             <h5><a href="#">Fate/stay night: Heaven's Feel I. presage flower</a></h5>
                                         </div>
                                         <div class="product__sidebar__view__item set-bg mix day"
                                             data-setbg="img/sidebar/tv-5.jpg">
-                                            
+
                                             <div class="view"><i class="fa fa-eye"></i> 9141</div>
                                             <h5><a href="#">Fate stay night unlimited blade works</a></h5>
                                         </div>
                                         <div class="product__sidebar__view__item set-bg mix day"
                                             data-setbg="img/sidebar/tv-5.jpg">
-                                            
+
                                             <div class="view"><i class="fa fa-eye"></i> 9141</div>
                                             <h5><a href="#">Fate stay night unlimited blade works</a></h5>
                                         </div>

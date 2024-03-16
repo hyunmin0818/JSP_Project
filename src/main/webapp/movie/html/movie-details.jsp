@@ -50,33 +50,32 @@
                             <div class="loader"></div>
                         </div>
 
-                        <!-- Header Section Begin -->
-                        <header class="header">
-                            <div class="container">
-                                <div class="row">
-                                    <div class="col-lg-2">
-                                        <div class="header__logo">
-                                            <a href="./index.jsp">
-                                                <img src="img/logo2.png" id="logo2" alt="">
-                                            </a>
-                                        </div>
-                                    </div>
-                                    <div class="col-lg-8">
-                                        <div class="header__nav">
-                                            <nav class="header__menu mobile-menu">
-                                                <ul>
+                                   <!-- Header Section Begin -->
+            <header class="header">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-lg-2">
+                            <div class="header__logo">
+                                <a href="./index.jsp">
+                                    <img src="img/logo2.png" id="logo2" alt="">
+                                </a>
+                            </div>
+                        </div>
+                        <div class="col-lg-8">
+                            <div class="header__nav">
+                                <nav class="header__menu mobile-menu">
+                                    <ul>
 
-                                                    <li class="active"><a href="./index.jsp">홈</a></li>
-                                                    <li><a href="./categories.jsp">영화<span
-                                                                class="arrow_carrot-down"></span></a>
-                                                        <ul class="dropdown">
-                                                            <li><a href="./categories.jsp">현재 상영작</a></li>
-                                                            <li><a href="./categories.jsp">상영 예정작</a></li>
-                                                            <!-- <li><a href="./anime-watching.html">트레일러 </a></li> -->
-                                                        </ul>
-                                                    </li>
+                                        <!-- <li class="active"><a href="./index.jsp">홈</a></li>
+                                        <li><a href="./categories.jsp">영화</span></a>
+                                        <ul class="dropdown">
+                                                <li><a href="./categories.jsp">현재 상영작</a></li>
+                                                <li><a href="./categories.jsp">상영 예정작</a></li>
 
-                                                    <!--           <li><a href="./anime-details.html">극장정보</a></li>
+                                            </ul>
+                                        </li>-->
+
+                                        <!--           <li><a href="./anime-details.html">극장정보</a></li>
 
                                 <li><a href="./categories.html">예매<span class="arrow_carrot-down"></span></a>
                                     <ul class="dropdown">
@@ -87,41 +86,31 @@
                                     </ul>   
                                      -->
 
-                                                    <li><a
-                                                            href="${pageContext.request.contextPath}/movie/html/notice.jsp">게시판<span
-                                                                class="arrow_carrot-down"></span></a>
-                                                        <ul class="dropdown">
-                                                            <li><a
-                                                                    href="${pageContext.request.contextPath}/movie/html/notice.jsp">공지사항</a>
-                                                            </li>
-                                                            <li><a
-                                                                    href="${pageContext.request.contextPath}/movie/html/notice.jsp">이벤트</a>
-                                                            </li>
-                                                            <!--                  <li><a href="#">리뷰</a></li> -->
+                                        <!-- <li><a href="${pageContext.request.contextPath}/movie/html/notice.jsp">게시판<span class="arrow_carrot-down"></span></a>
+                                    <ul class="dropdown">
+                                        <li><a href="${pageContext.request.contextPath}/movie/html/notice.jsp">공지사항</a></li>
+                                        <li><a href="${pageContext.request.contextPath}/movie/html/notice.jsp">이벤트</a></li> -->
+                                        <!--                  <li><a href="#">리뷰</a></li> -->
 
 
-                                                        </ul>
-                                                    </li>
+                                    </ul>
+                                    </li>
 
 
 
-                                                    <li><a
-                                                            href="${pageContext.request.contextPath}/movie/html/default.jsp">고객문의<span
-                                                                class="arrow_carrot-down"></span></a>
-                                                        <ul class="dropdown">
-                                                            <li><a
-                                                                    href="${pageContext.request.contextPath}/movie/html/default.jsp">고객센터</a>
-                                                            </li>
-                                                            <li><a href="#">주변 영화관 찾기</a></li>
-                                                        </ul>
-                                                    </li>
+                                    <!-- <li><a href="${pageContext.request.contextPath}/movie/html/default.jsp">고객문의<span class="arrow_carrot-down"></span></a>
+                                    <ul class="dropdown">
+                                        <li><a href="${pageContext.request.contextPath}/movie/html/default.jsp">고객센터</a></li>
+                                        <li><a href="#">주변 영화관 찾기</a></li>
+                                    </ul>
+                                </li> -->
 
 
-                                                    <!-- 대형 영화 사이트 참고한 양식 (스토어, 이벤트, 혜택)-->
-                                                    <!-- 시간이 남으면 추가해보는걸로 -->
+                                    <!-- 대형 영화 사이트 참고한 양식 (스토어, 이벤트, 혜택)-->
+                                    <!-- 시간이 남으면 추가해보는걸로 -->
 
 
-                                                    <!-- <li><a href="#">스토어</a></li>      
+                                    <!-- <li><a href="#">스토어</a></li>      
 
                                 <li><a href="./categories.html">이벤트<span class="arrow_carrot-down"></span></a>
                                     <ul class="dropdown">
@@ -135,44 +124,40 @@
                                 <li><a href="./blog.html">혜택</a></li> -->
 
 
-                                                </ul>
-                                            </nav>
-                                        </div>
-                                    </div>
-
-
-                                    <div class="col-lg-2">
-                                        <div class="header__right">
-
-                                            <a href="#" class="search-switch"><span class="icon_search"></span></a>
-                                            <span class="icon_profile arrow fa dropdown-toggle active arrow_carrot-down"
-                                                id="dropdown-toggle" data-bs-toggle="dropdown"
-                                                aria-expanded="false"></span>
-                                            <ul class="dropup-center dropup dropdown-menu"
-                                                aria-labelledby="dropdown-toggle">
-                                                <li> <a href="./login.jsp"><span class="dropdown-item">로그인</span></a>
-                                                </li>
-                                                <li>
-                                                    <hr class="dropdown-divider">
-                                                </li>
-                                                <li> <a href="./signup.jsp"><span class="dropdown-item">회원가입</span></a>
-                                                </li>
-                                            </ul>
-                                            <a href="./login.jsp" id="youNeedLogin">로그인</a>|
-                                            <a href="./join.jsp" id="youNeedJoin">회원가입 </a>
-                                        </div>
-                                    </div>
-
-
-
-                                </div>
-                                <div id="mobile-menu-wrap"></div>
+                                    </ul>
+                                </nav>
                             </div>
-                        </header>
+                        </div>
+
+
+                        <div class="col-lg-2">
+                            <div class="header__right">
+
+                                <a href="#" class="search-switch"><span class="icon_search"></span></a>
+                                <span class="icon_profile arrow fa dropdown-toggle active arrow_carrot-down"
+                                    id="dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false"></span>
+                                <ul class="dropup-center dropup dropdown-menu" aria-labelledby="dropdown-toggle">
+                                    <li> <a href="./login.jsp"><span class="dropdown-item">로그인</span></a></li>
+                                    <li>
+                                        <hr class="dropdown-divider">
+                                    </li>
+                                    <li> <a href="./signup.jsp"><span class="dropdown-item">회원가입</span></a></li>
+                                </ul>
+                                <a href="./login.jsp" id="youNeedLogin">로그인</a>|
+                                <a href="./join.jsp" id="youNeedJoin">회원가입 </a>
+                            </div>
+                        </div>
 
 
 
-                        <!-- Header End -->
+                    </div>
+                    <div id="mobile-menu-wrap"></div>
+                </div>
+            </header>
+
+
+
+            <!-- Header End -->
 
                         <!-- Breadcrumb Begin -->
                         <div class="breadcrumb-option">
@@ -197,7 +182,23 @@
                         <section class="anime-details spad">
                             <div class="container">
                                 <div class="anime__details__content">
-                                    <div class="row">
+
+                                    <div class="css-stilcut" style="background: url(https://an2-img.amz.wtchn.net/image/v2/UdinY7L06PQParoTrP1TAQ.jpg?jwt=ZXlKaGJHY2lPaUpJVXpJMU5pSjkuZXlKdmNIUnpJanBiSW1SZk1Ua3lNSGd4TURnd2NUZ3dJbDBzSW5BaU9pSXZkakl2YzNSdmNtVXZhVzFoWjJVdk1UQTJORGszTURBd056VTBOVGd4SW4wLk1RY1RhRC1YcXVPQ0VheG1SMmdiSFIzWEZ1RHpVRlVMU2ZOUEFXXzhxSlk) no-repeat center;">
+
+					
+                                        <div class="css-sdsdsd">
+    
+                                            <h1 class="css-Title">파묘</h1>
+                                            <div class="css-qnwpahr">파묘</div>
+                                            <div class="css-roqhddlf">2024 · 미스터리/스릴러 · 한국</div>
+                                            <div class="css-qkdduddlfwkdfmrnrrk">2시간 14분 · 15세</div>
+                                            <div class="css-tkd">어워드상  누적 관객 851.8만명</div>
+    
+                                        </div>
+                                    </div>
+
+                                    <div class="row" style="margin-top: 650px;">
+                                        
                                         <!-- 영화 이미지와 관련 정보 -->
                                         <div class="col-lg-3">
                                             <div class="anime__details__pic set-bg"
@@ -211,19 +212,12 @@
                                             <div class="anime__details__text">
                                                 <div class="anime__details__title">
                                                     <!-- 영화 제목과 일본어 제목 -->
-                                                    <h3>파묘</h3>
+                                                    <h3>감독</h3>
                                                     <span>장재현</span>
                                                 </div>
                                                 <!-- 영화 평점과 투표 수 -->
                                                 <div class="anime__details__rating">
-                                                    <div class="rating">
-                                                        <a href="#"><i class="fa fa-star"></i></a>
-                                                        <a href="#"><i class="fa fa-star"></i></a>
-                                                        <a href="#"><i class="fa fa-star"></i></a>
-                                                        <a href="#"><i class="fa fa-star"></i></a>
-                                                        <a href="#"><i class="fa fa-star-half-o"></i></a>
-                                                    </div>
-                                                    <span>1.029 Votes</span>
+
                                                 </div>
                                                 <!-- 영화 설명 -->
                                                 <p>미국 LA, 거액의 의뢰를 받은 무당 ‘화림’(김고은)과 ‘봉길’(이도현)은 기이한 병이 대물림되는 집안의 장손을 만난다.
@@ -258,29 +252,35 @@
                                                 <div class="anime__details__btn">
                                                     <a href="#" class="follow-btn"><i class="fa fa-heart-o"></i>
                                                         Follow</a>
-                                                    <a href="SeatPreview-master/index.html"
-                                                        class="watch-btn"><span>Watch Now</span> <i
-                                                            class="fa fa-angle-right"></i></a>
-                                                    <a href="#" class="reservation" hidden>예 매</a>
-                                                    <a href="#" class="reservation" hidden>수정</a>
+
                                                 </div>
                                             </div>
                                         </div>
                                     </div>
-                                    <hr style=" border: none; border-top: 1px solid #08052e; width: 100%;   ">
+                                    <!-- <hr style=" border: none; border-top: 1px solid #08052e; width: 100%;   ">
 
                                     <input type="button" onclick="toggleList()"
                                         style="background-color: #e53637; margin-left: 50%; border-radius: 20px; "
                                         value="   +   ">
-                                    <ul id="list" style="display: none;"> <!-- 12 지우기-->
+                                    <ul id="list" style="display: none;">  
                                         <div class="dd" style="padding-top: 20px;"></div>
+
+                                        <div class="css-jxv74f-StyledWrapper">
+                                            <figure class="css-nb4a5b-StyledImageWrapper e147tj4w2">
+                                                <div class="acter__item__pic set-bg"
+                                                    style="width: 100%;object-fit: contain;"
+                                                    data-setbg="https://blog.kakaocdn.net/dn/D3ET1/btqBOD2CbD0/XoSIXDT0x7XNnjF4diokz0/img.jpg">
+                                                </div>
+                                                 스틸컷 만약 null이여도 안보임 
+                                            </figure>
+                                        </div>
 
                                         <div class="container">
                                             <div class="col-lg-8">
                                                 <div class="row">
                                                     <div class="col-lg-8 col-md-8 col-sm-8">
                                                         <div class="section-title">
-                                                            <h4>배우 </h4>
+                                                            <h4>영화상 </h4>
                                                         </div>
                                                     </div>
                                                 </div>
@@ -288,86 +288,23 @@
 
                                             <div class="acter_muri">
 
-                                                <!-- 제품 아이템 -->
+                                                
                                                 <div class="acter__item">
-                                                    <!-- 제품 이미지 -->
+                                                  
                                                     <div class="acter__item__pic set-bg"
-                                                        data-setbg="https://i.namu.wiki/i/-Vwf70AB-rZOm1EAfUEwPUXegg9e4G4EFNHp_ujJ7ouvRDrkFkuQMdKcSa-GfAM0sUhwGbonOdxNPnPtmXkgetUDkb5JSYj3kwqM6qiXu1tbrRoPks0BOyZflMeIeE6v-YG8yIr0WR-2CCVvt_lW8g.webp">
-                                                    </div>
-                                                    <!-- 제품 텍스트 -->
-                                                    <div class="acter__item__text">
-                                                        <ul>
-                                                            <li>Acter</li>
-                                                            <li>Movie</li>
-                                                        </ul>
-                                                        <h5><a href="#">이도현 / 봉길</a></h5>
-                                                    </div>
-                                                </div>
-                                                <!-- 제품 아이템 -->
-                                                <div class="acter__item">
-                                                    <!-- 제품 이미지 -->
-                                                    <div class="acter__item__pic set-bg"
-                                                        data-setbg="https://image.cine21.com/resize/cine21/person/2020/0812/2262[X252,310].jpg">
-                                                    </div>
-                                                    <!-- 제품 텍스트 -->
-                                                    <div class="acter__item__text">
-                                                        <ul>
-                                                            <li>Acter</li>
-                                                            <li>Movie</li>
-                                                        </ul>
-                                                        <h5><a href="#">최만식 / 김상덕</a></h5>
-                                                    </div>
-                                                </div>
-                                                <!-- 제품 아이템 -->
-                                                <div class="acter__item">
-                                                    <!-- 제품 이미지 -->
-                                                    <div class="acter__item__pic set-bg"
-                                                        data-setbg="img/trending/trend-1.jpg">
-                                                    </div>
-                                                    <!-- 제품 텍스트 -->
-                                                    <div class="acter__item__text">
-                                                        <ul>
-                                                            <li>Actr</li>
-                                                            <li>Movie</li>
+                                                        data-setbg="https://blog.kakaocdn.net/dn/D3ET1/btqBOD2CbD0/XoSIXDT0x7XNnjF4diokz0/img.jpg">
 
-                                                        </ul>
-                                                        <h5><a href="#">이도현ㄴㄴㄴㄴ / 봉길ㄴㄴㄴㄴㄴㄴㄴㄴ</a></h5>
                                                     </div>
+                                                   
+
                                                 </div>
-                                                <!-- 제품 아이템 -->
-                                                <div class="acter__item">
-                                                    <!-- 제품 이미지 -->
-                                                    <div class="acter__item__pic set-bg"
-                                                        data-setbg="img/trending/trend-1.jpg">
-                                                    </div>
-                                                    <!-- 제품 텍스트 -->
-                                                    <div class="acter__item__text">
-                                                        <ul>
-                                                            <li>Acter</li>
-                                                            <li>Movie</li>
-                                                        </ul>
-                                                        <h5><a href="#">이도현 / 봉길</a></h5>
-                                                    </div>
-                                                </div>
-                                                <!-- 제품 아이템 -->
-                                                <div class="acter__item">
-                                                    <!-- 제품 이미지 -->
-                                                    <div class="acter__item__pic set-bg"
-                                                        data-setbg="img/trending/trend-1.jpg">
-                                                    </div>
-                                                    <!-- 제품 텍스트 -->
-                                                    <div class="acter__item__text">
-                                                        <ul>
-                                                            <li>Acter</li>
-                                                            <li>Movie</li>
-                                                        </ul>
-                                                        <h5><a href="#">이도현 / 봉길</a></h5>
-                                                    </div>
+                                                <div class="acter__item__text">
+                                                    <h5>이도현 / 봉길ㄴㄴㄴㄴㄴㄴㄴㄴ</h5>
                                                 </div>
 
                                             </div>
                                         </div>
-                                    </ul>
+                                    </ul> -->
                                 </div>
                                 <!-- 리뷰 목록 -->
                                 <div class="row">
@@ -420,36 +357,42 @@
                                             </div>
                                         </div>
                                     </div>
+
                                     <!-- 사이드바 영역 -->
-            <div class="col-lg-4 col-md-4" >
-                <div class="anime__details__sidebar">
-                    <div class="section-title">
-                        <h5>you might like...</h5>
-                    </div>
-                    <!-- 추천작 리스트 -->
-                    <div class="product__sidebar__view__item set-bg" data-setbg="img/sidebar/tv-1.jpg">
-     
-                        <div class="view"><i class="fa fa-eye"></i> 9141</div>
-                        <h5><a href="#">Boruto: Naruto next generations</a></h5>
-                    </div>
-                    <div class="product__sidebar__view__item set-bg" data-setbg="img/sidebar/tv-2.jpg">
-                   
-                        <div class="view"><i class="fa fa-eye"></i> 9141</div>
-                        <h5><a href="#">The Seven Deadly Sins: Wrath of the Gods</a></h5>
-                    </div>
-                    <div class="product__sidebar__view__item set-bg" data-setbg="img/sidebar/tv-3.jpg">
-                      
-                        <div class="view"><i class="fa fa-eye"></i> 9141</div>
-                        <h5><a href="#">Sword art online alicization war of underworld</a></h5>
-                    </div>
-                    <div class="product__sidebar__view__item set-bg" data-setbg="img/sidebar/tv-4.jpg">
-    
-                        <div class="view"><i class="fa fa-eye"></i> 9141</div>
-                        <h5><a href="#">Fate/stay night: Heaven's Feel I. presage flower</a></h5>
-                    </div>
-                </div>
+                                    <div class="col-lg-4 col-md-4">
+                                        <div class="anime__details__sidebar">
+                                            <div class="section-title">
+                                                <h5>you might like...</h5>
+                                            </div>
+                                            <!-- 추천작 리스트 -->
+                                            <div class="product__sidebar__view__item set-bg"
+                                                data-setbg="img/sidebar/tv-1.jpg">
+
+                                                <div class="view"><i class="fa fa-eye"></i> 9141</div>
+                                                <h5><a href="#">Boruto: Naruto next generations</a></h5>
+                                            </div>
+                                            <div class="product__sidebar__view__item set-bg"
+                                                data-setbg="img/sidebar/tv-2.jpg">
+
+                                                <div class="view"><i class="fa fa-eye"></i> 9141</div>
+                                                <h5><a href="#">The Seven Deadly Sins: Wrath of the Gods</a></h5>
+                                            </div>
+                                            <div class="product__sidebar__view__item set-bg"
+                                                data-setbg="img/sidebar/tv-3.jpg">
+
+                                                <div class="view"><i class="fa fa-eye"></i> 9141</div>
+                                                <h5><a href="#">Sword art online alicization war of underworld</a></h5>
+                                            </div>
+                                            <div class="product__sidebar__view__item set-bg"
+                                                data-setbg="img/sidebar/tv-4.jpg">
+
+                                                <div class="view"><i class="fa fa-eye"></i> 9141</div>
+                                                <h5><a href="#">Fate/stay night: Heaven's Feel I. presage flower</a>
+                                                </h5>
+                                            </div>
+                                        </div>
+                                    </div>
                                 </div>
-                            </div>
                         </section>
                         <!-- Anime Section End -->
 
@@ -510,28 +453,8 @@
                         <!-- Search model end -->
 
                         <!-- Js Plugins -->
-                        <!-- const movies = [
-    {
-        title: "파묘",         이름
-        director: "장재현",    감독
-        rating: 4,            평점?
-         image  : img/popular/popular-1.jpg
-        votes: 1515,           투표
-        type: "TV Series",      유형
-        studio: "㈜쇼박스",        제작사
-        date_aired: "2024.02.22",      방영일
-        status: "Airing",               방영중
-        genre: "미스터리,공포",         장르
-        duration: 134분,               재생시간
-        age_rating: "15세 관람가",      등급
-        description: "미국 LA, 거액의 의뢰를 받은 무당 ‘화림’(김고은)과 ‘봉길’(이도현)은 기이한 병이 대물림되는 
-                     집안의 장손을 만난다. 조상의 묫자리가 화근임을 알아챈 ‘화림’은 이장을 권하고, 돈 냄새를 맡은 최고의 풍수사 
-                     ‘상덕’(최민식)과 장의사 ‘영근’(유해진)이 합류한다. “전부 잘 알 거야… 묘 하나 잘못 건들면 어떻게 되는지” 
-                     절대 사람이 묻힐 수 없는 악지에 자리한 기이한 묘. ‘상덕’은 불길한 기운을 느끼고 제안을 거절하지만, 
-                     ‘화림’의 설득으로 결국 파묘가 시작되고… 나와서는 안될 것이 나왔다.",  
-    -->
-
-                        <script>
+                        <!-- const movies 
+                       <!--  <script>
                             let isMouseDown = false;
                             let startX;
                             let scrollLeft;
@@ -568,7 +491,7 @@
                             }
 
 
-                        </script>
+                        </script> -->
                         <script src="${pageContext.request.contextPath}/movie/html/js/jquery-3.3.1.min.js"></script>
                         <script src="${pageContext.request.contextPath}/movie/html/js/bootstrap.min.js"></script>
                         <script src="${pageContext.request.contextPath}/movie/html/js/player.js"></script>
