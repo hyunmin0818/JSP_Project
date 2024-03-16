@@ -6,8 +6,7 @@ public class MovieDTO {
 		private String title;	 	 // 영화 제목
 		private String titleEng;	 // 제목 영문명
 		private String titleOrg;	 // 원문 제목
-		private int prodYear;		// 제작 연도
-		private int releaseDate;	// 개봉일
+		private int prodYear;		 // 제작 연도
 		private String production_country; // 제작국가
 		private int runtime;		 // 상영 시간
 		private String rating;		 // 평점
@@ -16,7 +15,7 @@ public class MovieDTO {
 		private String use; 		 // ott & 극장 구분
 		private int directorId;		 // 감독id
 		private String directorNm;	 // 감독 이름
-		private String actorId;		 // 배우id
+		private int actorId;		 // 배우id
 		private String actorEnNm;	 // 배우 영문이름 (한글이름 ?)
 		private String nation;		 // 국가
 		private String company;		 // 제작사
@@ -29,42 +28,12 @@ public class MovieDTO {
 		private int audiAcc;	 	 // 누적 관람인원
 		private String Awards1; 	 // 영화제 수상내역
 		private String Awards2; 	 // 기타 수상내역
-		private int movie_likes; 	 // 영화 좋아요
+		private int movie_likes;	 // 영화 좋아요
+		private int releaseDate;	// 개봉일
+		private int movieView;		 // 영화 조회수
+		 
 		
-		public MovieDTO(String movieSeq, String title, String titleEng, String titleOrg, int prodYear,
-				String production_country, int runtime, String rating, String type, String genre, String use,
-				int directorId, String directorNm, String actorId, String actorEnNm, String nation, String company,
-				String plot, String posterUrl, String stillUrl, String vodClass, String vodUrl, String screenArea,
-				int audiAcc, String awards1, String awards2) {
-			this.movieSeq = movieSeq;
-			this.title = title;
-			this.titleEng = titleEng;
-			this.titleOrg = titleOrg;
-			this.prodYear = prodYear;
-			this.production_country = production_country;
-			this.runtime = runtime;
-			this.rating = rating;
-			this.type = type;
-			this.genre = genre;
-			this.use = use;
-			this.directorId = directorId;
-			this.directorNm = directorNm;
-			this.actorId = actorId;
-			this.actorEnNm = actorEnNm;
-			this.nation = nation;
-			this.company = company;
-			this.plot = plot;
-			this.posterUrl = posterUrl;
-			this.stillUrl = stillUrl;
-			this.vodClass = vodClass;
-			this.vodUrl = vodUrl;
-			this.screenArea = screenArea;
-			this.audiAcc = audiAcc;
-			Awards1 = awards1;
-			Awards2 = awards2;
-		}
-		
-		
+
 		public String getMovieSeq() {
 			return movieSeq;
 		}
@@ -143,10 +112,10 @@ public class MovieDTO {
 		public void setDirectorNm(String directorNm) {
 			this.directorNm = directorNm;
 		}
-		public String getActorId() {
+		public int getActorId() {
 			return actorId;
 		}
-		public void setActorId(String actorId) {
+		public void setActorId(int actorId) {
 			this.actorId = actorId;
 		}
 		public String getActorEnNm() {
@@ -227,18 +196,18 @@ public class MovieDTO {
 		public void setMovie_likes(int movie_likes) {
 			this.movie_likes = movie_likes;
 		}
-
-
 		public int getReleaseDate() {
 			return releaseDate;
 		}
-
-
 		public void setReleaseDate(int releaseDate) {
 			this.releaseDate = releaseDate;
 		}
-		
-		
+		public int getMovieView() {
+			return movieView;
+		}
+		public void setMovieView(int movieView) {
+			this.movieView = movieView;
+		}
 		
 		
 }

@@ -35,6 +35,7 @@ public class MovieFrontController extends HttpServlet {
       
       
       switch (requestURI) {
+
          case "/movie/clickPoster.mo": 
             forward = new ClickPosterAction().execute(req, resp);
             break;
@@ -47,6 +48,9 @@ public class MovieFrontController extends HttpServlet {
          case "/movie/addComment.mo": 
             forward = new AddCommentAction().execute(req, resp);
             break;
+         case "movie/addView.mo" :
+       	  forward = new AddMovieViewAction().execute(req, resp);
+       	  break;
       }
       
       if (forward != null) {
@@ -55,6 +59,7 @@ public class MovieFrontController extends HttpServlet {
          } else {                        // forward 방식
             req.getRequestDispatcher(forward.getPath()).forward(req, resp);
          }
+
       }
    }
 }

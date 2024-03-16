@@ -35,13 +35,13 @@
     </div>
 
     <!-- Header Section Begin -->
-    <header class="header">
+   <header class="header">
         <div class="container">
             <div class="row">
                 <div class="col-lg-2">
                     <div class="header__logo">
                         <a href="./index.jsp">
-                            <img src="img/logo2.png" id="logo2" alt="">
+                            <img src="img/logo.png" id="logo" alt="">
                         </a>
                     </div>
                 </div>
@@ -50,62 +50,62 @@
                         <nav class="header__menu mobile-menu">
                             <ul>
 
-                                <li class="active"><a href="./index.jsp">홈</a></li>    
-                                <li><a href="./categories.jsp">영화<span class="arrow_carrot-down"></span></a>
-                                    <ul class="dropdown">
+                                <!-- <li class="active"><a href="./index.jsp">홈</a></li>
+                                <li><a href="./categories.jsp">영화</span></a>
+                                <ul class="dropdown">
                                         <li><a href="./categories.jsp">현재 상영작</a></li>
                                         <li><a href="./categories.jsp">상영 예정작</a></li>
-                                        <!-- <li><a href="./anime-watching.html">트레일러 </a></li> -->
+
                                     </ul>
-                                </li>
+                                </li>-->
 
-                      <!--           <li><a href="./anime-details.html">극장정보</a></li>
+                                <!--           <li><a href="./anime-details.html">극장정보</a></li>
 
-                                <li><a href="./categories.html">예매<span class="arrow_carrot-down"></span></a>
-                                    <ul class="dropdown">
-                                        <li><a href="#">예매하기</a></li>
-                                        <li><a href="#">예매내역</a></li>
-                                        <li><a href="#">빠른예매</a></li>
-                                        <li><a href="#">상영시간표</a></li>    
-                                    </ul>   
-                                     -->
-                                    
-                                <li><a href="${pageContext.request.contextPath}/movie/html/notice.jsp">게시판<span class="arrow_carrot-down"></span></a>
-                                    <ul class="dropdown">
-                                        <li><a href="${pageContext.request.contextPath}/movie/html/notice.jsp">공지사항</a></li>
-                                        <li><a href="${pageContext.request.contextPath}/movie/html/notice.jsp">이벤트</a></li>
-                       <!--                  <li><a href="#">리뷰</a></li> -->
-                                 
-                                       
-                                    </ul>
-                                </li>
+                        <li><a href="./categories.html">예매<span class="arrow_carrot-down"></span></a>
+                            <ul class="dropdown">
+                                <li><a href="#">예매하기</a></li>
+                                <li><a href="#">예매내역</a></li>
+                                <li><a href="#">빠른예매</a></li>
+                                <li><a href="#">상영시간표</a></li>    
+                            </ul>   
+                             -->
+
+                                <!-- <li><a href="${pageContext.request.contextPath}/movie/html/notice.jsp">게시판<span class="arrow_carrot-down"></span></a>
+                            <ul class="dropdown">
+                                <li><a href="${pageContext.request.contextPath}/movie/html/notice.jsp">공지사항</a></li>
+                                <li><a href="${pageContext.request.contextPath}/movie/html/notice.jsp">이벤트</a></li> -->
+                                <!--                  <li><a href="#">리뷰</a></li> -->
 
 
-
-                                <li><a href="${pageContext.request.contextPath}/movie/html/default.jsp">고객문의<span class="arrow_carrot-down"></span></a>
-                                    <ul class="dropdown">
-                                        <li><a href="${pageContext.request.contextPath}/movie/html/default.jsp">고객센터</a></li>
-                                        <li><a href="#">주변 영화관 찾기</a></li>
-                                    </ul>
-                                </li>
-
-
-                              <!-- 대형 영화 사이트 참고한 양식 (스토어, 이벤트, 혜택)-->
-                              <!-- 시간이 남으면 추가해보는걸로 -->
-
-
-                                <!-- <li><a href="#">스토어</a></li>      
-
-                                <li><a href="./categories.html">이벤트<span class="arrow_carrot-down"></span></a>
-                                    <ul class="dropdown">
-                                        <li><a href="#">이벤트</a></li>
-                                        <li><a href="#">당첨자</a></li>
-                                    </ul>
-                                </li>
+                            </ul>
+                            </li>
 
 
 
-                                <li><a href="./blog.html">혜택</a></li> -->
+                            <!-- <li><a href="${pageContext.request.contextPath}/movie/html/default.jsp">고객문의<span class="arrow_carrot-down"></span></a>
+                            <ul class="dropdown">
+                                <li><a href="${pageContext.request.contextPath}/movie/html/default.jsp">고객센터</a></li>
+                                <li><a href="#">주변 영화관 찾기</a></li>
+                            </ul>
+                        </li> -->
+
+
+                            <!-- 대형 영화 사이트 참고한 양식 (스토어, 이벤트, 혜택)-->
+                            <!-- 시간이 남으면 추가해보는걸로 -->
+
+
+                            <!-- <li><a href="#">스토어</a></li>      
+
+                        <li><a href="./categories.html">이벤트<span class="arrow_carrot-down"></span></a>
+                            <ul class="dropdown">
+                                <li><a href="#">이벤트</a></li>
+                                <li><a href="#">당첨자</a></li>
+                            </ul>
+                        </li>
+
+
+
+                        <li><a href="./blog.html">혜택</a></li> -->
 
 
                             </ul>
@@ -116,22 +116,24 @@
 
                 <div class="col-lg-2">
                     <div class="header__right">
-                        
-                        <a href="#" class="search-switch"><span class="icon_search"></span></a>            
-                      <span class="icon_profile arrow fa dropdown-toggle active arrow_carrot-down" id="dropdown-toggle"
-                            data-bs-toggle="dropdown" aria-expanded="false"></span>   
-                       <ul class="dropup-center dropup dropdown-menu" aria-labelledby="dropdown-toggle">
-                         <li>  <a href="./login.jsp"><span class="dropdown-item">로그인</span></a></li>
-                          <li><hr class="dropdown-divider"></li>      
-                       <li> <a href="./signup.jsp"><span class="dropdown-item">회원가입</span></a></li> 
-                      </ul>
-                      <a href ="./login.jsp" id ="youNeedLogin">로그인</a>|
-                      <a href ="./join.jsp" id ="youNeedJoin">회원가입 </a>
+
+                        <a href="#" class="search-switch"><span class="icon_search"></span></a>
+                        <span class="icon_profile arrow fa dropdown-toggle active arrow_carrot-down"
+                            id="dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false"></span>
+                        <ul class="dropup-center dropup dropdown-menu" aria-labelledby="dropdown-toggle">
+                            <li> <a href="./login.jsp"><span class="dropdown-item">로그인</span></a></li>
+                            <li>
+                                <hr class="dropdown-divider">
+                            </li>
+                            <li> <a href="./signup.jsp"><span class="dropdown-item">회원가입</span></a></li>
+                        </ul>
+                        <a href="./login.jsp" id="youNeedLogin">로그인</a>|
+                        <a href="./join.jsp" id="youNeedJoin">회원가입 </a>
                     </div>
                 </div>
 
 
-        
+
             </div>
             <div id="mobile-menu-wrap"></div>
         </div>
@@ -142,7 +144,7 @@
     <!-- Header End -->
 
     <!-- Normal Breadcrumb Begin -->
-    <section class="normal-breadcrumb set-bg" data-setbg="img/cinema.jpg">
+    <section class="normal-breadcrumb set-bg" data-setbg="img/cinema1.jpg">
         <div class="container">
             <div class="row">
                 <div class="col-lg-12 text-center">
@@ -155,9 +157,9 @@
         </div>
     </section>
     <!-- Normal Breadcrumb End -->
-
+<hr>
     <!-- Login Section Begin -->
-    <div class="login__social">
+<!--     <div class="login__social"> -->
         <div class="row d-flex justify-content-center">
     <section class="login" align ="center">
         <div class="container"  align ="center">
@@ -171,7 +173,7 @@
                                 <span class="icon_mail"></span>
                             </div>
                       
-                            
+                            <br>
  
 
                             <button type="submit" class="site-btn">비밀번호 찾기</button>
@@ -182,28 +184,28 @@
                      
                     </div>
                     
-                    <p class = "whitetext forgot_idpw_message" id="forgot_id_message">
+                    <p class = "forgot_idpw_message" id="forgot_pw_message">
                     </p>
                         
             
                  <br>
-                    <a href="./findId.jsp" class="forget_pass" align="center">아이디 찾기</a><br><br>
+                    <a href="./findIdPw.jsp" class="forget_pass" target="_blank" align="center">아이디 찾기</a> | 
                     <a href="./login.jsp" class="forget_pass" align="center">로그인</a>
                 </div>
-            <div class="login__social" align="center">
-                <div class="row d-flex justify-content-center">
-                    <!-- <div class="col-lg-6"> -->
-                        <div class="login__social__links" align="center">
-                            <span>or</span>
-                            <ul align="center">
-                                <li><a href="#" class="facebook"><i class="fa fa-facebook"></i> Sign in With
-                                Facebook</a></li>
-                                <li><a href="#" class="google"><i class="fa fa-google"></i> Sign in With Google</a></li>
-                                <li><a href="#" class="twitter"><i class="fa fa-twitter"></i> Sign in With Twitter</a>
+<!--             <div class="login__social" align="center"> -->
+<!--                 <div class="row d-flex justify-content-center"> -->
+<!--                     <div class="col-lg-6"> -->
+<!--                         <div class="login__social__links" align="center"> -->
+<!--                             <span>or</span> -->
+<!--                             <ul align="center"> -->
+<!--                                 <li><a href="#" class="facebook"><i class="fa fa-facebook"></i> Sign in With -->
+<!--                                 Facebook</a></li> -->
+<!--                                 <li><a href="#" class="google"><i class="fa fa-google"></i> Sign in With Google</a></li> -->
+<!--                                 <li><a href="#" class="twitter"><i class="fa fa-twitter"></i> Sign in With Twitter</a> -->
 
-                                </li>
-                            </ul>
-                        </div>
+<!--                                 </li> -->
+<!--                             </ul> -->
+<!--                         </div> -->
                         <br><br> 
                     <!-- </div> -->
                  
@@ -228,7 +230,7 @@
             <div class="col-lg-6">
                 <div class="footer__nav">
                     <ul>
-                        <li class="active"><a href="${pageContext.request.contextPath}/movie/html/index.jsp">홈</a></li>
+                        <li><a href="${pageContext.request.contextPath}/movie/html/index.jsp">홈</a></li>
                         <li><a href="${pageContext.request.contextPath}/movie/html/default.jsp">고객센터</a></li>
                         <li><a href="#">블로그</a></li>
                        
