@@ -50,23 +50,23 @@
                             <div class="loader"></div>
                         </div>
 
-                                   <!-- Header Section Begin -->
-            <header class="header">
-                <div class="container">
-                    <div class="row">
-                        <div class="col-lg-2">
-                            <div class="header__logo">
-                                <a href="./index.jsp">
-                                    <img src="img/logo2.png" id="logo2" alt="">
-                                </a>
-                            </div>
-                        </div>
-                        <div class="col-lg-8">
-                            <div class="header__nav">
-                                <nav class="header__menu mobile-menu">
-                                    <ul>
+                        <!-- Header Section Begin -->
+                        <header class="header">
+                            <div class="container">
+                                <div class="row">
+                                    <div class="col-lg-2">
+                                        <div class="header__logo">
+                                            <a href="./index.jsp">
+                                                <img src="img/logo2.png" id="logo2" alt="">
+                                            </a>
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-8">
+                                        <div class="header__nav">
+                                            <nav class="header__menu mobile-menu">
+                                                <ul>
 
-                                        <!-- <li class="active"><a href="./index.jsp">홈</a></li>
+                                                    <!-- <li class="active"><a href="./index.jsp">홈</a></li>
                                         <li><a href="./categories.jsp">영화</span></a>
                                         <ul class="dropdown">
                                                 <li><a href="./categories.jsp">현재 상영작</a></li>
@@ -75,7 +75,7 @@
                                             </ul>
                                         </li>-->
 
-                                        <!--           <li><a href="./anime-details.html">극장정보</a></li>
+                                                    <!--           <li><a href="./anime-details.html">극장정보</a></li>
 
                                 <li><a href="./categories.html">예매<span class="arrow_carrot-down"></span></a>
                                     <ul class="dropdown">
@@ -86,19 +86,19 @@
                                     </ul>   
                                      -->
 
-                                        <!-- <li><a href="${pageContext.request.contextPath}/movie/html/notice.jsp">게시판<span class="arrow_carrot-down"></span></a>
+                                                    <!-- <li><a href="${pageContext.request.contextPath}/movie/html/notice.jsp">게시판<span class="arrow_carrot-down"></span></a>
                                     <ul class="dropdown">
                                         <li><a href="${pageContext.request.contextPath}/movie/html/notice.jsp">공지사항</a></li>
                                         <li><a href="${pageContext.request.contextPath}/movie/html/notice.jsp">이벤트</a></li> -->
-                                        <!--                  <li><a href="#">리뷰</a></li> -->
+                                                    <!--                  <li><a href="#">리뷰</a></li> -->
 
 
-                                    </ul>
-                                    </li>
+                                                </ul>
+                                                </li>
 
 
 
-                                    <!-- <li><a href="${pageContext.request.contextPath}/movie/html/default.jsp">고객문의<span class="arrow_carrot-down"></span></a>
+                                                <!-- <li><a href="${pageContext.request.contextPath}/movie/html/default.jsp">고객문의<span class="arrow_carrot-down"></span></a>
                                     <ul class="dropdown">
                                         <li><a href="${pageContext.request.contextPath}/movie/html/default.jsp">고객센터</a></li>
                                         <li><a href="#">주변 영화관 찾기</a></li>
@@ -106,11 +106,11 @@
                                 </li> -->
 
 
-                                    <!-- 대형 영화 사이트 참고한 양식 (스토어, 이벤트, 혜택)-->
-                                    <!-- 시간이 남으면 추가해보는걸로 -->
+                                                <!-- 대형 영화 사이트 참고한 양식 (스토어, 이벤트, 혜택)-->
+                                                <!-- 시간이 남으면 추가해보는걸로 -->
 
 
-                                    <!-- <li><a href="#">스토어</a></li>      
+                                                <!-- <li><a href="#">스토어</a></li>      
 
                                 <li><a href="./categories.html">이벤트<span class="arrow_carrot-down"></span></a>
                                     <ul class="dropdown">
@@ -124,40 +124,44 @@
                                 <li><a href="./blog.html">혜택</a></li> -->
 
 
-                                    </ul>
-                                </nav>
+                                                </ul>
+                                            </nav>
+                                        </div>
+                                    </div>
+
+
+                                    <div class="col-lg-2">
+                                        <div class="header__right">
+
+                                            <a href="#" class="search-switch"><span class="icon_search"></span></a>
+                                            <span class="icon_profile arrow fa dropdown-toggle active arrow_carrot-down"
+                                                id="dropdown-toggle" data-bs-toggle="dropdown"
+                                                aria-expanded="false"></span>
+                                            <ul class="dropup-center dropup dropdown-menu"
+                                                aria-labelledby="dropdown-toggle">
+                                                <li> <a href="./login.jsp"><span class="dropdown-item">로그인</span></a>
+                                                </li>
+                                                <li>
+                                                    <hr class="dropdown-divider">
+                                                </li>
+                                                <li> <a href="./signup.jsp"><span class="dropdown-item">회원가입</span></a>
+                                                </li>
+                                            </ul>
+                                            <a href="./login.jsp" id="youNeedLogin">로그인</a>|
+                                            <a href="./join.jsp" id="youNeedJoin">회원가입 </a>
+                                        </div>
+                                    </div>
+
+
+
+                                </div>
+                                <div id="mobile-menu-wrap"></div>
                             </div>
-                        </div>
-
-
-                        <div class="col-lg-2">
-                            <div class="header__right">
-
-                                <a href="#" class="search-switch"><span class="icon_search"></span></a>
-                                <span class="icon_profile arrow fa dropdown-toggle active arrow_carrot-down"
-                                    id="dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false"></span>
-                                <ul class="dropup-center dropup dropdown-menu" aria-labelledby="dropdown-toggle">
-                                    <li> <a href="./login.jsp"><span class="dropdown-item">로그인</span></a></li>
-                                    <li>
-                                        <hr class="dropdown-divider">
-                                    </li>
-                                    <li> <a href="./signup.jsp"><span class="dropdown-item">회원가입</span></a></li>
-                                </ul>
-                                <a href="./login.jsp" id="youNeedLogin">로그인</a>|
-                                <a href="./join.jsp" id="youNeedJoin">회원가입 </a>
-                            </div>
-                        </div>
+                        </header>
 
 
 
-                    </div>
-                    <div id="mobile-menu-wrap"></div>
-                </div>
-            </header>
-
-
-
-            <!-- Header End -->
+                        <!-- Header End -->
 
                         <!-- Breadcrumb Begin -->
                         <div class="breadcrumb-option">
@@ -179,26 +183,29 @@
                         <!-- Breadcrumb End -->
 
                         <!-- Anime Section Begin -->
+                        <div class="css-yy4d6f e1yew28617" style="position: relative;  height: 550px;">
+                            <div class="css-stilcut"
+                                style="background: url(https://an2-img.amz.wtchn.net/image/v2/UdinY7L06PQParoTrP1TAQ.jpg?jwt=ZXlKaGJHY2lPaUpJVXpJMU5pSjkuZXlKdmNIUnpJanBiSW1SZk1Ua3lNSGd4TURnd2NUZ3dJbDBzSW5BaU9pSXZkakl2YzNSdmNtVXZhVzFoWjJVdk1UQTJORGszTURBd056VTBOVGd4SW4wLk1RY1RhRC1YcXVPQ0VheG1SMmdiSFIzWEZ1RHpVRlVMU2ZOUEFXXzhxSlk) no-repeat center;">
+
+
+                                <div class="css-sdsdsd">
+
+                                    <h1 class="css-Title">파묘</h1>
+                                    <div class="css-qnwpahr">파묘</div>
+                                    <div class="css-roqhddlf">2024 · 미스터리/스릴러 · 한국</div>
+                                    <div class="css-qkdduddlfwkdfmrnrrk">2시간 14분 · 15세</div>
+                                    <div class="css-tkd">어워드상 누적 관객 851.8만명</div>
+
+                                </div>
+                            </div>
+                        </div>
                         <section class="anime-details spad">
                             <div class="container">
                                 <div class="anime__details__content">
-
-                                    <div class="css-stilcut" style="background: url(https://an2-img.amz.wtchn.net/image/v2/UdinY7L06PQParoTrP1TAQ.jpg?jwt=ZXlKaGJHY2lPaUpJVXpJMU5pSjkuZXlKdmNIUnpJanBiSW1SZk1Ua3lNSGd4TURnd2NUZ3dJbDBzSW5BaU9pSXZkakl2YzNSdmNtVXZhVzFoWjJVdk1UQTJORGszTURBd056VTBOVGd4SW4wLk1RY1RhRC1YcXVPQ0VheG1SMmdiSFIzWEZ1RHpVRlVMU2ZOUEFXXzhxSlk) no-repeat center;">
-
-					
-                                        <div class="css-sdsdsd">
     
-                                            <h1 class="css-Title">파묘</h1>
-                                            <div class="css-qnwpahr">파묘</div>
-                                            <div class="css-roqhddlf">2024 · 미스터리/스릴러 · 한국</div>
-                                            <div class="css-qkdduddlfwkdfmrnrrk">2시간 14분 · 15세</div>
-                                            <div class="css-tkd">어워드상  누적 관객 851.8만명</div>
-    
-                                        </div>
-                                    </div>
 
-                                    <div class="row" style="margin-top: 650px;">
-                                        
+                                    <div class="row" style="margin-top: 30px;">
+
                                         <!-- 영화 이미지와 관련 정보 -->
                                         <div class="col-lg-3">
                                             <div class="anime__details__pic set-bg"
