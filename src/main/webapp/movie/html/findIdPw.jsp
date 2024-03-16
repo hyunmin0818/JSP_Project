@@ -50,7 +50,7 @@
                         <nav class="header__menu mobile-menu">
                             <ul>
 
-                                <li class="active"><a href="./index.jsp">홈</a></li>    
+                                <li><a href="./index.jsp">홈</a></li>    
                                 <li><a href="./categories.jsp">영화<span class="arrow_carrot-down"></span></a>
                                     <ul class="dropdown">
                                         <li><a href="./categories.jsp">현재 상영작</a></li>
@@ -142,87 +142,85 @@
     <!-- Header End -->
 
     <!-- Normal Breadcrumb Begin -->
-    <section class="normal-breadcrumb set-bg" data-setbg="img/cinema.jpg">
+    <section class="normal-breadcrumb set-bg" data-setbg="img/cinema1.jpg">
         <div class="container">
             <div class="row">
                 <div class="col-lg-12 text-center">
                     <div class="normal__breadcrumb__text">
                         <h2>아이디/비밀번호 찾기</h2>
-                        <p>영화 사이트에 오신걸 환영합니다</p>
+                        <p>보노보노 영화 사이트에 오신걸 환영합니다</p>
                     </div>
                 </div>
             </div>
         </div>
     </section>
     <!-- Normal Breadcrumb End -->
-
+	<hr>
     <!-- Login Section Begin -->
-    <section class="login spad" align ="center">
-        <div class="container">
-            <div class="row" >
-                <div class="col-lg-6">
-                    <div class="login__form">
-                        <h3>아이디 찾기</h3>
+          <div class="row d-flex justify-content-center">
+    <section class="login" align ="center">
+        <div class="container"  align ="center">
+          
+               
+                    <div class="login__form" id ="logincenter">
+                        <h3>아이디 찾기 <button type="submit" class="site-btn" id="forgot_id_button">?</button></h3>
                         <form action="#">
                             <div class="input__item">
                                 <input type="text" placeholder="이름을 입력해주세요"> 
                                 <span class="icon_mail"></span>
                             </div>
+                         
+                      
+                            <br>
+                            
                             <div class="input__item">
-                                <input type="text" placeholder="법정생년월일 6자리를 입력해주세요">
-                                <span class="icon_lock"></span>
-                            </div>
-
-                            <div class="input__item">
-                                <input type="text" placeholder="휴대번호 뒤 7~8자리를 입력해주세요.(01X제외)">
+                                <input type="text" placeholder="생년월일을 입력해주세요"> 
                                 <span class="icon_mail"></span>
                             </div>
-                            
- 
+                         <br>   
+                            <div class="input__item">
+                                <input type="text" placeholder="이메일을 입력해주세요"> 
+                                <span class="icon_mail"></span>
+                            </div>
+ 					 <br>
 
-                            <button type="submit" class="site-btn">가입</button>
+                            <button type="submit" class="site-btn">아이디 찾기</button>
+                            
                         </form>
+                        
                      <br>
                      
                     </div>
-                    <a href="#" class="forget_pass" align="center">Forgot Your Password?</a>
-                  
-                </div>
-
-
-                <div class="col-lg-6">
-                    <div class="login__form">
-                        <h3>비밀번호 찾기</h3>
-                        <form action="#">
-                            <div class="input__item">
-                                <input type="text" placeholder="이름을 입력해주세요"> 
-                                <span class="icon_mail"></span>
-                            </div>
-                            <div class="input__item">
-                                <input type="text" placeholder="법정생년월일 6자리를 입력해주세요">
-                                <span class="icon_lock"></span>
-                            </div>
-
-                            <div class="input__item">
-                                <input type="text" placeholder="휴대번호 뒤 7~8자리를 입력해주세요.(01X제외)">
-                                <span class="icon_mail"></span>
-                            </div>
-                            
- 
-
-                            <button type="submit" class="site-btn">가입</button>
-                        </form>
-                     <br>
-                     
-                    </div>
-                    <a href="#" class="forget_pass" align="center">Forgot Your Password?</a>
-                  
-                </div>
-                
+                    
+                    <p class = "forgot_idpw_message" id="forgot_id_message">
+                    </p>
+                        
             
+                 <br>
+                    <a href="./findPw.jsp" class="forget_pass" target="_blank" align="center">비밀번호 찾기</a> | 
+                    <a href="./login.jsp" class="forget_pass" align="center">로그인</a>
+                </div>
+<!--             <div class="login__social" align="center"> -->
+<!--                 <div class="row d-flex justify-content-center"> -->
+<!--                     <div class="col-lg-6"> -->
+<!--                         <div class="login__social__links" align="center"> -->
+<!--                             <span>or</span> -->
+<!--                             <ul align="center"> -->
+<!--                                 <li><a href="#" class="facebook"><i class="fa fa-facebook"></i> Sign in With -->
+<!--                                 Facebook</a></li> -->
+<!--                                 <li><a href="#" class="google"><i class="fa fa-google"></i> Sign in With Google</a></li> -->
+<!--                                 <li><a href="#" class="twitter"><i class="fa fa-twitter"></i> Sign in With Twitter</a> -->
 
-                
+<!--                                 </li> -->
+<!--                             </ul> -->
+<!--                         </div> -->
+                        <br><br> 
+                    <!-- </div> -->
+                 
+                </div>
             </div>
+        </div>
+    </section>
 
 
          
@@ -234,18 +232,18 @@
 
             <div class="login__social">
                 <div class="row d-flex justify-content-center">
-                    <div class="col-lg-6">
-                        <div class="login__social__links">
-                            <span>or</span>
-                            <ul>
-                                <li><a href="#" class="facebook"><i class="fa fa-facebook"></i> Sign in With
-                                Facebook</a></li>
-                                <li><a href="#" class="google"><i class="fa fa-google"></i> Sign in With Google</a></li>
-                                <li><a href="#" class="twitter"><i class="fa fa-twitter"></i> Sign in With Twitter</a>
-                                </li>
-                            </ul>
-                        </div>
-                    </div>
+<!--                     <div class="col-lg-6"> -->
+<!--                         <div class="login__social__links"> -->
+<!--                             <span>or</span> -->
+<!--                             <ul> -->
+<!--                                 <li><a href="#" class="facebook"><i class="fa fa-facebook"></i> Sign in With -->
+<!--                                 Facebook</a></li> -->
+<!--                                 <li><a href="#" class="google"><i class="fa fa-google"></i> Sign in With Google</a></li> -->
+<!--                                 <li><a href="#" class="twitter"><i class="fa fa-twitter"></i> Sign in With Twitter</a> -->
+<!--                                 </li> -->
+<!--                             </ul> -->
+<!--                         </div> -->
+<!--                     </div> -->
                 </div>
             </div>
         </div>
@@ -267,7 +265,7 @@
             <div class="col-lg-6">
                 <div class="footer__nav">
                     <ul>
-                        <li class="active"><a href="${pageContext.request.contextPath}/movie/html/index.jsp">홈</a></li>
+                        <a href="${pageContext.request.contextPath}/movie/html/index.jsp">홈</a></li>
                         <li><a href="${pageContext.request.contextPath}/movie/html/default.jsp">고객센터</a></li>
                         <li><a href="#">블로그</a></li>
                        

@@ -51,7 +51,7 @@
                         <nav class="header__menu mobile-menu">
                             <ul>
 
-                                <li class="active"><a href="./index.jsp">홈</a></li>    
+                                <li><!--<li class="active">--><a href="./index.jsp">홈</a></li>    
                                 <li><a href="./categories.jsp">영화<span class="arrow_carrot-down"></span></a>
                                     <ul class="dropdown">
                                         <li><a href="./categories.jsp">현재 상영작</a></li>
@@ -143,7 +143,7 @@
     <!-- Header End -->
 
     <!-- Normal Breadcrumb Begin -->
-    <section class="normal-breadcrumb set-bg" data-setbg="img/cinema.jpg">
+    <section class="normal-breadcrumb set-bg" data-setbg="img/cinema1.jpg">
         <div class="container">
             <div class="row">
                 <div class="col-lg-12 text-center">
@@ -156,14 +156,14 @@
         </div>
     </section>
     <!-- Normal Breadcrumb End -->
-
+	<hr/>
     <!-- Login Section Begin -->
     <section class="login spad">
         <div class="container">
             <div class="row">
                 <div class="col-lg-6">
                     <div class="login__form">
-                        <h3>Login</h3>
+                        <h3>로그인</h3>
 						<c:if test="${not empty param.flag}">
 							<c:if test="${not param.flag}">
 								<script>
@@ -183,10 +183,10 @@
                            
                             
                             <div class="findIdPw_link" align="center"> 
-                                <label><input type="checkbox" id="check_saveId"> <a class="whitetext" id="saveId">아이디 저장</a></label><t>|</t>
-                                <a href="./findId.jsp" >아이디 찾기 </a>| 
+                                <label><input type="checkbox" id="check_saveId"> <a class="blacktext" id="saveId">아이디 저장</a></label><t>|</t>
+                                <a href="./findId.jsp" class="blacktext">아이디 찾기 </a>| 
                                
-                                <a href="./findPw.jsp">비밀번호 찾기</a>
+                                <a href="./findPw.jsp" class="blacktext">비밀번호 찾기</a>
                             </div>
                             <button type="submit" class="site-btn">로그인</button>                 
                          
@@ -203,13 +203,13 @@
                 <div class="col-lg-6">
                     <div class="login__register" align="center">
                         <h3>계정이 없습니까?</h3>
-                        <a href="join.jsp" class="primary-btn">회원가입</a><br>
+                        <a href="join.jsp" class="site-btn">회원가입</a><br>
                        
                     </div>
                     <br>
                     <div class="login__register" align="center">
-                         <h3>관리자 로그인</h3> -
-                        <a href="./manager.jsp" class="primary-btn">관리자</a><br>
+                         <h3>관리자 로그인</h3> 
+                        <a href="./manager.jsp" class="site-btn">관리자</a><br>
                        
                     </div>
           
@@ -219,20 +219,20 @@
             <div class="login__social">
              
 
-                <div class="row d-flex justify-content-center">
-                    <div class="col-lg-6">
-                        <div class="login__social__links">
-                            <span>or</span>
-                            <ul>
-                                <li><a href="#" class="facebook"><i class="fa fa-facebook"></i> Sign in With
-                                Facebook</a></li>
-                                <li><a href="#" class="google"><i class="fa fa-google"></i> Sign in With Google</a></li>
-                                <li><a href="#" class="twitter"><i class="fa fa-twitter"></i> Sign in With Twitter</a>
-                                </li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
+<!--                 <div class="row d-flex justify-content-center"> -->
+<!--                     <div class="col-lg-6"> -->
+<!--                         <div class="login__social__links"> -->
+<!--                             <span>or</span> -->
+<!--                             <ul> -->
+<!--                                 <li><a href="#" class="facebook"><i class="fa fa-facebook"></i> Sign in With -->
+<!--                                 Facebook</a></li> -->
+<!--                                 <li><a href="#" class="google"><i class="fa fa-google"></i> Sign in With Google</a></li> -->
+<!--                                 <li><a href="#" class="twitter"><i class="fa fa-twitter"></i> Sign in With Twitter</a> -->
+<!--                                 </li> -->
+<!--                             </ul> -->
+<!--                         </div> -->
+<!--                     </div> -->
+<!--                 </div> -->
             </div>
         </div>
     </section>
