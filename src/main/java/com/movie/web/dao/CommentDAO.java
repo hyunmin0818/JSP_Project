@@ -37,6 +37,16 @@ public class CommentDAO {
 	          return commentList;
 	         
 	   }
+	      // 클릭시 댓글리스트 갖고오기
+	      public List<CommentDTO> getCmByMovieSeq(String movieSeq) {
+	    	    List<CommentDTO> commentList = new ArrayList<CommentDTO>();
+	    	    try {
+	    	        commentList = sqlSession.selectList("Movie.getCmByMovieSeq", movieSeq);
+	    	    } catch (Exception e) {
+	    	        e.printStackTrace();
+	    	    }
+	    	    return commentList;
+	    	}
 	      public boolean insertComment(String user_id, String comment, String movieSeq) {
 	    	    boolean result = false;
 	    	    

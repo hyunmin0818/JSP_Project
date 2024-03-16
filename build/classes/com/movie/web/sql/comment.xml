@@ -9,6 +9,12 @@
 	JOIN movie m ON c.movieSeq = m.movieSeq
 	WHERE m.title LIKE CONCAT('%', #{parameter}, '%');
 </select>
+<select id="getCmByMovieSeq" parameterType="string" resultType="commentdto">
+    SELECT c.*
+    FROM comment c
+    JOIN movie m ON c.movieSeq = m.movieSeq
+    WHERE m.movieSeq = #{movieSeq};
+</select>
 <insert id="insertComment"  parameterType="hashmap">
 	INSERT INTO comment (comment_id, user_id, operator_id, comment, comment_time, movieSeq)
         VALUES (#{comment_id},#{user_id},null, #{comment}, NOW(), #{movieSeq})
