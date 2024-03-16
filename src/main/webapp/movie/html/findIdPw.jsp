@@ -175,7 +175,7 @@
 				<div class="col-lg-12 text-center">
 					<div class="normal__breadcrumb__text">
 						<h2>아이디/비밀번호 찾기</h2>
-						<p>영화 사이트에 오신걸 환영합니다</p>
+						<p>보노보노 영화 사이트에 오신걸 환영합니다</p>
 					</div>
 				</div>
 			</div>
