@@ -66,7 +66,15 @@ public class MovieDAO {
 		return sqlSession.selectOne("Movie.getMovieCnt");
 	}
 	
-	
+	// 영화의 조회수를 추가하는 메서드
+	public void updateMovieViews(int movieId) {
+	    sqlSession.update("Movie.updateMovieViews", movieId);
+	}
+
+	// 영화의 조회수를 가져오는 메서드
+	public int getMovieViews(int movieId) {
+	    return sqlSession.selectOne("Movie.getMovieViews", movieId);
+	}
 }
 
 

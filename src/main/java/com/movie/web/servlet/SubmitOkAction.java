@@ -22,10 +22,6 @@ public class SubmitOkAction implements Action{
 		UserDTO userInfo = udao.getUserInfo(user_id);
         ActionForward forward = new ActionForward();
         // 사용자로부터 입력받은 아이디와 비밀번호
-        
-
-        
-        
 
         System.out.println("값 받아오기 성공"); // 값 받아오기 여부 확인용
 
@@ -48,15 +44,12 @@ public class SubmitOkAction implements Action{
         	    // 이에 대한 처리를 수행
         		forward.setPath("/movie/html/join.jsp");
         	}
-        	
-        
-            
+
         } else {
 			forward.setPath("/movie/html/login.jsp?flag=false");
 			System.out.println("로그인 실패");
 		}
-        
-       
+
 		return forward;
 	}
 	

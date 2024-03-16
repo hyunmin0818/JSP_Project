@@ -12,9 +12,9 @@ public class UpdateMyPageAction implements Action{
 	
 	@Override
 	public ActionForward execute(HttpServletRequest request, HttpServletResponse response) {
-		ActionForward forward = new ActionForward();
-		UserDAO udao = new UserDAO();
 		
+		UserDAO udao = new UserDAO();
+		ActionForward forward = new ActionForward();
 		
 		String user_id = request.getParameter("user_id");
         String username = request.getParameter("username");
