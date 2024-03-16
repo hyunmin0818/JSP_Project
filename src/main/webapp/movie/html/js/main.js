@@ -38,6 +38,7 @@
         var bg = $(this).data('setbg');
         $(this).css('background-image', 'url(' + bg + ')');
     });
+   
 
    $(document).ready(function() {
     // 검색 아이콘 클릭 시 모달 표시
@@ -114,5 +115,8 @@
         $("html, body").animate({ scrollTop: 0 }, "slow");
         return false;
      });
+     
+   
+
 
 })(jQuery);

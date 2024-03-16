@@ -34,10 +34,10 @@ public class CommentDTO {
 	public void setComment(String comment) {
 		this.comment = comment;
 	}
-	public LocalDateTime getCommentTime() {
+	public LocalDateTime getComment_time() {
 		return comment_time;
 	}
-	public void setCommentTime(LocalDateTime comment_time) {
+	public void setComment_time(LocalDateTime comment_time) {
 		this.comment_time = comment_time;
 	}
 	public String getMovieSeq() {

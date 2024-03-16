@@ -1,0 +1,7 @@
+@charset "UTF-8";
+.detailimage {
+    width: 947.56px; /* 너비 설정 */
+    height: 550px; /* 높이 설정 */
+    background-size: cover; /* 배경 이미지가 요소의 크기에 맞게 조정됩니다 */
+    background-position: center; /* 배경 이미지가 요소의 중앙에 위치하도록 설정 */
+}

@@ -6,7 +6,8 @@ public class MovieDTO {
 		private String title;	 	 // 영화 제목
 		private String titleEng;	 // 제목 영문명
 		private String titleOrg;	 // 원문 제목
-		private int prodYear;		 // 제작 연도
+		private int prodYear;		// 제작 연도
+		private int releaseDate;	// 개봉일
 		private String production_country; // 제작국가
 		private int runtime;		 // 상영 시간
 		private String rating;		 // 평점
@@ -225,6 +226,16 @@ public class MovieDTO {
 		}
 		public void setMovie_likes(int movie_likes) {
 			this.movie_likes = movie_likes;
+		}
+
+
+		public int getReleaseDate() {
+			return releaseDate;
+		}
+
+
+		public void setReleaseDate(int releaseDate) {
+			this.releaseDate = releaseDate;
 		}
 		
 		

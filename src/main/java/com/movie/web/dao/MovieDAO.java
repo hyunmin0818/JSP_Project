@@ -24,20 +24,19 @@ public class MovieDAO {
 	    }
 		
 	
-	// 영화의 상세정보를 가져오는 메서드
-	public List<MovieDTO> searchMovies(String parameter) {
-        List<MovieDTO> movieList = null;
-        try {
-            HashMap<String, Object> paramMap = new HashMap<>();
-            paramMap.put("parameter", "%" + parameter + "%"); // 부분 일치 검색을 위해 '%' 추가
+	   public List<MovieDTO> searchMovies(String parameter) {
+		    List<MovieDTO> movieList = null;
+		    try {
+		        HashMap<String, Object> paramMap = new HashMap<>();
+		        paramMap.put("parameter", "%" + parameter + "%"); // 부분 일치 검색을 위해 '%' 추가
 
-            movieList = sqlSession.selectList("Movie.searchMovies", parameter);
-        } catch (Exception e) { 
-            e.printStackTrace();
-        }
-        return movieList;
-    }
-
+		        // 수정된 부분: paramMap을 전달합니다.
+		        movieList = sqlSession.selectList("Movie.searchMovies", paramMap);
+		    } catch (Exception e) { 
+		        e.printStackTrace();
+		    }
+		    return movieList;
+		}
 	
 	public List<MovieDTO> getMovieList(int startRow, int endRow) {
 		HashMap<String, Integer> datas = new HashMap<>();
