@@ -1,7 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
-<%@ include file="/movie/html/header.jsp" %>
 <!DOCTYPE html>
 <html lang="zxx">
 
@@ -17,6 +16,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Mulish:wght@300;400;500;600;700;800;900&display=swap"
     rel="stylesheet">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" />
 
     <!-- Css Styles -->
     <link rel="stylesheet" href="${pageContext.request.contextPath}/movie/html/css/bootstrap.min.css" type="text/css">
@@ -27,6 +27,9 @@
     <link rel="stylesheet" href="${pageContext.request.contextPath}/movie/html/css/owl.carousel.min.css" type="text/css">
     <link rel="stylesheet" href="${pageContext.request.contextPath}/movie/html/css/slicknav.min.css" type="text/css">
     <link rel="stylesheet" href="${pageContext.request.contextPath}/movie/html/css/style.css" type="text/css">
+    <link rel="stylesheet" href="${pageContext.request.contextPath}/movie/html/css/search.css" type="text/css">
+    
+    <%@ include file="/movie/html/header.jsp" %>
 </head>
 
 <body>
@@ -35,10 +38,10 @@
         <div class="loader"></div>
     </div>
 
-    <!-- Header Section Begin -->
-   <header class="header">
-        <div class="container">
-            
+   <!-- Header Section Begin -->
+    <header class="header">
+    <div class="container">
+		
         </div>
     </header>
 
@@ -53,33 +56,43 @@
                 <div class="col-lg-12 text-center">
                     <div class="normal__breadcrumb__text">
                         <h2>아이디/비밀번호 찾기</h2>
-                        <p>영화 사이트에 오신걸 환영합니다</p>
+                        <p>보노보노 영화 사이트에 오신걸 환영합니다</p>
                     </div>
                 </div>
             </div>
         </div>
     </section>
     <!-- Normal Breadcrumb End -->
-<hr>
+	<hr>
     <!-- Login Section Begin -->
-<!--     <div class="login__social"> -->
-        <div class="row d-flex justify-content-center">
+          <div class="row d-flex justify-content-center">
     <section class="login" align ="center">
         <div class="container"  align ="center">
           
                
                     <div class="login__form" id ="logincenter">
-                        <h3>비밀번호 찾기 <button type="button" class="site-btn" id="forgot_id_button">?</button></h3>
-                        <form action="/movie/searchPw.ms">
+                        <h3>아이디 찾기 <button type="button" class="site-btn" id="forgot_id_button">?</button></h3>
+                        <form action="/movie/searchId.ms">
                             <div class="input__item">
-                                <input type="text" placeholder="아이디를 입력해주세요"> 
-                                <span class="icon_lock"></span>
+                                <input type="text" placeholder="이름을 입력해주세요"> 
+                                <span class="material-symbols-outlined">signature</span>
                             </div>
+                         
                       
                             <br>
- 
+                            
+                            <div class="input__item">
+                                <input type="text" placeholder="생년월일을 입력해주세요"> 
+                                <span class="material-symbols-outlined">cake</span>
+                            </div>
+                         <br>   
+                            <div class="input__item">
+                                <input type="text" placeholder="연락처를 입력해주세요"> 
+                                <span class="material-symbols-outlined">call</span>
+                            </div>
+ 					 <br>
 
-                            <button type="submit" class="site-btn">비밀번호 찾기</button>
+                            <button type="submit" class="site-btn">아이디 찾기</button>
                             
                         </form>
                         
@@ -87,12 +100,12 @@
                      
                     </div>
                     
-                    <p class = "forgot_idpw_message" id="forgot_pw_message">
+                    <p class = "forgot_idpw_message" id="forgot_id_message">
                     </p>
                         
             
                  <br>
-                    <a href="./findId.jsp" class="forget_pass" align="center">아이디 찾기</a> | 
+                    <a href="./findPw.jsp" class="forget_pass"" align="center">비밀번호 찾기</a> | 
                     <a href="./login.jsp" class="forget_pass" align="center">로그인</a>
                 </div>
 <!--             <div class="login__social" align="center"> -->
@@ -116,9 +129,36 @@
             </div>
         </div>
     </section>
+
+
+         
+                
+
+
+
+
+
+            <div class="login__social">
+                <div class="row d-flex justify-content-center">
+<!--                     <div class="col-lg-6"> -->
+<!--                         <div class="login__social__links"> -->
+<!--                             <span>or</span> -->
+<!--                             <ul> -->
+<!--                                 <li><a href="#" class="facebook"><i class="fa fa-facebook"></i> Sign in With -->
+<!--                                 Facebook</a></li> -->
+<!--                                 <li><a href="#" class="google"><i class="fa fa-google"></i> Sign in With Google</a></li> -->
+<!--                                 <li><a href="#" class="twitter"><i class="fa fa-twitter"></i> Sign in With Twitter</a> -->
+<!--                                 </li> -->
+<!--                             </ul> -->
+<!--                         </div> -->
+<!--                     </div> -->
+                </div>
+            </div>
+        </div>
+    </section>
     <!-- Login Section End -->
 
-    <!-- Footer Section Begin -->
+  <!-- Footer Section Begin -->
 <footer class="footer">
     <div class="page-up">
         <a href="#" id="scrollToTopButton"><span class="arrow_carrot-up"></span></a>
@@ -133,7 +173,7 @@
             <div class="col-lg-6">
                 <div class="footer__nav">
                     <ul>
-                        <li><a href="${pageContext.request.contextPath}/movie/html/index.jsp">홈</a></li>
+                        <a href="${pageContext.request.contextPath}/movie/html/index.jsp">홈</a></li>
                         <li><a href="${pageContext.request.contextPath}/movie/html/default.jsp">고객센터</a></li>
                         <li><a href="#">블로그</a></li>
                        
@@ -163,15 +203,7 @@
     <!-- Search model end -->
 
     <!-- Js Plugins -->
-    <script src="${pageContext.request.contextPath}/movie/html/js/jquery-3.3.1.min.js"></script>
-    <script src="${pageContext.request.contextPath}/movie/html/js/bootstrap.min.js"></script>
-    <script src="${pageContext.request.contextPath}/movie/html/js/player.js"></script>
-    <script src="${pageContext.request.contextPath}/movie/html/js/jquery.nice-select.min.js"></script>
-    <script src="${pageContext.request.contextPath}/movie/html/js/mixitup.min.js"></script>
-    <script src="${pageContext.request.contextPath}/movie/html/js/jquery.slicknav.js"></script>
-    <script src="${pageContext.request.contextPath}/movie/html/js/owl.carousel.min.js"></script>
-    <script src="${pageContext.request.contextPath}/movie/html/js/main.js"></script>
-    <script src="${pageContext.request.contextPath}/movie/html/js/findIdPw_button_click_information"></script> <!-- '?' 버튼 기능 추가-->
+   
 
 
 </body>

@@ -1,9 +1,11 @@
+<%@page import="com.movie.web.dto.UserDTO"%>
 <%@page import="java.util.List"%>
 <%@page import="com.movie.web.dto.MovieDTO"%>
 <%@page import="com.movie.web.dao.MovieDAO"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+<%@ include file="/movie/html/header.jsp" %>
 <!DOCTYPE html>
 <html lang="zxx">
 
@@ -78,72 +80,9 @@
 	<!-- Header Section Begin -->
 	<header class="header">
 		<div class="container">
-			<div class="row">
-				<!-- 로고 -->
-				<div class="col-lg-2">
-					<div class="header__logo">
-						<a href="${pageContext.request.contextPath}/movie/html/index.jsp">
-							<img src="img/logo2.png" id="logo2" alt="">
-						</a>
-					</div>
-				</div>
-				<!-- 네비게이션 메뉴 -->
-				<div class="col-lg-8">
-					<div class="header__nav">
-						<nav class="header__menu mobile-menu">
-							 <div id="cover">
-                            <form method="get" action="">
-                              <div class="tb">
-                                <div class="td"><input type="text" placeholder="Search" required></div>
-                                <div class="td" id="s-cover">
-                                  <button type="submit">
-                                    <div id="s-circle"></div>
-                                    <span></span>
-                                  </button>
-                                </div>
-                              </div>
-                            </form>
-                          </div>
-						</nav>
-					</div>
-				</div>
-
-
-				<div class="col-lg-2">
-					<div class="header__right">
-                        <!-- 입력창  -->
-						<span
-							class="icon_profile arrow fa dropdown-toggle active arrow_carrot-down"
-							id="dropdown-toggle" data-bs-toggle="dropdown"
-							aria-expanded="false"></span>
-						<ul class="dropup-center dropup dropdown-menu"
-							aria-labelledby="dropdown-toggle">
-							<li><a
-								href="${pageContext.request.contextPath}/movie/mypage.ms"><span
-									class="dropdown-item">마이페이지</span></a></li>
-							<li><hr class="dropdown-divider"></hr></li>
-							<li><a
-								href="${pageContext.request.contextPath}/movie/logout.ms"><span
-									class="dropdown-item" id="redtext">로그아웃</span></a></li>
-						</ul>
-						<a href="${pageContext.request.contextPath}/movie/mypage.ms"
-							id="youNeedLogin">${sessionscope.userinfo.user_id}</a>
-					</div>
-				</div>
-
-
-
-
-
-
-
-
-
-
-			</div>
-			<div id="mobile-menu-wrap"></div>
-		</div>
-	</header>
+			
+                </div>
+            </header>
 
 
 
@@ -163,9 +102,9 @@
 								<!-- 라벨 -->
 								<div class="label"></div>
 								<!-- 제목 -->
-								<h2>파묘</h2>
+								<h2 class="whitetext">파묘</h2>
 								<!-- 내용 -->
-								<p>험한 것이 나왔다...</p>
+								<p class="whitetext"> 험한 것이 나왔다...</p>
 								<!-- 시청 버튼 -->
 								<a
 									href="${pageContext.request.contextPath}/movie/html/movie-details.jsp"><span>Watch
@@ -183,7 +122,7 @@
 								<div class="hero__text">
 									<div class="label">${movie.title}</div>
 									<h2>${movie.title}</h2>
-									<p>After 30 days of travel across the world...</p>
+									<p class="whitetext">After 30 days of travel across the world...</p>
 									<a href="#"><span>Watch Now</span> <i
 										class="fa fa-angle-right"></i></a>
 								</div>
@@ -196,8 +135,8 @@
 						<div class="col-lg-6">
 							<div class="hero__text">
 								<div class="label">${movie.title}</div>
-								<h2>Fate / Stay Night: Unlimited Blade Works</h2>
-								<p>After 30 days of travel across the world...</p>
+								<h2 class ="Whitetext">Fate / Stay Night: Unlimited Blade Works</h2>
+								<p class="whitetext">After 30 days of travel across the world...</p>
 								<a href="#"><span>Watch Now</span> <i
 									class="fa fa-angle-right"></i></a>
 							</div>
@@ -292,55 +231,55 @@
                                             data-setbg="img/sidebar/tv-1.jpg">
                                             
                                             <div class="view"><i class="fa fa-eye"></i> 9141</div>
-                                            <h5><a href="#">Boruto: Naruto next generations</a></h5>
+                                            <h5><a href="#" class ="whitetext">Boruto: Naruto next generations</a></h5>
                                         </div>
                                         <div class="product__sidebar__view__item set-bg mix month week"
                                             data-setbg="img/sidebar/tv-2.jpg">
                                             
                                             <div class="view"><i class="fa fa-eye"></i> 9141</div>
-                                            <h5><a href="#">The Seven Deadly Sins: Wrath of the Gods</a></h5>
+                                            <h5><a href="#" class ="whitetext">The Seven Deadly Sins: Wrath of the Gods</a></h5>
                                         </div>
                                         <div class="product__sidebar__view__item set-bg mix week years"
                                             data-setbg="img/sidebar/tv-3.jpg">
                                             
                                             <div class="view"><i class="fa fa-eye"></i> 9141</div>
-                                            <h5><a href="#">Sword art online alicization war of underworld</a></h5>
+                                            <h5><a href="#" class="whitetext">Sword art online alicization war of underworld</a></h5>
                                         </div>
                                         <div class="product__sidebar__view__item set-bg mix years month"
                                             data-setbg="img/sidebar/tv-4.jpg">
                                             
                                             <div class="view"><i class="fa fa-eye"></i> 9141</div>
-                                            <h5><a href="#">Fate/stay night: Heaven's Feel I. presage flower</a></h5>
+                                            <h5><a href="#" class ="whitetext">Fate/stay night: Heaven's Feel I. presage flower</a></h5>
                                         </div>
                                         <div class="product__sidebar__view__item set-bg mix day"
                                             data-setbg="img/sidebar/tv-5.jpg">
                                             
                                             <div class="view"><i class="fa fa-eye"></i> 9141</div>
-                                            <h5><a href="#">Fate stay night unlimited blade works</a></h5>
+                                            <h5><a href="#" class ="whitetext">Fate stay night unlimited blade works</a></h5>
                                         </div>
                                         <div class="product__sidebar__view__item set-bg mix week years"
                                             data-setbg="img/sidebar/tv-3.jpg">
                                             
                                             <div class="view"><i class="fa fa-eye"></i> 9141</div>
-                                            <h5><a href="#">Sword art online alicization war of underworld</a></h5>
+                                            <h5><a href="#" class ="whitetext">Sword art online alicization war of underworld</a></h5>
                                         </div>
                                         <div class="product__sidebar__view__item set-bg mix years month"
                                             data-setbg="img/sidebar/tv-4.jpg">
                                             
                                             <div class="view"><i class="fa fa-eye"></i> 9141</div>
-                                            <h5><a href="#">Fate/stay night: Heaven's Feel I. presage flower</a></h5>
+                                            <h5><a href="#" class ="whitetext">Fate/stay night: Heaven's Feel I. presage flower</a></h5>
                                         </div>
                                         <div class="product__sidebar__view__item set-bg mix day"
                                             data-setbg="img/sidebar/tv-5.jpg">
                                             
                                             <div class="view"><i class="fa fa-eye"></i> 9141</div>
-                                            <h5><a href="#">Fate stay night unlimited blade works</a></h5>
+                                            <h5><a href="#" class ="whitetext">Fate stay night unlimited blade works</a></h5>
                                         </div>
                                         <div class="product__sidebar__view__item set-bg mix day"
                                             data-setbg="img/sidebar/tv-5.jpg">
                                             
                                             <div class="view"><i class="fa fa-eye"></i> 9141</div>
-                                            <h5><a href="#">Fate stay night unlimited blade works</a></h5>
+                                            <h5><a href="#" class ="whitetext">Fate stay night unlimited blade works</a></h5>
                                         </div>
                                     </div>
                                 </div>

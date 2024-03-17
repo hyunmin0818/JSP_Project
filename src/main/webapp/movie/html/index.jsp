@@ -1,5 +1,7 @@
+<%@page import="com.movie.web.dto.UserDTO"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+<%@ include file="/movie/html/header.jsp" %>
         <!DOCTYPE html>
         <html lang="zxx">
 
@@ -9,7 +11,7 @@
             <meta name="keywords" content="Anime, unica, creative, html">
             <meta name="viewport" content="width=device-width, initial-scale=1.0">
             <meta http-equiv="X-UA-Compatible" content="ie=edge">
-            <title>Anime | Template</title>
+            <title>Bonobono Movie</title>
 
             <!-- Google Font -->
             <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@300;400;500;600;700&display=swap"
@@ -26,6 +28,8 @@
             <link rel="stylesheet" href="css/owl.carousel.min.css" type="text/css">
             <link rel="stylesheet" href="css/slicknav.min.css" type="text/css">
             <link rel="stylesheet" href="css/style.css" type="text/css">
+            <link rel="stylesheet" href="${pageContext.request.contextPath}/movie/html/css/search.css" type="text/css">
+           
 
             <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"
                 integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r"
@@ -34,7 +38,11 @@
                 integrity="sha384-0pUGZvbkm6XF6gxjEnlmuGrJXVbNuzT9qBBavbLwCsOGabYfZo0T0to5eqruptLy"
                 crossorigin="anonymous"></script>
         </head>
-
+        
+        
+<%--  		<%UserDTO udto = (UserDTO)session.getAttribute("userinfo"); //세션 객체 선언%> 		 --%>
+ 		
+ 		
         <body>
 
 
@@ -47,108 +55,11 @@
             <!-- Header Section Begin -->
             <header class="header">
                 <div class="container">
-                    <div class="row">
-                        <div class="col-lg-2">
-                            <div class="header__logo">
-                                <a href="./index.jsp">
-                                    <img src="img/logo2.png" id="logo2" alt="">
-                                </a>
-                            </div>
-                        </div>
-                        <div class="col-lg-8">
-                            <div class="header__nav">
-                                <nav class="header__menu mobile-menu">
-                                    <ul>
-
-                                       <!-- <li class="active"><a href="./index.jsp">홈</a></li>
-                                        <li><a href="./categories.jsp">영화</span></a>
-                                        <ul class="dropdown">
-                                                <li><a href="./categories.jsp">현재 상영작</a></li>
-                                                <li><a href="./categories.jsp">상영 예정작</a></li>
-
-                                            </ul>
-                                        </li>-->
-
-                                        <!--           <li><a href="./anime-details.html">극장정보</a></li>
-
-                                <li><a href="./categories.html">예매<span class="arrow_carrot-down"></span></a>
-                                    <ul class="dropdown">
-                                        <li><a href="#">예매하기</a></li>
-                                        <li><a href="#">예매내역</a></li>
-                                        <li><a href="#">빠른예매</a></li>
-                                        <li><a href="#">상영시간표</a></li>    
-                                    </ul>   
-                                     -->
-
-                                        <!-- <li><a href="${pageContext.request.contextPath}/movie/html/notice.jsp">게시판<span class="arrow_carrot-down"></span></a>
-                                    <ul class="dropdown">
-                                        <li><a href="${pageContext.request.contextPath}/movie/html/notice.jsp">공지사항</a></li>
-                                        <li><a href="${pageContext.request.contextPath}/movie/html/notice.jsp">이벤트</a></li> -->
-                                        <!--                  <li><a href="#">리뷰</a></li> -->
-
-
-                                    </ul>
-                                    </li>
-
-
-
-                                    <!-- <li><a href="${pageContext.request.contextPath}/movie/html/default.jsp">고객문의<span class="arrow_carrot-down"></span></a>
-                                    <ul class="dropdown">
-                                        <li><a href="${pageContext.request.contextPath}/movie/html/default.jsp">고객센터</a></li>
-                                        <li><a href="#">주변 영화관 찾기</a></li>
-                                    </ul>
-                                </li> -->
-
-
-                                    <!-- 대형 영화 사이트 참고한 양식 (스토어, 이벤트, 혜택)-->
-                                    <!-- 시간이 남으면 추가해보는걸로 -->
-
-
-                                    <!-- <li><a href="#">스토어</a></li>      
-
-                                <li><a href="./categories.html">이벤트<span class="arrow_carrot-down"></span></a>
-                                    <ul class="dropdown">
-                                        <li><a href="#">이벤트</a></li>
-                                        <li><a href="#">당첨자</a></li>
-                                    </ul>
-                                </li>
-
-
-
-                                <li><a href="./blog.html">혜택</a></li> -->
-
-
-                                    </ul>
-                                </nav>
-                            </div>
-                        </div>
-
-
-                        <div class="col-lg-2">
-                            <div class="header__right">
-
-                                <a href="#" class="search-switch"><span class="icon_search"></span></a>
-                                <span class="icon_profile arrow fa dropdown-toggle active arrow_carrot-down"
-                                    id="dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false"></span>
-                                <ul class="dropup-center dropup dropdown-menu" aria-labelledby="dropdown-toggle">
-                                    <li> <a href="./login.jsp"><span class="dropdown-item">로그인</span></a></li>
-                                    <li>
-                                        <hr class="dropdown-divider">
-                                    </li>
-                                    <li> <a href="./signup.jsp"><span class="dropdown-item">회원가입</span></a></li>
-                                </ul>
-                                <a href="./login.jsp" id="youNeedLogin">로그인</a>|
-                                <a href="./join.jsp" id="youNeedJoin">회원가입 </a>
-                            </div>
-                        </div>
-
-
-
-                    </div>
-                    <div id="mobile-menu-wrap"></div>
-                </div>
-            </header>
-
+                 
+                 </div> 
+                 </header> 
+                        
+                        
 
 
             <!-- Header End -->
@@ -161,9 +72,9 @@
                             <div class="row">
                                 <div class="col-lg-6">
                                     <div class="hero__text">
-                                        <div class="label">Adventure</div>
-                                        <h2>파묘</h2>
-                                        <p>험한 것이 나왔다 . . .</p>
+                                        <div class="whitetext label">Adventure</div>
+                                        <h2 class ="whitetext h2_inPicture">파묘</h2>
+                                        <p class ="h2_inPicture">험한 것이 나왔다 . . .</p>
                                         <a
                                             href="${pageContext.request.contextPath}/movie/html/SeatPreview-master/index.jsp"><span>Watch
                                                 Now</span> <i class="fa fa-angle-right"></i></a>
@@ -176,9 +87,9 @@
                                 <div class="col-lg-6">
                                     <div class="hero__text">
                                         <div class="label">Adventure</div>
-                                        <h2>Fate / Stay Night: Unlimited Blade Works</h2>
-                                        <p>After 30 days of travel across the world...</p>
-                                        <a href="#"><span>Watch Now</span> <i class="fa fa-angle-right"></i></a>
+                                        <h2 class ="h2_inPicture" class ="h2_inPicture" class ="h2_inPicture" class ="h2_inPicture">Fate / Stay Night: Unlimited Blade Works</h2 class ="h2_inPicture" class ="h2_inPicture" class ="h2_inPicture" class ="h2_inPicture">
+                                        <p class ="h2_inPicture">After 30 days of travel across the world...</p>
+                                        <a class ="a_inPicture" href="#"><span>Watch Now</span> <i class="fa fa-angle-right"></i></a>
                                     </div>
                                 </div>
                             </div>
@@ -188,9 +99,9 @@
                                 <div class="col-lg-6">
                                     <div class="hero__text">
                                         <div class="label">Adventure</div>
-                                        <h2>Fate / Stay Night: Unlimited Blade Works</h2>
-                                        <p>After 30 days of travel across the world...</p>
-                                        <a href="#"><span>Watch Now</span> <i class="fa fa-angle-right"></i></a>
+                                        <h2 class ="h2_inPicture">Fate / Stay Night: Unlimited Blade Works</h2>
+                                        <p class ="p_inPicture">After 30 days of travel across the world...</p>
+                                        <a class = "p_inPicture" href="#"><span>Watch Now</span> <i class="fa fa-angle-right"></i></a>
                                     </div>
                                 </div>
                             </div>
@@ -457,55 +368,55 @@
                                             data-setbg="img/sidebar/tv-1.jpg">
                                             
                                             <div class="view"><i class="fa fa-eye"></i> 9141</div>
-                                            <h5><a href="#">Boruto: Naruto next generations</a></h5>
+                                            <h5><a class = "a_inPicture" href="#">Boruto: Naruto next generations</a></h5>
                                         </div>
                                         <div class="product__sidebar__view__item set-bg mix month week"
                                             data-setbg="img/sidebar/tv-2.jpg">
                                             
                                             <div class="view"><i class="fa fa-eye"></i> 9141</div>
-                                            <h5><a href="#">The Seven Deadly Sins: Wrath of the Gods</a></h5>
+                                            <h5><a class = "a_inPicture" href="#">The Seven Deadly Sins: Wrath of the Gods</a></h5>
                                         </div>
                                         <div class="product__sidebar__view__item set-bg mix week years"
                                             data-setbg="img/sidebar/tv-3.jpg">
                                             
                                             <div class="view"><i class="fa fa-eye"></i> 9141</div>
-                                            <h5><a href="#">Sword art online alicization war of underworld</a></h5>
+                                            <h5><a class = "a_inPicture" href="#">Sword art online alicization war of underworld</a></h5>
                                         </div>
                                         <div class="product__sidebar__view__item set-bg mix years month"
                                             data-setbg="img/sidebar/tv-4.jpg">
                                             
                                             <div class="view"><i class="fa fa-eye"></i> 9141</div>
-                                            <h5><a href="#">Fate/stay night: Heaven's Feel I. presage flower</a></h5>
+                                            <h5><a class = "a_inPicture" href="#">Fate/stay night: Heaven's Feel I. presage flower</a></h5>
                                         </div>
                                         <div class="product__sidebar__view__item set-bg mix day"
                                             data-setbg="img/sidebar/tv-5.jpg">
                                             
                                             <div class="view"><i class="fa fa-eye"></i> 9141</div>
-                                            <h5><a href="#">Fate stay night unlimited blade works</a></h5>
+                                            <h5><a class = "a_inPicture" href="#">Fate stay night unlimited blade works</a></h5>
                                         </div>
                                         <div class="product__sidebar__view__item set-bg mix week years"
                                             data-setbg="img/sidebar/tv-3.jpg">
                                             
                                             <div class="view"><i class="fa fa-eye"></i> 9141</div>
-                                            <h5><a href="#">Sword art online alicization war of underworld</a></h5>
+                                            <h5><a class = "a_inPicture" href="#">Sword art online alicization war of underworld</a></h5>
                                         </div>
                                         <div class="product__sidebar__view__item set-bg mix years month"
                                             data-setbg="img/sidebar/tv-4.jpg">
                                             
                                             <div class="view"><i class="fa fa-eye"></i> 9141</div>
-                                            <h5><a href="#">Fate/stay night: Heaven's Feel I. presage flower</a></h5>
+                                            <h5><a class ="a_inPicture" href="#">Fate/stay night: Heaven's Feel I. presage flower</a></h5>
                                         </div>
                                         <div class="product__sidebar__view__item set-bg mix day"
                                             data-setbg="img/sidebar/tv-5.jpg">
                                             
                                             <div class="view"><i class="fa fa-eye"></i> 9141</div>
-                                            <h5><a href="#">Fate stay night unlimited blade works</a></h5>
+                                            <h5><a class = "a_inPicture"href="#">Fate stay night unlimited blade works</a></h5>
                                         </div>
                                         <div class="product__sidebar__view__item set-bg mix day"
                                             data-setbg="img/sidebar/tv-5.jpg">
                                             
                                             <div class="view"><i class="fa fa-eye"></i> 9141</div>
-                                            <h5><a href="#">Fate stay night unlimited blade works</a></h5>
+                                            <h5><a class = "a_inPicture" href="#">Fate stay night unlimited blade works</a></h5>
                                         </div>
                                     </div>
                                 </div>
@@ -526,7 +437,7 @@
                     <div class="row">
                         <div class="col-lg-3">
                             <div class="footer__logo">
-                                <a href="./index.jsp"><img src="img/logo2.png" alt=""></a>
+                                <a href="./index.jsp"><img src="img/logo3.png" alt=""></a>
                             </div>
                         </div>
                         <div class="col-lg-6">
@@ -567,6 +478,24 @@
             <!-- Search model end -->
 
             <!-- Js Plugins -->
+            
+            <script>
+		document.addEventListener('DOMContentLoaded', function() {
+	    var form = document.querySelector('#cover form'); // 검색 폼 선택
+	    var input = form.querySelector('input[type="text"]'); // 입력 필드 선택
+	    form.addEventListener('submit', function(event) {
+	        event.preventDefault(); // 기본 제출 동작 방지
+	        var searchTerm = input.value.trim(); // 입력값 얻기 및 공백 제거
+	        if (searchTerm !== '') {
+	            // 여기에 검색 기능을 실행하는 코드를 추가할 수 있습니다.
+	            alert('검색어: ' + searchTerm); // 예시로 검색어를 경고창으로 출력합니다.
+	        } else {
+	            alert('검색어를 입력하세요.');
+	        }
+	    });
+	});
+	</script>
+            
             <script src="js/jquery-3.3.1.min.js"></script>
             <script src="js/bootstrap.min.js"></script>
             <script src="js/player.js"></script>
