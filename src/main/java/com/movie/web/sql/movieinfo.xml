@@ -13,7 +13,6 @@
 	<select id="getMovieCnt"  resultType="int">
 	SELECT COUNT(*) FROM movie
 	</select>
-		
 	<select id="getMovieList" resultType="moviedto" parameterType="hashmap">
 		SELECT * FROM (
 		SELECT m.*,
@@ -23,37 +22,30 @@
 		) AS ranked_movies
 		WHERE rownum BETWEEN #{startRow} AND #{endRow}
 	</select>
-
-	
+	<select id="searchMoviesByGenre" resultType="moviedto">
+	SELECT * FROM movie
+	WHERE genre LIKE CONCAT('%', #{genre}, '%')
+	AND releasedate BETWEEN '2020-12-31' AND '2024-03-17'
+	ORDER BY releasedate DESC
+	</select>
 	<select id="searchMovies" resultType="MovieDTO" parameterType="string">
 		SELECT *
 	FROM movie
 	WHERE title LIKE CONCAT('%', #{parameter}, '%')
     </select>
-    
     <select id="clickPoster" resultType="MovieDTO" parameterType="string">
     SELECT *
     FROM movie
     WHERE movieSeq = #{movieSeq}
 	</select>
-	
     <select id="getLatestMovie" resultType="moviedto" parameterType="java.util.HashMap">
 		SELECT *
 		FROM movie
 		ORDER BY releaseDate DESC
 		LIMIT 15;
 	</select>
-    
-     <update id="updateMovieViews" parameterType="int">
-	    UPDATE movie
-	    SET movieView = movieView + 1
-	    WHERE movieSeq = #{movieSeq}
- 	 </update>
-  
-  	<select id="getMovieViews" resultType="int" parameterType="int">
-	    SELECT movieView
-	    FROM movie
-	    WHERE movieSeq = #{movieSeq}
+	 <select id="getNextCommentId" resultType="int">
+        SELECT IFNULL(MAX(comment_id), 0) + 1 FROM comment
     </select>
     
 </mapper>
