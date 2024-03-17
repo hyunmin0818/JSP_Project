@@ -29,16 +29,30 @@
 	FROM movie
 	WHERE title LIKE CONCAT('%', #{parameter}, '%')
     </select>
+    
     <select id="clickPoster" resultType="MovieDTO" parameterType="string">
     SELECT *
     FROM movie
     WHERE movieSeq = #{movieSeq}
 	</select>
+	
     <select id="getLatestMovie" resultType="moviedto" parameterType="java.util.HashMap">
 		SELECT *
 		FROM movie
 		ORDER BY releaseDate DESC
 		LIMIT 15;
 	</select>
+    
+     <update id="updateMovieViews" parameterType="int">
+	    UPDATE movie
+	    SET movieView = movieView + 1
+	    WHERE movieSeq = #{movieSeq}
+ 	 </update>
+  
+  	<select id="getMovieViews" resultType="int" parameterType="int">
+	    SELECT movieView
+	    FROM movie
+	    WHERE movieSeq = #{movieSeq}
+    </select>
     
 </mapper>

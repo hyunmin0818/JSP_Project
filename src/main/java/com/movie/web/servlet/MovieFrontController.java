@@ -47,6 +47,13 @@ public class MovieFrontController extends HttpServlet {
          case "/movie/addComment.mo": 
             forward = new AddCommentAction().execute(req, resp);
             break;
+         case "/movie/AddMovieView.mo":
+        	 forward = new AddMovieViewAction().execute(req, resp);
+        	 break;
+         case "/movie/getMovieView.mo":
+        	 forward = new getMovieViewAction().execute(req, resp);
+        	 break;
+        	 
       }
       
       if (forward != null) {

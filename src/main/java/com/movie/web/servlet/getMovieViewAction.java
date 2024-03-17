@@ -6,11 +6,11 @@ import com.movie.web.action.ActionForward;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 
-public class AddMovieViewAction implements Action{
+public class getMovieViewAction implements Action{
 
-	public ActionForward execute(HttpServletRequest req, HttpServletResponse resp) {
+	@Override
+	public ActionForward execute(HttpServletRequest request, HttpServletResponse response) {
 
-		
 		return null;
 	}
 
