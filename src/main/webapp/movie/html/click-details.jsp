@@ -340,7 +340,7 @@
 						<!-- 리뷰 목록 -->
 						<div class="row">
 							<div class="col-lg-8 col-md-8">
-								<div class="movie__details__review">
+								<div class="anime__details__review">
 									<div class="section-title">
 										<h5>Reviews</h5>
 									</div>
@@ -349,11 +349,11 @@
 										<c:when
 											test="${commentList != null and fn:length(commentList) > 0}">
 											<c:forEach var="comment" items="${commentList }">
-												<div class="movie__review__item">
-													<div class="movie__review__item__pic">
-														<img src="img/anime/review-1.jpg" alt="">
+												<div class="aniem__review__item">
+													<div class="anime__review__item__pic">
+														<img src="https://d2u3dcdbebyaiu.cloudfront.net/uploads/atch_img/665/708d0162261869f0558a0a1cabea0b50_res.jpeg" alt="">
 													</div>
-													<div class="movie__review__item__text">
+													<div class="anime__review__item__text">
 														<h6>
 															${comment.user_id}<span>${comment.comment_time}</span>
 														</h6>

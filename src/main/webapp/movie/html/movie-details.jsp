@@ -351,7 +351,7 @@
                                                     <c:forEach var="comment" items="${commentList }">
                                                         <div class="anime__review__item">
                                                             <div class="anime__review__item__pic">
-                                                                <img src="img/anime/review-1.jpg" alt="">
+                                                                <img src="https://d2u3dcdbebyaiu.cloudfront.net/uploads/atch_img/665/708d0162261869f0558a0a1cabea0b50_res.jpeg" alt="">
                                                             </div>
                                                             <div class="anime__review__item__text">
                                                                 <h6>
