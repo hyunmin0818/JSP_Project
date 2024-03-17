@@ -276,6 +276,32 @@
 %>
 							</div>
 							</div>
+							<!-- 페이지 처리 부분 -->
+	<div class="pagination-container" ">
+		<div style="text-align: center;">		
+			<%
+			if (startPage > 1) {
+			%>
+			<a href="?page=<%=startPage - 1%>"><i class="fa fa-angle-double-left"></i></a>
+			<%
+			}
+			%>
+			<%
+			for (int i = startPage; i <= endPage; i++) {
+			%>
+			<a href="?page=<%=i%>"><%=i%></a>
+			<%
+			}
+			%>
+			<%
+			if (endPage < totalPage) {
+			%>
+			<a href="?page=<%=endPage + 1%>"><i class="fa fa-angle-double-right"></i></a>
+			<%
+			}
+			%>
+		</div>
+	</div>
 							</div>
 							<div class="col-lg-4 col-md-6 col-sm-8">
 							  <div class="product__sidebar">
@@ -346,34 +372,7 @@
 							  </div>
 		   </div>
 	 </section>
-  
-	  <!-- 페이지 처리 부분 -->
-	<div class="pagination-container">
-		<div>		
-			<%
-			if (startPage > 1) {
-			%>
-			<a href="?page=<%=startPage - 1%>">이전</a>
-			<%
-			}
-			%>
-			<%
-			for (int i = startPage; i <= endPage; i++) {
-			%>
-			<a href="?page=<%=i%>"><%=i%></a>
-			<%
-			}
-			%>
-			<%
-			if (endPage < totalPage) {
-			%>
-			<a href="?page=<%=endPage + 1%>">다음</a>
-			<%
-			}
-			%>
-		</div>
-	</div>
-	
+ 
 	<!-- Product Section Begin end -->
 	<!-- Footer Section Begin -->
 	<footer class="footer">

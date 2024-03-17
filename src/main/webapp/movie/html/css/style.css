@@ -1252,17 +1252,17 @@ ol {
 	border-radius: 0;
 }
 
-.product__pagination {
+.pagination-container {
 	padding-top: 15px;
 }
 
-.product__pagination a {
+.pagination-container a {
 	display: inline-block;
 	font-size: 15px;
 	color: #b7b7b7;
 	font-weight: 600;
 	height: 50px;
-	width: 50px;
+	width: 40px;
 	border: 1px solid transparent;
 	border-radius: 50%;
 	line-height: 48px;
@@ -1272,15 +1272,15 @@ ol {
 	transition: all, 0.3s;
 }
 
-.product__pagination a:hover {
+.pagination-container a:hover {
 	color: black;
 }
 
-.product__pagination a.current-page {
+.pagination-container a.current-page {
 	border: 1px solid black
 }
 
-.product__pagination a i {
+.pagination-container a i {
 	color: #b7b7b7;
 	font-size: 15px;
 }
