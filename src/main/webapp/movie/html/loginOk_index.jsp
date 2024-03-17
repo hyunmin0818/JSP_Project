@@ -373,6 +373,8 @@
 			%>
 		</div>
 	</div>
+	
+	<!-- Product Section Begin end -->
 	<!-- Footer Section Begin -->
 	<footer class="footer">
 		<div class="page-up">
