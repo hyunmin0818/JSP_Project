@@ -1,6 +1,8 @@
 package com.movie.web.servlet;
 
 import java.time.LocalDate;
+import java.util.ArrayList;
+import java.util.HashSet;
 import java.util.List;
 
 import com.movie.web.action.Action;
@@ -42,9 +44,18 @@ public class ClickPosterAction implements Action {
         // 영화 장르 가져오기
         String genre = movieInfo.get(0).getGenre(); // 가정: movieInfo 리스트의 첫 번째 항목에서 장르 정보를 가져옴
         
+        String[] genreArray = genre.split(",");
         // 비슷한 장르의 영화 찾기
-        List<MovieDTO> similarMovies = movieDAO.searchMoviesByGenre(genre);
+        List<MovieDTO> similarMovies = new ArrayList<>();
         
+     // 각 장르에 대해 비슷한 영화 찾기
+        for (String singleGenre : genreArray) {
+            similarMovies.addAll(movieDAO.searchMoviesByGenre(singleGenre.trim())); // trim으로 앞뒤 공백 제거
+        }
+
+        // 중복된 영화 정보 제거 (옵션)
+        HashSet<MovieDTO> uniqueMovies = new HashSet<>(similarMovies);
+        similarMovies = new ArrayList<>(uniqueMovies);
         // 댓글 DAO 인스턴스 생성
         CommentDAO commentDAO = new CommentDAO();
         

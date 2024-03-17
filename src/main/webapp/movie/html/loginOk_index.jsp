@@ -357,7 +357,7 @@
 			<%
 			for (int i = startPage; i <= endPage; i++) {
 			%>
-			<a href="?page=<%=i%>"><%=i%></a>
+			<a class="current-page" href="?page=<%=i%>"><%=i%></a>
 			<%
 			}
 			%>
