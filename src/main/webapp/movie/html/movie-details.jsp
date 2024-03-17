@@ -57,7 +57,7 @@
                                     <div class="col-lg-2">
                                         <div class="header__logo">
                                             <a href="./index.jsp">
-                                                <img src="img/logo2.png" id="logo2" alt="">
+                                                <img src="${pageContext.request.contextPath}/movie/html/img/logo2.png" id="logo2" alt="">
                                             </a>
                                         </div>
                                     </div>
@@ -460,7 +460,7 @@
                                     <div class="col-lg-3">
                                         <div class="footer__logo">
                                             <a href="${pageContext.request.contextPath}/movie/html/index.jsp"><img
-                                                    src="img/logo2.png" alt=""></a>
+                                                    src="${pageContext.request.contextPath}/movie/html/img/logo2.png" alt=""></a>
                                         </div>
                                     </div>
                                     <div class="col-lg-6">
