@@ -13,7 +13,7 @@ import com.movie.web.mybatis.SqlMapConfig;
 
 public class CommentDAO {
     
-	private static int commentIdCounter = 2; // 클래스 멤버 변수로 옮김
+	private static int commentIdCounter = 26; // 클래스 멤버 변수로 옮김
     
 	SqlSessionFactory factory = SqlMapConfig.getFactory();
     SqlSession sqlSession;
@@ -67,20 +67,20 @@ public class CommentDAO {
 	    	}
 	      
 	      // 댓글 수정
-	      public boolean updateComment(int comment_id, String comment, LocalDateTime comment_time) {
-	          boolean result = false;
-	          
-	          HashMap<String, Object> params = new HashMap<>();
-	          params.put("comment_id", comment_id);
-	          params.put("comment", comment);
-	          params.put("comment_time", comment_time);
-	          
-	          if(sqlSession.update("Movie.updateComment", params) == 1) {
-	              result = true;
-	          }
-	          
-	          return result;
-	      }
+	      public boolean updateComment(int comment_id, String comment, String user_id) { // 사용자 ID 인자 추가
+	    	    boolean result = false;
+	    	    
+	    	    HashMap<String, Object> params = new HashMap<>();
+	    	    params.put("comment_id", comment_id);
+	    	    params.put("comment", comment);
+	    	    params.put("user_id", user_id); // 사용자 ID를 맵에 추가
+	    	    
+	    	    if(sqlSession.update("Movie.updateComment", params) == 1) {
+	    	        result = true;
+	    	    }
+	    	    
+	    	    return result;
+	    	}
 	      // comment_id를 기준으로 댓글을 삭제하는 메서드
 	      public boolean deleteComment(int comment_id) {
 	          boolean result = false;

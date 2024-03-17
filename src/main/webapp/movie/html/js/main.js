@@ -117,6 +117,36 @@
      });
      
    
+//$(document).ready(function() {
+//    $('.edit').click(function() {
+//        const commentId = this.id.split('_')[1];
+//        $(`#editForm_${commentId}`).show();
+//    });
+//
+//    $('form').submit(function(event) {
+//        // 폼 제출의 기본 동작을 방지합니다.
+//        event.preventDefault();
+//
+//        // 폼 데이터를 변수에 저장합니다.
+//        const formData = $(this).serialize();
+//
+//        // AJAX 요청을 보냅니다.
+//        $.ajax({
+//            type: "POST",
+//            url: $(this).attr('action'),
+//            data: formData,
+//            success: function(response) {
+//                // 성공 시의 처리 로직을 작성합니다.
+//                // 예: 수정된 댓글 내용으로 화면을 업데이트하거나, 성공 메시지를 표시합니다.
+//                alert("댓글이 수정되었습니다!");
+//            },
+//            error: function() {
+//                // 실패 시의 처리 로직을 작성합니다.
+//                alert("오류가 발생했습니다. 다시 시도해주세요.");
+//            }
+//        });
+//    });
+//});
 
 
 })(jQuery);

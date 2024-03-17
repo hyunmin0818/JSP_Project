@@ -3,6 +3,7 @@
         <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
             <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
                 <%@taglib uri="http://java.sun.com/jsp/jstl/functions" prefix="fn" %>
+                	<%@ include file="/movie/html/header.jsp" %>
                     <!DOCTYPE html>
                     <html lang="zxx">
 
@@ -46,118 +47,18 @@
                     <body>
                         <!-- 페이지 로딩시 보여지는 로딩 스피너 -->
                         <!-- Page Preloder -->
-                        <div id="preloder">
-                            <div class="loader"></div>
-                        </div>
+	<div id="preloder">
+		<div class="loader"></div>
+	</div>
 
-                        <!-- Header Section Begin -->
-                        <header class="header">
-                            <div class="container">
-                                <div class="row">
-                                    <div class="col-lg-2">
-                                        <div class="header__logo">
-                                            <a href="./index.jsp">
-                                                <img src="img/logo2.png" id="logo2" alt="">
-                                            </a>
-                                        </div>
-                                    </div>
-                                    <div class="col-lg-8">
-                                        <div class="header__nav">
-                                            <nav class="header__menu mobile-menu">
-                                                <ul>
+	<!-- Header Section Begin -->
+		<!-- Header Section Begin -->
+	<header class="header">
+		<div class="container">
+			
+		</div>
+	</header>
 
-                                                    <!-- <li class="active"><a href="./index.jsp">홈</a></li>
-                                        <li><a href="./categories.jsp">영화</span></a>
-                                        <ul class="dropdown">
-                                                <li><a href="./categories.jsp">현재 상영작</a></li>
-                                                <li><a href="./categories.jsp">상영 예정작</a></li>
-
-                                            </ul>
-                                        </li>-->
-
-                                                    <!--           <li><a href="./anime-details.html">극장정보</a></li>
-
-                                <li><a href="./categories.html">예매<span class="arrow_carrot-down"></span></a>
-                                    <ul class="dropdown">
-                                        <li><a href="#">예매하기</a></li>
-                                        <li><a href="#">예매내역</a></li>
-                                        <li><a href="#">빠른예매</a></li>
-                                        <li><a href="#">상영시간표</a></li>    
-                                    </ul>   
-                                     -->
-
-                                                    <!-- <li><a href="${pageContext.request.contextPath}/movie/html/notice.jsp">게시판<span class="arrow_carrot-down"></span></a>
-                                    <ul class="dropdown">
-                                        <li><a href="${pageContext.request.contextPath}/movie/html/notice.jsp">공지사항</a></li>
-                                        <li><a href="${pageContext.request.contextPath}/movie/html/notice.jsp">이벤트</a></li> -->
-                                                    <!--                  <li><a href="#">리뷰</a></li> -->
-
-
-                                                </ul>
-                                                </li>
-
-
-
-                                                <!-- <li><a href="${pageContext.request.contextPath}/movie/html/default.jsp">고객문의<span class="arrow_carrot-down"></span></a>
-                                    <ul class="dropdown">
-                                        <li><a href="${pageContext.request.contextPath}/movie/html/default.jsp">고객센터</a></li>
-                                        <li><a href="#">주변 영화관 찾기</a></li>
-                                    </ul>
-                                </li> -->
-
-
-                                                <!-- 대형 영화 사이트 참고한 양식 (스토어, 이벤트, 혜택)-->
-                                                <!-- 시간이 남으면 추가해보는걸로 -->
-
-
-                                                <!-- <li><a href="#">스토어</a></li>      
-
-                                <li><a href="./categories.html">이벤트<span class="arrow_carrot-down"></span></a>
-                                    <ul class="dropdown">
-                                        <li><a href="#">이벤트</a></li>
-                                        <li><a href="#">당첨자</a></li>
-                                    </ul>
-                                </li>
-
-
-
-                                <li><a href="./blog.html">혜택</a></li> -->
-
-
-                                                </ul>
-                                            </nav>
-                                        </div>
-                                    </div>
-
-
-                                    <div class="col-lg-2">
-                                        <div class="header__right">
-
-                                            <a href="#" class="search-switch"><span class="icon_search"></span></a>
-                                            <span class="icon_profile arrow fa dropdown-toggle active arrow_carrot-down"
-                                                id="dropdown-toggle" data-bs-toggle="dropdown"
-                                                aria-expanded="false"></span>
-                                            <ul class="dropup-center dropup dropdown-menu"
-                                                aria-labelledby="dropdown-toggle">
-                                                <li> <a href="./login.jsp"><span class="dropdown-item">로그인</span></a>
-                                                </li>
-                                                <li>
-                                                    <hr class="dropdown-divider">
-                                                </li>
-                                                <li> <a href="./join.jsp"><span class="dropdown-item">회원가입</span></a>
-                                                </li>
-                                            </ul>
-                                            <a href="/movie/html/login.jsp" id="youNeedLogin">로그인</a>|
-                                            <a href="./join.jsp" id="youNeedJoin">회원가입 </a>
-                                        </div>
-                                    </div>
-
-
-
-                                </div>
-                                <div id="mobile-menu-wrap"></div>
-                            </div>
-                        </header>
 
 
 
@@ -185,7 +86,7 @@
                         <!-- Anime Section Begin -->
                         <div class="css-yy4d6f e1yew28617" style="position: relative;  height: 550px;">
                             <div class="css-stilcut"
-                                style="background: url(https://an2-img.amz.wtchn.net/image/v2/UdinY7L06PQParoTrP1TAQ.jpg?jwt=ZXlKaGJHY2lPaUpJVXpJMU5pSjkuZXlKdmNIUnpJanBiSW1SZk1Ua3lNSGd4TURnd2NUZ3dJbDBzSW5BaU9pSXZkakl2YzNSdmNtVXZhVzFoWjJVdk1UQTJORGszTURBd056VTBOVGd4SW4wLk1RY1RhRC1YcXVPQ0VheG1SMmdiSFIzWEZ1RHpVRlVMU2ZOUEFXXzhxSlk) no-repeat center;"> 
+                                style="background: url(${movieinfo.posterUrl}) no-repeat center;"> 
 
 
                                 <div class="css-sdsdsd">
@@ -399,48 +300,24 @@
 										<h5>you might like...</h5>
 									</div>
 									<!-- 추천작 리스트 -->
-									<div class="product__sidebar__view__item set-bg"
-										data-setbg="img/sidebar/tv-1.jpg">
-
-										<div class="view">
-											<i class="fa fa-eye"></i> 9141
-										</div>
-										<h5>
-											<a href="#">Boruto: Naruto next generations</a>
-										</h5>
+								<c:forEach items="${similarMovies}" var="genremovie"
+									varStatus="status">
+									<c:if test="${status.index >= 1 && status.index <= 4}">
+										<!-- 영화 정보 출력 -->
+										<div class="product__sidebar__view__item set-bg"
+											data-setbg="${genremovie.posterUrl}">
+											<div class="view">
+												<i class="fa fa-eye"></i> 
+												</div>
+											<div>
+										<h3>${genremovie.title}</h3>
+										<p>${genremovie.genre}</p>
+										<!-- 추가적인 영화 정보 출력 -->
 									</div>
-									<div class="product__sidebar__view__item set-bg"
-										data-setbg="img/sidebar/tv-2.jpg">
-
-										<div class="view">
-											<i class="fa fa-eye"></i> 9141
-										</div>
-										<h5>
-											<a href="#">The Seven Deadly Sins: Wrath of the Gods</a>
-										</h5>
-									</div>
-									<div class="product__sidebar__view__item set-bg"
-										data-setbg="img/sidebar/tv-3.jpg">
-
-										<div class="view">
-											<i class="fa fa-eye"></i> 9141
-										</div>
-										<h5>
-											<a href="#">Sword art online alicization war of
-												underworld</a>
-										</h5>
-									</div>
-									<div class="product__sidebar__view__item set-bg"
-										data-setbg="img/sidebar/tv-4.jpg">
-
-										<div class="view">
-											<i class="fa fa-eye"></i> 9141
-										</div>
-										<h5>
-											<a href="#">Fate/stay night: Heaven's Feel I. presage
-												flower</a>
-										</h5>
-									</div>
+								</div>
+							</c:if>
+							</c:forEach>
+				
 								</div>
 							</div>
 						</div></section>

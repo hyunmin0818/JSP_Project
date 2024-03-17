@@ -3,7 +3,6 @@
         <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
             <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
                 <%@taglib uri="http://java.sun.com/jsp/jstl/functions" prefix="fn" %>
-                	<%@ include file="/movie/html/header.jsp" %>
                     <!DOCTYPE html>
                     <html lang="zxx">
 
@@ -186,7 +185,7 @@
                         <!-- Anime Section Begin -->
                         <div class="css-yy4d6f e1yew28617" style="position: relative;  height: 550px;">
                             <div class="css-stilcut"
-                                style="background: url(${movie.posterUrl}) no-repeat center;"> 
+                                style="background: url(https://an2-img.amz.wtchn.net/image/v2/UdinY7L06PQParoTrP1TAQ.jpg?jwt=ZXlKaGJHY2lPaUpJVXpJMU5pSjkuZXlKdmNIUnpJanBiSW1SZk1Ua3lNSGd4TURnd2NUZ3dJbDBzSW5BaU9pSXZkakl2YzNSdmNtVXZhVzFoWjJVdk1UQTJORGszTURBd056VTBOVGd4SW4wLk1RY1RhRC1YcXVPQ0VheG1SMmdiSFIzWEZ1RHpVRlVMU2ZOUEFXXzhxSlk) no-repeat center;"> 
 
 
                                 <div class="css-sdsdsd">
@@ -341,7 +340,7 @@
 						<!-- 리뷰 목록 -->
 						<div class="row">
 							<div class="col-lg-8 col-md-8">
-								<div class="anime__details__review">
+								<div class="movie__details__review">
 									<div class="section-title">
 										<h5>Reviews</h5>
 									</div>
@@ -359,17 +358,6 @@
 															${comment.user_id}<span>${comment.comment_time}</span>
 														</h6>
 														<p>${comment.comment }</p>
-														 <!-- 수정 버튼 추가 시작 -->
-									                    
-<%-- 									                        <input type="button" value="수정" class="edit" id="editButton_${comment.comment_id}"> --%>
-<%-- 															<div id="editForm_${comment.comment_id}" style="display: none;"> --%>
-<%-- 														    <form method="post" action="${pageContext.request.contextPath}/movie/updateComment.mo"> --%>
-<%-- 														        <input type="hidden" name="comment_id" value="${comment.comment_id}"> --%>
-<%-- 														        <textarea name="comment">${comment.comment}</textarea> --%>
-<!-- 														        <button type="submit">수정 완료</button> -->
-<!-- 														    </form> -->
-<!-- 														</div> -->
-									                    <!-- 수정 버튼 추가 끝 -->
 														<input type="button" value="삭제" class="delete"
 															id="deleteButton" hidden>
 													</div>
@@ -563,7 +551,7 @@
                         <script src="${pageContext.request.contextPath}/movie/html/js/jquery.slicknav.js"></script>
                         <script src="${pageContext.request.contextPath}/movie/html/js/owl.carousel.min.js"></script>
                         <script src="${pageContext.request.contextPath}/movie/html/js/main.js"></script>
-						
+
                     </body>
 
                     </html>

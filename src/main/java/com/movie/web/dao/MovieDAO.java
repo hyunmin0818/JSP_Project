@@ -37,6 +37,21 @@ public class MovieDAO {
 		    }
 		    return movieList;
 		}
+	   // 장르 : 상세페이지 활용
+	   public List<MovieDTO> searchMoviesByGenre(String genre) {
+		    List<MovieDTO> movieList = null;
+		    try {
+		        HashMap<String, Object> paramMap = new HashMap<>();
+		        paramMap.put("genre", "%" + genre + "%"); // 부분 일치 검색을 위해 '%' 추가
+
+		        // 수정된 부분: paramMap을 전달합니다.
+		        movieList = sqlSession.selectList("Movie.searchMoviesByGenre", paramMap);
+		    } catch (Exception e) { 
+		        e.printStackTrace();
+		    }
+		    return movieList;
+		}
+	   
 	   public List<MovieDTO> clickPoster(String movieSeq) {
 		    List<MovieDTO> movieInfo = null;
 		    try {

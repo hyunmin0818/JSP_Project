@@ -22,8 +22,12 @@
 		) AS ranked_movies
 		WHERE rownum BETWEEN #{startRow} AND #{endRow}
 	</select>
-
-	
+	<select id="searchMoviesByGenre" resultType="moviedto">
+	SELECT * FROM movie
+	WHERE genre LIKE CONCAT('%', #{genre}, '%')
+	AND releasedate BETWEEN '2020-12-31' AND '2024-03-17'
+	ORDER BY releasedate DESC
+	</select>
 	<select id="searchMovies" resultType="MovieDTO" parameterType="string">
 		SELECT *
 	FROM movie
@@ -40,5 +44,8 @@
 		ORDER BY releaseDate DESC
 		LIMIT 15;
 	</select>
+	 <select id="getNextCommentId" resultType="int">
+        SELECT IFNULL(MAX(comment_id), 0) + 1 FROM comment
+    </select>
     
 </mapper>

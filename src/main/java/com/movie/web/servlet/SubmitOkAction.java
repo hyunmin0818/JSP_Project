@@ -38,6 +38,14 @@ public class SubmitOkAction implements Action{
                 session.setAttribute("userinfo", userInfo);
         		forward.setPath("/movie/html/loginOk_index.jsp?user_id="+user_id);
         		System.out.println("Session UserInfo: " + session.getAttribute("userinfo"));
+        		 
+        		// 세션 유지 시간 설정 (초 단위)
+                session.setMaxInactiveInterval(1800); // 30분 유지
+
+                // 이전 페이지의 URL을 가져와서 세션에 저장
+                String prevURL = request.getHeader("referer");
+                session.setAttribute("prevURL", prevURL);
+
         		
         	} else {
         	    // 사용자 정보가 존재하지 않는 경우

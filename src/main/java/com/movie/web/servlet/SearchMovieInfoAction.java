@@ -6,16 +6,33 @@ import com.movie.web.action.Action;
 import com.movie.web.action.ActionForward;
 import com.movie.web.dao.CommentDAO;
 import com.movie.web.dao.MovieDAO;
+import com.movie.web.dao.UserDAO;
 import com.movie.web.dto.CommentDTO;
 import com.movie.web.dto.MovieDTO;
+import com.movie.web.dto.UserDTO;
 
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
+import jakarta.servlet.http.HttpSession;
 
 public class SearchMovieInfoAction implements Action{
 
 	@Override
 	public ActionForward execute(HttpServletRequest request, HttpServletResponse response) {
+		
+		HttpSession session = request.getSession(false); 
+        UserDAO udao = new UserDAO();
+        UserDTO udto = new UserDTO();
+
+        // 세션에서 userinfo 객체 가져오기
+        UserDTO userInfo = null;
+        if (session != null) {
+            userInfo = (UserDTO) session.getAttribute("userinfo");
+          System.out.println("정보 유지");
+            // 세션에서 "userinfo"로 저장된 UserDTO 객체 가져오기
+        }
+		
+		
 		// 파라미터 가져오기
         String parameter = request.getParameter("searchParameter");
         

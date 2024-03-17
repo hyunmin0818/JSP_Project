@@ -21,7 +21,8 @@ public class MoveMypage implements Action{
 	     // 세션에서 userinfo 객체 가져오기
 	        UserDTO userInfo = null;
 	        if (session != null) {
-	            userInfo = (UserDTO) session.getAttribute("userinfo"); // 세션에서 "userinfo"로 저장된 UserDTO 객체 가져오기
+	            userInfo = (UserDTO) session.getAttribute("userinfo");
+	            // 세션에서 "userinfo"로 저장된 UserDTO 객체 가져오기
 	        }
 
 	        // userInfo가 null이 아닐 경우(즉, 로그인된 상태일 경우) 사용자 정보를 사용
