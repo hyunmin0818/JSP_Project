@@ -19,7 +19,7 @@ $(document).ready(function() {
     // 영화 좋아요 추가
     function likeMovie(ldto, likeIcon) {
         $.ajax({
-            url: 'addLikeAndUpdateLikesCount',
+            url: 'LikeIncrease',
             type: 'POST',
             data: ldto,
             success: function(response) {
@@ -33,7 +33,7 @@ $(document).ready(function() {
     // 영화 좋아요 제거
     function unlikeMovie(ldto, likeIcon) {
         $.ajax({
-            url: 'decrementMovieLikes',
+            url: 'LikeDecrease',
             type: 'POST',
             data: ldto,
             success: function(response) {
@@ -42,6 +42,6 @@ $(document).ready(function() {
                 liked = false;
             }
         });
-        
+
     }
 });

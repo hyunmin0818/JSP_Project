@@ -1,8 +1,12 @@
 package com.movie.web.dao;
 
+import java.sql.Connection;
+import java.sql.PreparedStatement;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+import java.io.InputStream;
+
 
 import org.apache.ibatis.session.SqlSession;
 import org.apache.ibatis.session.SqlSessionFactory;
@@ -10,6 +14,12 @@ import org.apache.ibatis.session.SqlSessionFactory;
 
 import com.movie.web.dto.MovieDTO;
 import com.movie.web.mybatis.SqlMapConfig;
+import org.w3c.dom.Document;
+import org.w3c.dom.Element;
+import org.w3c.dom.NodeList;
+
+import javax.xml.parsers.DocumentBuilder;
+import javax.xml.parsers.DocumentBuilderFactory;
 
 public class MovieDAO {
 	   
@@ -74,6 +84,11 @@ public class MovieDAO {
 	// 영화의 조회수를 가져오는 메서드
 	public int getMovieViews(int movieId) {
 	    return sqlSession.selectOne("Movie.getMovieViews", movieId);
+	}
+
+	// 영화의 조희수를 올리는 메서드
+	public void addMovieViewCount(int movieId) {
+		sqlSession.update("Movie.updateMovieViews", movieId);
 	}
 }
 
