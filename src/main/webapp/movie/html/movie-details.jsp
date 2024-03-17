@@ -64,15 +64,14 @@
 			<div class="row">
 				<div class="col-lg-2">
 					<div class="header__logo">
-						<a href="./index.jsp"> <img src="img/logo2.png" id="logo2"
+						<a href="./index.jsp"> <img src="${pageContext.request.contextPath}/movie/html/img/logo2.png" id="logo2"
 							alt="">
 						</a>
 					</div>
 				</div>
 				<div class="col-lg-8">
 					<div class="header__nav">
-						<nav class="header__menu mobile-menu">
-						</nav>
+						<nav class="header__menu mobile-menu"></nav>
 					</div>
 				</div>
 				<div class="col-lg-2">
@@ -126,7 +125,7 @@
 	<div class="css-yy4d6f e1yew28617"
 		style="position: relative; height: 550px;">
 		<div class="css-stilcut"
-			style="background: url(${movie.posterUrl}) no-repeat center;">
+			style="background: url(${movie.stillUrl}) no-repeat center;">
 
 
 			<div class="css-sdsdsd">
@@ -231,7 +230,7 @@
 					</hr>
 				</c:otherwise>
 			</c:choose>
-			<hr style=" border: none; border-top: 1px solid #08052e; width: 100%;   ">
+			<hr style="border: none; border-top: 1px solid #08052e; width: 100%;">
 		</div>
 		<!-- 리뷰 목록 -->
 		<div class="row">
@@ -247,7 +246,7 @@
 							<c:forEach var="comment" items="${commentList }">
 								<div class="anime__review__item">
 									<div class="anime__review__item__pic">
-										<img src="img/anime/review-1.jpg" alt="">
+										<img src="https://d2u3dcdbebyaiu.cloudfront.net/uploads/atch_img/665/708d0162261869f0558a0a1cabea0b50_res.jpeg" alt="">
 									</div>
 									<div class="anime__review__item__text">
 										<h6>
@@ -296,17 +295,20 @@
 						varStatus="status">
 						<c:if test="${status.index >= 1 && status.index <= 4}">
 							<!-- 영화 정보 출력 -->
-							<div class="product__sidebar__view__item set-bg"
-								data-setbg="${genremovie.posterUrl}">
-								<div class="view">
-									<i class="fa fa-eye"></i>
-								</div>
-								<div>
-									<h3>${genremovie.title}</h3>
-									<p>${genremovie.genre}</p>
-									<!-- 추가적인 영화 정보 출력 -->
-								</div>
-							</div>
+								<div class="product__sidebar__view__item set-bg mix day years"
+									data-setbg="${genremovie.posterUrl}">
+									<div class="view">
+										<i class="fa fa-eye"></i>
+									</div>
+									<div>
+										<a href="#"
+											style="color: rgb(255, 255, 255); 
+												   font-weight: 700; 
+												   line-height: 26px;">${genremovie.title}</a>
+										<%-- <p>${genremovie.genre}</p> --%>
+										<!-- 추가적인 영화 정보 출력 -->
+									</div>
+								</div>		
 						</c:if>
 					</c:forEach>
 
@@ -326,7 +328,8 @@
 				<div class="col-lg-3">
 					<div class="footer__logo">
 						<a href="${pageContext.request.contextPath}/movie/html/index.jsp"><img
-							src="img/logo2.png" alt=""></a>
+							src="${pageContext.request.contextPath}/movie/html/img/logo2.png"
+							alt=""></a>
 					</div>
 				</div>
 				<div class="col-lg-6">
@@ -378,13 +381,20 @@
 	<!-- Search model end -->
 
 	<!-- Js Plugins -->
-	<script src="${pageContext.request.contextPath}/movie/html/js/jquery-3.3.1.min.js"></script>
-	<script src="${pageContext.request.contextPath}/movie/html/js/bootstrap.min.js"></script>
-	<script src="${pageContext.request.contextPath}/movie/html/js/player.js"></script>
-	<script src="${pageContext.request.contextPath}/movie/html/js/jquery.nice-select.min.js"></script>
-	<script src="${pageContext.request.contextPath}/movie/html/js/mixitup.min.js"></script>
-	<script src="${pageContext.request.contextPath}/movie/html/js/jquery.slicknav.js"></script>
-	<script src="${pageContext.request.contextPath}/movie/html/js/owl.carousel.min.js"></script>
+	<script
+		src="${pageContext.request.contextPath}/movie/html/js/jquery-3.3.1.min.js"></script>
+	<script
+		src="${pageContext.request.contextPath}/movie/html/js/bootstrap.min.js"></script>
+	<script
+		src="${pageContext.request.contextPath}/movie/html/js/player.js"></script>
+	<script
+		src="${pageContext.request.contextPath}/movie/html/js/jquery.nice-select.min.js"></script>
+	<script
+		src="${pageContext.request.contextPath}/movie/html/js/mixitup.min.js"></script>
+	<script
+		src="${pageContext.request.contextPath}/movie/html/js/jquery.slicknav.js"></script>
+	<script
+		src="${pageContext.request.contextPath}/movie/html/js/owl.carousel.min.js"></script>
 	<script src="${pageContext.request.contextPath}/movie/html/js/main.js"></script>
 
 </body>

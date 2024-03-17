@@ -244,7 +244,7 @@
 
 			<!-- 리뷰 목록 -->
 			<div class="row">
-				<div class="col-lg-8 col-md-8">
+				<div class="col-lg-8 col-md-8" style="margin-bottom: 100px;">
 					<div class="anime__details__review">
 						<div class="section-title">
 							<h5>Reviews</h5>

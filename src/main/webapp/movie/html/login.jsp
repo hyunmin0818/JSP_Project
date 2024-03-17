@@ -121,7 +121,7 @@
                 <div class="row d-flex justify-content-center">
                     <div class="col-lg-6">
                         <div class="login__social__links">
-                            <span style="margin-bottom: 200px;">or</span>
+                            <span style="margin-bottom: 200px;margin-top: 30px;">or</span>
                             <ul>
                               
                             </ul>

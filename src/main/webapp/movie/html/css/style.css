@@ -177,7 +177,7 @@ h6 {
 p {
 	font-size: 15px;
 	font-family: "Mulish", sans-serif;
-	color: #3d3d3d;
+	color: white;
 	font-weight: 400;
 	line-height: 25px;
 	margin: 0 0 15px 0;
@@ -275,7 +275,7 @@ ol {
 	font-size: 13px;
 	font-weight: 700;
 	text-transform: uppercase;
-	color: black;;
+	color: white;
 	letter-spacing : 2px;
 }
 
@@ -490,7 +490,7 @@ ol {
 }
 
 .header {
-	background: white;
+	background: #ff6161;
 	 /* margin-bottom:-10px;  */
 }
 
@@ -633,7 +633,7 @@ ol {
 .hero__text .label {
 	font-size: 13px;
 	color: #e53637;
-	background: black;
+	background: rgb(255, 255, 255);
 	padding: 5px 14px 3px;
 	display: inline-block;
 	position: relative;
@@ -645,7 +645,7 @@ ol {
 }
 
 .hero__text h2 {
-	color: black;;
+	color: rgb(255, 255, 255);
 	font-size: 42px;
 	font-family: "Oswald", sans-serif;
 	font-weight: 700;
@@ -661,7 +661,7 @@ ol {
 }
 
 .hero__text p {
-	color: black;;
+	color: rgb(255, 255, 255);
 	font-size: 16px;
 	margin-bottom: 40px;
 	position: relative;
@@ -734,13 +734,13 @@ ol {
 .hero__slider.owl-carousel .owl-dots button {
 	height: 8px;
 	width: 8px;
-	background: #b7b7b7;
+	background: rgb(255, 0, 0);
 	border-radius: 50%;
 	margin-right: 10px;
 }
 
 .hero__slider.owl-carousel .owl-dots button.active {
-	background: black
+	background: #ffb8b8;
 }
 
 .hero__slider.owl-carousel .owl-dots button:last-child {
@@ -751,10 +751,10 @@ ol {
 	font-size: 36px;
 	height: 66px;
 	width: 66px;
-	background: #0b0c2a;
+	background: rgb(255, 0, 0);
 	line-height: 66px;
 	text-align: center;
-	color: black;;
+	color: white;
 	-webkit-transform: rotate(45deg);
 	-ms-transform: rotate(45deg);
 	transform: rotate(45deg);
@@ -778,7 +778,7 @@ ol {
 	right: 0;
 	height: 54px;
 	width: 54px;
-	background: rgba(255, 255, 255, 0.1);
+	background: rgba(255, 255, 255, 0.28);
 	content: "";
 	z-index: -1;
 	margin: 0 auto;
@@ -1110,10 +1110,22 @@ ol {
 }
 
 .product__sidebar__view__item {
-	height: 190px;
-	position: relative;
-	border-radius: 5px;
-	margin-bottom: 20px;
+    height: 190px;
+    position: relative;
+    border-radius: 5px;
+    margin-bottom: 20px;
+    overflow: hidden; /* 이미지가 요소를 벗어나는 경우를 방지하기 위해 사용 */
+    cursor: pointer;
+}
+.product__sidebar__view__item-parent{
+	  max-width: 100%;
+	    height: auto;
+}
+
+.product__sidebar__view__item img {
+    width: 100%; /* 이미지를 부모 요소의 너비에 맞춤 */
+    height: auto; /* 이미지의 높이를 자동으로 조정하여 원본 비율을 유지 */
+    display: block; /* 이미지를 블록 요소로 설정하여 다른 내용과의 정렬을 용이하게 함 */
 }
 
 .product__sidebar__view__item .ep {
@@ -1130,8 +1142,8 @@ ol {
 
 .product__sidebar__view__item .view {
 	font-size: 13px;
-	color: black;;
-	background: #3d3d3d;
+	color: black;
+	background: #ff00009c;
 	display: inline-block;
 	padding: 2px 10px;
 	border-radius: 4px;
@@ -1149,7 +1161,7 @@ ol {
 }
 
 .product__sidebar__view__item h5 a {
-	color: black;;
+	color: rgb(255, 255, 255);
 	font-weight: 700;
 	line-height: 26px;
 }
@@ -1294,9 +1306,7 @@ ol {
 	padding-top: 60px;
 }
 
-.anime__details__content {
-	margin-bottom: 65px;
-}
+
 
 .anime__details__text {
 	position: relative;
@@ -1325,7 +1335,7 @@ ol {
 
 
 .anime__details__text p {
-	color: #b7b7b7;
+	color: #000000;
 	font-size: 18px;
 	line-height: 30px;
 }
@@ -1337,27 +1347,28 @@ ol {
 }
 
 .anime__details__pic .comment {
-	font-size: 13px;
-	color: black;;
-	background: #3d3d3d;
-	display: inline-block;
-	padding: 2px 10px;
-	border-radius: 4px;
-	position: absolute;
-	left: 10px;
-	bottom: 25px;
+   font-size: 13px;
+    color: black;
+    background: #ff00009c;
+    display: inline-block;
+    padding: 2px 10px;
+    border-radius: 4px;
+    position: absolute;
+    right: 0px;
+    bottom: 0;
 }
 
 .anime__details__pic .view {
-	font-size: 13px;
-	color: black;;
-	background: #3d3d3d;
-	display: inline-block;
-	padding: 2px 10px;
-	border-radius: 4px;
-	position: absolute;
-	right: 10px;
-	bottom: 25px;
+    font-size: 13px;
+    color: black;
+    background: #ff00009c;
+    display: inline-block;
+    padding: 2px 10px;
+    border-radius: 4px;
+    position: absolute;
+    bottom: 0px;
+    left: 105px;
+    float: left;
 }
 
 .anime__details__title {
@@ -1365,14 +1376,14 @@ ol {
 }
 
 .anime__details__title h3 {
-	color: black;;
+	color: black;
 	font-weight: 700;
 	margin-bottom: 13px;
 }
 
 .anime__details__title span {
 	font-size: 15px;
-	color: #b7b7b7;
+	color:	#000000;
 	display: block;
 }
 
@@ -1410,6 +1421,8 @@ ol {
 	line-height: 30px;
 	position: relative;
 	padding-left: 18px;
+	overflow: hidden;
+    height: 30px;
 }
 
 .anime__details__widget ul li:before {
@@ -1418,19 +1431,19 @@ ol {
 	top: 12px;
 	height: 6px;
 	width: 6px;
-	background: #b7b7b7;
+	background: #f35454;
 	content: "";
 }
 
 .anime__details__widget ul li span {
-	color: #b7b7b7;
+	color: black;
 	width: 115px;
 	display: inline-block;
 }
 
 .anime__details__btn .follow-btn {
 	font-size: 13px;
-	color: black;;
+	color: black;
 	background: #e53637;
 	display: inline-block;
 	font-weight: 700;
@@ -1544,7 +1557,7 @@ ol {
 	right: -30px;
 	top: 15px;
 	border-top: 15px solid transparent;
-	border-left: 15px solid #1d1e39;
+	border-left: 15px solid #dfdfdf;
 	content: "";
 	-webkit-transform: rotate(45deg);
 	-ms-transform: rotate(45deg);
@@ -1559,9 +1572,10 @@ ol {
 
 .anime__review__item__text {
 	overflow: hidden;
-	background: #1d1e39;
+	background: #dfdfdf;
 	padding: 18px 30px 16px 20px;
 	border-radius: 10px;
+	margin-bottom: 20px;
 }
 
 .anime__review__item__text h6 {
@@ -1571,15 +1585,18 @@ ol {
 }
 
 .anime__review__item__text h6 span {
-	color: #b7b7b7;
-	font-weight: 400;
+	color: #797979;
+    font-weight: 400;
+	padding-left: 6px;
 }
 
 .anime__review__item__text p {
-	color: #b7b7b7;
+	color: #000000;
 	line-height: 23px;
 	margin-bottom: 0;
+	font-weight: bold;
 }
+
 
 /**/
 .anime_default_pic {
@@ -1703,6 +1720,7 @@ ol {
 	border-radius: 5px;
 	resize: none;
 	margin-bottom: 24px;
+	background: #dfdfdf;
 }
 
 .anime__details__form form button {
@@ -2263,12 +2281,11 @@ ol {
 }
 
 .login__form::after {
-	position: absolute;
 	right: -14px;
 	top: -40px;
 	height: 330px;
 	width: 1px;
-	background: rgba(255, 255, 255, 0.2);
+	background: rgb(215 215 215);
 	content: "";
 }
 
@@ -2438,12 +2455,12 @@ ol {
 
 .login__form form .input__item input {
 	height: 50px;
-	width: 100%;
-	font-size: 15px;
-	color: black;;		/*로그인 텍스트 검은색으로 수정 */
-	background: black;
-	border: none;
-	padding-left: 76px;
+    width: 100%;
+    font-size: 15px;
+    color: white;
+    background: #e53637;
+    border: none;
+    padding-left: 76px;
 }
 
 .login__form form .input__item input::-webkit-input-placeholder {
@@ -2468,7 +2485,7 @@ ol {
 }
 
 .login__form form .input__item span {
-	color: #b7b7b7;
+	color: #FFFFFF;
 	font-size: 20px;
 	position: absolute;
 	left: 15px;
