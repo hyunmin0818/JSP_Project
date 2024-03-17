@@ -856,27 +856,28 @@ ol {
 }
 
 .product__item__pic .comment {
-	font-size: 13px;
-	color: black;;
-	background: #3d3d3d;
-	display: inline-block;
-	padding: 2px 10px;
-	border-radius: 4px;
-	position: absolute;
-	left: 10px;
-	bottom: 10px;
+    font-size: 13px;
+    color: black;
+    background: #ff00009c;
+    display: inline-block;
+    padding: 2px 10px;
+    border-radius: 4px;
+    position: absolute;
+    right: 0px;
+    bottom: 0;
 }
 
 .product__item__pic .view {
-	font-size: 13px;
-	color: black;;
-	background: #3d3d3d;
-	display: inline-block;
-	padding: 2px 10px;
-	border-radius: 4px;
-	position: absolute;
-	right: 10px;
-	bottom: 10px;
+    font-size: 13px;
+    color: black;
+    background: #ff00009c;
+    display: inline-block;
+    padding: 2px 10px;
+    border-radius: 4px;
+    position: absolute;
+    bottom: 0px;
+    left: 105px;
+    float: left;
 }
 
 .product__item__text {
