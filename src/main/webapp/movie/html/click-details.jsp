@@ -272,9 +272,8 @@
 										</div>
 										<!-- 영화 관련 버튼 -->
 										<div class="anime__details__btn">
-											<a href="#" class="follow-btn"><i class="fa fa-heart-o"></i>
-												Follow</a>
-
+											<button id="likeButton" class="follow-btn"><i id="likeIcon" class="fa fa-heart-o"></i> Like
+                                             </button>
 										</div>
 									</div>
 								</div>
