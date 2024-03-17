@@ -13,6 +13,7 @@
 	<select id="getMovieCnt"  resultType="int">
 	SELECT COUNT(*) FROM movie
 	</select>
+		
 	<select id="getMovieList" resultType="moviedto" parameterType="hashmap">
 		SELECT * FROM (
 		SELECT m.*,

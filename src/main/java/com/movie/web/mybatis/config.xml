@@ -7,7 +7,7 @@
 	<typeAlias type="com.movie.web.dto.MovieDTO" alias="moviedto"/>
 	<typeAlias type="com.movie.web.dto.ReviewDTO" alias="reviewdto"/>
 	<typeAlias type="com.movie.web.dto.CommentDTO" alias="commentdto"/>
-
+	<typeAlias type="com.movie.web.dto.LikesDTO" alias="likesdto"/>
 </typeAliases>
 	<environments default="development">
 		<environment id="development">
@@ -22,9 +22,8 @@
 	</environments>
 	<mappers>
 		<mapper resource="com/movie/web/sql/user.xml"/>
-
 		<mapper resource="com/movie/web/sql/movieinfo.xml"/>
 		<mapper resource="com/movie/web/sql/comment.xml"/>
-
+		<mapper resource="com/movie/web/sql/movieLike.xml"/>
 	</mappers>
 </configuration>
