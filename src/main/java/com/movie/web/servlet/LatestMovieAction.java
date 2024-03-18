@@ -15,7 +15,7 @@ public class LatestMovieAction implements Action {
     public ActionForward execute(HttpServletRequest request, HttpServletResponse response) {
         MovieDAO movieDAO = new MovieDAO();
 
-        List<MovieDTO> latestMovies = movieDAO.getLatestMovie();
+        List<MovieDTO> latestMovies = movieDAO.getMovieList(1, 10);
 
         request.setAttribute("latestMovies", latestMovies);
 

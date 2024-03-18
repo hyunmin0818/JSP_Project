@@ -5,3 +5,4 @@ putty
 *.project
 *.jar
 *.jsp
+build/
