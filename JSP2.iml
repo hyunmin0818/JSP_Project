@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <module type="JAVA_MODULE" version="4">
   <component name="EclipseModuleManager">
-    <libelement value="jar://$MODULE_DIR$/src/main/webapp/WEB-INF/lib/bcrypt-0.10.2.jar!/" />
+    <libelement value="jar://$MODULE_DIR$/src/main/webapp/WEB-INF/lib/jbcrypt-0.4.jar!/" />
     <libelement value="jar://$MODULE_DIR$/src/main/webapp/WEB-INF/lib/bytes-1.5.0.jar!/" />
     <libelement value="jar://$MODULE_DIR$/src/main/webapp/WEB-INF/lib/jakarta.servlet.jsp.jstl-2.0.0.jar!/" />
     <libelement value="jar://$MODULE_DIR$/src/main/webapp/WEB-INF/lib/jakarta.servlet.jsp.jstl-api-2.0.0.jar!/" />
@@ -43,9 +43,9 @@
     <orderEntry type="library" name="org.eclipse.jst.j2ee.internal.module.container" level="application" />
     <orderEntry type="library" name="org.eclipse.jst.server.core.container/org.eclipse.jst.server.tomcat.runtimeTarget/Server" level="application" />
     <orderEntry type="module-library">
-      <library name="bcrypt-0.10.2.jar">
+      <library name="jbcrypt-0.4.jar">
         <CLASSES>
-          <root url="jar://$MODULE_DIR$/src/main/webapp/WEB-INF/lib/bcrypt-0.10.2.jar!/" />
+          <root url="jar://$MODULE_DIR$/src/main/webapp/WEB-INF/lib/jbcrypt-0.4.jar!/" />
         </CLASSES>
         <JAVADOC />
         <SOURCES />
