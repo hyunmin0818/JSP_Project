@@ -35,7 +35,6 @@ public class MovieFrontController extends HttpServlet {
       
       
       switch (requestURI) {
-
          case "/movie/clickPoster.mo": 
             forward = new ClickPosterAction().execute(req, resp);
             break;
@@ -70,5 +69,5 @@ public class MovieFrontController extends HttpServlet {
          }
 
       }
-   }
+   
 }

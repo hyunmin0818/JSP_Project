@@ -9,7 +9,7 @@ import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 import jakarta.servlet.http.HttpSession;
 
-public class UpdateCommentAction implements Action {
+public class DeleteCommentAction implements Action {
     @Override
     public ActionForward execute(HttpServletRequest request, HttpServletResponse response) {
         // ActionForward 객체 초기화
