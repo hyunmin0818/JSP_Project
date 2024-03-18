@@ -114,7 +114,16 @@ public class CommentDAO {
 	    	    return result;
 	    	}
 		
-
+			// 영화 시퀀스를 기준으로 댓글 수를 가져오는 메서드
+			public int getCommentCountByMovieSeq(String movieSeq) {
+				int commentCount = 0;
+				try {
+					commentCount = sqlSession.selectOne("Movie.getCmByMovieSeq", movieSeq);
+				} catch (Exception e) {
+					e.printStackTrace();
+				}
+				return commentCount;
+			}
 
 
 
