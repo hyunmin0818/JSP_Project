@@ -191,9 +191,12 @@
 										</div>
 										<!-- 영화 관련 버튼 -->
 										<div class="anime__details__btn">
-											<button id="likeButton" class="follow-btn"><i id="likeIcon" class="fa fa-heart-o"></i> Like
+                                            <input type="hidden" name="movieSeq" value="${movieinfo.movieSeq}">
+                                            <input type="hidden" name="user_id" value="${userinfo.user_id}">
+                                             <button id="likeButton" class="follow-btn"><i id="likeIcon" class="fa fa-heart-o">
+                                             </i> Like
                                              </button>
-										</div>
+                                         </div>
 									</div>
 								</div>
 							</div>
