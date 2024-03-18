@@ -24,6 +24,7 @@ public class AddCommentAction implements Action{
         // 세션에서 userinfo 객체 가져오기
         HttpSession session = request.getSession();
         UserDTO udto = (UserDTO) session.getAttribute("userinfo");
+        
 
         String movieSeq = request.getParameter("movieSeq");
         

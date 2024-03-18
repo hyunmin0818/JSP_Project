@@ -19,12 +19,11 @@
 	 INSERT INTO comment (comment_id, user_id, operator_id, comment, comment_time, movieSeq)
         VALUES (#{comment_id},#{user_id}, #{operator_id}, #{comment}, NOW(), #{movieSeq})
 </insert>
-<update id="updateComment" parameterType="map">
-  UPDATE comment
-  SET comment = #{comment}
+<delete id="deleteComment" parameterType="map">
+  delete comment
+  from comment 
   WHERE comment_id = #{comment_id}
-  AND user_id = #{user_id} 
-</update>
+</delete>
 <delete id="deleteCoIfUserIsOperator" parameterType="map">
     DELETE FROM comment
     WHERE comment_id = #{comment_id}

@@ -69,7 +69,7 @@ public class ClickPosterAction implements Action {
         
         // JSP 페이지로 포워딩
         ActionForward forward = new ActionForward();
-        forward.setPath("/movie/html/click-details.jsp?movieSeq=" + movieSeq); // 영화 정보와 비슷한 장르 영화 정보, 댓글 정보를 표시할 JSP 페이지 경로 설정
+        forward.setPath("/movie/html/click-details2.jsp?movieSeq=" + movieSeq); // 영화 정보와 비슷한 장르 영화 정보, 댓글 정보를 표시할 JSP 페이지 경로 설정
         forward.setRedirect(false); // 포워딩이므로 false로 설정
         
         return forward;

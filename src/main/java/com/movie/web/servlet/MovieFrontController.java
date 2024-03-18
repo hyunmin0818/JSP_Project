@@ -47,13 +47,10 @@ public class MovieFrontController extends HttpServlet {
          case "/movie/addComment.mo": 
             forward = new AddCommentAction().execute(req, resp);
             break;
-         case "/movie/GetCommentCount.mo": 
-            forward = new GetCommentCountAction().execute(req, resp);
-            break;
-         case "/movie/updateComment.mo": 
-            forward = new UpdateCommentAction().execute(req, resp);
+         case "/movie/deleteComment.mo": 
+            forward = new DeleteCommentAction().execute(req, resp);
             break; 
-         case "movie/addView.mo" :
+         case "/movie/addView.mo" :
        	  forward = new AddMovieViewAction().execute(req, resp);
        	  	break;
          case "/movie/AddMovieView.mo":
@@ -72,5 +69,5 @@ public class MovieFrontController extends HttpServlet {
          }
 
       }
-   
-}
+   }
+   }

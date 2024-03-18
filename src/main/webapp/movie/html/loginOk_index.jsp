@@ -1,8 +1,7 @@
 <%@page import="java.util.List"%>
 <%@page import="com.movie.web.dto.MovieDTO"%>
 <%@page import="com.movie.web.dao.MovieDAO"%>
-<%@ page language="java" contentType="text/html; charset=UTF-8"
-	pageEncoding="UTF-8"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <!DOCTYPE html>
 <html lang="zxx">
@@ -18,6 +17,7 @@
 <title>Anime | Template</title>
 
 <!-- Google Font -->
+<%@ include file="/movie/html/header.jsp"%>
 <link
 	href="https://fonts.googleapis.com/css2?family=Oswald:wght@300;400;500;600;700&display=swap"
 	rel="stylesheet">
@@ -62,11 +62,6 @@
 </head>
 
 <body>
-
-
-
-
-
 	<!-- Page Preloder -->
 	<div id="preloder">
 		<div class="loader"></div>
@@ -75,72 +70,9 @@
 	<!-- Header Section Begin -->
 	<header class="header">
 		<div class="container">
-			<div class="row">
-				<!-- 로고 -->
-				<div class="col-lg-2">
-					<div class="header__logo">
-						<a href="${pageContext.request.contextPath}/movie/html/index.jsp">
-							<img src="${pageContext.request.contextPath}/movie/html/img/logo2.png" id="logo2" alt="">
-						</a>
-					</div>
-				</div>
-				<!-- 네비게이션 메뉴 -->
-				<div class="col-lg-8">
-					<div class="header__nav">
-						<nav class="header__menu mobile-menu">
-							
-						</nav>
-					</div>
-				</div>
 
-
-				<div class="col-lg-2">
-					<div class="header__right">
-						
-						<a href="#" class="search-switch"><span class="icon_search"></span></a>
-						<span
-							class="icon_profile arrow fa dropdown-toggle active arrow_carrot-down"
-							id="dropdown-toggle" data-bs-toggle="dropdown"
-							aria-expanded="false"></span>
-						<ul class="dropup-center dropup dropdown-menu"
-							aria-labelledby="dropdown-toggle">
-							<li><a
-								href="${pageContext.request.contextPath}/movie/mypage.ms"><span
-									class="dropdown-item">마이페이지</span></a></li>
-							<li><hr class="dropdown-divider"></hr></li>
-							<%-- <li><a
-								href="${pageContext.request.contextPath}/movie/html/findTicket.jsp"><span
-									class="dropdown-item" id="redtext">예매내역</span></a></li> --%>
-							<!--  <li> <a href="#"><span class="dropdown-item" id="redtext">팔로우</span></a></li>  -->
-							<%-- <li><a
-								href="${pageContext.request.contextPath}/movie/html/request.jsp"><span
-									class="dropdown-item" id="redtext">내 문의내역</span></a></li> --%>
-							<!-- <li> <a href="#"><span class="dropdown-item" id="redtext">쿠폰함(미구현)</span></a></li>  -->
-							<li><a
-								href="${pageContext.request.contextPath}/movie/logout.ms"><span
-									class="dropdown-item" id="redtext">로그아웃</span></a></li>
-						</ul>
-						<a href="${pageContext.request.contextPath}/movie/mypage.ms"
-							id="youNeedLogin">${sessionscope.userinfo.user_id}</a>
-					</div>
-				</div>
-
-
-
-
-
-
-
-
-
-
-			</div>
-			<div id="mobile-menu-wrap"></div>
 		</div>
 	</header>
-
-
-
 	<!-- Header End -->
 
 	<!-- Hero Section Begin -->
@@ -206,46 +138,45 @@
 	<!-- Product Section Begin -->
 	<section class="product spad">
 		<div class="container">
-		   <div class="row">
-			  <div class="col-lg-8">
-				 <div class="trending__product">
-					<div class="row">
-					   <div class="col-lg-8 col-md-8 col-sm-8">
-						  <div class="section-title">
-							 <h4>현재 상영 중</h4>
-						  </div>
-					   </div>
-					   <div class="col-lg-4 col-md-4 col-sm-4">
+			<div class="row">
+				<div class="col-lg-8">
+					<div class="trending__product">
+						<div class="row">
+							<div class="col-lg-8 col-md-8 col-sm-8">
+								<div class="section-title">
+									<h4>현재 상영 중</h4>
+								</div>
+							</div>
+							<div class="col-lg-4 col-md-4 col-sm-4"></div>
 						 
-					   </div>
-					</div>
-					<div class="row">
+						</div>
+						<div class="row">
 
 							<%
 							MovieDAO mdao = new MovieDAO();
-										   int totalCnt = mdao.getMovieCnt();
-							  
-										   String temp = request.getParameter("page");
-										   int pageIndex = 0;
-										   try {
-											  pageIndex = temp == null ? 1 : Integer.parseInt(temp);
-										   } catch (NumberFormatException e) {
-											  pageIndex = 1; // 잘못된 파라미터 값이 전달될 경우 기본값으로 설정
-										   }
-							  
-										   int pageSize = 12;
-										   int endRow = pageIndex * pageSize; // 여기서 수정이 필요했음
-										   int startRow = endRow - pageSize + 1;
-							  
-										   int startPage = ((pageIndex - 1) / pageSize) * pageSize + 1;
-										   int endPage = startPage + pageSize - 1;
-										   int totalPage = (totalCnt - 1) / pageSize + 1;
-							  
-										   endPage = endPage > totalPage ? totalPage : endPage;
-							  
-										   List<MovieDTO> movieList = mdao.getMovieList(startRow, endRow);
-							  
-											for (MovieDTO movie : movieList) {
+							int totalCnt = mdao.getMovieCnt();
+
+							String temp = request.getParameter("page");
+							int pageIndex = 0;
+							try {
+								pageIndex = temp == null ? 1 : Integer.parseInt(temp);
+							} catch (NumberFormatException e) {
+								pageIndex = 1; // 잘못된 파라미터 값이 전달될 경우 기본값으로 설정
+							}
+
+							int pageSize = 12;
+							int endRow = pageIndex * pageSize; // 여기서 수정이 필요했음
+							int startRow = endRow - pageSize + 1;
+
+							int startPage = ((pageIndex - 1) / pageSize) * pageSize + 1;
+							int endPage = startPage + pageSize - 1;
+							int totalPage = (totalCnt - 1) / pageSize + 1;
+
+							endPage = endPage > totalPage ? totalPage : endPage;
+
+							List<MovieDTO> movieList = mdao.getMovieList(startRow, endRow);
+
+							for (MovieDTO movie : movieList) {
 							%>
 							<div class="col-lg-4 col-md-6 col-sm-6">
 								<div class="product__item">
@@ -272,137 +203,146 @@
 								</div>
 							</div>
 							<%
-}
-%>
+							}
+							%>
+						</div>
+					</div>
+					<!-- 페이지 처리 부분 -->
+					<div class="pagination-container"">
+						<div style="text-align: center;">
+							<%
+							if (startPage > 1) {
+							%>
+							<a href="?page=<%=startPage - 1%>"><i
+								class="fa fa-angle-double-left"></i></a>
+							<%
+							}
+							%>
+							<%
+							for (int i = startPage; i <= endPage; i++) {
+							%>
+							<a href="?page=<%=i%>"><%=i%></a>
+							<%
+							}
+							%>
+							<%
+							if (endPage < totalPage) {
+							%>
+							<a href="?page=<%=endPage + 1%>"><i
+								class="fa fa-angle-double-right"></i></a>
+							<%
+							}
+							%>
+						</div>
+					</div>
+				</div>
+				<div class="col-lg-4 col-md-6 col-sm-8">
+					<div class="product__sidebar">
+						<div class="product__sidebar__view">
+							<div class="section-title">
+								<h5>Top Views</h5>
 							</div>
-							</div>
-							<!-- 페이지 처리 부분 -->
-	<div class="pagination-container" ">
-		<div style="text-align: center;">		
-			<%
-			if (startPage > 1) {
-			%>
-			<a href="?page=<%=startPage - 1%>"><i class="fa fa-angle-double-left"></i></a>
-			<%
-			}
-			%>
-			<%
-			for (int i = startPage; i <= endPage; i++) {
-			%>
-			<a href="?page=<%=i%>"><%=i%></a>
-			<%
-			}
-			%>
-			<%
-			if (endPage < totalPage) {
-			%>
-			<a href="?page=<%=endPage + 1%>"><i class="fa fa-angle-double-right"></i></a>
-			<%
-			}
-			%>
-		</div>
-	</div>
-							</div>
-							<div class="col-lg-4 col-md-6 col-sm-8">
-							  <div class="product__sidebar">
-								  <div class="product__sidebar__view">
-									  <div class="section-title">
-										  <h5>Top Views</h5>
-									  </div>
-								   
-									  <div class="filter__gallery">
-										  <div class="product__sidebar__view__item set-bg mix day years"
-											  data-setbg="img/sidebar/tv-1.jpg">
-											  
-											  <div class="view"><i class="fa fa-eye"></i> 9141</div>
-											  <h5><a href="#">Boruto: Naruto next generations</a></h5>
-										  </div>
-										  <div class="product__sidebar__view__item set-bg mix month week"
-											  data-setbg="img/sidebar/tv-2.jpg">
-											  
-											  <div class="view"><i class="fa fa-eye"></i> 9141</div>
-											  <h5><a href="#">The Seven Deadly Sins: Wrath of the Gods</a></h5>
-										  </div>
-										  <div class="product__sidebar__view__item set-bg mix week years"
-											  data-setbg="img/sidebar/tv-3.jpg">
-											  
-											  <div class="view"><i class="fa fa-eye"></i> 9141</div>
-											  <h5><a href="#">Sword art online alicization war of underworld</a></h5>
-										  </div>
-										  <div class="product__sidebar__view__item set-bg mix years month"
-											  data-setbg="img/sidebar/tv-4.jpg">
-											  
-											  <div class="view"><i class="fa fa-eye"></i> 9141</div>
-											  <h5><a href="#">Fate/stay night: Heaven's Feel I. presage flower</a></h5>
-										  </div>
-										  <div class="product__sidebar__view__item set-bg mix day"
-											  data-setbg="img/sidebar/tv-5.jpg">
-											  
-											  <div class="view"><i class="fa fa-eye"></i> 9141</div>
-											  <h5><a href="#">Fate stay night unlimited blade works</a></h5>
-										  </div>
-										  <div class="product__sidebar__view__item set-bg mix week years"
-											  data-setbg="img/sidebar/tv-3.jpg">
-											  
-											  <div class="view"><i class="fa fa-eye"></i> 9141</div>
-											  <h5><a href="#">Sword art online alicization war of underworld</a></h5>
-										  </div>
-										  <div class="product__sidebar__view__item set-bg mix years month"
-											  data-setbg="img/sidebar/tv-4.jpg">
-											  
-											  <div class="view"><i class="fa fa-eye"></i> 9141</div>
-											  <h5><a href="#">Fate/stay night: Heaven's Feel I. presage flower</a></h5>
-										  </div>
-										  <div class="product__sidebar__view__item set-bg mix day"
-											  data-setbg="img/sidebar/tv-5.jpg">
-											  
-											  <div class="view"><i class="fa fa-eye"></i> 9141</div>
-											  <h5><a href="#">Fate stay night unlimited blade works</a></h5>
-										  </div>
-										  <div class="product__sidebar__view__item set-bg mix day"
-											  data-setbg="img/sidebar/tv-5.jpg">
-											  
-											  <div class="view"><i class="fa fa-eye"></i> 9141</div>
-											  <h5><a href="#">Fate stay night unlimited blade works</a></h5>
-										  </div>
-									  </div>
-								  </div>
-								  <div class="product__sidebar__comment">
-								  </div>
-							  </div>
-		   </div>
-	 </section>
-<<<<<<< HEAD
-  
-	  <!-- 페이지 처리 부분 -->
-	<div class="pagination-container">
-		<div>		
-			<%
-			if (startPage > 1) {
-			%>
-			<a href="?page=<%=startPage - 1%>">이전</a>
-			<%
-			}
-			%>
-			<%
-			for (int i = startPage; i <= endPage; i++) {
-			%>
-			<a class="current-page" href="?page=<%=i%>"><%=i%></a>
-			<%
-			}
-			%>
-			<%
-			if (endPage < totalPage) {
-			%>
-			<a href="?page=<%=endPage + 1%>">다음</a>
-			<%
-			}
-			%>
-		</div>
-	</div>
 
- 
-	<!-- Product Section Begin end -->
+							<div class="filter__gallery">
+								<div class="product__sidebar__view__item set-bg mix day years"
+									data-setbg="img/sidebar/tv-1.jpg">
+
+									<div class="view">
+										<i class="fa fa-eye"></i> 9141
+									</div>
+									<h5>
+										<a href="#">Boruto: Naruto next generations</a>
+									</h5>
+								</div>
+								<div class="product__sidebar__view__item set-bg mix month week"
+									data-setbg="img/sidebar/tv-2.jpg">
+
+									<div class="view">
+										<i class="fa fa-eye"></i> 9141
+									</div>
+									<h5>
+										<a href="#">The Seven Deadly Sins: Wrath of the Gods</a>
+									</h5>
+								</div>
+								<div class="product__sidebar__view__item set-bg mix week years"
+									data-setbg="img/sidebar/tv-3.jpg">
+
+									<div class="view">
+										<i class="fa fa-eye"></i> 9141
+									</div>
+									<h5>
+										<a href="#">Sword art online alicization war of underworld</a>
+									</h5>
+								</div>
+								<div class="product__sidebar__view__item set-bg mix years month"
+									data-setbg="img/sidebar/tv-4.jpg">
+
+									<div class="view">
+										<i class="fa fa-eye"></i> 9141
+									</div>
+									<h5>
+										<a href="#">Fate/stay night: Heaven's Feel I. presage
+											flower</a>
+									</h5>
+								</div>
+								<div class="product__sidebar__view__item set-bg mix day"
+									data-setbg="img/sidebar/tv-5.jpg">
+
+									<div class="view">
+										<i class="fa fa-eye"></i> 9141
+									</div>
+									<h5>
+										<a href="#">Fate stay night unlimited blade works</a>
+									</h5>
+								</div>
+								<div class="product__sidebar__view__item set-bg mix week years"
+									data-setbg="img/sidebar/tv-3.jpg">
+
+									<div class="view">
+										<i class="fa fa-eye"></i> 9141
+									</div>
+									<h5>
+										<a href="#">Sword art online alicization war of underworld</a>
+									</h5>
+								</div>
+								<div class="product__sidebar__view__item set-bg mix years month"
+									data-setbg="img/sidebar/tv-4.jpg">
+
+									<div class="view">
+										<i class="fa fa-eye"></i> 9141
+									</div>
+									<h5>
+										<a href="#">Fate/stay night: Heaven's Feel I. presage
+											flower</a>
+									</h5>
+								</div>
+								<div class="product__sidebar__view__item set-bg mix day"
+									data-setbg="img/sidebar/tv-5.jpg">
+
+									<div class="view">
+										<i class="fa fa-eye"></i> 9141
+									</div>
+									<h5>
+										<a href="#">Fate stay night unlimited blade works</a>
+									</h5>
+								</div>
+								<div class="product__sidebar__view__item set-bg mix day"
+									data-setbg="img/sidebar/tv-5.jpg">
+
+									<div class="view">
+										<i class="fa fa-eye"></i> 9141
+									</div>
+									<h5>
+										<a href="#">Fate stay night unlimited blade works</a>
+									</h5>
+								</div>
+							</div>
+						</div>
+						<div class="product__sidebar__comment"></div>
+					</div>
+				</div>
+	</section>
+<!-- Product Section Begin end -->
 
 	<!-- Footer Section Begin -->
 	<footer class="footer">
@@ -455,7 +395,7 @@
 				<i class="icon_close"></i>
 			</div>
 			<form class="search-model-form">
-				<input type="text" id="search-input" placeholder="Search here....." >
+				<input type="text" id="search-input" placeholder="Search here.....">
 			</form>
 		</div>
 	</div>

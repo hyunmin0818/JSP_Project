@@ -66,28 +66,15 @@ public class CommentDAO {
 	    	    return result;
 	    	}
 	      
-	      // 댓글 수정
-	      public boolean updateComment(int comment_id, String comment, String user_id) { // 사용자 ID 인자 추가
-	    	    boolean result = false;
-	    	    
-	    	    HashMap<String, Object> params = new HashMap<>();
-	    	    params.put("comment_id", comment_id);
-	    	    params.put("comment", comment);
-	    	    params.put("user_id", user_id); // 사용자 ID를 맵에 추가
-	    	    
-	    	    if(sqlSession.update("Movie.updateComment", params) == 1) {
-	    	        result = true;
-	    	    }
-	    	    
-	    	    return result;
-	    	}
+	     
 	      // comment_id를 기준으로 댓글을 삭제하는 메서드
-	      public boolean deleteComment(int comment_id) {
+	      public boolean deleteComment(int comment_id , String user_id) {
 	          boolean result = false;
 	          
 	          // 댓글 삭제를 위한 comment_id 값을 HashMap에 저장
 	          HashMap<String, Object> params = new HashMap<>();
 	          params.put("comment_id", comment_id);
+	          params.put("user_id",user_id);
 	          
 	          // sqlSession.delete 메서드를 사용하여 댓글 삭제 실행
 	          if(sqlSession.delete("Movie.deleteComment", params) == 1) {
@@ -96,6 +83,8 @@ public class CommentDAO {
 	          
 	          return result;
 	      }
+	      
+	      // 시간남으면 추가할 기능 : 관리자 로그인일 경우 ... 
 	      public boolean deleteCoIfUserIsOperator(int comment_id, String user_id) {
 	    	    // 결과 초기화
 	    	    boolean result = false;

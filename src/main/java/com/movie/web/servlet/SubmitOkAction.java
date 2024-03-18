@@ -37,9 +37,12 @@ public class SubmitOkAction implements Action{
         	    // 이후 필요한 로직을 수행
         		HttpSession session = request.getSession(true);
                 session.setAttribute("userinfo", userInfo);
+                session.setAttribute("isLoggedIn", true);
         		forward.setPath("/movie/html/loginOk_index.jsp?user_id="+user_id);
+        		System.out.println("Session logincheck: " + session.getAttribute("isLoggedIn"));
         		System.out.println("Session UserInfo: " + session.getAttribute("userinfo"));
-        		 
+        		session.setAttribute("loggedInUser_id", user_id); 
+        		
         		// 세션 유지 시간 설정 (초 단위)
                 session.setMaxInactiveInterval(1800); // 30분 유지
 

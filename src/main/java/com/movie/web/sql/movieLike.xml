@@ -7,24 +7,22 @@
 	<update id="UpdateLikesCount">
     <!-- 좋아요가 눌릴 때마다 likes 컬럼을 1 증가시키고, movie 테이블의 movielike 컬럼도 업데이트 -->
     <!-- cdata = 내부 특수기호들 특수기호로 처리하지않게하기위함 -->
-    <![CDATA[
     UPDATE movie_likes ml
     INNER JOIN movie m ON ml.movieSeq = m.movieSeq
     SET ml.movieLike = ml.movieLike + 1,
         m.movielike = m.movielike + 1
-    WHERE ml.user_id = #{userId} AND ml.movieSeq = #{movieSeq}
-    ]]>
-	</update>
+    WHERE ml.user_id = #{user_id} AND ml.movieSeq = #{movieSeq}
+  	</update>
 
 	<update id="removeLikeAndUpdateLikesCount">
 	    <!-- 좋아요가 취소될 때마다 likes 컬럼을 1 감소시키고, movie 테이블의 movielike 컬럼도 업데이트 -->
-	    <![CDATA[
+	   
 	    UPDATE movielikes ml
 	    INNER JOIN movie m ON ml.movie_id = m.movie_id
 	    SET ml.likes = ml.likes - 1,
 	        m.movielike = m.movielike - 1
 	    WHERE ml.user_id = #{userId} AND ml.movie_id = #{movieId}
-	    ]]>
+	    
 	</update>
     
     <!-- 특정 영화에 대한 좋아요 수 조회 -->

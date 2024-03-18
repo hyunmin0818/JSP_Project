@@ -31,6 +31,8 @@ public class SearchMovieInfoAction implements Action{
         if (session != null) {
             userInfo = (UserDTO) session.getAttribute("userinfo");
           System.out.println("정보 유지");
+          session.setAttribute("isLoggedIn", true);
+          System.out.println("Session logincheck: " + session.getAttribute("isLoggedIn"));
             // 세션에서 "userinfo"로 저장된 UserDTO 객체 가져오기
         }
 		
