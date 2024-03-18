@@ -120,14 +120,6 @@
 									<div class="anime__details__pic set-bg"
 										data-setbg="${movieinfo.posterUrl }">
 										<!--이미지-->
-										<div class="comment">
-											<i class="fa fa-comments"></i> 6
-										</div>
-										<!-- 댓글-->
-										<div class="view">
-											<i class="fa fa-eye"></i> 9141
-										</div>
-										<!-- 조회수-->
 									</div>
 								</div>
 								<!-- 영화 세부 정보 -->
@@ -135,6 +127,11 @@
 									<div class="anime__details__text">
 										<div class="anime__details__title">
 											<!-- 영화 제목과 일본어 제목 -->
+											<div style="position: relative;">
+   												<div style="position: absolute; left: 80%; top: 0;">
+        											<h3><i style="padding-left: 22px" class="fa fa-eye"></i>${movieinfo.movieView}</h3>
+    											</div>
+											</div>
 											<h3>${movieinfo.title}</h3>
 											<span>${movieinfo.titleEng}</span>
 										</div>
@@ -202,7 +199,8 @@
 			<div class="col-lg-8 col-md-8">
 				<div class="anime__details__review">
 					<div class="section-title">
-						<h5>Reviews</h5>
+						<h5>Reviews <i style="padding-left: 90%" class="fa fa-comments"></i>226</h5> 										
+						<!-- 댓글-->
 					</div>
 					<!-- 리뷰 아이템 -->
 					<c:choose>
