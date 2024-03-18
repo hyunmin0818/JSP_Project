@@ -58,7 +58,7 @@
                                     <div class="col-lg-2">
                                         <div class="header__logo">
                                             <a href="./index.jsp">
-                                                <img src="img/logo2.png" id="logo2" alt="">
+                                                <img src="${pageContext.request.contextPath}/movie/html/img/logo2.png" id="logo2" alt="">
                                             </a>
                                         </div>
                                     </div>
@@ -186,14 +186,19 @@
                         <!-- Anime Section Begin -->
                         <div class="css-yy4d6f e1yew28617" style="position: relative;  height: 550px;">
                             <div class="css-stilcut"
+
                                 style="background: url(${movie.posterUrl}) no-repeat center;"> 
+
+                              
+
 
 
                                 <div class="css-sdsdsd">
 
                                     <h1 class="css-Title"> ${movie.title}</h1>
                                     <div class="css-qnwpahr">${moviet.title}</div>
-                                    <div class="css-roqhddlf">${movie.releasedate}· ${movie.genre } · ${movie.nation}</div>
+                                    <div class="css-roqhddlf">${movie.releasedate}· ${movie.genre } · ${movie.nation}
+                                    </div>
                                     <div class="css-qkdduddlfwkdfmrnrrk">${movie.runtime} · ${movie.rating}</div>
                                     <div class="css-tkd">${movie.awards1}${movie.awards2}</div>
 
@@ -202,94 +207,93 @@
                         </div>
                         <section class="anime-details spad">
                             <div class="container">
+                                <div class="anime__details__content">
+                                    <c:choose>
+                                        <c:when test="${movieList != null and fn:length(movieList) > 0 }">
+                                            <c:forEach var="movie" items="${movieList}">
 
-			<c:choose>
-				<c:when test="${movieList != null and fn:length(movieList) > 0 }">
-					<c:forEach var="movie" items="${movieList}">
-						<div class="anime__details__content">
+                                                <div class="row" style="margin-top: 30px;">
 
-
-							<div class="row" style="margin-top: 30px;">
-
-								<!-- 영화 이미지와 관련 정보 -->
-								<div class="col-lg-3">
-									<div class="anime__details__pic set-bg"
-										data-setbg="${movie.posterUrl }">
-										<!--이미지-->
-										<div class="comment">
-											<i class="fa fa-comments"></i> 6
-										</div>
-										<!-- 댓글-->
-										<div class="view">
-											<i class="fa fa-eye"></i> 9141
-										</div>
-										<!-- 조회수-->
-									</div>
-								</div>
-								<!-- 영화 세부 정보 -->
-								<div class="col-lg-9">
-									<div class="anime__details__text">
-										<div class="anime__details__title">
-											<!-- 영화 제목과 일본어 제목 -->
-											<h3>${movie.title}</h3>
-											<span>${movie.titleEng}</span>
-										</div>
-										<!-- 영화 평점과 투표 수 -->
-										<div class="anime__details__rating"></div>
-										<!-- 영화 설명 -->
-										<p>${movie.plot}</p>
-										<!-- 영화 세부 정보 표 -->
-										<div class="anime__details__widget">
-											<div class="row">
-												<div class="col-lg-6 col-md-6">
-													<ul>
-														<li><span>유형:</span> ${movie.type}</li>
-														<!--유형-->
-														<li><span>회사:</span> ${movie.company}</li>
-														<!--제작사-->
-														<li><span>개봉일:</span> ${movie.releaseDate}</li>
-														<!--방영일-->
-														<li><span>국가:</span> ${movie.nation}</li>
-														<!--국가-->
-														<li><span>장르:</span> ${movie.genre}</li>
-														<!--장르-->
-													</ul>
-												</div>
-												<div class="col-lg-6 col-md-6">
-													<ul>
-														<li><span>감독:</span> ${movie.directorNm}</li>
-														<!--배우-->
-														<li><span>배우:</span> ${movie.actorEnNm}</li>
-														<!--평가-->
-														<li><span>상영시간:</span> ${movie.runtime}</li>
-														<!--재생시간-->
-														<li><span>등급:</span> ${movie.rating}</li>
-														<!--등급-->
-														<li><span>제작사: </span> ${movie.company}</li>
-														<!--조회수-->
-													</ul>
-												</div>
-											</div>
-										</div>
-										<!-- 영화 관련 버튼 -->
-										<div class="anime__details__btn">
-											<a href="#" class="follow-btn"><i class="fa fa-heart-o"></i>
-												Follow</a>
-
-										</div>
-									</div>
-								</div>
-							</div>
-							</c:forEach>
-						</c:when>
-						<c:otherwise>
-							<hr
-								style="border: none; border-top: 1px solid #08052e; width: 100%;">
-							<span style="color: white">상세 정보가 없습니다.</span>
-							</hr>
-						</c:otherwise>
-						</c:choose>
-						<!-- <hr style=" border: none; border-top: 1px solid #08052e; width: 100%;   ">
+                                                    <!-- 영화 이미지와 관련 정보 -->
+                                                    <div class="col-lg-3">
+                                                        <div class="anime__details__pic set-bg"
+                                                            data-setbg="${movie.posterUrl }">
+                                                            <!--이미지-->
+                                                            <div class="comment">
+                                                                <i class="fa fa-comments"></i> 6
+                                                            </div>
+                                                            <!-- 댓글-->
+                                                            <div class="view">
+                                                                <i class="fa fa-eye"></i> 9141
+                                                            </div>
+                                                            <!-- 조회수-->
+                                                        </div>
+                                                    </div>
+                                                    <!-- 영화 세부 정보 -->
+                                                    <div class="col-lg-9">
+                                                        <div class="anime__details__text">
+                                                            <div class="anime__details__title">
+                                                                <!-- 영화 제목과 일본어 제목 -->
+                                                                <h3>${movie.title}</h3>
+                                                                <span>${movie.titleEng}</span>
+                                                            </div>
+                                                            <!-- 영화 평점과 투표 수 -->
+                                                            <div class="anime__details__rating"></div>
+                                                            <!-- 영화 설명 -->
+                                                            <p>${movie.plot}</p>
+                                                            <!-- 영화 세부 정보 표 -->
+                                                            <div class="anime__details__widget">
+                                                                <div class="row">
+                                                                    <div class="col-lg-6 col-md-6">
+                                                                        <ul>
+                                                                            <li><span>유형:</span> ${movie.type}</li>
+                                                                            <!--유형-->
+                                                                            <li><span>회사:</span> ${movie.company}</li>
+                                                                            <!--제작사-->
+                                                                            <li><span>개봉일:</span> ${movie.releaseDate}
+                                                                            </li>
+                                                                            <!--방영일-->
+                                                                            <li><span>국가:</span> ${movie.nation}</li>
+                                                                            <!--국가-->
+                                                                            <li><span>장르:</span> ${movie.genre}</li>
+                                                                            <!--장르-->
+                                                                        </ul>
+                                                                    </div>
+                                                                    <div class="col-lg-6 col-md-6">
+                                                                        <ul>
+                                                                            <li><span>감독:</span> ${movie.directorNm}
+                                                                            </li>
+                                                                            <!--배우-->
+                                                                            <li><span>배우:</span> ${movie.actorEnNm}</li>
+                                                                            <!--평가-->
+                                                                            <li><span>상영시간:</span> ${movie.runtime}</li>
+                                                                            <!--재생시간-->
+                                                                            <li><span>등급:</span> ${movie.rating}</li>
+                                                                            <!--등급-->
+                                                                            <li><span>제작사: </span> ${movie.company}</li>
+                                                                            <!--조회수-->
+                                                                        </ul>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                            <!-- 영화 관련 버튼 -->
+                                                            <div class="anime__details__btn">
+                                                                <button id="likeButton" class="follow-btn">
+                                                                    <i id="likeIcon" class="fa fa-heart-o"></i> Like
+                                                                </button>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </c:forEach>
+                                        </c:when>
+                                        <c:otherwise>
+                                            <hr style="border: none; border-top: 1px solid #08052e; width: 100%;">
+                                            <span style="color: white">상세 정보가 없습니다.</span>
+                                            </hr>
+                                        </c:otherwise>
+                                    </c:choose>
+                                    <!-- <hr style=" border: none; border-top: 1px solid #08052e; width: 100%;   ">
 
                                     <input type="button" onclick="toggleList()"
                                         style="background-color: #e53637; margin-left: 50%; border-radius: 20px; "
@@ -337,6 +341,7 @@
                                             </div>
                                         </div>
                                     </ul> -->
+
 						</div>
 						<!-- 리뷰 목록 -->
 						<div class="row">
@@ -376,16 +381,21 @@
 													<!-- 컨텐츠 있으면 뽑아오기 -->
 												</div>
 												<!-- 사용자 리뷰 입력 폼 -->
+											
+                              				  </div>
 
-											</c:forEach>
-										</c:when>
-										<c:otherwise>
-											<div class="anime__review__item__text">
-												<h6 align="center">댓글이 없습니다.</h6>
 
-											</div>
-										</c:otherwise>
-									</c:choose>
+    												  </c:forEach>
+                                                </c:when>
+                                                <c:otherwise>
+                                                    <div class="anime__review__item__text">
+                                                        <h6 align="center">댓글이 없습니다.</h6>
+
+                                                    </div>
+                                                </c:otherwise>
+                                            </c:choose>
+                                           
+
 									<div class="anime__details__form">
 										<div class="section-title">
 											<h5>Your Comment</h5>
@@ -431,6 +441,8 @@
 								</div>
 							</div>
 						</div></section>
+                               
+                                  
                         <!-- Anime Section End -->
 
                         <!-- Footer Section Begin -->
@@ -443,7 +455,7 @@
                                     <div class="col-lg-3">
                                         <div class="footer__logo">
                                             <a href="${pageContext.request.contextPath}/movie/html/index.jsp"><img
-                                                    src="img/logo2.png" alt=""></a>
+                                                    src="${pageContext.request.contextPath}/movie/html/img/logo2.png" alt=""></a>
                                         </div>
                                     </div>
                                     <div class="col-lg-6">
@@ -529,6 +541,7 @@
 
 
                         </script> -->
+                       
                         <script src="${pageContext.request.contextPath}/movie/html/js/jquery-3.3.1.min.js"></script>
                         <script src="${pageContext.request.contextPath}/movie/html/js/bootstrap.min.js"></script>
                         <script src="${pageContext.request.contextPath}/movie/html/js/player.js"></script>
@@ -538,7 +551,9 @@
                         <script src="${pageContext.request.contextPath}/movie/html/js/jquery.slicknav.js"></script>
                         <script src="${pageContext.request.contextPath}/movie/html/js/owl.carousel.min.js"></script>
                         <script src="${pageContext.request.contextPath}/movie/html/js/main.js"></script>
-						
+					    <script src="${pageContext.request.contextPath}/movie/html/js/ajaxForLikes.js"></script>
+
+
                     </body>
 
                     </html>

@@ -47,5 +47,15 @@
 	 <select id="getNextCommentId" resultType="int">
         SELECT IFNULL(MAX(comment_id), 0) + 1 FROM comment
     </select>
-    
+    <update id="updateMovieViews" parameterType="int">
+	    UPDATE movie
+	    SET movieView = movieView + 1
+	    WHERE movieSeq = #{movieSeq}
+ 	 </update>
+  
+  	<select id="getMovieViews" resultType="int" parameterType="int">
+	    SELECT movieView
+	    FROM movie
+	    WHERE movieSeq = #{movieSeq}
+    </select>
 </mapper>

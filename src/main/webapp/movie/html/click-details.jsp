@@ -51,6 +51,7 @@
 		<div class="loader"></div>
 	</div>
 
+<<<<<<< HEAD
 	<!-- Header Section Begin -->
 		<!-- Header Section Begin -->
 	<header class="header">
@@ -58,6 +59,23 @@
 			
 		</div>
 	</header>
+=======
+                        <!-- Header Section Begin -->
+                        <header class="header">
+                            <div class="container">
+                                <div class="row">
+                                    <div class="col-lg-2">
+                                        <div class="header__logo">
+                                            <a href="./index.jsp">
+                                                <img src="${pageContext.request.contextPath}/movie/html/img/logo2.png" id="logo2" alt="">
+                                            </a>
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-8">
+                                        <div class="header__nav">
+                                            <nav class="header__menu mobile-menu">
+                                                <ul>
+
 
 
 
@@ -173,9 +191,8 @@
 										</div>
 										<!-- 영화 관련 버튼 -->
 										<div class="anime__details__btn">
-											<a href="#" class="follow-btn"><i class="fa fa-heart-o"></i>
-												Follow</a>
-
+											<button id="likeButton" class="follow-btn"><i id="likeIcon" class="fa fa-heart-o"></i> Like
+                                             </button>
 										</div>
 									</div>
 								</div>
@@ -241,7 +258,7 @@
 						<!-- 리뷰 목록 -->
 						<div class="row">
 							<div class="col-lg-8 col-md-8">
-								<div class="movie__details__review">
+								<div class="anime__details__review">
 									<div class="section-title">
 										<h5>Reviews</h5>
 									</div>
@@ -250,11 +267,11 @@
 										<c:when
 											test="${commentList != null and fn:length(commentList) > 0}">
 											<c:forEach var="comment" items="${commentList }">
-												<div class="movie__review__item">
-													<div class="movie__review__item__pic">
-														<img src="img/anime/review-1.jpg" alt="">
+												<div class="aniem__review__item">
+													<div class="anime__review__item__pic">
+														<img src="https://d2u3dcdbebyaiu.cloudfront.net/uploads/atch_img/665/708d0162261869f0558a0a1cabea0b50_res.jpeg" alt="">
 													</div>
-													<div class="movie__review__item__text">
+													<div class="anime__review__item__text">
 														<h6>
 															${comment.user_id}<span>${comment.comment_time}</span>
 														</h6>
@@ -333,7 +350,7 @@
                                     <div class="col-lg-3">
                                         <div class="footer__logo">
                                             <a href="${pageContext.request.contextPath}/movie/html/index.jsp"><img
-                                                    src="img/logo2.png" alt=""></a>
+                                                    src="${pageContext.request.contextPath}/movie/html/img/logo2.png" alt=""></a>
                                         </div>
                                     </div>
                                     <div class="col-lg-6">
@@ -419,6 +436,7 @@
 
 
                         </script> -->
+                         
                         <script src="${pageContext.request.contextPath}/movie/html/js/jquery-3.3.1.min.js"></script>
                         <script src="${pageContext.request.contextPath}/movie/html/js/bootstrap.min.js"></script>
                         <script src="${pageContext.request.contextPath}/movie/html/js/player.js"></script>
@@ -428,6 +446,7 @@
                         <script src="${pageContext.request.contextPath}/movie/html/js/jquery.slicknav.js"></script>
                         <script src="${pageContext.request.contextPath}/movie/html/js/owl.carousel.min.js"></script>
                         <script src="${pageContext.request.contextPath}/movie/html/js/main.js"></script>
+                        <script src="${pageContext.request.contextPath}/movie/html/js/ajaxForLikes.js"></script>
 
                     </body>
 
