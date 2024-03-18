@@ -6,3 +6,4 @@ putty
 *.jar
 *.jsp
 build/*
+.idea
