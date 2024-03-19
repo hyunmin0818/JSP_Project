@@ -54,11 +54,13 @@ public class CommentDAO {
 	    	    HashMap<String, Object> params = new HashMap<>();
 	    	    params.put("comment_id", getNextCommentId()); // 동기화된 메서드를 통해 id 획득
 	    	    params.put("user_id", user_id);
-	    	    params.put("operator_id", null); // 고정값, 나중에 테이블에 insert된 정보에 따라 수정
 	    	    params.put("comment", comment);
 	    	    params.put("movieSeq", movieSeq); // 인자로 받은 movieSeq 사용
 
-	    	    // sqlSession.insert 메서드를 사용하여 댓글 추가 실행
+			  	System.out.println("movieSeq : " + movieSeq);
+				System.out.println("user_id: " + user_id);
+			  	System.out.println("comment: " + comment);
+			  // sqlSession.insert 메서드를 사용하여 댓글 추가 실행
 	    	    if(sqlSession.insert("Movie.insertComment", params) == 1) {
 	    	        result = true;
 	    	    }

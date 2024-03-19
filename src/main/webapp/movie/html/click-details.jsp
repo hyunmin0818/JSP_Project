@@ -204,8 +204,7 @@
                     </div>
                     <!-- 리뷰 아이템 -->
                     <c:choose>
-                        <c:when
-                                test="${commentList != null and fn:length(commentList) > 0}">
+                        <c:when test="${commentList != null and fn:length(commentList) > 0}">
                             <c:forEach var="comment" items="${commentList }">
                                 <div class="anime__review__item">
                                     <div class="anime__review__item__pic">
@@ -213,7 +212,7 @@
                                              alt="">
                                     </div>
                                     <div class="anime__review__item__text">
-                                        <input type="hidden" name="movieSeq" value="${Movie.movieSeq}">
+                                        <input type="hidden" name="movieSeq" value="${movieinfo.movieSeq}">
                                         <h6>${comment.user_id}<span>${comment.comment_time}</span>
                                         </h6>
                                         <p>${comment.comment}</p>
@@ -240,7 +239,7 @@
                         </div>
                         <form name="commentForm" method="post"
                               action="${pageContext.request.contextPath}/movie/addComment.mo">
-                            <input type="hidden" name="movieSeq" value="${movieList[0].movieSeq}">
+                            <input type="hidden" name="movieSeq" value="${movieInfo[0].movieSeq}">
                             <input type="hidden" name="comment_id" value="${comment.comment_id }">
                             <textarea name="comment" placeholder="Comment 를 작성해주세요">${comment.comment }</textarea>
                             <button type="submit" style="float: right;">
@@ -250,7 +249,6 @@
                     </div>
                 </div>
             </div>
-
             <!-- 사이드바 영역 -->
             <div class="col-lg-4 col-md-4">
                 <div class="anime__details__sidebar">
