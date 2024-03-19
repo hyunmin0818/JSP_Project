@@ -188,8 +188,7 @@
                     </div>
                     <!-- 리뷰 아이템 -->
                     <c:choose>
-                        <c:when
-                                test="${commentList != null and fn:length(commentList) > 0}">
+                        <c:when test="${commentList != null and fn:length(commentList) > 0}">
                             <c:forEach var="comment" items="${commentList}">
                                 <div class="anime__review__item">
                                     <div class="anime__review__item__pic">
@@ -198,7 +197,7 @@
                                                 alt="">
                                     </div>
                                     <div class="anime__review__item__text">
-                                        <input type="hidden" name="movieSeq" value="${Movie.movieSeq}">
+                                        <input type="hidden" name="movieSeq" value="${comment.movieSeq}">
                                         <h6>${comment.user_id}<span>${comment.comment_time}</span>
                                         </h6>
                                         <p>${comment.comment}</p>
