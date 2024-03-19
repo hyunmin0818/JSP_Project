@@ -11,7 +11,7 @@ $(document).ready(function(){
         // Ajax 호출
         $.ajax({
             type: 'POST',
-            url: 'LikeIncrease.lk', // 좋아요 처리를 담당하는 JSP 파일 URL
+            url: '/movie/LikeIncrease.lk', // 좋아요 처리를 담당하는 JSP 파일 URL
             data: {
                 movieSeq: movieSeq,
                 userId: userId,

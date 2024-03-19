@@ -11,7 +11,7 @@ import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 import jakarta.servlet.http.HttpSession;
 
-@WebServlet("*.lk")
+@WebServlet("/movie/LikeIncrease.lk")
 public class UpdateLikesController extends HttpServlet{
 
 	@Override
@@ -30,12 +30,15 @@ public class UpdateLikesController extends HttpServlet{
 		
 		HttpSession session = req.getSession(false);
 		
+		System.out.println(requestURI);
+		
 		switch (requestURI) {
 		
-		case "/LikeIncrease.lk" :
+		case "/movie/LikeIncrease.lk" :
+			System.out.println("테스트");
 			forward = new LikeIncreaseAction().execute(req, resp);
 			break;
-		case "/LikeDecrease.lk" :
+		case "/movie/LikeDecrease.lk" :
 			forward = new LikeDecreaseAction().execute(req, resp);
 			break;
 			

@@ -16,24 +16,32 @@ public class LikeIncreaseAction implements Action {
 	public ActionForward execute(HttpServletRequest request, HttpServletResponse response) {
 		
 		String movieSeq = request.getParameter("movieSeq");
+		String userId = request.getParameter("userId"); // 변수명 수정
+		
+		System.out.println(movieSeq);
+		System.out.println(userId);
+		System.out.println("------");
 		
 		LikesDTO ldto = new LikesDTO();
-		ldto.setMovieSeq(movieSeq);		// 좋아요를 추가할 영화 Seq설정
+		ldto.setMovieSeq(movieSeq);
+		ldto.setUser_Id(userId); // 변수명 수정
 		
 		LikesDAO ldao = new LikesDAO();
-		boolean success = ldao.addLikeAndUpdateLikesCount(ldto); // 좋아요 추가 및 업데이트
+		boolean success = ldao.addLikeAndUpdateLikesCount(ldto);
+		System.out.println(success);
 		
-		 if (success) {
-	            // 좋아요 추가 및 업데이트 성공시
-	            int updatedLikesCount = ldao.getLikesCount(ldto.getMovieLike()); // 업데이트된 좋아요 수 가져오기
-	            response.setContentType("application/json");
-	            try {
-	                response.getWriter().write(String.valueOf(updatedLikesCount)); // 업데이트된 좋아요 수를 클라이언트에 전송
-	            } catch (IOException e) {
-	                e.printStackTrace();
-	            }
-	        } 
+		if (success) {
+		    int updatedLikesCount = ldao.getLikesCount(ldto.getMovieLike());
+		    response.setContentType("application/json");
+		    try {
+		        response.getWriter().write(String.valueOf(updatedLikesCount));
+		        System.out.println("좋아요가 성공적으로 추가되었습니다.");
+		    } catch (IOException e) {
+		        e.printStackTrace();
+		        System.out.println("좋아요 추가에 실패하였습니다.");
+		    }
+		} 
 
-	        return null; // 이동할 페이지가 없으므로 null 반환
+		return null;
 	    }
 	}
