@@ -122,14 +122,12 @@
                                 List<CommentDTO> comments = cdao.getCmByMovieSeq(movie.getMovieSeq());
                                 // 댓글 수 계산
                                 int commentCount = comments.size();
-                                
-                              
-                                
+         
                         %>
                                 <div class="col-lg-4 col-md-6 col-sm-6">
                                     <div class="product__item">
-                                        <a href="${pageContext.request.contextPath}/movie/clickPoster.mo?movieSeq=<%=movie.getMovieSeq()%>">
-                                            <div class="product__item__pic set-bg" data-setbg="<%=movie.getPosterUrl()%>">
+                                        <a href="${pageContext.request.contextPath}/movie/clickPoster.mo?movieSeq=<%=movie.getMovieSeq()%>" onclick="updateViewsOnPage(<%=movie.getMovieSeq()%>)">
+                                            <div class="product__item__pic set-bg" data-setbg="<%=movie.getPosterUrl()%>" >
                                                 <div class="comment">
                                                     <i class="fa fa-comments"></i><%=commentCount%>
                                                 </div>
@@ -143,7 +141,7 @@
                                                 <li><%= movie.getGenre() %></li>
                                             </ul>
                                             <h5>
-                                                <a href="movie-details.jsp?movieSeq=<%=movie.getMovieSeq()%>"><%= movie.getTitle() %></a>
+                                                <a href="movie-details.jsp?movieSeq=<%=movie.getMovieSeq()%>" onclick="updateViewsOnPage(<%=movie.getMovieSeq()%>)"><%= movie.getTitle() %></a>
                                             </h5>
                                         </div>
                                     </div>
@@ -202,7 +200,7 @@
                               <i class="fa fa-eye"></i>
                            </div>
                            <h5>
-                              <a href="#">Boruto: Naruto next generations</a>
+                              <%-- <a href="movie-details.jsp?movieSeq=<%=movie.getMovieSeq()%>" onclick="updateViewsOnPage(<%=movie.getMovieSeq()%>)"><%= movie.getTitle() %></a> --%>
                            </h5>
                         </div>
        

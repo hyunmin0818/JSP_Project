@@ -303,7 +303,7 @@
                     <c:forEach items="${similarMovies}" var="genremovie" varStatus="status">
                         <c:if test="${status.index >= 1 && status.index <= 4}">
                             <!-- 영화 정보 출력 -->
-                            <a href="${pageContext.request.contextPath}/movie/clickPoster.mo?movieSeq=${genremovie.movieSeq}">
+                            <a href="${pageContext.request.contextPath}/movie/clickPoster.mo?movieSeq=${genremovie.movieSeq}" onclick="updateViewsOnPage(${genremovie.movieSeq})">
                                 <div class="product__sidebar__view__item set-bg" data-setbg="${genremovie.posterUrl}">
                                     <div class="view">
                                         <i class="fa fa-eye"></i> ${movie.movieView}
@@ -391,6 +391,8 @@
 <script src="${pageContext.request.contextPath}/movie/html/js/owl.carousel.min.js"></script>
 <script src="${pageContext.request.contextPath}/movie/html/js/main.js"></script>
 <script src="${pageContext.request.contextPath}/movie/html/js/ajaxForLikes.js"></script>
+<script src="${pageContext.request.contextPath}/movie/html/js/ajaxForView.js"></script>
+
 
 <script>window.onload = function () {
     var deleteButtons = document.getElementsByClassName('deleteButton');

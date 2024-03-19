@@ -95,9 +95,7 @@
 								<!-- 내용 -->
 								<p>험한 것이 나왔다...</p>
 								<!-- 시청 버튼 -->
-								<a
-									href="${pageContext.request.contextPath}/movie/html/movie-details.jsp"><span>Watch
-										Now</span> <i class="fa fa-angle-right"></i></a>
+								<a href="${pageContext.request.contextPath}/movie/html/movie-details.jsp"><span>Watch Now</span> <i class="fa fa-angle-right"></i></a>
 							</div>
 						</div>
 					</div>
@@ -175,7 +173,7 @@
 
                      endPage = endPage > totalPage ? totalPage : endPage;
 
-                       List<MovieDTO> movieList = mdao.getMovieList(startRow, endRow);
+                     List<MovieDTO> movieList = mdao.getMovieList(startRow, endRow);
                             CommentDAO cdao = new CommentDAO();
                             
                             for (MovieDTO movie : movieList) {
@@ -187,7 +185,7 @@
                         %>
                                 <div class="col-lg-4 col-md-6 col-sm-6">
                                     <div class="product__item">
-                                        <a href="${pageContext.request.contextPath}/movie/clickPoster.mo?movieSeq=<%=movie.getMovieSeq()%>">
+                                        <a href="${pageContext.request.contextPath}/movie/clickPoster.mo?movieSeq=<%=movie.getMovieSeq()%>" onclick="updateViewsOnPage(<%=movie.getMovieSeq()%>)">
                                             <div class="product__item__pic set-bg" data-setbg="<%=movie.getPosterUrl()%>">
                                                 <div class="comment">
                                                     <i class="fa fa-comments"></i><%=commentCount%>
@@ -202,7 +200,7 @@
                                                 <li><%= movie.getGenre() %></li>
                                             </ul>
                                             <h5>
-                                                <a href="movie-details.jsp?movieSeq=<%=movie.getMovieSeq()%>"><%= movie.getTitle() %></a>
+                                                <a href="movie-details.jsp?movieSeq=<%=movie.getMovieSeq()%>" onclick="updateViewsOnPage(<%=movie.getMovieSeq()%>)"><%= movie.getTitle() %></a>
                                             </h5>
                                         </div>
                                     </div>
@@ -360,6 +358,8 @@
 	<script
 		src="${pageContext.request.contextPath}/movie/html/js/owl.carousel.min.js"></script>
 	<script src="${pageContext.request.contextPath}/movie/html/js/main.js"></script>
+	<script src="${pageContext.request.contextPath}/movie/html/js/ajaxForLikes.js"></script>
+	<script src="${pageContext.request.contextPath}/movie/html/js/ajaxForView.js"></script>
 </body>
 
 </html>

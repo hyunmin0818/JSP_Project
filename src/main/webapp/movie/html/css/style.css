@@ -1080,10 +1080,49 @@ ol {
 }
 
 .product__sidebar__view {
-	position: relative;
-	margin-bottom: 80px;
-	cursor: pointer;
+   position: relative;
+   margin-bottom: 80px;
+   cursor: pointer;
+}
 
+/* 슬라이더 컨테이너 스타일 */
+.slider-container {
+  margin-top: 20px; /* 상단 여백 */
+  padding: 15px; /* 내부 여백 */
+  background-color: #000000; /* 배경색을 까만색으로 변경 */
+  border-radius: 8px; /* 테두리 둥글기 */
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* 그림자 효과 */
+}
+
+/* 슬라이더 상단 뷰 레인지 스타일 */
+#slider-topview-range {
+  margin: 20px 0; /* 상하 여백 */
+  height: 8px; /* 높이 */
+  background-color: #ccc; /* 배경색 */
+  border-radius: 4px; /* 테두리 둥글기 */
+}
+
+/* 슬라이더 핸들(조절 부분) 스타일 - noUiSlider 라이브러리용 */
+.noUi-handle {
+    background-color: #FFFFFF; /* 배경색을 하얀색으로 변경 */
+    border-radius: 50%; /* 테두리를 동그랗게 변경 */
+}
+
+/* 슬라이더가 활성화됐을 때의 스타일 (예시) */
+.noUi-connect {
+  background-color: #e53637; /* 활성화 시 배경색을 빨간색으로 변경 */
+}
+
+/* 선택된 범위를 표시하는 문구의 스타일 */
+.slider-container p {
+  color: #333; /* 글자색 */
+  font-size: 14px; /* 글자 크기 */
+  margin-top: 10px; /* 상단 여백 */
+}
+
+/* 선택된 범위 값을 표시하는 span 스타일 */
+#slider-range-value {
+  font-weight: bold; /* 글자 굵기 */
 }
 
 .product__sidebar__view .filter__controls {

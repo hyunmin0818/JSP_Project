@@ -255,7 +255,7 @@
                                     href="${pageContext.request.contextPath}/movie/clickPoster.mo?movieSeq=${genremovie.movieSeq}">
                                 <div class="product__sidebar__view__item set-bg" data-setbg="${genremovie.posterUrl}">
                                     <div class="view"><i class="fa fa-eye"></i></div>
-                                    <a href="#"
+                                    <a href="${pageContext.request.contextPath}/movie/clickPoster.mo?movieSeq=${genremovie.movieSeq}" onclick="updateViewsOnPage(${genremovie.movieSeq})">
                                        style="color: rgb(255, 255, 255); font-weight: 700; line-height: 26px;">${genremovie.title}</a>
                                     <!-- 추가적인 영화 정보 출력 -->
                                         <%-- <p>${genremovie.genre}</p> --%>
@@ -343,6 +343,7 @@
 <script src="${pageContext.request.contextPath}/movie/html/js/main.js"></script>
 <script src="${pageContext.request.contextPath}/movie/html/js/ajaxForLikes.js"></script>
 <script src="${pageContext.request.contextPath}/movie/html/js/login.js"></script>
+<script src="${pageContext.request.contextPath}/movie/html/js/ajaxForView.js"></script>
 <script>
     window.onload = function () {
         var deleteButtons = document.getElementsByClassName('deleteButton');
