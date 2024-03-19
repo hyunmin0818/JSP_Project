@@ -47,6 +47,7 @@
 	 <select id="getNextCommentId" resultType="int">
         SELECT IFNULL(MAX(comment_id), 0) + 1 FROM comment
     </select>
+    
      <update id="updateMovieViews" parameterType="int">
 	    UPDATE movie
 	    SET movieView = movieView + 1
@@ -58,5 +59,10 @@
 	    FROM movie
 	    WHERE movieSeq = #{movieSeq}
     </select>
+    
+<!--     <select id="getMovieDESC" resultType="moviedto">
+    	SELECT * FROM movie
+		ORDER BY movieView DESC;
+    </select> -->
     
 </mapper>

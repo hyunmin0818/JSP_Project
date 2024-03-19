@@ -105,6 +105,11 @@ public class MovieDAO {
 	public void addMovieViewCount(int movieId) {
 		sqlSession.update("Movie.updateMovieViews", movieId);
 	}
+	
+//	public List<MovieDTO> getMovieDESCAction() {
+//	    List<MovieDTO> movieList = sqlSession.selectList("getMovieDESC");
+//	    return movieList;
+//	}
 }
 
 
