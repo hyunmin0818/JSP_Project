@@ -27,7 +27,7 @@ $(document).ready(function(){
                         // Ajax 호출 - 좋아요 취소 기능 추가
                         $.ajax({
                             type: 'POST',
-                            url: 'LikeDecrease.lk',
+                            url: '/movie/LikeDecrease.lk',
                             data: {
                                 movieSeq: movieSeq,
                                 userId: userId,
