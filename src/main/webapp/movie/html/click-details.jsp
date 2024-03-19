@@ -301,17 +301,19 @@
                     </div>
                     <!-- 추천작 리스트 -->
                     <c:forEach items="${similarMovies}" var="genremovie" varStatus="status">
-                        <c:if test="${status.index >= 1 && status.index <= 4}">
-                            <!-- 영화 정보 출력 -->
-                            <a href="${pageContext.request.contextPath}/movie/clickPoster.mo?movieSeq=${genremovie.movieSeq}" onclick="updateViewsOnPage(${genremovie.movieSeq})">
-                                <div class="product__sidebar__view__item set-bg" data-setbg="${genremovie.posterUrl}">
-                                    <div class="view">
-                                        <i class="fa fa-eye"></i> ${movie.movieView}
-                                    </div>
-                                </div>
-                            </a>
-                        </c:if>
-                    </c:forEach>
+   						 <c:if test="${status.index >= 1 && status.index <= 4}">
+       							<!-- 영화 정보 출력 -->
+      							<div class="product__sidebar__view__item set-bg" data-setbg="${genremovie.posterUrl}" onclick="updateViewsOnPage(${genremovie.movieSeq})">
+              					 	<h5 ><a>${ genremovie.title}</a></h5>
+              					 	 <div class="product__item__text">
+                                            <li>코메디,어드벤처,가족</li>
+                                     </div>
+              					
+              					 
+              					 	<div class="view"><i class="fa fa-eye"></i> ${movie.movieView} </div>
+            					 </div>
+   						</c:if>
+					</c:forEach>
                 </div>
             </div>
         </div>
@@ -381,6 +383,15 @@
 <!-- Search model end -->
 
 <!-- Js Plugins -->
+<script>
+    function updateViewsOnPage(movieSeq) {
+        // updateViewsOnPage() 함수를 호출하여 영화 시퀀스를 전달
+        // 이동할 URL 설정
+        var url = '${pageContext.request.contextPath}/movie/clickPoster.mo?movieSeq=' + movieSeq ;
+        // 페이지 이동
+        window.location = url;
+    }
+</script>
 <script src="${pageContext.request.contextPath}/movie/html/js/jquery-3.3.1.min.js"></script>
 <script src="${pageContext.request.contextPath}/movie/html/js/bootstrap.min.js"></script>
 <script src="${pageContext.request.contextPath}/movie/html/js/player.js"></script>

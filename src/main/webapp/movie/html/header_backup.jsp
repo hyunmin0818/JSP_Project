@@ -76,8 +76,7 @@
                     <!-- 돋보기 검색 아이콘 -->
                           <a href="#" class="search-switch"><span class="icon_search"></span></a>
                      <!-- 사용자 아이콘 --> 
-                            <span class="icon_profile" href="${pageContext.request.contextPath}/movie/html/mypage.jsp"
-                             id="dropdown-toggle" data-bs-toggle="dropdown"></span>                    
+                            <a class="icon_profile" href="${pageContext.request.contextPath}/movie/mypage.ms" style="margin-right: 0 px;"></a>                    
 
                         <a href="${pageContext.request.contextPath}/movie/mypage.ms" id="youNeedLogin"><%=userId%></a>
                          |<a href="${pageContext.request.contextPath}/movie/logout.ms" id="youNeedLogout">로그아웃</a>
@@ -99,11 +98,7 @@
             <!-- 돋보기 아이콘 -->
 			<a href="#" class="search-switch"><span class="icon_search"></span></a> 
 			<!-- 사용자 아이콘 -->                     
-						 
-						   
-
-							   
-							   
+	
 							   <a href="${pageContext.request.contextPath}/movie/html/login.jsp" id="youNeedLogin">로그인</a>|
 							   <a href="${pageContext.request.contextPath}/movie/html/join.jsp" id="youNeedJoin">회원가입 </a>
 						   </div>

@@ -67,12 +67,9 @@
 				%>
 				<div class="col-lg-2">
 					<div class="header__logo">
-						<a
-							href="${pageContext.request.contextPath}/movie/html/loginOk_index.jsp">
+						<a href="${pageContext.request.contextPath}/movie/html/loginOk_index.jsp">
 							<!-- 	<a href="${pageContext.request.contextPath}/movie/html/index.jsp"> -->
-							<img
-							src="${pageContext.request.contextPath}/movie/html/img/logo2.png"
-							id="logo2" alt="">
+							<img src="${pageContext.request.contextPath}/movie/html/img/logo2.png" id="logo2" alt="">
 						</a>
 					</div>
 				</div>
