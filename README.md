@@ -8,15 +8,13 @@
 다른 사용자들과 리뷰를 공유하는 기능을 제공합니다.
 
 ## 주요 기능
-- 영화 예매: 사용자는 검색 및 예매 기능을 통해 영화 상영 일정을 확인하고 예매할 수 있습니다.
 - 리뷰 작성 및 확인: 사용자는 영화 시청 후 리뷰를 작성하고, 다른 사용자들의 리뷰를 확인할 수 있습니다.
-- 개인 프로필 및 기록 관리: 사용자는 개인 프로필을 설정하고, 예매 및 리뷰 기록을 관리할 수 있습니다.
 - 영화 정보 제공: 영화의 상세 정보, 감독, 출연진, 장르, 예고편 등의 다양한 정보를 제공합니다.
 
 ## 기술 스택
 - Frontend: HTML, CSS, JavaScript
-- Backend: Java, JSP, Spring Framework
-- Database: MySQL, Oracle 또는 AWS
+- Backend: Java, JSP, Spring Framework, AJAX, Lombok
+- Database: MySQL, AWS, RDS
 - 협업 및 버전 관리: Git, GitHub
 
 ## 프로젝트 목표
