@@ -34,6 +34,7 @@ public class LikeIncreaseAction implements Action {
 		    int updatedLikesCount = ldao.getLikesCount(ldto.getMovieLike());
 		    response.setContentType("application/json");
 		    try {
+				response.getWriter().write("liked");
 		        response.getWriter().write(String.valueOf(updatedLikesCount));
 		        System.out.println("좋아요가 성공적으로 추가되었습니다.");
 		    } catch (IOException e) {

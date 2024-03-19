@@ -28,6 +28,7 @@ public class LikeDecreaseAction implements Action {
 			int updatedLikesCount = ldao.getLikesCount(ldto.getMovieLike()); // 업데이트된 좋아요 수 가져오기
 			response.setContentType("application/json");
 			try {
+				response.getWriter().write("unliked");
 				response.getWriter().write(String.valueOf(updatedLikesCount)); // 업데이트 된 좋아요 수를 클라이언트로 전송
 			} catch(IOException e) {
 				e.printStackTrace();
