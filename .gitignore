@@ -4,6 +4,6 @@ putty
 *.class
 *.project
 *.jar
-*.jsp
+
 build/*
 .idea
