@@ -1,3 +1,7 @@
+<%@page import="com.movie.web.dao.CommentDAO"%>
+<%@page import="com.movie.web.dto.MovieDTO"%>
+<%@page import="java.util.List"%>
+<%@page import="com.movie.web.dao.MovieDAO"%>
 <%@page import="com.movie.web.dto.UserDTO" %>
 <%@page import="com.movie.web.dto.CommentDTO" %>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
@@ -85,24 +89,32 @@
 </div>
 <!-- Breadcrumb End -->
 <!-- Anime Section Begin -->
+<c:choose>
+	 <c:when test="${not empty movieInfo}">
+        <c:forEach var="movieinfo" items="${movieInfo}">
 <div class="css-yy4d6f e1yew28617"
      style="position: relative; height: 550px;">
-    <div class="css-stilcut"
-         style="background: url(https://an2-img.amz.wtchn.net/image/v2/UdinY7L06PQParoTrP1TAQ.jpg?jwt=ZXlKaGJHY2lPaUpJVXpJMU5pSjkuZXlKdmNIUnpJanBiSW1SZk1Ua3lNSGd4TURnd2NUZ3dJbDBzSW5BaU9pSXZkakl2YzNSdmNtVXZhVzFoWjJVdk1UQTJORGszTURBd056VTBOVGd4SW4wLk1RY1RhRC1YcXVPQ0VheG1SMmdiSFIzWEZ1RHpVRlVMU2ZOUEFXXzhxSlk) no-repeat center;">
-
+ 
+    <div class="css-stilcut" data-setbg =${movieinfo.stillUrl};>
 
         <div class="css-sdsdsd">
-
-            <h1 class="css-Title">${movie.title}</h1>
-            <div class="css-qnwpahr">${moviet.title}</div>
-            <div class="css-roqhddlf">${movie.releasedate}·${movie.genre }
-                · ${movie.nation}</div>
-            <div class="css-qkdduddlfwkdfmrnrrk">${movie.runtime}·
-                ${movie.rating}</div>
-            <div class="css-tkd">${movie.awards1}${movie.awards2}</div>
-
+	
+            <h1 class="css-Title">${movieinfo.title}</h1>
+            <div class="css-qnwpahr">${movieinfo.title}</div>
+            <div class="css-roqhddlf">${movieinfo.releaseDate}·${movieinfo.genre } · ${movieinfo.nation}</div>
+            <div class="css-qkdduddlfwkdfmrnrrk">${movieinfo.runtime}· ${movieinfo.rating}</div>
+            <div class="css-tkd">${movieinfo.awards1}${movieinfo.awards2}</div>
         </div>
     </div>
+	</c:forEach>
+</c:when>
+ <c:otherwise>
+                <hr
+                        style="border: none; border-top: 1px solid #08052e; width: 100%;">
+                <span style="color: white">상세 정보가 없습니다.</span>
+                </hr>
+            </c:otherwise>
+            </c:choose>
 </div>
 <section class="anime-details spad">
     <div class="container">
@@ -111,14 +123,13 @@
         <c:when test="${not empty movieInfo}">
         <c:forEach var="movieinfo" items="${movieInfo}">
         <div class="anime__details__content">
-
+	
 
             <div class="row" style="margin-top: 30px;">
 
                 <!-- 영화 이미지와 관련 정보 -->
                 <div class="col-lg-3">
-                    <div class="anime__details__pic set-bg"
-                         data-setbg="${movieinfo.posterUrl }">
+                    <div class="anime__details__pic set-bg" data-setbg="${movieinfo.posterUrl }">
                         <!--이미지-->
                     </div>
                 </div>
@@ -176,8 +187,7 @@
                         <div class="anime__details__btn">
                             <input type="hidden" name="movieSeq" value="${movieinfo.movieSeq}">
                             <input type="hidden" name="user_id" value="${userinfo.user_id}">
-                            <button id="likeButton" class="follow-btn"><i id="likeIcon" class="fa fa-heart-o">
-                            </i> Like
+                            <button id="likeButton" class="follow-btn"><i id="likeIcon" class="fa fa-heart-o"> </i> Like
                             </button>
                         </div>
                     </div>
@@ -199,7 +209,42 @@
             <div class="col-lg-8 col-md-8">
                 <div class="anime__details__review">
                     <div class="section-title">
-                        <h5>Reviews <i style="padding-left: 90%" class="fa fa-comments"></i>226</h5>
+                    <%
+                     MovieDAO mdao = new MovieDAO();
+                     int totalCnt = mdao.getMovieCnt();
+
+                     String temp = request.getParameter("page");
+                     int pageIndex = 0;
+                     try {
+                        pageIndex = temp == null ? 1 : Integer.parseInt(temp);
+                     } catch (NumberFormatException e) {
+                        pageIndex = 1; // 잘못된 파라미터 값이 전달될 경우 기본값으로 설정
+                     }
+
+                     int pageSize = 1;
+                     int endRow = pageIndex * pageSize; // 여기서 수정이 필요했음
+                     int startRow = endRow - pageSize + 1;
+
+                     int startPage = ((pageIndex - 1) / pageSize) * pageSize + 1;
+                     int endPage = startPage + pageSize - 1;
+                     int totalPage = (totalCnt - 1) / pageSize + 1;
+
+                     endPage = endPage > totalPage ? totalPage : endPage;
+
+                       List<MovieDTO> movieList = mdao.getMovieList(startRow, endRow);
+                            CommentDAO cdao = new CommentDAO();
+                            
+                            for (MovieDTO movie : movieList) {
+                              
+                                List<CommentDTO> comments = cdao.getCmByMovieSeq(movie.getMovieSeq());
+                                // 댓글 수 계산
+                                int commentCount = comments.size();
+         
+                        %>
+                        <h5>Reviews <i style="padding-left: 90%" class="fa fa-comments"></i><%=commentCount%></h5>
+                         <%
+                            }
+                           %>
                         <!-- 댓글-->
                     </div>
                     <!-- 리뷰 아이템 -->
@@ -219,9 +264,8 @@
                                         <p>${comment.comment}</p>
 
                                         <!-- 로그인한 사용자 ID와 리뷰 작성자 ID가 일치할 경우에만 삭제 버튼을 표시 -->
-                                        <c:if test="${comment.user_id == loggedInUser_id}">
-                                            <input type="button" value="삭제" class="deleteButton"
-                                                   onclick="deleteComment(${movieinfo.movieSeq})">
+                                       <c:if test="${comment.user_id == loggedInUser_id}">
+                                            <input type="button" value="삭제" class="deleteButton" onclick="deleteComment(${comment.comment_id})">
                                         </c:if>
                                     </div>
                                 </div>

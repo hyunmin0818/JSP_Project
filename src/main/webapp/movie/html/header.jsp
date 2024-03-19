@@ -79,9 +79,8 @@
                             <span class="icon_profile" href="${pageContext.request.contextPath}/movie/html/mypage.jsp"
  							id="dropdown-toggle" data-bs-toggle="dropdown"></span>                    
 
-						<a href="${pageContext.request.contextPath}/movie/mypage.ms"
-							id="youNeedLogin"><%=userId%></a> |<a href="${pageContext.request.contextPath}/movie/logout.ms"
-				id="youNeedLogout">로그아웃</a>
+						<a href="${pageContext.request.contextPath}/movie/mypage.ms" id="youNeedLogin"><%=userId%></a>
+						 |<a href="${pageContext.request.contextPath}/movie/logout.ms" id="youNeedLogout">로그아웃</a>
 					</div><!-- ${sessionscope.userinfo.user_id} -->
 				</div>
 				
@@ -101,22 +100,9 @@
 			<!-- 돋보기 아이콘 -->
                                  <a href="#" class="search-switch"><span class="icon_search"></span></a> 
              <!-- 사용자 아이콘 -->                     
-         <a href="${pageContext.request.contextPath}/movie/html/mypage.jsp">   <span class="icon_profile
- 							id="dropdown-toggle" data-bs-toggle="dropdown" 
- 							></span> </a>
                           
                             
-<!-- 						<span class="icon_profile arrow fa dropdown-toggle active arrow_carrot-down" -->
-<!-- 							id="dropdown-toggle" data-bs-toggle="dropdown" -->
-<!-- 							aria-expanded="false"><a href="${pageContext.request.contextPath}/movie/html/mypage.jsp"></a></span> -->
 
-<!--   네이베이션 활성화 안됨                  <ul class="dropup-center dropup dropdown-menu" aria-labelledby="dropdown-toggle"> -->
-<%--                                     <li> <a href="${pageContext.request.contextPath}/movie/html/login.jsp"><span class="dropdown-item">로그인</span></a></li> --%>
-<!--                                     <li> -->
-<!--                                         <hr class="dropdown-divider"> -->
-<!--                                     </li> -->
-<!--                                     <li> <a href="${pageContext.request.contextPath}/movie/html/join.jsp"><span class="dropdown-item">회원가입</span></a></li> -->
-<!--                                 </ul> -->
                                 
                                 
                                 <a href="${pageContext.request.contextPath}/movie/html/login.jsp" id="youNeedLogin">로그인</a>|

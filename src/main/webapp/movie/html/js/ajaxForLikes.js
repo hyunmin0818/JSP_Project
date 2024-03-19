@@ -61,3 +61,17 @@ $(document).ready(function(){
         });
     });
 });
+
+
+$(document).ready(function() {
+    $('#likeButton').click(function() {
+        var likeIcon = $(this).find('i');
+        if (likeIcon.hasClass('fa-heart-o')) {
+            likeIcon.removeClass('fa-heart-o').addClass('fa-heart');
+            $(this).html('<i class="fa fa-heart"></i>Unfollow');
+        } else {
+            likeIcon.removeClass('fa-heart').addClass('fa-heart-o');
+            $(this).html('<i class="fa fa-heart-o"></i> Like');
+        }
+    });
+});
