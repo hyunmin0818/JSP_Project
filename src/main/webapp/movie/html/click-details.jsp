@@ -92,10 +92,9 @@
 <c:choose>
 	 <c:when test="${not empty movieInfo}">
         <c:forEach var="movieinfo" items="${movieInfo}">
-<div class="css-yy4d6f e1yew28617"
-     style="position: relative; height: 550px;">
+<div class="css-yy4d6f e1yew28617" style="position: relative; height: 550px;">
  
-    <div class="css-stilcut" data-setbg =${movieinfo.stillUrl};>
+    <div class="css-stilcut" data-setbg ="${movieinfo.stillUrl}">
 
         <div class="css-sdsdsd">
 	
@@ -303,10 +302,10 @@
                     <c:forEach items="${similarMovies}" var="genremovie" varStatus="status">
    						 <c:if test="${status.index >= 1 && status.index <= 4}">
        							<!-- 영화 정보 출력 -->
-      							<div class="product__sidebar__view__item set-bg" data-setbg="${genremovie.posterUrl}" onclick="updateViewsOnPage(${genremovie.movieSeq})">
+      							<div class="product__sidebar__view__item set-bg" data-setbg="${genremovie.stillUrl}" onclick="updateViewsOnPage(${genremovie.movieSeq})">
               					 	<h5 ><a>${ genremovie.title}</a></h5>
               					 	 <div class="product__item__text">
-                                            <li>코메디,어드벤처,가족</li>
+                                            <li>${genremovie.genre}</li>
                                      </div>
               					
               					 

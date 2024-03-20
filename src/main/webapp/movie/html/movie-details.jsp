@@ -58,11 +58,11 @@
             <div class="col-lg-12">
                 <div class="breadcrumb__links">
                     <!-- 홈으로 이동하는 링크 -->
-                    <a href="./indexOk_index.jsp"><i class="fa fa-home"></i> Home</a>
+                    <a href="${pageContext.request.contextPath}/movie/html/loginOk_index.jsp"><i class="fa fa-home"></i> Home</a>
                     <!-- 카테고리 페이지로 이동하는 링크 -->
-                    <a href="">Categories</a>
+                    <a href="#">search</a>
                     <!-- 현재 페이지의 카테고리 이름을 표시하는 부분 -->
-                    <span>${movie.genre}</span>
+                    <span>${movie.genre }
                 </div>
             </div>
         </div>
@@ -70,40 +70,21 @@
 </div>
 <!-- Breadcrumb End -->
 <!-- Anime Section Begin -->
-<div class="css-yy4d6f e1yew28617"
-     style="position: relative; height: 550px;">
-    <div class="css-stilcut"
-         style="background: url(${movie.posterUrl}) no-repeat center;">
-        <div class="css-sdsdsd">
-
-            <h1 class="css-Title">${movie.title}</h1>
-            <div class="css-qnwpahr">${moviet.title}</div>
-            <div class="css-roqhddlf">${movie.releasedate}·${movie.genre }
-                · ${movie.nation}</div>
-            <div class="css-qkdduddlfwkdfmrnrrk">${movie.runtime}·
-                ${movie.rating}</div>
-            <div class="css-tkd">${movie.awards1}${movie.awards2}</div>
-
-        </div>
-    </div>
-</div>
 <section class="anime-details spad">
     <div class="container">
+    	<div class="section-title">
+                        <h5>you might like...</h5>
+                    </div>
         <c:choose>
         <c:when test="${movieList != null and fn:length(movieList) > 0 }">
         <c:forEach var="movie" items="${movieList}">
         <div class="anime__details__content">
-
             <div class="row" style="margin-top: 30px;">
-
                 <!-- 영화 이미지와 관련 정보 -->
                 <div class="col-lg-3">
-                    <div class="anime__details__pic set-bg"
-                         data-setbg="${movie.posterUrl }">
-                        <!--이미지-->
-                        <div class="view">
-                            <i class="fa fa-eye"></i> 9141
-                        </div>
+                	
+                    <div class="anime__details__pic set-bg" style="cursor: pointer;" data-setbg="${movie.posterUrl }" onclick="gourl('${pageContext.request.contextPath}/movie/clickPoster.mo?movieSeq=${ movie.getMovieSeq()}')">
+                        <script> function gourl(url) {  window.location.href = url;  }</script>
                         <!-- 조회수-->
                     </div>
                 </div>
@@ -117,7 +98,9 @@
                                     <h3><i style="padding-left: 22px" class="fa fa-eye"></i>${movieinfo.movieView}</h3>
                                 </div>
                             </div>
+                            <a href="${pageContext.request.contextPath}/movie/clickPoster.mo?movieSeq=${ movie.getMovieSeq()}" onclick="updateViewsOnPage(${ movie.getMovieSeq()}">
                             <h3>${movie.title}</h3>
+                            </a>
                             <span>${movie.titleEng}</span>
                         </div>
                         <!-- 영화 평점과 투표 수 -->
@@ -164,107 +147,20 @@
                             </button>
                         </div>
                     </div>
+        	<hr style="  margin-top: 100px; ">
                 </div>
+                
             </div>
+            
             </c:forEach>
             </c:when>
             <c:otherwise>
-                <hr
-                        style="border: none; border-top: 1px solid #08052e; width: 100%;">
-                <span style="color: white">상세 정보가 없습니다.</span>
+                <hr style="border: none; border-top: 1px solid #08052e; width: 100%;">
+               		 <span style="color: white">상세 정보가 없습니다.</span>
                 </hr>
             </c:otherwise>
             </c:choose>
-            <hr style="border: none; border-top: 1px solid #08052e; width: 100%;">
-
         </div>
-        <!-- 리뷰 목록 -->
-        <div class="row">
-            <div class="col-lg-8 col-md-8">
-                <div class="anime__details__review">
-                    <div class="section-title">
-                        <h5>Reviews <i style="padding-left: 94%" class="fa fa-comments"></i> 6 </h5>
-                        <!-- 리뷰 수 -->
-                    </div>
-                    <!-- 리뷰 아이템 -->
-                    <c:choose>
-                        <c:when test="${commentList != null and fn:length(commentList) > 0}">
-                            <c:forEach var="comment" items="${commentList}">
-                                <div class="anime__review__item">
-                                    <div class="anime__review__item__pic">
-                                        <img
-                                                src="https://d2u3dcdbebyaiu.cloudfront.net/uploads/atch_img/665/708d0162261869f0558a0a1cabea0b50_res.jpeg"
-                                                alt="">
-                                    </div>
-                                    <div class="anime__review__item__text">
-                                        <input type="hidden" name="movieSeq" value="${comment.movieSeq}">
-                                        <h6>${comment.user_id}<span>${comment.comment_time}</span>
-                                        </h6>
-                                        <p>${comment.comment}</p>
-
-                                        <!-- 로그인한 사용자 ID와 리뷰 작성자 ID가 일치할 경우에만 삭제 버튼을 표시 -->
-                                        <c:if test="${comment.user_id == loggedInUser_id}">
-                                            <input type="button" value="삭제" class="deleteButton"
-                                                   onclick="deleteComment(${comment.comment_id})">
-                                        </c:if>
-                                    </div>
-                                </div>
-                                <!-- 컨텐츠 있으면 뽑아오기 -->
-
-                                <!-- 사용자 리뷰 입력 폼 -->
-                            </c:forEach>
-                        </c:when>
-                        <c:otherwise>
-                            <div class="anime__review__item__text">
-                                <h6 align="center">댓글이 없습니다.</h6>
-                            </div>
-                        </c:otherwise>
-                    </c:choose>
-
-
-                    <div class="anime__details__form">
-                        <div class="section-title">
-                            <h5>Your Comment</h5>
-                        </div>
-                        <form name="commentForm" method="post"
-                              action="${pageContext.request.contextPath}/movie/addComment.mo">
-                            <input type="hidden" name="movieSeq"
-                                   value="${movieList[0].movieSeq}"> <input type="hidden"
-                                                                            name="comment_id"
-                                                                            value="${comment.comment_id }">
-                            <textarea name="comment" placeholder="Comment 를 작성해주세요">${comment.comment }</textarea>
-                            <button type="submit" style="float: right;">
-                                <i class="fa fa-location-arrow"></i> Review
-                            </button>
-                        </form>
-                    </div>
-                </div>
-            </div>
-            <!-- 사이드바 영역 -->
-            <div class="col-lg-4 col-md-4">
-                <div class="anime__details__sidebar">
-                    <div class="section-title">
-                        <h5>you might like...</h5>
-                    </div>
-                    <!-- 추천작 리스트 -->
-                    <c:forEach items="${similarMovies}" var="genremovie"
-                               varStatus="status">
-                        <c:if test="${status.index >= 1 && status.index <= 4}">
-                            <!-- 영화 정보 출력 -->
-                            <a
-                                    href="${pageContext.request.contextPath}/movie/clickPoster.mo?movieSeq=${genremovie.movieSeq}">
-                                <div class="product__sidebar__view__item set-bg" data-setbg="${genremovie.posterUrl}">
-                                    <div class="view"><i class="fa fa-eye"></i></div>
-                                    <a href="${pageContext.request.contextPath}/movie/clickPoster.mo?movieSeq=${genremovie.movieSeq}" onclick="updateViewsOnPage(${genremovie.movieSeq})">
-                                       style="color: rgb(255, 255, 255); font-weight: 700; line-height: 26px;">${genremovie.title}</a>
-                                    <!-- 추가적인 영화 정보 출력 -->
-                                        <%-- <p>${genremovie.genre}</p> --%>
-                                </div>
-                            </a>
-                        </c:if>
-                    </c:forEach>
-                </div>
-            </div>
         </div>
 </section>
 <!-- Anime Section End -->

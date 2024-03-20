@@ -1,12 +1,11 @@
 <%@page import="com.movie.web.dto.CommentDTO"%>
 <%@page import="com.movie.web.dao.CommentDAO"%>
-<%@page import="com.movie.web.dto.MovieDTO"%>
 <%@page import="java.util.List"%>
+<%@page import="com.movie.web.dto.MovieDTO"%>
 <%@page import="com.movie.web.dao.MovieDAO"%>
-<%@ page language="java" contentType="text/html; charset=UTF-8"
-   pageEncoding="UTF-8"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
-
+<%@taglib uri="http://java.sun.com/jsp/jstl/functions" prefix="fn"%>
 <!DOCTYPE html>
 <html lang="zxx">
 
@@ -16,27 +15,43 @@
 <meta name="keywords" content="Anime, unica, creative, html">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta http-equiv="X-UA-Compatible" content="ie=edge">
+<meta http-equiv="Content-Security-Policy"
+   content="upgrade-insecure-requests">
 <title>Anime | Template</title>
 
 <!-- Google Font -->
-
 <%@ include file="/movie/html/header.jsp"%>
-<link
-   href="https://fonts.googleapis.com/css2?family=Oswald:wght@300;400;500;600;700&display=swap"
-   rel="stylesheet">
-<link
-   href="https://fonts.googleapis.com/css2?family=Mulish:wght@300;400;500;600;700;800;900&display=swap"
-   rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Oswald:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Mulish:wght@300;400;500;600;700;800;900&display=swap"  rel="stylesheet">
 
-<!-- Css Styles -->
-<link rel="stylesheet" href="css/bootstrap.min.css" type="text/css">
-<link rel="stylesheet" href="css/font-awesome.min.css" type="text/css">
-<link rel="stylesheet" href="css/elegant-icons.css" type="text/css">
-<link rel="stylesheet" href="css/plyr.css" type="text/css">
-<link rel="stylesheet" href="css/nice-select.css" type="text/css">
-<link rel="stylesheet" href="css/owl.carousel.min.css" type="text/css">
-<link rel="stylesheet" href="css/slicknav.min.css" type="text/css">
-<link rel="stylesheet" href="css/style.css" type="text/css">
+<!-- Css Styles test -->
+<link
+   href="https://cdn.jsdelivr.net/npm/nouislider/distribute/nouislider.min.css"
+   rel="stylesheet">
+<link rel="stylesheet"
+   href="${pageContext.request.contextPath}/movie/html/css/bootstrap.min.css"
+   type="text/css">
+<link rel="stylesheet"
+   href="${pageContext.request.contextPath}/movie/html/css/font-awesome.min.css"
+   type="text/css">
+<link rel="stylesheet"
+   href="${pageContext.request.contextPath}/movie/html/css/elegant-icons.css"
+   type="text/css">
+<link rel="stylesheet"
+   href="${pageContext.request.contextPath}/movie/html/css/plyr.css"
+   type="text/css">
+<link rel="stylesheet"
+   href="${pageContext.request.contextPath}/movie/html/css/nice-select.css"
+   type="text/css">
+<link rel="stylesheet"
+   href="${pageContext.request.contextPath}/movie/html/css/owl.carousel.min.css"
+   type="text/css">
+<link rel="stylesheet"
+   href="${pageContext.request.contextPath}/movie/html/css/slicknav.min.css"
+   type="text/css">
+<link rel="stylesheet"
+   href="${pageContext.request.contextPath}/movie/html/css/style.css"
+   type="text/css">
 
 <script
    src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"
@@ -183,32 +198,26 @@
                </div>
             </div>
             <div class="col-lg-4 col-md-6 col-sm-8">
-               <div class="product__sidebar">
-                  <div class="product__sidebar__view">
-                     <div class="section-title">
+            <div class="product__sidebar">
+                <div class="product__sidebar__view">
+                    <div class="section-title">
                         <h5>Top Views</h5>
-                     </div>
-
-                     <div class="filter__gallery">
-
-                    
-                     
-                        <div class="product__sidebar__view__item set-bg mix day years"
-                           data-setbg="img/sidebar/tv-1.jpg">
-
-                           <div class="view">
-                              <i class="fa fa-eye"></i>
-                           </div>
-                           <h5>
-                              <%-- <a href="movie-details.jsp?movieSeq=<%=movie.getMovieSeq()%>" onclick="updateViewsOnPage(<%=movie.getMovieSeq()%>)"><%= movie.getTitle() %></a> --%>
-                           </h5>
+                    </div>
+                    <div class="filter__gallery">
+                        <div class="slider-container">
+                            <div id="slider-topview-range"></div>
+                                <p> <span id="slider-range-value"></span></p>
                         </div>
-       
-                     </div>
-                  </div>
-                  <div class="product__sidebar__comment"></div>
-               </div>
+                    </div>
+                </div>
+                <div class="product__sidebar__comment" id="topview-movies">
+                    <!-- 여기에 댓글 관련 내용 추가 -->
+                    <div class="product__sidebar__view__item" >
+                        <h5><a href="#">${movies.title}</a></h5>
+                    </div>
+                </div>
             </div>
+        </div>
    </section>
 
 
@@ -270,15 +279,18 @@
    <!-- Search model end -->
 
    <!-- Js Plugins -->
-   <script src="js/jquery-3.3.1.min.js"></script>
-   <script src="js/bootstrap.min.js"></script>
-   <script src="js/player.js"></script>
-   <script src="js/jquery.nice-select.min.js"></script>
-   <script src="js/mixitup.min.js"></script>
-   <script src="js/jquery.slicknav.js"></script>
-   <script src="js/owl.carousel.min.js"></script>
-   <script src="js/main.js"></script>
 
+   <script src="${pageContext.request.contextPath}/movie/html/js/jquery-3.3.1.min.js"></script>
+   <script src="${pageContext.request.contextPath}/movie/html/js/bootstrap.min.js"></script>
+   <script src="${pageContext.request.contextPath}/movie/html/js/player.js"></script>
+   <script  src="${pageContext.request.contextPath}/movie/html/js/jquery.nice-select.min.js"></script>
+   <script  src="${pageContext.request.contextPath}/movie/html/js/mixitup.min.js"></script>
+   <script  src="${pageContext.request.contextPath}/movie/html/js/jquery.slicknav.js"></script>
+   <script src="${pageContext.request.contextPath}/movie/html/js/owl.carousel.min.js"></script>
+   <script src="${pageContext.request.contextPath}/movie/html/js/main.js"></script>
+   <script src="https://cdn.jsdelivr.net/npm/nouislider/distribute/nouislider.min.js"></script>
+   <script src="https://cdn.jsdelivr.net/npm/@babel/polyfill/dist/polyfill.min.js"></script>
+   <script src="${pageContext.request.contextPath}/movie/html/js/date-slider.js"></script>
 
 </body>
 

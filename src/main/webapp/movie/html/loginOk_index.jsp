@@ -5,6 +5,7 @@
 <%@page import="com.movie.web.dao.MovieDAO"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+<%@taglib uri="http://java.sun.com/jsp/jstl/functions" prefix="fn"%>
 <!DOCTYPE html>
 <html lang="zxx">
 
@@ -15,127 +16,126 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta http-equiv="X-UA-Compatible" content="ie=edge">
 <meta http-equiv="Content-Security-Policy"
-	content="upgrade-insecure-requests">
+   content="upgrade-insecure-requests">
 <title>Anime | Template</title>
 
 <!-- Google Font -->
 <%@ include file="/movie/html/header.jsp"%>
-<link
-	href="https://fonts.googleapis.com/css2?family=Oswald:wght@300;400;500;600;700&display=swap"
-	rel="stylesheet">
-<link
-	href="https://fonts.googleapis.com/css2?family=Mulish:wght@300;400;500;600;700;800;900&display=swap"
-	rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Oswald:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Mulish:wght@300;400;500;600;700;800;900&display=swap"  rel="stylesheet">
 
 <!-- Css Styles test -->
+<link
+   href="https://cdn.jsdelivr.net/npm/nouislider/distribute/nouislider.min.css"
+   rel="stylesheet">
 <link rel="stylesheet"
-	href="${pageContext.request.contextPath}/movie/html/css/bootstrap.min.css"
-	type="text/css">
+   href="${pageContext.request.contextPath}/movie/html/css/bootstrap.min.css"
+   type="text/css">
 <link rel="stylesheet"
-	href="${pageContext.request.contextPath}/movie/html/css/font-awesome.min.css"
-	type="text/css">
+   href="${pageContext.request.contextPath}/movie/html/css/font-awesome.min.css"
+   type="text/css">
 <link rel="stylesheet"
-	href="${pageContext.request.contextPath}/movie/html/css/elegant-icons.css"
-	type="text/css">
+   href="${pageContext.request.contextPath}/movie/html/css/elegant-icons.css"
+   type="text/css">
 <link rel="stylesheet"
-	href="${pageContext.request.contextPath}/movie/html/css/plyr.css"
-	type="text/css">
+   href="${pageContext.request.contextPath}/movie/html/css/plyr.css"
+   type="text/css">
 <link rel="stylesheet"
-	href="${pageContext.request.contextPath}/movie/html/css/nice-select.css"
-	type="text/css">
+   href="${pageContext.request.contextPath}/movie/html/css/nice-select.css"
+   type="text/css">
 <link rel="stylesheet"
-	href="${pageContext.request.contextPath}/movie/html/css/owl.carousel.min.css"
-	type="text/css">
+   href="${pageContext.request.contextPath}/movie/html/css/owl.carousel.min.css"
+   type="text/css">
 <link rel="stylesheet"
-	href="${pageContext.request.contextPath}/movie/html/css/slicknav.min.css"
-	type="text/css">
+   href="${pageContext.request.contextPath}/movie/html/css/slicknav.min.css"
+   type="text/css">
 <link rel="stylesheet"
-	href="${pageContext.request.contextPath}/movie/html/css/style.css"
-	type="text/css">
+   href="${pageContext.request.contextPath}/movie/html/css/style.css"
+   type="text/css">
 
 <script
-	src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"
-	integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r"
-	crossorigin="anonymous"></script>
+   src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"
+   integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r"
+   crossorigin="anonymous"></script>
 <script
-	src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.min.js"
-	integrity="sha384-0pUGZvbkm6XF6gxjEnlmuGrJXVbNuzT9qBBavbLwCsOGabYfZo0T0to5eqruptLy"
-	crossorigin="anonymous"></script>
+   src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.min.js"
+   integrity="sha384-0pUGZvbkm6XF6gxjEnlmuGrJXVbNuzT9qBBavbLwCsOGabYfZo0T0to5eqruptLy"
+   crossorigin="anonymous"></script>
 </head>
 
 <body>
-	<!-- Page Preloder -->
-	<div id="preloder">
-		<div class="loader"></div>
-	</div>
+   <!-- Page Preloder -->
+   <div id="preloder">
+      <div class="loader"></div>
+   </div>
 
-	<!-- Header Section Begin -->
-	<header class="header">
-		<div class="container">
+   <!-- Header Section Begin -->
+   <header class="header">
+      <div class="container"></div>
+   </header>
+   <!-- Header End -->
 
-		</div>
-	</header>
-	<!-- Header End -->
+   <!-- Hero Section Begin -->
+   <section class="hero">
+      <div class="container">
+         <!-- 히어로 슬라이더 -->
+         <div class="hero__slider owl-carousel">
+            <!-- 히어로 아이템 1 -->
+            <div class="hero__items set-bg" data-setbg="img/hero/pamyo.jpg">
+               <div class="row">
+                  <div class="col-lg-6">
+                     <!-- 히어로 텍스트 -->
+                     <div class="hero__text">
+                        <!-- 라벨 -->
+                        <!-- <div class="label">Mystery</div> -->
+                        <!-- 제목 -->
+                        <h2>파묘</h2>
+                        <!-- 내용 -->
+                        <p>험한 것이 나왔다...</p>
+                        <!-- 시청 버튼 -->
+                        <a
+                           href="${pageContext.request.contextPath}/movie/html/movie-details.jsp"><span>Watch
+                              Now</span> <i class="fa fa-angle-right"></i></a>
+                     </div>
+                  </div>
+               </div>
+            </div>
+            <!-- 히어로 아이템 2 -->
+            <c:forEach var="movie" items="${movie.randomMovies}">
+               <div class="hero__items set-bg"
+                  style="background-image: url('http://file.koreafilm.or.kr/thm/02/99/18/32/tn_DPF028732.jpg');">
+                  <div class="row">
+                     <div class="col-lg-6">
+                        <div class="hero__text">
+                           <div class="label">${movie.title}</div>
+                           <h2>${movie.title}</h2>
+                           <p>After 30 days of travel across the world...</p>
+                           <a href="#"><span>Watch Now</span> <i
+                              class="fa fa-angle-right"></i></a>
+                        </div>
+                     </div>
+                  </div>
+               </div>
+            </c:forEach>
+            <div class="hero__items set-bg" data-setbg="img/hero/hero-1.jpg">
+               <div class="row">
+                  <div class="col-lg-6">
+                     <div class="hero__text">
+                        <div class="label">${movie.title}</div>
+                        <h2>Fate / Stay Night: Unlimited Blade Works</h2>
+                        <p>After 30 days of travel across the world...</p>
+                        <a href="#"><span>Watch Now</span> <i
+                           class="fa fa-angle-right"></i></a>
+                     </div>
+                  </div>
+               </div>
+            </div>
+         </div>
+      </div>
+   </section>
+   <!-- Hero Section End -->
 
-	<!-- Hero Section Begin -->
-	<section class="hero">
-		<div class="container">
-			<!-- 히어로 슬라이더 -->
-			<div class="hero__slider owl-carousel">
-				<!-- 히어로 아이템 1 -->
-				<div class="hero__items set-bg" data-setbg="img/hero/pamyo.jpg">
-					<div class="row">
-						<div class="col-lg-6">
-							<!-- 히어로 텍스트 -->
-							<div class="hero__text">
-								<!-- 라벨 -->
-								<!-- <div class="label">Mystery</div> -->
-								<!-- 제목 -->
-								<h2>파묘</h2>
-								<!-- 내용 -->
-								<p>험한 것이 나왔다...</p>
-								<!-- 시청 버튼 -->
-								<a href="${pageContext.request.contextPath}/movie/html/movie-details.jsp"><span>Watch Now</span> <i class="fa fa-angle-right"></i></a>
-							</div>
-						</div>
-					</div>
-				</div>
-				<!-- 히어로 아이템 2 -->
-				<c:forEach var="movie" items="${movie.movieList}">
-					<div class="hero__items set-bg"
-						style="background-image: url('http://file.koreafilm.or.kr/thm/02/99/18/32/tn_DPF028732.jpg');">
-						<div class="row">
-							<div class="col-lg-6">
-								<div class="hero__text">
-									<div class="label">${movie.title}</div>
-									<h2>${movie.title}</h2>
-									<p>After 30 days of travel across the world...</p>
-									<a href="#"><span>Watch Now</span> <i
-										class="fa fa-angle-right"></i></a>
-								</div>
-							</div>
-						</div>
-					</div>
-				</c:forEach>
-				<div class="hero__items set-bg" data-setbg="img/hero/hero-1.jpg">
-					<div class="row">
-						<div class="col-lg-6">
-							<div class="hero__text">
-								<div class="label">${movie.title}</div>
-								<h2>Fate / Stay Night: Unlimited Blade Works</h2>
-								<p>After 30 days of travel across the world...</p>
-								<a href="#"><span>Watch Now</span> <i
-									class="fa fa-angle-right"></i></a>
-							</div>
-						</div>
-					</div>
-				</div>
-			</div>
-		</div>
-	</section>
-	<!-- Hero Section End -->
-
-	<!-- Product Section Begin -->
+   <!-- Product Section Begin -->
    <section class="product spad">
       <div class="container">
          <div class="row">
@@ -173,7 +173,7 @@
 
                      endPage = endPage > totalPage ? totalPage : endPage;
 
-                     List<MovieDTO> movieList = mdao.getMovieList(startRow, endRow);
+                       List<MovieDTO> movieList = mdao.getMovieList(startRow, endRow);
                             CommentDAO cdao = new CommentDAO();
                             
                             for (MovieDTO movie : movieList) {
@@ -186,7 +186,7 @@
                                 <div class="col-lg-4 col-md-6 col-sm-6">
                                     <div class="product__item">
                                         <a href="${pageContext.request.contextPath}/movie/clickPoster.mo?movieSeq=<%=movie.getMovieSeq()%>" onclick="updateViewsOnPage(<%=movie.getMovieSeq()%>)">
-                                            <div class="product__item__pic set-bg" data-setbg="<%=movie.getPosterUrl()%>">
+                                            <div class="product__item__pic set-bg" data-setbg="<%=movie.getPosterUrl()%>" >
                                                 <div class="comment">
                                                     <i class="fa fa-comments"></i><%=commentCount%>
                                                 </div>
@@ -242,124 +242,114 @@
                </div>
             </div>
             <div class="col-lg-4 col-md-6 col-sm-8">
-               <div class="product__sidebar">
-                  <div class="product__sidebar__view">
-                     <div class="section-title">
+            <div class="product__sidebar">
+                <div class="product__sidebar__view">
+                    <div class="section-title">
                         <h5>Top Views</h5>
-                     </div>
-
-                     <div class="filter__gallery">
-
-                    
-                     
-                        <div class="product__sidebar__view__item set-bg mix day years"
-                           data-setbg="img/sidebar/tv-1.jpg">
-
-                           <div class="view">
-                              <i class="fa fa-eye"></i>
-                           </div>
-                           <h5>
-                              <a href="#">Boruto: Naruto next generations</a>
-                           </h5>
+                    </div>
+                    <div class="filter__gallery">
+                        <div class="slider-container">
+                            <div id="slider-topview-range"></div>
+                                <p> <span id="slider-range-value"></span></p>
                         </div>
-                        <!-- 반복문  -->
-                        <div class="product__sidebar__view__item set-bg mix day years"
-                           data-setbg="img/sidebar/tv-1.jpg">
-
-                           <div class="view">
-                              <i class="fa fa-eye"></i>
-                           </div>
-                           <h5>
-                              <a href="#">Boruto: Naruto next generations</a>
-                           </h5>
-                        </div>
-       				<!-- 반복문  -->
-                     </div>
-                  </div>
-                  <div class="product__sidebar__comment"></div>
-               </div>
+                    </div>
+                </div>
+                <div class="product__sidebar__comment" id="topview-movies">
+                    <div class="product__sidebar__view__item" >
+                        <h5 ><a>${movies.title}</a></h5>
+              				<div class="product__item__text">
+                              <li>${movies.genre}</li>
+                            </div>
+                    </div>
+                </div>
             </div>
+        </div>
    </section>
 
 
    <!-- Product Section Begin end -->
 
-	<!-- Footer Section Begin -->
-	<footer class="footer">
-		<div class="page-up">
-			<a href="#" id="scrollToTopButton"><span class="arrow_carrot-up"></span></a>
-		</div>
-		<div class="container">
-			<div class="row">
-				<div class="col-lg-3">
-					<div class="footer__logo">
-						<a href="${pageContext.request.contextPath}/movie/html/index.jsp"><img
-							src="${pageContext.request.contextPath}/movie/html/img/logo2.png" alt=""></a>
-					</div>
-				</div>
-				<div class="col-lg-6">
-					<div class="footer__nav">
-						<ul>
-							<li class="active"><a
-								href="${pageContext.request.contextPath}/movie/html/index.jsp">홈</a></li>
-							<li><a
-								href="${pageContext.request.contextPath}/movie/html/default.jsp">고객센터</a></li>
-							<li><a href="#">블로그</a></li>
+   <!-- Footer Section Begin -->
+   <footer class="footer">
+      <div class="page-up">
+         <a href="#" id="scrollToTopButton"><span class="arrow_carrot-up"></span></a>
+      </div>
+      <div class="container">
+         <div class="row">
+            <div class="col-lg-3">
+               <div class="footer__logo">
+                  <a href="${pageContext.request.contextPath}/movie/html/index.jsp"><img
+                     src="${pageContext.request.contextPath}/movie/html/img/logo2.png"
+                     alt=""></a>
+               </div>
+            </div>
+            <div class="col-lg-6">
+               <div class="footer__nav">
+                  <ul>
+                     <li class="active"><a
+                        href="${pageContext.request.contextPath}/movie/html/index.jsp">홈</a></li>
+                     <li><a
+                        href="${pageContext.request.contextPath}/movie/html/default.jsp">고객센터</a></li>
+                     <li><a href="#">블로그</a></li>
 
-						</ul>
-					</div>
-				</div>
-				<div class="col-lg-3">
-					<p>
-						<!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
-						Copyright &copy;
-						<script>
-							document.write(new Date().getFullYear());
-						</script>
-						All rights reserved | This template is made with <i
-							class="fa fa-heart" aria-hidden="true"></i> by <a
-							href="https://colorlib.com" target="_blank">Colorlib</a>
-						<!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
-					</p>
+                  </ul>
+               </div>
+            </div>
+            <div class="col-lg-3">
+               <p>
+                  <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+                  Copyright &copy;
+                  <script>
+                     document.write(new Date().getFullYear());
+                  </script>
+                  All rights reserved | This template is made with <i
+                     class="fa fa-heart" aria-hidden="true"></i> by <a
+                     href="https://colorlib.com" target="_blank">Colorlib</a>
+                  <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+               </p>
 
-				</div>
-			</div>
-		</div>
-	</footer>
-	<!-- Footer Section End -->
+            </div>
+         </div>
+      </div>
+   </footer>
+   <!-- Footer Section End -->
 
-	<!-- Search model Begin -->
-	<div class="search-model">
-		<div class="h-100 d-flex align-items-center justify-content-center">
-			<div class="search-close-switch">
-				<i class="icon_close"></i>
-			</div>
-			<form class="search-model-form">
-				<input type="text" id="search-input" placeholder="Search here.....">
-			</form>
-		</div>
-	</div>
-	<!-- Search model end -->
+   <!-- Search model Begin -->
+   <div class="search-model">
+      <div class="h-100 d-flex align-items-center justify-content-center">
+         <div class="search-close-switch">
+            <i class="icon_close"></i>
+         </div>
+         <form class="search-model-form">
+            <input type="text" id="search-input" placeholder="Search here.....">
+         </form>
+      </div>
+   </div>
+   <!-- Search model end -->
 
-	<!-- Js Plugins -->
+   <!-- Js Plugins -->
 
-	<script
-		src="${pageContext.request.contextPath}/movie/html/js/jquery-3.3.1.min.js"></script>
-	<script
-		src="${pageContext.request.contextPath}/movie/html/js/bootstrap.min.js"></script>
-	<script
-		src="${pageContext.request.contextPath}/movie/html/js/player.js"></script>
-	<script
-		src="${pageContext.request.contextPath}/movie/html/js/jquery.nice-select.min.js"></script>
-	<script
-		src="${pageContext.request.contextPath}/movie/html/js/mixitup.min.js"></script>
-	<script
-		src="${pageContext.request.contextPath}/movie/html/js/jquery.slicknav.js"></script>
-	<script
-		src="${pageContext.request.contextPath}/movie/html/js/owl.carousel.min.js"></script>
-	<script src="${pageContext.request.contextPath}/movie/html/js/main.js"></script>
-	<script src="${pageContext.request.contextPath}/movie/html/js/ajaxForLikes.js"></script>
-	<script src="${pageContext.request.contextPath}/movie/html/js/ajaxForView.js"></script>
+   <script
+      src="${pageContext.request.contextPath}/movie/html/js/jquery-3.3.1.min.js"></script>
+   <script
+      src="${pageContext.request.contextPath}/movie/html/js/bootstrap.min.js"></script>
+   <script
+      src="${pageContext.request.contextPath}/movie/html/js/player.js"></script>
+   <script
+      src="${pageContext.request.contextPath}/movie/html/js/jquery.nice-select.min.js"></script>
+   <script
+      src="${pageContext.request.contextPath}/movie/html/js/mixitup.min.js"></script>
+   <script
+      src="${pageContext.request.contextPath}/movie/html/js/jquery.slicknav.js"></script>
+   <script
+      src="${pageContext.request.contextPath}/movie/html/js/owl.carousel.min.js"></script>
+   <script src="${pageContext.request.contextPath}/movie/html/js/main.js"></script>
+   <script
+      src="https://cdn.jsdelivr.net/npm/nouislider/distribute/nouislider.min.js"></script>
+   <script
+      src="https://cdn.jsdelivr.net/npm/@babel/polyfill/dist/polyfill.min.js"></script>
+   <script
+      src="${pageContext.request.contextPath}/movie/html/js/date-slider.js"></script>
 </body>
 
 </html>
