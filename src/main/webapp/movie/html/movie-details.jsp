@@ -138,17 +138,16 @@
                         <!-- 영화 관련 버튼 -->
                         <div class="anime__details__btn" >
                         <div style="position: relative;">
-                                <div style="position: absolute;  top: 0; text-align: right;">
+                                <div style="position: absolute;  top: 0; text-align: right; display: flex;">
                               
-                                   <%--  <h3><i style="padding-left: 22px" class="fa fa-eye"></i>${movie.movieView}</h3>
-                                    <h3><i style="padding-left: 22px" class="fa fa-comments"></i>${movie.commentCount}}</h3>  
-                                    <h3><i style="padding-left: 22px" class="fa fa-heart"></i>${movie.movie_likes}</h3> --%>
+                                   <h3><i style="padding-left: 22px" class="fa fa-eye"></i>${movie.movieView}</h3>
+                                    <%-- <h3><i style="padding-left: 22px" class="fa fa-comments"></i>${movie.commentCount}}</h3>  --%> 
+                                    <h3><i style="padding-left: 22px" class="fa fa-heart"></i>${movie.movie_likes}</h3> 
                                                            
                                 </div>
                             </div>
-                            <button id="likeButton" class="follow-btn">
-                                <i id="likeIcon" class="fa fa-heart-o"></i>Like
-                            </button>
+                           <a class="site-btn"  style=" float: right;" 
+                           href="${pageContext.request.contextPath}/movie/clickPoster.mo?movieSeq=${ movie.getMovieSeq()}" onclick="updateViewsOnPage(${ movie.getMovieSeq()}"><i id="likeIcon" ></i>Join</a>
                         </div>
                     </div>
         	<hr style="  margin-top: 100px; ">
