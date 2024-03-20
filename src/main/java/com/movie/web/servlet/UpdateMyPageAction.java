@@ -26,7 +26,6 @@ public class UpdateMyPageAction implements Action{
         // 업데이트 성공 여부
         boolean result = udao.updateUserinfo(user_id, username, userphone, userbirth, email);
 		
-		
 		 if(result) {
 	            // 업데이트 성공 시, 마이페이지로 리다이렉트
 	            forward.setRedirect(true); // 리다이렉트 방식으로 전송

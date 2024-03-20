@@ -2,7 +2,9 @@ package com.movie.web.dao;
 
 import java.sql.Connection;
 
+import java.util.Date;
 import java.sql.PreparedStatement;
+import java.text.SimpleDateFormat;
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
 import java.util.HashMap;
@@ -32,6 +34,7 @@ public class MovieDAO {
 	   
 	   public MovieDAO (){
 	      sqlSession = factory.openSession(true);
+	     
 	   }
 	   public void insertMovie(Map<String, Object> map) {
 	        sqlSession.insert("mapper.movieinsert", map);
@@ -96,19 +99,22 @@ public class MovieDAO {
 	}
 	
 	// 영화의 조회수를 추가하는 메서드
-	public void updateMovieViews(int movieId) {
-	    sqlSession.update("Movie.updateMovieViews", movieId);
+	public void updateMovieViews(int movieSeq) {
+	    sqlSession.update("Movie.updateMovieViews", movieSeq);
+	    System.out.println("요기까진 왔음");
 	}
 
 	// 영화의 조회수를 가져오는 메서드
-	public int getMovieViews(int movieId) {
-	    return sqlSession.selectOne("Movie.getMovieViews", movieId);
+	public Integer getMovieViews(int movieSeq) {
+	    return sqlSession.selectOne("Movie.getMovieViews", movieSeq);
+	    
 	}
 
-	// 영화의 조희수를 올리는 메서드
-	public void addMovieViewCount(int movieId) {
-		sqlSession.update("Movie.updateMovieViews", movieId);
-	}
+//	// 영화의 조희수를 올리는 메서드
+//	public void addMovieViewCount(int movieId) {
+//		sqlSession.update("Movie.updateMovieViews", movieId);
+//	}
+	
 	public List<MovieDTO> selectMoviesByViewCount(LocalDate startDate, LocalDate endDate) {
 	    HashMap<String, Object> params = new HashMap<>();
 
@@ -135,22 +141,21 @@ public class MovieDAO {
 	    return movies.stream().limit(7).collect(Collectors.toList());
 	    
 	}
-	// 큰 슬라이더에 쓸 개봉일 내림차순
-			public List<MovieDTO> selectMoviesByReleaseDate() {
-	        List<MovieDTO> movieList = null;
-	        try {
-	            // 이번에는 파라미터가 필요 없으므로 별도의 맵을 만들지 않습니다.
-	            movieList = sqlSession.selectList("Movie.selectMoviesByReleaseDate");
-	        } catch (Exception e) {
-	            e.printStackTrace();
-	        }
-	        return movieList;
-	    }
+		
+		// 큰 슬라이더에 쓸 개봉일 내림차순
+		public List<MovieDTO> selectMoviesByReleaseDate() {
+        List<MovieDTO> movieList = null;
+        try {
+            // 이번에는 파라미터가 필요 없으므로 별도의 맵을 만들지 않습니다.
+            movieList = sqlSession.selectList("Movie.selectMoviesByReleaseDate");
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        return movieList;
+    }
 	
-//	public List<MovieDTO> getMovieDESCAction() {
-//	    List<MovieDTO> movieList = sqlSession.selectList("getMovieDESC");
-//	    return movieList;
-//	}
-}
+	}
+
+
 
 

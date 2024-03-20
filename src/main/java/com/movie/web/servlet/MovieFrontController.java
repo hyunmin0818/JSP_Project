@@ -60,24 +60,11 @@ public class MovieFrontController extends HttpServlet {
          case "/movie/deleteComment.mo": 
             forward = new DeleteCommentAction().execute(req, resp);
             break; 
-         case "/movie/addView.mo" :
-       	  forward = new AddMovieViewAction().execute(req, resp);
-       	  	break;
-         case "/movie/AddMovieView.mo":
-        	 forward = new AddMovieViewAction().execute(req, resp);
-        	 break;
+
          case "/movie/getMoviesByView.mo":
         	forward = new GetMoviesByViewCountAction().execute(req, resp); // FetchMoviesAction은 새로 구현해야 하는 액션 클래스입니다.
         	 break;
-      
-
-            
-//         case "/movie/getMovieView.mo":
-//        	 forward = new getMovieViewAction().execute(req, resp);
-//        	 break;
-//         case "/movie/getMovieDESC.mo":
-//        	 forward = new getMovieDESCAction().execute(req, resp);
-//        	 break;
+     
       }
       
       if (forward != null) {
