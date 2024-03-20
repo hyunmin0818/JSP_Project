@@ -28,7 +28,7 @@ Instead of a list of all class selectors,
 you can use the generic selector below, but it's slower:
 [class*="your-class-prefix"] {
 */
-.icon_search, .icon_lock , .icon_mail,.icon_id ,.icon_profile{
+.icon_search, .icon_lock , .icon_mail,.icon_id ,.icon_profile ,.arrow_carrot-left ,.arrow_carrot-right{
 font-family: 'ElegantIcons';
    speak: none;
    font-style: normal;
@@ -55,4 +55,10 @@ font-family: 'ElegantIcons';
 }
 .icon_profile:before {
    content: "\e08a";
+}
+.arrow_carrot-left:before {
+   content: "\34";
+}
+.arrow_carrot-right:before {
+    content: "\35";
 }

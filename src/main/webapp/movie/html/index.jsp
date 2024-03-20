@@ -86,7 +86,82 @@
    <!-- Hero Section Begin -->
    <section class="hero">
       <div class="container">
-      
+         <!-- 히어로 슬라이더 -->
+         <div class="hero__slider owl-carousel">
+            <!-- 히어로 아이템 1 -->
+            <div class="hero__items set-bg" data-setbg="img/hero/pamyo.jpg">
+               <div class="row">
+                  <div class="col-lg-6">
+                     <!-- 히어로 텍스트 -->
+                     <div class="hero__text">
+                        <!-- 라벨 -->
+                        <div class="label">Mystery</div> 
+                        <!-- 제목 -->
+                        <h2>파묘</h2>
+                        <!-- 내용 -->
+                        <p>험한 것이 나왔다...</p>
+                        <!-- 시청 버튼 -->
+                        <a
+                           href="${pageContext.request.contextPath}/movie/html/movie-details.jsp"><span>Watch
+                              Now</span> <i class="fa fa-angle-right"></i></a>
+                     </div>
+                  </div>
+               </div>
+            </div>
+            <!-- 히어로 아이템 2 -->
+            <div class="hero__items set-bg" data-setbg="https://cdn.mhnse.com/news/photo/202402/252466_269385_3448.jpeg">
+               <div class="row">
+                  <div class="col-lg-6">
+                     <div class="hero__text">
+                        <div class="label">Action</div>
+                        <h2>듄: 파트  2 </h2>
+                        <p>After 30 days of travel across the world...</p>
+                        <a href="#"><span>Watch Now</span> <i
+                           class="fa fa-angle-right"></i></a>
+                     </div>
+                  </div>
+               </div>
+            </div>
+            <div class="hero__items set-bg" data-setbg="https://cdn.topstarnews.net/news/photo/202403/15463324_1262394_4221.jpg">
+               <div class="row">
+                  <div class="col-lg-6">
+                     <div class="hero__text">
+                        <div class="label">Society</div>
+                        <h2>댓글부대</h2>
+                        <p>내 기사 오보로 만든거 너희들은 아니지?</p>
+                        <a href="#"><span>Watch Now</span> <i
+                           class="fa fa-angle-right"></i></a>
+                     </div>
+                  </div>
+               </div>
+            </div>
+            <div class="hero__items set-bg" data-setbg="https://image-cdn.hypb.st/https%3A%2F%2Fkr.hypebeast.com%2Ffiles%2F2021%2F03%2Fwarner-bros-godzilla-vs-kong-movie-korea-release-date-info-00.jpg?cbr=1&q=90">
+               <div class="row">
+                  <div class="col-lg-6">
+                     <div class="hero__text">
+                        <div class="label">Action</div>
+                        <h2>고질라 X 콩: 뉴 엠파이어</h2>
+                        <p>강한 자들을 맞이하라</p>
+                        <a href="#"><span>Watch Now</span> <i
+                           class="fa fa-angle-right"></i></a>
+                     </div>
+                  </div>
+               </div>
+            </div>
+            <div class="hero__items set-bg" data-setbg="https://i.ytimg.com/vi/BTB1vMfl0kU/maxresdefault.jpg">
+               <div class="row">
+                  <div class="col-lg-6">
+                     <div class="hero__text">
+                        <div class="label">Animation</div>
+                        <h2>극장판 스파이 패밀리 코드 : 화이트</h2>
+                        <p>세계의 비밀을 아냐가 ! ! ?</p>
+                        <a href="#"><span>Watch Now</span> <i
+                           class="fa fa-angle-right"></i></a>
+                     </div>
+                  </div>
+               </div>
+            </div>
+         </div>
       </div>
    </section>
    <!-- Hero Section End -->

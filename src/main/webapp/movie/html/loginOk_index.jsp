@@ -101,29 +101,52 @@
                </div>
             </div>
             <!-- 히어로 아이템 2 -->
-            <c:forEach var="movie" items="${movie.randomMovies}">
-               <div class="hero__items set-bg"
-                  style="background-image: url('http://file.koreafilm.or.kr/thm/02/99/18/32/tn_DPF028732.jpg');">
-                  <div class="row">
-                     <div class="col-lg-6">
-                        <div class="hero__text">
-                           <div class="label">${movie.title}</div>
-                           <h2>${movie.title}</h2>
-                           <p>After 30 days of travel across the world...</p>
-                           <a href="#"><span>Watch Now</span> <i
-                              class="fa fa-angle-right"></i></a>
-                        </div>
-                     </div>
-                  </div>
-               </div>
-            </c:forEach>
-            <div class="hero__items set-bg" data-setbg="img/hero/hero-1.jpg">
+            <div class="hero__items set-bg" data-setbg="https://cdn.mhnse.com/news/photo/202402/252466_269385_3448.jpeg">
                <div class="row">
                   <div class="col-lg-6">
                      <div class="hero__text">
-                        <div class="label">${movie.title}</div>
-                        <h2>Fate / Stay Night: Unlimited Blade Works</h2>
+                        <div class="label">Action</div>
+                        <h2>듄: 파트  2 </h2>
                         <p>After 30 days of travel across the world...</p>
+                        <a href="#"><span>Watch Now</span> <i
+                           class="fa fa-angle-right"></i></a>
+                     </div>
+                  </div>
+               </div>
+            </div>
+            <div class="hero__items set-bg" data-setbg="https://cdn.topstarnews.net/news/photo/202403/15463324_1262394_4221.jpg">
+               <div class="row">
+                  <div class="col-lg-6">
+                     <div class="hero__text">
+                        <div class="label">Society</div>
+                        <h2>댓글부대</h2>
+                        <p>내 기사 오보로 만든거 너희들은 아니지?</p>
+                        <a href="#"><span>Watch Now</span> <i
+                           class="fa fa-angle-right"></i></a>
+                     </div>
+                  </div>
+               </div>
+            </div>
+            <div class="hero__items set-bg" data-setbg="https://image-cdn.hypb.st/https%3A%2F%2Fkr.hypebeast.com%2Ffiles%2F2021%2F03%2Fwarner-bros-godzilla-vs-kong-movie-korea-release-date-info-00.jpg?cbr=1&q=90">
+               <div class="row">
+                  <div class="col-lg-6">
+                     <div class="hero__text">
+                        <div class="label">Action</div>
+                        <h2>고질라 X 콩: 뉴 엠파이어</h2>
+                        <p>강한 자들을 맞이하라</p>
+                        <a href="#"><span>Watch Now</span> <i
+                           class="fa fa-angle-right"></i></a>
+                     </div>
+                  </div>
+               </div>
+            </div>
+            <div class="hero__items set-bg" data-setbg="https://i.ytimg.com/vi/BTB1vMfl0kU/maxresdefault.jpg">
+               <div class="row">
+                  <div class="col-lg-6">
+                     <div class="hero__text">
+                        <div class="label">Animation</div>
+                        <h2>극장판 스파이 패밀리 코드 : 화이트</h2>
+                        <p>세계의 비밀을 아냐가 ! ! ?</p>
                         <a href="#"><span>Watch Now</span> <i
                            class="fa fa-angle-right"></i></a>
                      </div>
