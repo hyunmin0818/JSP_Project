@@ -14,6 +14,15 @@ import jakarta.servlet.http.HttpSession;
 @WebServlet("*.mo")
 public class MovieFrontController extends HttpServlet {
    
+   private MovieServiceHp movieService;
+
+	@Override
+	public void init() throws ServletException {
+	    super.init();
+	    movieService = MovieServiceHp.getInstance();
+	    System.out.println("여기는 탔음.");
+	}
+   
    @Override
    protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
       doProcess(req, resp);
@@ -41,8 +50,8 @@ public class MovieFrontController extends HttpServlet {
          case "/movie/searchMovie.mo": 
             forward = new SearchMovieInfoAction().execute(req, resp);
             break;
-         case "/movie/detailInfo/mo": 
-            forward = new MoveMovieDetailAction().execute(req, resp); // db 댓글불러오는 메서드도 연결해야됨
+         case "/movie/RandomAction/mo": 
+            forward = new MainSliderRandomAction().execute(req, resp); // db 댓글불러오는 메서드도 연결해야됨
             break;
          case "/movie/addComment.mo": 
             forward = new AddCommentAction().execute(req, resp);
@@ -56,6 +65,12 @@ public class MovieFrontController extends HttpServlet {
          case "/movie/AddMovieView.mo":
         	 forward = new AddMovieViewAction().execute(req, resp);
         	 break;
+         case "/movie/getMoviesByView.mo":
+        	forward = new GetMoviesByViewCountAction().execute(req, resp); // FetchMoviesAction은 새로 구현해야 하는 액션 클래스입니다.
+        	 break;
+      
+
+            
 //         case "/movie/getMovieView.mo":
 //        	 forward = new getMovieViewAction().execute(req, resp);
 //        	 break;
