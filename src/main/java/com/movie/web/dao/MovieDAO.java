@@ -135,6 +135,17 @@ public class MovieDAO {
 	    return movies.stream().limit(7).collect(Collectors.toList());
 	    
 	}
+	// 큰 슬라이더에 쓸 개봉일 내림차순
+			public List<MovieDTO> selectMoviesByReleaseDate() {
+	        List<MovieDTO> movieList = null;
+	        try {
+	            // 이번에는 파라미터가 필요 없으므로 별도의 맵을 만들지 않습니다.
+	            movieList = sqlSession.selectList("Movie.selectMoviesByReleaseDate");
+	        } catch (Exception e) {
+	            e.printStackTrace();
+	        }
+	        return movieList;
+	    }
 	
 //	public List<MovieDTO> getMovieDESCAction() {
 //	    List<MovieDTO> movieList = sqlSession.selectList("getMovieDESC");
