@@ -139,9 +139,11 @@
                         <div class="anime__details__btn" >
                         <div style="position: relative;">
                                 <div style="position: absolute;  top: 0; text-align: right;">
-                                    <h3><i style="padding-left: 22px" class="fa fa-eye"></i>${movieinfo.movieView}</h3>
-                                    <h3><i style="padding-left: 22px" class="fa fa-comments"></i>${movieinfo.movieView}</h3>  
-                                    <h3><i style="padding-left: 22px" class="fa fa-heart"></i>${movieinfo.movie_likes}</h3>                             
+                              
+                                   <%--  <h3><i style="padding-left: 22px" class="fa fa-eye"></i>${movie.movieView}</h3>
+                                    <h3><i style="padding-left: 22px" class="fa fa-comments"></i>${movie.commentCount}}</h3>  
+                                    <h3><i style="padding-left: 22px" class="fa fa-heart"></i>${movie.movie_likes}</h3> --%>
+                                                           
                                 </div>
                             </div>
                             <button id="likeButton" class="follow-btn">
