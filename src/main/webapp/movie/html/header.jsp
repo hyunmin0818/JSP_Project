@@ -88,8 +88,7 @@
 				%>
 				<div class="col-lg-10">
 					<div class="header__nav">
-						<nav class="header__menu mobile-menu">
-
+						
 							<%
 							if (session != null && session.getAttribute("userinfo") != null) { //계정이 있을 경우
 							%>

@@ -166,13 +166,17 @@
                                 </div>
                             </div>
                         </div>
+                        
                         <!-- 영화 관련 버튼 -->
+                        <form name="commentForm" method="post"
+                              action="${pageContext.request.contextPath}/movie/addComment.mo">
                         <div class="anime__details__btn">
                             <input type="hidden" name="movieSeq" value="${movieinfo.movieSeq}">
                             <input type="hidden" name="user_id" value="${userinfo.user_id}">
                             <button id="likeButton" class="follow-btn"><i id="likeIcon" class="fa fa-heart-o"> </i>Like
                             </button>
                         </div>
+                        </form>
                     </div>
                 </div>
             </div>
@@ -237,6 +241,8 @@
                             <input type="hidden" name="comment_id" value="${comment.comment_id }">
                             <textarea name="comment" placeholder="Comment 를 작성해주세요">${comment.comment }</textarea>
                             <button type="submit" style="float: right;">
+                            	<input type="hidden" name="movieSeq" value="${movieinfo.movieSeq}">
+                           		 <input type="hidden" name="user_id" value="${userinfo.user_id}">
                                 <i class="fa fa-location-arrow"></i> Review
                             </button>
                         </form>
@@ -359,7 +365,7 @@ $(document).ready(function() {
 <script src="${pageContext.request.contextPath}/movie/html/js/main.js"></script>
 <script src="${pageContext.request.contextPath}/movie/html/js/ajaxForLikes.js"></script>
 <script src="${pageContext.request.contextPath}/movie/html/js/ajaxForView.js"></script>
-
+<script src="${pageContext.request.contextPath}/movie/html/js/ajaxGetCommentList.js"></script>
 
 <script>window.onload = function () {
     var deleteButtons = document.getElementsByClassName('deleteButton');
