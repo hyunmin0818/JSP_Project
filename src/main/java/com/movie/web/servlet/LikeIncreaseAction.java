@@ -2,6 +2,8 @@ package com.movie.web.servlet;
 
 import java.io.IOException;
 
+import org.json.simple.JSONObject;
+
 import com.movie.web.action.Action;
 import com.movie.web.action.ActionForward;
 import com.movie.web.dao.LikesDAO;
@@ -30,18 +32,21 @@ public class LikeIncreaseAction implements Action {
 		boolean success = ldao.addLikeAndUpdateLikesCount(ldto);
 		System.out.println(success);
 		
-		if (success) {
-		    int updatedLikesCount = ldao.getLikesCount(ldto.getMovieLike());
-		    response.setContentType("application/json");
-		    try {
-				response.getWriter().write("liked");
-		        response.getWriter().write(String.valueOf(updatedLikesCount));
-		        System.out.println("좋아요가 성공적으로 추가되었습니다.");
-		    } catch (IOException e) {
-		        e.printStackTrace();
-		        System.out.println("좋아요 추가에 실패하였습니다.");
-		    }
-		} 
+		 if (success) {
+		        int updatedLikesCount = ldao.getLikesCount(ldto.getMovieLike());
+		        response.setContentType("application/json");
+		        try {
+		            JSONObject jsonResponse = new JSONObject();
+		            jsonResponse.put("status", "success");
+		            jsonResponse.put("action", "like");
+		            jsonResponse.put("updatedLikesCount", updatedLikesCount);
+		            response.getWriter().write(jsonResponse.toString());
+		            System.out.println("좋아요가 성공적으로 추가되었습니다.");
+		        } catch (IOException e) {
+		            e.printStackTrace();
+		            System.out.println("좋아요 추가에 실패하였습니다.");
+		        }
+		    } 
 
 		return null;
 	    }
