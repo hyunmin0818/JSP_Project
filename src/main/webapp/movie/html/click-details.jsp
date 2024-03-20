@@ -105,6 +105,7 @@
             <div class="css-tkd">${movieinfo.awards1}${movieinfo.awards2}</div>
         </div>
     </div>
+</div>
    </c:forEach>
 </c:when>
  <c:otherwise>
