@@ -87,7 +87,7 @@
                      <!-- 히어로 텍스트 -->
                      <div class="hero__text">
                         <!-- 라벨 -->
-                        <!-- <div class="label">Mystery</div> -->
+                        <div class="label">Mystery</div> 
                         <!-- 제목 -->
                         <h2>파묘</h2>
                         <!-- 내용 -->

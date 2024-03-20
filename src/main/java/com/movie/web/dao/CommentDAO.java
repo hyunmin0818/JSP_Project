@@ -115,7 +115,17 @@ public class CommentDAO {
 				}
 				return commentCount;
 			}
-
+			
+			public int selectCount(String movieSeq) {
+				int commentCount = 0;
+				try {
+					commentCount = sqlSession.selectOne("Movie.getCmByMovieSeq", movieSeq);
+				} catch (Exception e) {
+					e.printStackTrace();
+				}
+				return commentCount;
+			}
+			
 
 
 }	

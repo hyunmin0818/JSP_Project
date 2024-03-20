@@ -81,7 +81,7 @@
                     <!-- 카테고리 페이지로 이동하는 링크 -->
                     <a href="">Categories</a>
                     <!-- 현재 페이지의 카테고리 이름을 표시하는 부분 -->
-                    <span>${movie.genre}</span>
+                    <span>${movieinfo.genre}</span>
                 </div>
             </div>
         </div>
@@ -89,36 +89,19 @@
 </div>
 <!-- Breadcrumb End -->
 <!-- Anime Section Begin -->
-<c:choose>
-    <c:when test="${not empty movieInfo}">
-        <c:forEach var="movieinfo" items="${movieInfo}">
-<div class="css-yy4d6f e1yew28617" style="position: relative; height: 550px;">
- 
-    <div class="css-stilcut" data-setbg ="${movieinfo.stillUrl}">
 
+<section class="anime-details spad">
+    <div class="container">
+<c:forEach var="movieinfo" items="${movieInfo}">
+        
+<div class="css-yy4d6f e1yew28617" >
+    <div class="css_stilcut">
         <div class="css-sdsdsd">
-   
-            <h1 class="css-Title">${movieinfo.title}</h1>
-            <div class="css-qnwpahr">${movieinfo.title}</div>
-            <div class="css-roqhddlf">${movieinfo.releaseDate}·${movieinfo.genre } · ${movieinfo.nation}</div>
-            <div class="css-qkdduddlfwkdfmrnrrk">${movieinfo.runtime}· ${movieinfo.rating}</div>
-            <div class="css-tkd">${movieinfo.awards1}${movieinfo.awards2}</div>
+   			<img alt="${movieinfo.stillUrl}" src="${movieinfo.stillUrl}">
         </div>
     </div>
 </div>
    </c:forEach>
-</c:when>
- <c:otherwise>
-                <hr
-                        style="border: none; border-top: 1px solid #08052e; width: 100%;">
-                <span style="color: white">상세 정보가 없습니다.</span>
-                </hr>
-            </c:otherwise>
-            </c:choose>
-</div>
-<section class="anime-details spad">
-    <div class="container">
-
         <c:choose>
         <c:when test="${not empty movieInfo}">
         <c:forEach var="movieinfo" items="${movieInfo}">
@@ -187,7 +170,7 @@
                         <div class="anime__details__btn">
                             <input type="hidden" name="movieSeq" value="${movieinfo.movieSeq}">
                             <input type="hidden" name="user_id" value="${userinfo.user_id}">
-                            <button id="likeButton" class="follow-btn"><i id="likeIcon" class="fa fa-heart-o"> </i> Like
+                            <button id="likeButton" class="follow-btn"><i id="likeIcon" class="fa fa-heart-o"> </i>Like
                             </button>
                         </div>
                     </div>
@@ -209,42 +192,9 @@
             <div class="col-lg-8 col-md-8">
                 <div class="anime__details__review">
                     <div class="section-title">
-                    <%
-                     MovieDAO mdao = new MovieDAO();
-                     int totalCnt = mdao.getMovieCnt();
-
-                     String temp = request.getParameter("page");
-                     int pageIndex = 0;
-                     try {
-                        pageIndex = temp == null ? 1 : Integer.parseInt(temp);
-                     } catch (NumberFormatException e) {
-                        pageIndex = 1; // 잘못된 파라미터 값이 전달될 경우 기본값으로 설정
-                     }
-
-                     int pageSize = 1;
-                     int endRow = pageIndex * pageSize; // 여기서 수정이 필요했음
-                     int startRow = endRow - pageSize + 1;
-
-                     int startPage = ((pageIndex - 1) / pageSize) * pageSize + 1;
-                     int endPage = startPage + pageSize - 1;
-                     int totalPage = (totalCnt - 1) / pageSize + 1;
-
-                     endPage = endPage > totalPage ? totalPage : endPage;
-
-                       List<MovieDTO> movieList = mdao.getMovieList(startRow, endRow);
-                            CommentDAO cdao = new CommentDAO();
-                            
-                            for (MovieDTO movie : movieList) {
-                              
-                                List<CommentDTO> comments = cdao.getCmByMovieSeq(movie.getMovieSeq());
-                                // 댓글 수 계산
-                                int commentCount = comments.size();
-         
-                        %>
-                        <h5>Reviews <i style="padding-left: 90%" class="fa fa-comments"></i><%=commentCount%></h5>
-                         <%
-                            }
-                           %>
+                    
+                        <h5>Reviews <i style="padding-left: 90%" class="fa fa-comments"></i> ${movieinfo.commentCount}</h5>
+                      
                         <!-- 댓글-->
                     </div>
                     <!-- 리뷰 아이템 -->
@@ -303,17 +253,14 @@
                     <c:forEach items="${similarMovies}" var="genremovie" varStatus="status">
                       <c:if test="${status.index >= 1 && status.index <= 4}">
                             <!-- 영화 정보 출력 -->
-                           <div class="product__sidebar__view__item set-bg" data-setbg="${genremovie.stillUrl}" onclick="updateViewsOnPage(${genremovie.movieSeq})">
+                           <div class="product__sidebar__view__item set-bg" data-setbg="${genremovie.stillUrl}" onclick="updateViewsOnPage(${genremovie.movieSeq})" >
                                  <h5 ><a>${ genremovie.title}</a></h5>
-                                  <div class="product__item__text">
-                                            <li>${genremovie.genre}</li>
-                                     </div>
-                             
-                              
-                                 <div class="view"><i class="fa fa-eye"></i> ${movie.movieView} </div>
+                                  <div class="product__item__text"><li>${genremovie.genre}</li> </div>       
+                                  <div class="view"><i class="fa fa-eye"></i> ${movieinfo.movieView} </div>
+                                  
                             </div>
                      </c:if>
-               </c:forEach>
+               		</c:forEach>
                 </div>
             </div>
         </div>
@@ -391,6 +338,15 @@
         // 페이지 이동
         window.location = url;
     }
+</script>
+<script >
+$(document).ready(function() {
+    $('.css_stilcut').each(function() {
+        var bgImgUrl = $(this).data('setbg');
+        $(this).css('background-image', 'url(' + bgImgUrl + ')');
+        console.log(bgImgUrl);
+    });
+});
 </script>
 <script src="${pageContext.request.contextPath}/movie/html/js/jquery-3.3.1.min.js"></script>
 <script src="${pageContext.request.contextPath}/movie/html/js/bootstrap.min.js"></script>

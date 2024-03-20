@@ -916,68 +916,32 @@ ol {
 	line-height: 26px;
 }
 
-.css-stilcut {
-    display: flex;
-    position: absolute;
-    top: 55px;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    overflow: hidden;
-    justify-content: center;
-    align-items: center;
+
+
+
+
+.css_stilcut {
+  max-width: 100%; 
+  background-color: #fff;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  border-radius: 8px;
+  overflow: hidden;
 }
 
 .css-sdsdsd {
-    bottom: 60px;
-    flex-direction: row;
-    align-items: end;
-    min-width: 600px;
-    margin-top: 300px;
-    margin-right: 400px;
-}
-@media only screen and (max-width: 768px) {
-    .css-stilcut {
-        height: auto; /* 높이 자동 조정 */
-    }
-
-    .css-sdsdsd {
-        flex-direction: column; /* 컬럼 방향으로 변경 */
-        align-items: center; /* 가운데 정렬 */
-        min-width: auto; /* 최소 너비 자동 조정 */
-        margin: 50px; /* 여백 조정 */
-    }
+  position: relative;
+  max-width: 1200px; 
+  width: 100%; 
+  margin: 0 auto; 
 }
 
-.css-Title {
-	font-size: 36px;
-	font-weight: 700;
-	line-height: 36px;
-	color: black;
-}
 
-.css-qnwpahr {
-	margin-top: 16px;
-	color: black;
-}
-
-.css-roqhddlf {
-	font-size: 14px;
-	line-height: 18px;
-	margin-top: 8px;
-	color: black;
-}
-
-.css-qkdduddlfwkdfmrnrrk {
-	font-size: 14px;
-	line-height: 18px;
-	margin-top: 8px;
-	color: black;
-}
-
-.css-tkd {
-	line-height: 14px;
-	color: black;
+.css-sdsdsd img {
+  width: 100%;
+  height: auto;
+  display: block;
+  max-height: 800px; 
+  object-fit: cover; 
 }
 
 
@@ -1011,7 +975,7 @@ ol {
 .slider-container {
   margin-top: 20px; /* 상단 여백 */
   padding: 15px; /* 내부 여백 */
-  background-color: #000000; /* 배경색을 까만색으로 변경 */
+  background-color: #ffa6a6; /* 배경색을 까만색으로 변경 */
   border-radius: 8px; /* 테두리 둥글기 */
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* 그림자 효과 */
 }
@@ -1278,9 +1242,7 @@ position: absolute;
   Anime Details
 -----------------------*/
 
-.anime-details {
-	padding-top: 60px;
-}
+
 
 
 

@@ -79,10 +79,7 @@
 				<div class="col-lg-2">
 					<div class="header__logo">
 						<a href="${pageContext.request.contextPath}/movie/html/index.jsp">
-
-							<img
-							src="${pageContext.request.contextPath}/movie/html/img/logo2.png"
-							id="logo2" alt="">
+							<img src="${pageContext.request.contextPath}/movie/html/img/logo2.png" id="logo2" alt="">
 						</a>
 					</div>
 				</div>
@@ -104,13 +101,11 @@
 									<!-- 돋보기 검색 아이콘 -->
 									<a href="#" class="search-switch"><span class="icon_search"></span></a>
 									<!-- 사용자 아이콘 -->
-									<span class="icon_profile"
-										href="${pageContext.request.contextPath}/movie/html/mypage.jsp"
-										id="dropdown-toggle" data-bs-toggle="dropdown"></span> <a
-										href="${pageContext.request.contextPath}/movie/mypage.ms"
-										id="youNeedLogin"><%=userId%></a> |<a
-										href="${pageContext.request.contextPath}/movie/logout.ms"
-										id="youNeedLogout">로그아웃</a>
+									
+									 <a href="${pageContext.request.contextPath}/movie/mypage.ms" style=" margin-right: 0px;">
+									<span class="icon_profile" style=" cursor: pointer;"></span></a>
+									<a href="${pageContext.request.contextPath}/movie/mypage.ms" id="youNeedLogin"><%=userId%></a>
+									 |<a href="${pageContext.request.contextPath}/movie/logout.ms" id="youNeedLogout">로그아웃</a>
 								</div>
 								<!-- ${sessionscope.userinfo.user_id} -->
 							</div>
@@ -134,9 +129,7 @@
 			<!-- 돋보기 아이콘 -->
 			<a href="#" class="search-switch"><span class="icon_search"></span></a>
 			<!-- 사용자 아이콘 -->
-			<a href="${pageContext.request.contextPath}/movie/html/mypage.jsp">
-				<span class="icon_profile id=" dropdown-toggle" data-bs-toggle="dropdown"></span>
-			</a>
+			<a href="${pageContext.request.contextPath}/movie/html/mypage.jsp"> </a>
 
 			<a href="${pageContext.request.contextPath}/movie/html/login.jsp"
 				id="youNeedLogin">로그인</a>| <a

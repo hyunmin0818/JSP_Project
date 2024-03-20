@@ -93,11 +93,6 @@
                     <div class="anime__details__text">
                         <div class="anime__details__title">
                             <!-- 영화 제목과 일본어 제목 -->
-                            <div style="position: relative;">
-                                <div style="position: absolute; left: 80%; top: 0;">
-                                    <h3><i style="padding-left: 22px" class="fa fa-eye"></i>${movieinfo.movieView}</h3>
-                                </div>
-                            </div>
                             <a href="${pageContext.request.contextPath}/movie/clickPoster.mo?movieSeq=${ movie.getMovieSeq()}" onclick="updateViewsOnPage(${ movie.getMovieSeq()}">
                             <h3>${movie.title}</h3>
                             </a>
@@ -141,9 +136,16 @@
                             </div>
                         </div>
                         <!-- 영화 관련 버튼 -->
-                        <div class="anime__details__btn">
+                        <div class="anime__details__btn" >
+                        <div style="position: relative;">
+                                <div style="position: absolute;  top: 0; text-align: right;">
+                                    <h3><i style="padding-left: 22px" class="fa fa-eye"></i>${movieinfo.movieView}</h3>
+                                    <h3><i style="padding-left: 22px" class="fa fa-comments"></i>${movieinfo.movieView}</h3>  
+                                    <h3><i style="padding-left: 22px" class="fa fa-heart"></i>${movieinfo.movie_likes}</h3>                             
+                                </div>
+                            </div>
                             <button id="likeButton" class="follow-btn">
-                                <i id="likeIcon" class="fa fa-heart-o"></i> Like
+                                <i id="likeIcon" class="fa fa-heart-o"></i>Like
                             </button>
                         </div>
                     </div>
@@ -174,15 +176,12 @@
         <div class="row">
             <div class="col-lg-3">
                 <div class="footer__logo">
-                    <a href="${pageContext.request.contextPath}/movie/html/index.jsp"><img
-                            src="${pageContext.request.contextPath}/movie/html/img/logo2.png"
-                            alt=""></a>
+                    <a href="${pageContext.request.contextPath}/movie/html/index.jsp"><img src="${pageContext.request.contextPath}/movie/html/img/logo2.png"  alt=""></a>
                 </div>
             </div>
             <div class="col-lg-6">
                 <div class="footer__nav">
-                    <ul>
-                        <li class="active"><a
+                    <ul><li class="active"><a
                                 href="${pageContext.request.contextPath}/movie/html/index.jsp">홈</a>
                         </li>
                         <li><a
