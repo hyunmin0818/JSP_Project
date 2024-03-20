@@ -3,6 +3,7 @@ package com.movie.web.servlet;
 import java.io.IOException;
 
 import com.movie.web.action.ActionForward;
+import com.movie.web.services.MovieServiceHp;
 
 import jakarta.servlet.ServletException;
 import jakarta.servlet.annotation.WebServlet;
@@ -14,12 +15,12 @@ import jakarta.servlet.http.HttpSession;
 @WebServlet("*.mo")
 public class MovieFrontController extends HttpServlet {
    
-   private MovieServiceHp movieService;
+   private MovieServiceHp movieServices;
 
 	@Override
 	public void init() throws ServletException {
 	    super.init();
-	    movieService = MovieServiceHp.getInstance();
+	    movieServices = MovieServiceHp.getInstance();
 	    System.out.println("여기는 탔음.");
 	}
    
