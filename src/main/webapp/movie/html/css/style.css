@@ -1680,8 +1680,8 @@ position: absolute;
 #profile_modifybutton1,#profile_modifybutton2{		/*프로필 수정버튼*/
 	
 		font-size: 13px;
-		color: black;
-		background:blue;
+		color: white;
+		background:#e53637;
 		font-weight: 700;
 		border: none;
 		border-radius: 3px;
