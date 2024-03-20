@@ -57,7 +57,8 @@ public class GetMoviesByViewCountAction implements Action {
             movieObj.put("title", movie.getTitle());
             movieObj.put("movieView", movie.getMovieView());
             movieObj.put("releaseDate", movie.getReleaseDate());
-            movieObj.put("posterUrl", movie.getPosterUrl());
+            movieObj.put("stillUrl", movie.getStillUrl());
+            movieObj.put("genre", movie.getGenre());
             moviesArray.add(movieObj);
         }
 

@@ -88,13 +88,15 @@ function updateMovieList(data) {
     var defaultPosterUrl = 'img/idefault.png'; // 기본 이미지 URL을 여기에 설정하세요.
     
     data.forEach(function(movie) {
-		var posterUrl = movie.posterUrl || defaultPosterUrl;
+		var stillUrl = movie.stillUrl || defaultPosterUrl;
         var movieHTML = `
             <div class="filter__gallery">
-                <div class="product__sidebar__view__item set-bg mix day" style="background-image: url('${posterUrl}');">
+                <div class="product__sidebar__view__item set-bg mix day" style="background-image: url('${movie.stillUrl}');">
                     <div class="view"><i class="fa fa-eye"></i> ${movie.movieView}</div>
-                    <h5><a href="#">${movie.title}</a></h5>
-                </div>
+                    <h5 ><a>${movie.title}</a></h5>
+              					 	 <div class="product__item__text">
+                                            <li>${movie.genre}</li>
+                                     </div>
             </div>`;
         movieListContainer.innerHTML += movieHTML;
     });

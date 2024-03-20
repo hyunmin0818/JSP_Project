@@ -2,7 +2,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
-<%@ include file="/movie/html/header.jsp" %>
+<%@ include file="header.jsp" %>
 <!DOCTYPE html>
 <html lang="zxx">
 
@@ -30,9 +30,9 @@
     <link rel="stylesheet" href="${pageContext.request.contextPath}/movie/html/css/style.css" type="text/css">
 </head>
 <%
- 	UserDTO uto =  (UserDTO)session.getAttribute("userinfo");
+    UserDTO udto =  (UserDTO)session.getAttribute("userinfo");
 %>
-<%=uto.getUser_id() %>
+
 
 <body>
     <!-- Page Preloder -->
@@ -43,13 +43,13 @@
     <!-- Header Section Begin -->
     <header class="header">
         <div class="container">
-         	
+            
         </div>
     </header>
     <!-- Header End -->
 
     <!-- Normal Breadcrumb Begin -->
-    <section class="normal-breadcrumb set-bg" data-setbg="img/cinema.jpg">
+    <section class="normal-breadcrumb set-bg" data-setbg="img/cinema12.jpg">
         <div class="container">
             <div class="row">
                 <div class="col-lg-12 text-center">
@@ -70,8 +70,12 @@
                     </div>
                 </div>
             </div>
+            
         </div>
+       
     </section>
+    
+     <hr>
     <!-- Normal Breadcrumb End -->
 
     <!-- Login Section Begin -->
@@ -82,26 +86,18 @@
         <!-- <p>마이페이지!!!!!!!!!!!!!!!!!!!!!!!!!</p> -->
         
         <div class="container">
-            <div class="row" >
-                
-                <div class="col-lg-6">
-                    <div class="login__form" id ="logincenter" >
-                        <!-- <h3>Login</h3> -->
-                       
-                 <img src="./img/mario.jpg" id="member_profile"/>
-                     
-                    </div>
-                   
-                </div>
+            
 
-
-                <div class="col-lg-6">
+				
+             
                     <div class="login__form" id ="logincenter">
-                        <h3 align="center" >나의 정보 </h3><br>
-                        <form action="./loginOk_index.html">               <!--입력창 비활성화 -->
-                            <h5 align="left" class="whitetext">닉네임</h5><br>
+                        
+                        <form action="${pageContext.request.contextPath}/movie/html/loginOk_index.jsp">               <!--입력창 비활성화 -->
+<!--                         <h3 align="center" >나의 정보 </h3>-->
+							<br> 
+                            <h5 align="left" class="blacktext">이름</h5><br>
                             <div class="input__item1">
-                               <h4 class="whitetext">${sessionScope.userinfo.getUsername()}</h4><br>
+                               <h4 class="blacktext">${sessionScope.userinfo.getUsername()}</h4><br>
 
                                 <!-- <input type="text" class ="blacktext" placeholder="이름을 입력해주세요" value ="Nickname(이름 DB값으로 수정해주세요)" disabled> 
                                 <span class="icon_mail"></span> --> 
@@ -110,25 +106,21 @@
                             </div>
 
                             
-                           <!--  <h5 align="left" class="whitetext">프로필 사진</h5><br>  
-                            <div class="input__item">
-                                <input type="file" placeholder="프로필 사진" value ="Nickname(이름 DB값으로 수정해주세요)" disabled> 
-                                <span class="icon_mail"></span>
-                            </div>  !!!!!!!!!!!!)프로필 수정 때 사용\ !!!!!!!!!!!!!-->
 
 
-                            <h5 align="left" class="whitetext">생년월일</h5><br>  
+
+                            <h5 align="left" class="blacktext">생년월일</h5><br>  
                             
-                                <h4 class="whitetext">${sessionScope.userinfo.getUserbirth()}</h4><br>
+                                <h4 class="blacktext">${sessionScope.userinfo.getUserbirth()}</h4><br>
                                    <!--  <div class="input__item"></div>
                                 <input type="text" placeholder="법정생년월일 6자리를 입력해주세요" value ="0123456(생년월일 DB값으로 수정해주세요)" disabled>
                                 <span class="icon_lock"></span> -->
                             </div>
 
-                            <h5 align="left" class="whitetext">휴대번호</h5><br>
+                            <h5 align="left" class="blacktext">휴대번호</h5><br>
 
                             <div class="input__item">  
-                            <h4 class="whitetext">${sessionScope.userinfo.getUserphone()}</h4><br>
+                            <h4 class="blacktext">${sessionScope.userinfo.getUserphone()}</h4><br>
                           <!--  <div class="input__item">
                                 
                                  <input type="text" placeholder="휴대번호 뒤 7~8자리를 입력해주세요.(01X제외)"value ="999-9999-9999(휴대전화 DB값으로 수정해주세요)" disabled>
@@ -137,9 +129,9 @@
 
                         </div>
 
-                        <h5 align="left" class="whitetext">이메일</h5><br>
+                        <h5 align="left" class="blacktext">이메일</h5><br>
                         <div class="input__item">  
-                            <h4 class="whitetext">${sessionScope.userinfo.getEmail()}</h4><br>
+                            <h4 class="blacktext">${sessionScope.userinfo.getEmail()}</h4><br>
                           <!--  <div class="input__item">
                                 
                                  <input type="text" placeholder="휴대번호 뒤 7~8자리를 입력해주세요.(01X제외)"value ="999-9999-9999(휴대전화 DB값으로 수정해주세요)" disabled>
@@ -151,27 +143,27 @@
 
                         <br><br><br>
 
-                            <!-- <h5 align="left" class="whitetext">예매정보 조회</h5><br>
+                            <!-- <h5 align="left" class="blacktext">예매정보 조회</h5><br>
                             <div class="input__item">
                                 <input type="text" placeholder="예매정보 조회" value ="영화예매정보조회 (DB)" disabled>
                                 <span class="icon_mail"></span>
                             </div> -->
                             <br>
-                            <button type="button" class="site-btn" id="checkTicket">예매정보 확인</button>
+<!--                             <button type="button" class="site-btn" id="checkTicket">예매정보 확인</button> -->
  
 
                             <button type="submit" class="site-btn" href = "${pageContext.request.contextPath}/movie/returnPage">확인</button>
                            
                         <!-- </form> -->
-                        <button type="button" class="site-btn" id="profile_modifybutton1" href ="${pageContext.request.contextPath}/movie/updateMypage.ms">수정</button>
+                        <button type="button" class="site-btn whitetext" id="profile_modifybutton1" href ="${pageContext.request.contextPath}/movie/updateMypage.ms">수정</button>
                        <br> <br> <br> <br> <br> <br>
                     </div>
                 
                 
                         </div>
                     </div>     </div>
-                </div>
-            </div>
+               
+            
         </div>
     </div>
 </div>
