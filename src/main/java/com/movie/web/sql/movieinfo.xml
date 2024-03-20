@@ -59,7 +59,20 @@
 	    FROM movie
 	    WHERE movieSeq = #{movieSeq}
     </select>
-    
+    <select id="selectMoviesByViewCount" resultType="moviedto">
+	SELECT *
+	FROM movie
+	WHERE releaseDate BETWEEN #{startDate} AND #{endDate}
+	ORDER BY
+	movieView DESC
+	LIMIT 100
+	</select>
+	<select id="selectMoviesByReleaseDte" resultType="moviedto">
+	SELECT * FROM movie
+	WHERE posterUrl IS NOT NULL AND TRIM(posterUrl) != ''
+	ORDER BY releaseDate DESC
+	LIMIT 100
+	</select>
 <!--     <select id="getMovieDESC" resultType="moviedto">
     	SELECT * FROM movie
 		ORDER BY movieView DESC;
