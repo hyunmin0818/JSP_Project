@@ -105,6 +105,32 @@ public class MovieDAO {
 	public void addMovieViewCount(int movieId) {
 		sqlSession.update("Movie.updateMovieViews", movieId);
 	}
+	public List<MovieDTO> selectMoviesByViewCount(LocalDate startDate, LocalDate endDate) {
+	    HashMap<String, Object> params = new HashMap<>();
+
+	    // startDate와 endDate에 대한 null 체크 및 기본값 설정
+	    LocalDate defaultStartDate = LocalDate.of(2020, 1, 1); // 기본 시작 날짜를 조정했습니다.
+	    LocalDate defaultEndDate = LocalDate.of(2024, 3, 18); // 기본 종료 날짜입니다.
+
+	    // 날짜를 정수형으로 변환하는 과정
+	    int formattedStartDate = (startDate != null) ? 
+	        Integer.parseInt(startDate.format(DateTimeFormatter.ofPattern("yyyyMMdd"))) : 
+	        Integer.parseInt(defaultStartDate.format(DateTimeFormatter.ofPattern("yyyyMMdd")));
+	    
+	    int formattedEndDate = (endDate != null) ? 
+	        Integer.parseInt(endDate.format(DateTimeFormatter.ofPattern("yyyyMMdd"))) : 
+	        Integer.parseInt(defaultEndDate.format(DateTimeFormatter.ofPattern("yyyyMMdd")));
+
+	    // 변환된 날짜를 매개변수로 추가
+	    params.put("startDate", formattedStartDate);
+	    params.put("endDate", formattedEndDate);
+	    
+	    // MyBatis (또는 사용하는 SQL 매퍼)를 사용하여 쿼리 실행
+	    List<MovieDTO> movies = sqlSession.selectList("Movie.selectMoviesByViewCount", params);
+	    System.out.println("movies" + movies);
+	    return movies.stream().limit(7).collect(Collectors.toList());
+	    
+	}
 	
 //	public List<MovieDTO> getMovieDESCAction() {
 //	    List<MovieDTO> movieList = sqlSession.selectList("getMovieDESC");
