@@ -101,15 +101,12 @@
         </div>
     </div>
 </div>
-   </c:forEach>
+   </c:forEach>  영화 상세정보를 나오게하는 로직
         <c:choose>
         <c:when test="${not empty movieInfo}">
         <c:forEach var="movieinfo" items="${movieInfo}">
         <div class="anime__details__content">
-   
-
             <div class="row" style="margin-top: 30px;">
-
                 <!-- 영화 이미지와 관련 정보 -->
                 <div class="col-lg-3">
                     <div class="anime__details__pic set-bg" data-setbg="${movieinfo.posterUrl }">
@@ -161,7 +158,7 @@
                                         <li><span>등급:</span> ${movieinfo.rating}</li>
                                         <!--등급-->
                                         <li><span>제작사: </span> ${movieinfo.company}</li>
-                                        <!--조회수-->
+                                        <!--제작사-->
                                     </ul>
                                 </div>
                             </div>
@@ -171,8 +168,8 @@
                         <form name="commentForm" method="post"
                               action="${pageContext.request.contextPath}/movie/addComment.mo">
                         <div class="anime__details__btn">
-                            <input type="hidden" name="movieSeq" value="${movieinfo.movieSeq}">
-                            <input type="hidden" name="user_id" value="${userinfo.user_id}">
+                            <input type="hidden" name="movieSeq" value="${movieinfo.movieSeq}"> <!-- movieSeq파라미터를 넘기기위한 태그-->
+                            <input type="hidden" name="user_id" value="${userinfo.user_id}"> <!-- user_id파라미터를 넘기기위한 태그-->
                             <button id="likeButton" class="follow-btn"><i id="likeIcon" class="fa fa-heart-o"> </i>Like
                             </button>
                         </div>
@@ -207,15 +204,15 @@
                             <c:forEach var="comment" items="${commentList }">
                                 <div class="anime__review__item">
                                     <div class="anime__review__item__pic">
+                                        <!-- 사용자 이미지  -->
                                         <img src="https://d2u3dcdbebyaiu.cloudfront.net/uploads/atch_img/665/708d0162261869f0558a0a1cabea0b50_res.jpeg"
                                              alt="">
                                     </div>
                                     <div class="anime__review__item__text">
-                                        <input type="hidden" name="movieSeq" value="${movieinfo.movieSeq}">
-                                        <h6>${comment.user_id}<span>${comment.comment_time}</span>
-                                        </h6>
+                                    		<!-- movieSeq 파라미터를 넘기기위한 태그  -->
+                                        <input type="hidden" name="movieSeq" value="${movieinfo.movieSeq}">  
+                                        <h6>${comment.user_id}<span>${comment.comment_time}</span> </h6>
                                         <p>${comment.comment}</p>
-
                                         <!-- 로그인한 사용자 ID와 리뷰 작성자 ID가 일치할 경우에만 삭제 버튼을 표시 -->
                                        <c:if test="${comment.user_id == loggedInUser_id}">
                                             <input type="button" value="삭제" class="deleteButton" onclick="deleteComment(${comment.comment_id})">
@@ -224,13 +221,13 @@
                                 </div>
                             </c:forEach>
                         </c:when>
-                        <c:otherwise>
+                        <c:otherwise>  <!-- 댓글이 없을경우 나오는 로직  -->
                             <div class="anime__review__item__text">
-                                <h6 align="center">댓글이 없습니다.</h6>
-
+                                <h6 align="center">댓글이 없습니다.</h6>  
                             </div>
                         </c:otherwise>
                     </c:choose>
+                    <!-- 리뷰 아이템 -->
                     <div class="anime__details__form">
                         <div class="section-title">
                             <h5>Your Comment</h5>
@@ -241,8 +238,8 @@
                             <input type="hidden" name="comment_id" value="${comment.comment_id }">
                             <textarea name="comment" placeholder="Comment 를 작성해주세요">${comment.comment }</textarea>
                             <button type="submit" style="float: right;">
-                            	<input type="hidden" name="movieSeq" value="${movieinfo.movieSeq}">
-                           		 <input type="hidden" name="user_id" value="${userinfo.user_id}">
+                            	<input type="hidden" name="movieSeq" value="${movieinfo.movieSeq}"> <!-- movieSeq 파라미터를 넘기기위한 태그-->
+                           		 <input type="hidden" name="user_id" value="${userinfo.user_id}">   <!-- user_id파라미터를 넘기기위한 태그-->
                                 <i class="fa fa-location-arrow"></i> Review
                             </button>
                         </form>
@@ -255,7 +252,7 @@
                     <div class="section-title">
                         <h5>you might like...</h5>
                     </div>
-                    <!-- 추천작 리스트 -->
+                    <!-- 최신별 리스트  -->
                     <c:forEach items="${similarMovies}" var="genremovie" varStatus="status">
                       <c:if test="${status.index >= 1 && status.index <= 4}">
                             <!-- 영화 정보 출력 -->

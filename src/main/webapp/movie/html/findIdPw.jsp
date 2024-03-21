@@ -130,7 +130,7 @@
 								<input type="text" placeholder="휴대번호 뒤 7~8자리를 입력해주세요.(01X제외)">
 								<span class="icon_mail"></span>
 							</div>
-							<button type="submit" class="site-btn">가입</button>
+							<button type="submit" class="site-btn">확인</button>
 						</form>
 
 
