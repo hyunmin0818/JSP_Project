@@ -28,7 +28,7 @@ Instead of a list of all class selectors,
 you can use the generic selector below, but it's slower:
 [class*="your-class-prefix"] {
 */
-.icon_search, .icon_lock , .icon_mail,.icon_id ,.icon_profile ,.arrow_carrot-left ,.arrow_carrot-right{
+.icon_search, .icon_lock , .icon_mail,.icon_id ,.icon_profile ,.arrow_carrot-left ,.arrow_carrot-right,.arrow_carrot-up{
 font-family: 'ElegantIcons';
    speak: none;
    font-style: normal;
@@ -61,4 +61,7 @@ font-family: 'ElegantIcons';
 }
 .arrow_carrot-right:before {
     content: "\35";
+}
+.arrow_carrot-up:before {
+	content: "\32";
 }
