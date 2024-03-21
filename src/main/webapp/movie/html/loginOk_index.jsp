@@ -17,7 +17,7 @@
 <meta http-equiv="X-UA-Compatible" content="ie=edge">
 <meta http-equiv="Content-Security-Policy"
    content="upgrade-insecure-requests">
-<title>Anime | Template</title>
+<title>Bonobono | Template</title>
 
 <!-- Google Font -->
 <%@ include file="/movie/html/header.jsp"%>
@@ -208,7 +208,8 @@
                         %>
                                 <div class="col-lg-4 col-md-6 col-sm-6">
                                     <div class="product__item">
-                                        <a href="${pageContext.request.contextPath}/movie/clickPoster.mo?movieSeq=<%=movie.getMovieSeq()%>" onclick="updateViewsOnPage(<%=movie.getMovieSeq()%>)">
+                                        <a href="${pageContext.request.contextPath}/movie/clickPoster.mo?movieSeq=<%=movie.getMovieSeq()%>" 
+                                           onclick="updateViewsOnPage(<%=movie.getMovieSeq()%>)">
                                             <div class="product__item__pic set-bg" data-setbg="<%=movie.getPosterUrl()%>" >
                                                 <div class="comment">
                                                     <i class="fa fa-comments"></i><%=commentCount%>
@@ -223,7 +224,8 @@
                                                 <li><%= movie.getGenre() %></li>
                                             </ul>
                                             <h5>
-                                                <a href="movie-details.jsp?movieSeq=<%=movie.getMovieSeq()%>" onclick="updateViewsOnPage(<%=movie.getMovieSeq()%>)"><%= movie.getTitle() %></a>
+                                                <a href="${pageContext.request.contextPath}/movie/clickPoster.mo?movieSeq=<%=movie.getMovieSeq()%>" 
+                                                   onclick="updateViewsOnPage(<%=movie.getMovieSeq()%>)"><%= movie.getTitle() %></a>
                                             </h5>
                                         </div>
                                     </div>
@@ -301,21 +303,12 @@
          <div class="row">
             <div class="col-lg-3">
                <div class="footer__logo">
-                  <a href="${pageContext.request.contextPath}/movie/html/index.jsp"><img
-                     src="${pageContext.request.contextPath}/movie/html/img/logo2.png"
-                     alt=""></a>
+                  <a href="${pageContext.request.contextPath}/movie/html/index.jsp"><img src="img/logo2.png" alt=""></a>
                </div>
             </div>
             <div class="col-lg-6">
                <div class="footer__nav">
-                  <ul>
-                     <li class="active"><a
-                        href="${pageContext.request.contextPath}/movie/html/index.jsp">홈</a></li>
-                     <li><a
-                        href="${pageContext.request.contextPath}/movie/html/default.jsp">고객센터</a></li>
-                     <li><a href="#">블로그</a></li>
-
-                  </ul>
+                 
                </div>
             </div>
             <div class="col-lg-3">

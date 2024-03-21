@@ -198,7 +198,7 @@ img {
 	max-width: 100%;
 }
 
-input:fㅉocus,
+input:focus,
 select:focus,
 button:focus,
 textarea:focus {
@@ -845,6 +845,7 @@ ol {
 	/* 이미지가 넘치지 않도록 처리 */
 	transition: transform 0.3s;
 	/* 호버 효과를 위한 애니메이션 추가 */
+	border: 1px solid #000; 
 }
 
 .product__item__pic:hover {
@@ -1040,7 +1041,7 @@ ol {
     border-radius: 5px;
     margin-bottom: 20px;
     overflow: hidden; /* 이미지가 요소를 벗어나는 경우를 방지하기 위해 사용 */
-    cursor: pointer;
+    border: 1px solid #000; 
 }
 .product__sidebar__view__item-parent{
 	  max-width: 100%;
@@ -1088,8 +1089,9 @@ position: absolute;
 }
 
 .product__sidebar__view__item a {
-	color: rgb(255, 255, 255);
+	color: black;
 	font-weight: 700;
+	
 
 }
 .product__sidebar__view__item li{
@@ -1264,6 +1266,7 @@ position: absolute;
 	height: 440px;
 	border-radius: 5px;
 	position: relative;
+	border: 1px solid #000;
 }
 
 .anime__details__pic .comment {
@@ -1276,6 +1279,8 @@ position: absolute;
     position: absolute;
     right: 0px;
     bottom: 0;
+   	border: 1px solid #000;
+    
 }
 
 .anime__details__pic .view {
@@ -1289,6 +1294,7 @@ position: absolute;
     bottom: 0px;
     left: 105px;
     float: left;
+  
 }
 
 .anime__details__title {

@@ -85,15 +85,15 @@ function updateMovieList(data) {
 
     movieListContainer.innerHTML = '';
     
-    var defaultstillUrl = 'img/idefault.png'; // 기본 이미지 URL을 여기에 설정하세요.
+    var defaultstillUrl = 'https://e7.pngegg.com/pngimages/2/610/png-clipart-face-with-tears-of-joy-emoji-android-crying-emoticon-emoji-face-smiley.png'; // 기본 이미지 URL을 여기에 설정하세요.
     
     data.forEach(function(movie) {
 		var stillUrl = movie.stillUrl || defaultstillUrl;
         var movieHTML = `
             <div class="filter__gallery">
                 <div class="product__sidebar__view__item set-bg mix day" style="background-image: url('${movie.stillUrl}');">
-                    <div class="view"><i class="fa fa-eye"></i> ${movie.movieView}</div>
-                    <h5 ><a>${movie.title}</a></h5>
+                    <h5><a style="color:black;" href="../../movie/clickPoster.mo?movieSeq=${movie.movieSeq}" onmouseover="this.style.color='white'" onmouseout="this.style.color='black'">${movie.title}</a></h5>
+
               					 	 <div class="product__item__text">
                                             <li>${movie.genre}</li>
                                      </div>
@@ -101,4 +101,3 @@ function updateMovieList(data) {
         movieListContainer.innerHTML += movieHTML;
     });
 }
-

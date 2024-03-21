@@ -17,7 +17,7 @@
 <meta http-equiv="X-UA-Compatible" content="ie=edge">
 <meta http-equiv="Content-Security-Policy"
    content="upgrade-insecure-requests">
-<title>Anime | Template</title>
+<title>Bonobono | Template</title>
 
 <!-- Google Font -->
 <%@ include file="/movie/html/header.jsp"%>
@@ -199,17 +199,15 @@
                      int endPage = startPage + pageSize - 1;
                      int totalPage = (totalCnt - 1) / pageSize + 1;
                      endPage = endPage > totalPage ? totalPage : endPage;
-                       List<MovieDTO> movieList = mdao.getMovieList(startRow, endRow);
-                            CommentDAO cdao = new CommentDAO();
-                            for (MovieDTO movie : movieList) {
-                                List<CommentDTO> comments = cdao.getCmByMovieSeq(movie.getMovieSeq());
-                                // 댓글 수 계산
-                                int commentCount = comments.size();
-         
-                        %>
+                     List<MovieDTO> movieList = mdao.getMovieList(startRow, endRow);
+                     CommentDAO cdao = new CommentDAO();
+                     for (MovieDTO movie : movieList) {
+                     List<CommentDTO> comments = cdao.getCmByMovieSeq(movie.getMovieSeq());
+                     // 댓글 수 계산
+                     int commentCount = comments.size(); %>
                                 <div class="col-lg-4 col-md-6 col-sm-6">
                                     <div class="product__item">
-                                        <a href="${pageContext.request.contextPath}${pageContext.request.contextPath}/movie/clickPoster.mo?movieSeq=<%=movie.getMovieSeq()%>" onclick="updateViewsOnPage(<%=movie.getMovieSeq()%>)">
+                                        <a href="${pageContext.request.contextPath}/movie/clickPoster.mo?movieSeq=<%=movie.getMovieSeq()%>" onclick="updateViewsOnPage(<%=movie.getMovieSeq()%>)">
                                             <div class="product__item__pic set-bg" data-setbg="<%=movie.getPosterUrl()%>" >
                                                 <div class="comment">
                                                     <i class="fa fa-comments"></i><%=commentCount%>
@@ -224,7 +222,8 @@
                                                 <li><%= movie.getGenre() %></li>
                                             </ul>
                                             <h5>
-                                                <a href="movie-details.jsp?movieSeq=<%=movie.getMovieSeq()%>" onclick="updateViewsOnPage(<%=movie.getMovieSeq()%>)"><%= movie.getTitle() %></a>
+                                                <a href="${pageContext.request.contextPath}/movie/clickPoster.mo?movieSeq=<%=movie.getMovieSeq()%>" 
+                                                   onclick="updateViewsOnPage(<%=movie.getMovieSeq()%>)"><%= movie.getTitle() %></a>
                                             </h5>
                                         </div>
                                     </div>
@@ -278,7 +277,7 @@
                         </div>
                     </div>
                 </div>
-                <div onclick="${pageContext.request.contextPath}/movie/clickPoster.mo?movieSeq=${movie.movieSeq}">
+                <div>
                 <div class="product__sidebar__comment" id="topview-movies" onclick="${pageContext.request.contextPath}/movie/clickPoster.mo?=${movie.movieSeq}">
                     <!-- 여기에 댓글 관련 내용 추가 -->
                     <div class="product__sidebar__view__item" >
@@ -307,12 +306,7 @@
             </div>
             <div class="col-lg-6">
                <div class="footer__nav">
-                  <ul>
-                     <li class="active"><a href="./index.jsp">홈</a></li>
-                     <li><a href="./default.jsp">고객센터</a></li>
-                     <li><a href="./blog.jsp">블로그</a></li>
-
-                  </ul>
+                 
                </div>
             </div>
             <div class="col-lg-3">

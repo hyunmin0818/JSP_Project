@@ -13,7 +13,7 @@
     <meta name="keywords" content="Anime, unica, creative, html">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>영화 | 상세정보</title>
+    <title>BonoBono | 상세정보</title>
     <!-- Google Font -->
     <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Mulish:wght@300;400;500;600;700;800;900&display=swap"
@@ -171,49 +171,41 @@
 </section>
 <!-- 영화 정보 끝 -->
 
-<!-- 푸터 시작 -->
-<footer class="footer">
-    <div class="page-up">
-        <a href="#" id="scrollToTopButton"><span class="arrow_carrot-up"></span></a>
-    </div>
-    <div class="container">
-        <div class="row">
+<!-- Footer Section Begin -->
+   <footer class="footer">
+      <div class="page-up">
+         <a href="#" id="scrollToTopButton"><span class="arrow_carrot-up"></span></a>
+      </div>
+      <div class="container">
+         <div class="row">
             <div class="col-lg-3">
-                <div class="footer__logo">
-                    <a href="${pageContext.request.contextPath}/movie/html/index.jsp"><img src="${pageContext.request.contextPath}/movie/html/img/logo2.png"  alt=""></a>
-                </div>
+               <div class="footer__logo">
+                  <a href="${pageContext.request.contextPath}/movie/html/index.jsp"><img src="img/logo2.png" alt=""></a>
+               </div>
             </div>
             <div class="col-lg-6">
-                <div class="footer__nav">
-                    <ul><li class="active"><a
-                                href="${pageContext.request.contextPath}/movie/html/index.jsp">홈</a>
-                        </li>
-                        <li><a
-                                href="${pageContext.request.contextPath}/movie/html/default.jsp">고객센터</a>
-                        </li>
-                        <li><a href="#">블로그</a></li>
-
-                    </ul>
-                </div>
+               <div class="footer__nav">
+                 
+               </div>
             </div>
             <div class="col-lg-3">
-                <p>
-                    <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
-                    Copyright &copy;
-                    <script>
-                        document.write(new Date().getFullYear());
-                    </script>
-                    All rights reserved | This template is made with <i
-                        class="fa fa-heart" aria-hidden="true"></i> by <a
-                        href="https://colorlib.com" target="_blank">Colorlib</a>
-                    <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
-                </p>
+               <p>
+                  <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+                  Copyright &copy;
+                  <script>
+                     document.write(new Date().getFullYear());
+                  </script>
+                  All rights reserved | This template is made with <i
+                     class="fa fa-heart" aria-hidden="true"></i> by <a
+                     href="https://colorlib.com" target="_blank">Colorlib</a>
+                  <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+               </p>
 
             </div>
-        </div>
-    </div>
-</footer>
-<!-- 푸터 끝 -->
+         </div>
+      </div>
+   </footer>
+   <!-- Footer Section End -->
 
 <!-- 우측 상단 검색창 활성화 시 화면 -->
 <div class="search-model">

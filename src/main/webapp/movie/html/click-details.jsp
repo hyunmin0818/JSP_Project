@@ -18,7 +18,7 @@
     <meta name="keywords" content="Anime, unica, creative, html">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>영화 | 상세정보</title>
+    <title>Bonobono | 상세정보</title>
 
     <!-- Google Font -->
     <link
@@ -201,7 +201,7 @@
                 <div class="anime__details__review">
                     <div class="section-title">
                     
-                        <h5>Reviews <i style="padding-left: 90%" class="fa fa-comments"></i> ${movieinfo.commentCount}</h5>
+                        <h5>Reviews</h5>
                       
                        
                     </div>
@@ -265,9 +265,11 @@
                       <c:if test="${status.index >= 1 && status.index <= 4}">
                             <!-- 영화 정보 출력 -->
                            <div class="product__sidebar__view__item set-bg" data-setbg="${genremovie.stillUrl}" onclick="updateViewsOnPage(${genremovie.movieSeq})" >
-                                 <h5 ><a>${ genremovie.title}</a></h5>
+                                 <h5 ><a onmouseover="this.style.color='white'" 
+                                 onmouseout="this.style.color='black'" 
+                                 href="${pageContext.request.contextPath}/movie/clickPoster.mo?movieSeq=${genremovie.movieSeq}">${ genremovie.title}</a></h5>
                                   <div class="product__item__text"><li>${genremovie.genre}</li> </div>       
-                                  <div class="view"><i class="fa fa-eye"></i> ${movieinfo.movieView} </div>
+                               
                                   
                             </div>
                      </c:if>
@@ -294,16 +296,7 @@
             </div>
             <div class="col-lg-6">
                 <div class="footer__nav">
-                    <ul>
-                        <li class="active"><a
-                                href="${pageContext.request.contextPath}/movie/html/index.jsp">홈</a>
-                        </li>
-                        <li><a
-                                href="${pageContext.request.contextPath}/movie/html/default.jsp">고객센터</a>
-                        </li>
-                        <li><a href="#">블로그</a></li>
-
-                    </ul>
+                   
                 </div>
             </div>
             <div class="col-lg-3">
