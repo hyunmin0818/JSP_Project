@@ -69,13 +69,13 @@
       <div class="loader"></div>
    </div>
 
-   <!-- Header Section Begin -->
+   <!-- 헤더 Begin -->
    <header class="header">
       <div class="container"></div>
    </header>
-   <!-- Header End -->
+   <!-- 헤더 End -->
 
-   <!-- Hero Section Begin -->
+   <!-- 영화 넘어가는 메인화면 -->
    <section class="hero">
       <div class="container">
          <!-- 히어로 슬라이더 -->
@@ -94,7 +94,7 @@
                         <p>험한 것이 나왔다...</p>
                         <!-- 시청 버튼 -->
                         <a
-                           href="${pageContext.request.contextPath}/movie/html/movie-details.jsp"><span>Watch
+                           href="${pageContext.request.contextPath}/movie/clickPoster.mo?movieSeq=35655"><span>Watch
                               Now</span> <i class="fa fa-angle-right"></i></a>
                      </div>
                   </div>
@@ -108,7 +108,7 @@
                         <div class="label">Action</div>
                         <h2>듄: 파트  2 </h2>
                         <p>After 30 days of travel across the world...</p>
-                        <a href="#"><span>Watch Now</span> <i
+                        <a href="${pageContext.request.contextPath}/movie/clickPoster.mo?movieSeq=59931"><span>Watch Now</span> <i
                            class="fa fa-angle-right"></i></a>
                      </div>
                   </div>
@@ -121,7 +121,7 @@
                         <div class="label">Society</div>
                         <h2>댓글부대</h2>
                         <p>내 기사 오보로 만든거 너희들은 아니지?</p>
-                        <a href="#"><span>Watch Now</span> <i
+                        <a href="${pageContext.request.contextPath}/movie/clickPoster.mo?movieSeq=36062"><span>Watch Now</span> <i
                            class="fa fa-angle-right"></i></a>
                      </div>
                   </div>
@@ -134,7 +134,7 @@
                         <div class="label">Action</div>
                         <h2>고질라 X 콩: 뉴 엠파이어</h2>
                         <p>강한 자들을 맞이하라</p>
-                        <a href="#"><span>Watch Now</span> <i
+                        <a href="${pageContext.request.contextPath}/movie/clickPoster.mo?movieSeq=60544"><span>Watch Now</span> <i
                            class="fa fa-angle-right"></i></a>
                      </div>
                   </div>
@@ -147,7 +147,7 @@
                         <div class="label">Animation</div>
                         <h2>극장판 스파이 패밀리 코드 : 화이트</h2>
                         <p>세계의 비밀을 아냐가 ! ! ?</p>
-                        <a href="#"><span>Watch Now</span> <i
+                        <a href="${pageContext.request.contextPath}/movie/clickPoster.mo?movieSeq=60091"><span>Watch Now</span> <i
                            class="fa fa-angle-right"></i></a>
                      </div>
                   </div>
@@ -156,7 +156,7 @@
          </div>
       </div>
    </section>
-   <!-- Hero Section End -->
+   <!-- 영화 넘어가는 메인화면 -->
 
    <!-- Product Section Begin -->
    <section class="product spad">

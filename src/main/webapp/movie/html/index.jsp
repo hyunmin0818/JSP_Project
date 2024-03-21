@@ -209,7 +209,7 @@
                         %>
                                 <div class="col-lg-4 col-md-6 col-sm-6">
                                     <div class="product__item">
-                                        <a href="${pageContext.request.contextPath}	<%=movie.getMovieSeq()%>" onclick="updateViewsOnPage(<%=movie.getMovieSeq()%>)">
+                                        <a href="${pageContext.request.contextPath}${pageContext.request.contextPath}/movie/clickPoster.mo?movieSeq=<%=movie.getMovieSeq()%>" onclick="updateViewsOnPage(<%=movie.getMovieSeq()%>)">
                                             <div class="product__item__pic set-bg" data-setbg="<%=movie.getPosterUrl()%>" >
                                                 <div class="comment">
                                                     <i class="fa fa-comments"></i><%=commentCount%>
