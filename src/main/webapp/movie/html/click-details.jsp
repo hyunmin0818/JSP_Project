@@ -101,7 +101,7 @@
         </div>
     </div>
 </div>
-   </c:forEach>  영화 상세정보를 나오게하는 로직
+   </c:forEach>  <!-- 영화 상세정보를 나오게하는 로직 -->
         <c:choose>
         <c:when test="${not empty movieInfo}">
         <c:forEach var="movieinfo" items="${movieInfo}">
@@ -180,10 +180,8 @@
             </c:forEach>
             </c:when>
             <c:otherwise>
-                <hr
-                        style="border: none; border-top: 1px solid #08052e; width: 100%;">
-                <span style="color: white">상세 정보가 없습니다.</span>
-                </hr>
+                <hr style="border: none; border-top: 1px solid #08052e; width: 100%;">
+                <span style="color: black;">상세 정보가 없습니다.</span> </hr>
             </c:otherwise>
             </c:choose>
 

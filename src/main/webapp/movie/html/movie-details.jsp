@@ -142,7 +142,7 @@
                               
                                    <h3><i style="padding-left: 22px" class="fa fa-eye"></i>${movie.movieView}</h3>
                                     <%-- <h3><i style="padding-left: 22px" class="fa fa-comments"></i>${movie.commentCount}}</h3>  --%> 
-                                    <h3><i style="padding-left: 22px" class="fa fa-heart"></i>${movie.movie_likes}</h3> 
+                                 <%--<h3><i style="padding-left: 22px" class="fa fa-heart"></i>${movie.movie_likes}</h3>  --%>
                                                            
                                 </div>
                             </div>
