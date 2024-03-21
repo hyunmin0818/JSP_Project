@@ -92,8 +92,8 @@ function updateMovieList(data) {
         var movieHTML = `
             <div class="filter__gallery">
                 <div class="product__sidebar__view__item set-bg mix day" style="background-image: url('${movie.stillUrl}');">
-                    <div class="view"><i class="fa fa-eye"></i> ${movie.movieView}</div>
-                    <h5 ><a>${movie.title}</a></h5>
+                    <h5><a style="color:black;" href="../../movie/clickPoster.mo?movieSeq=${movie.movieSeq}" onmouseover="this.style.color='white'" onmouseout="this.style.color='black'">${movie.title}</a></h5>
+
               					 	 <div class="product__item__text">
                                             <li>${movie.genre}</li>
                                      </div>
@@ -101,4 +101,3 @@ function updateMovieList(data) {
         movieListContainer.innerHTML += movieHTML;
     });
 }
-
