@@ -92,7 +92,7 @@ function updateMovieList(data) {
         var movieHTML = `
             <div class="filter__gallery">
                 <div class="product__sidebar__view__item set-bg mix day" style="background-image: url('${movie.stillUrl}');">
-                    <h5><a style="color:black;" href="../../movie/clickPoster.mo?movieSeq=${movie.movieSeq}" onmouseover="this.style.color='white'" onmouseout="this.style.color='black'">${movie.title}</a></h5>
+                    <h5><a  href="../clickPoster.mo?movieSeq=${movie.movieSeq}">${movie.title}</a></h5>
 
               					 	 <div class="product__item__text">
                                             <li>${movie.genre}</li>

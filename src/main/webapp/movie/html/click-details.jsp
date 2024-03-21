@@ -77,9 +77,9 @@
             <div class="col-lg-12">
                 <div class="breadcrumb__links">
                     <!-- 홈으로 이동하는 링크 -->
-                    <a href="./indexOk_index.jsp"><i class="fa fa-home"></i> Home</a>
+                    <a href="${pageContext.request.contextPath}/movie/html/index.jsp"><i class="fa fa-home"></i> Home</a>
                     <!-- 카테고리 페이지로 이동하는 링크 -->
-                    <a href="">Categories</a>
+                    <a >Categories</a>
                     <!-- 현재 페이지의 카테고리 이름을 표시하는 부분 -->
                     <span>${movieinfo.genre}</span>
                 </div>
@@ -265,9 +265,7 @@
                       <c:if test="${status.index >= 1 && status.index <= 4}">
                             <!-- 영화 정보 출력 -->
                            <div class="product__sidebar__view__item set-bg" data-setbg="${genremovie.stillUrl}" onclick="updateViewsOnPage(${genremovie.movieSeq})" >
-                                 <h5 ><a onmouseover="this.style.color='white'" 
-                                 onmouseout="this.style.color='black'" 
-                                 href="${pageContext.request.contextPath}/movie/clickPoster.mo?movieSeq=${genremovie.movieSeq}">${ genremovie.title}</a></h5>
+                                 <h5 ><a  href="${pageContext.request.contextPath}/movie/clickPoster.mo?movieSeq=${genremovie.movieSeq}">${ genremovie.title}</a></h5>
                                   <div class="product__item__text"><li>${genremovie.genre}</li> </div>       
                                
                                   

@@ -58,11 +58,9 @@
             <div class="col-lg-12">
                 <div class="breadcrumb__links">
                     <!-- 홈으로 이동하는 링크 -->
-                    <a href="${pageContext.request.contextPath}/movie/html/loginOk_index.jsp"><i class="fa fa-home"></i> Home</a>
+                    <a href="${pageContext.request.contextPath}/movie/html/index.jsp"><i class="fa fa-home"></i> Home</a>
                     <!-- 카테고리 페이지로 이동하는 링크 -->
-                    <a href="#">search</a>
-                    <!-- 현재 페이지의 카테고리 이름을 표시하는 부분 -->
-                    <span>${movie.genre }
+                    <a >search</a>
                 </div>
             </div>
         </div>

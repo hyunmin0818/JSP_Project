@@ -877,6 +877,7 @@ ol {
     position: absolute;
     right: 0px;
     bottom: 0;
+    letter-spacing: 1px;
 }
 
 .product__item__pic .view {
@@ -1089,10 +1090,13 @@ position: absolute;
 }
 
 .product__sidebar__view__item a {
-	color: black;
-	font-weight: 700;
-	
+    color: black;
+    font-weight: 700;
+    text-shadow: 0 0 5px white;
+}
 
+.product__sidebar__view__item a:hover {
+    color: white; /* 마우스 호버 시 텍스트 색상을 흰색으로 변경 */
 }
 .product__sidebar__view__item li{
 	 list-style: none;

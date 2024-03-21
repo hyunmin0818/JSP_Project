@@ -149,20 +149,13 @@
 	%>
 
 	<!-- Header End -->
-	<script
-		src="${pageContext.request.contextPath}/movie/html/js/jquery-3.3.1.min.js"></script>
-	<script
-		src="${pageContext.request.contextPath}/movie/html/js/bootstrap.min.js"></script>
-	<script
-		src="${pageContext.request.contextPath}/movie/html/js/player.js"></script>
-	<script
-		src="${pageContext.request.contextPath}/movie/html/js/jquery.nice-select.min.js"></script>
-	<script
-		src="${pageContext.request.contextPath}/movie/html/js/mixitup.min.js"></script>
-	<script
-		src="${pageContext.request.contextPath}/movie/html/js/jquery.slicknav.js"></script>
-	<script
-		src="${pageContext.request.contextPath}/movie/html/js/owl.carousel.min.js"></script>
+	<script src="${pageContext.request.contextPath}/movie/html/js/jquery-3.3.1.min.js"></script>
+	<script src="${pageContext.request.contextPath}/movie/html/js/bootstrap.min.js"></script>
+	<script src="${pageContext.request.contextPath}/movie/html/js/player.js"></script>
+	<script src="${pageContext.request.contextPath}/movie/html/js/jquery.nice-select.min.js"></script>
+	<script src="${pageContext.request.contextPath}/movie/html/js/mixitup.min.js"></script>
+	<script src="${pageContext.request.contextPath}/movie/html/js/jquery.slicknav.js"></script>
+	<script src="${pageContext.request.contextPath}/movie/html/js/owl.carousel.min.js"></script>
 	<script src="${pageContext.request.contextPath}/movie/html/js/main.js"></script>
 
 </body>
