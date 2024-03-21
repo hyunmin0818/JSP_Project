@@ -80,8 +80,9 @@ public class ClickPosterAction implements Action {
 
 			// 댓글 정보 가져오기
 			CommentDAO commentDAO = new CommentDAO();
+			
 			List<CommentDTO> commentList = commentDAO.getCmByMovieSeq(movieSeq);
-
+			
 			// 정보를 request에 저장
 			request.setAttribute("movieInfo", movieInfo);
 			request.setAttribute("similarMovies", similarMovies);
@@ -89,7 +90,7 @@ public class ClickPosterAction implements Action {
 
 			// JSP 페이지로 포워딩
 			ActionForward forward = new ActionForward();
-			forward.setPath("/movie/html/click-details.jsp?movieSeq=" + movieSeq);
+			forward.setPath("/movie/html/click-details.jsp?movieSeq=" + movieSeq); // 댓글 ID를 해시로 추가);
 			forward.setRedirect(false);
 
 			return forward;

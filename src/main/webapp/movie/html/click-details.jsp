@@ -232,12 +232,11 @@
                         <div class="section-title">
                             <h5>Your Comment</h5>
                         </div>
-                        <form name="commentForm" method="post"
-                              action="${pageContext.request.contextPath}/movie/addComment.mo">
+                        <form id="commentForm">
                             <input type="hidden" name="movieSeq" value="${movieInfo[0].movieSeq}">
                             <input type="hidden" name="comment_id" value="${comment.comment_id }">
                             <textarea name="comment" placeholder="Comment 를 작성해주세요">${comment.comment }</textarea>
-                            <button type="submit" style="float: right;">
+                            <button type="submit"  id="submitComment" style="float: right;">
                             	<input type="hidden" name="movieSeq" value="${movieinfo.movieSeq}"> <!-- movieSeq 파라미터를 넘기기위한 태그-->
                            		 <input type="hidden" name="user_id" value="${userinfo.user_id}">   <!-- user_id파라미터를 넘기기위한 태그-->
                                 <i class="fa fa-location-arrow"></i> Review
@@ -256,12 +255,14 @@
                     <c:forEach items="${similarMovies}" var="genremovie" varStatus="status">
                       <c:if test="${status.index >= 1 && status.index <= 4}">
                             <!-- 영화 정보 출력 -->
-                           <div class="product__sidebar__view__item set-bg" data-setbg="${genremovie.stillUrl}" onclick="updateViewsOnPage(${genremovie.movieSeq})" >
+                           <a href="${pageContext.request.contextPath}/movie/clickPoster.mo?movieSeq=${genremovie.movieSeq}">
+                           <div class="product__sidebar__view__item set-bg" data-setbg="${genremovie.stillUrl}" onclick="updateViewsOnPage(${genremovie.movieSeq})">
                                  <h5 ><a>${ genremovie.title}</a></h5>
                                   <div class="product__item__text"><li>${genremovie.genre}</li> </div>       
                                   <div class="view"><i class="fa fa-eye"></i> ${movieinfo.movieView} </div>
                                   
                             </div>
+                            </a>
                      </c:if>
                		</c:forEach>
                 </div>
@@ -363,6 +364,7 @@ $(document).ready(function() {
 <script src="${pageContext.request.contextPath}/movie/html/js/ajaxForLikes.js"></script>
 <script src="${pageContext.request.contextPath}/movie/html/js/ajaxForView.js"></script>
 <script src="${pageContext.request.contextPath}/movie/html/js/ajaxGetCommentList.js"></script>
+<script src="${pageContext.request.contextPath}/movie/html/js/addcomment.js"></script>
 
 <script>window.onload = function () {
     var deleteButtons = document.getElementsByClassName('deleteButton');

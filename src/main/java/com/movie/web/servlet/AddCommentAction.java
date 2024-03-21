@@ -1,5 +1,11 @@
 package com.movie.web.servlet;
 
+import java.io.IOException;
+import java.text.SimpleDateFormat;
+import java.util.Date;
+
+import org.json.simple.JSONObject;
+
 import com.movie.web.action.Action;
 import com.movie.web.action.ActionForward;
 import com.movie.web.dao.CommentDAO;
@@ -32,22 +38,41 @@ public class AddCommentAction implements Action{
             CommentDAO commentDAO = new CommentDAO(); 
             boolean result = commentDAO.insertComment( user_id, comment , movieSeq);
 
+            response.setContentType("application/json");
+            response.setCharacterEncoding("UTF-8");
+            
+            SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
+            String comment_time = dateFormat.format(new Date());
+            
+            JSONObject jsonResponse = new JSONObject();
             if (result) {
-                // 댓글 추가 성공 시, 원래 페이지로 리다이렉트
-                forward.setRedirect(true); // 리다이렉트 방식으로 전송
-                forward.setPath("/movie/html/click-details.jsp?movieSeq="+ movieSeq); // 원래 페이지로 이동
-                System.out.println("댓글 등록 완료");
-            }else {
-                // 댓글 추가 실패 시, 에러 페이지로 이동
-                forward.setRedirect(true);
-                forward.setPath("errorPage.jsp");
+                jsonResponse.put("status", "success");
+                jsonResponse.put("message", "댓글 등록 성공");
+                jsonResponse.put("user_id", user_id);
+                jsonResponse.put("comment_time", comment_time);
+                jsonResponse.put("comment", comment);
+            } else {
+                jsonResponse.put("status", "fail");
+                jsonResponse.put("message", "댓글 등록 실패");
             }
+            try {
+				response.getWriter().write(jsonResponse.toString());
+			} catch (IOException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
         } else {
-            // 로그인하지 않은 경우 로그인 페이지로 리다이렉트
-            forward.setRedirect(true);
-            forward.setPath("/movie/html/login.jsp");
+            JSONObject jsonResponse = new JSONObject();
+            jsonResponse.put("status", "fail");
+            jsonResponse.put("message", "로그인 필요");
+            try {
+				response.getWriter().write(jsonResponse.toString());
+			} catch (IOException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+            return null; // 처리를 여기서 마칩니다.
         }
         return forward;
-
-	}
+    }
 }

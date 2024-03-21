@@ -13,7 +13,7 @@ import com.movie.web.mybatis.SqlMapConfig;
 
 public class CommentDAO {
     
-	private static int commentIdCounter = 26; // 클래스 멤버 변수로 옮김
+	private static int commentIdCounter = 58; // 클래스 멤버 변수로 옮김
     
 	SqlSessionFactory factory = SqlMapConfig.getFactory();
     SqlSession sqlSession;
