@@ -38,25 +38,25 @@ public class UserFrontController extends HttpServlet {
       switch (requestURI) {
          case "/SubmitOk.ms": 
             forward = new SubmitOkAction().execute(request, response);
-            break;
+            break;		// 로그인
          case "/movie/mypage.ms": 
             forward = new MoveMypage().execute(request, response);
-            break;
+            break;		// 마이페이지 이동
          case "/movie/updateMypage.ms":
             forward = new UpdateMyPageAction().execute(request, response);
-            break;
+            break;		// 마이페이지 수정 -- 미연결
          case "/movie/checkId.ms": 
             //forward = new CheckIdAction().execute(request, response);
             break;
          case "/movie/joinOk.ms":
             forward = new JoinOkAction().execute(request, response);
-            break;
+            break;		// 회원가입
          case "/movie/returnPage": 
             forward = new ReturnPageAction().execute(request, response);
             break;               // 세션정보 include
          case "/movie/logout.ms": 
             forward = new LogOutAction().execute(request, response);
-            break;
+            break;		// 세션 종료. 유저값 삭제
          case "/movie/searchId.ms":
             forward = new SearchIdAction().execute(request, response);
             break;

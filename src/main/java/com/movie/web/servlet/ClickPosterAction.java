@@ -25,7 +25,7 @@ public class ClickPosterAction implements Action {
 	@Override
 	public ActionForward execute(HttpServletRequest request, HttpServletResponse response) {
 
-		HttpSession session = request.getSession(false);
+		HttpSession session = request.getSession(false);	// 세션이 생성되어있을 경우 이전 세션을 유지합니다.
 		UserDAO udao = new UserDAO();
 		UserDTO udto = new UserDTO();
 
@@ -66,14 +66,14 @@ public class ClickPosterAction implements Action {
 		// 영화 정보 가져오기
 		List<MovieDTO> movieInfo = movieDAO.clickPoster(movieSeq);
 
-		if (!movieInfo.isEmpty()) {
-			String genre = movieInfo.get(0).getGenre();
-			String[] genreArray = genre.split(",");
+		if (!movieInfo.isEmpty()) {						
+			String genre = movieInfo.get(0).getGenre();		// 검색한 movieSeq 값의 장르를 담아옵니다.
+			String[] genreArray = genre.split(",");		// 속성이 분리되지 않았으므로 "," 구분자를 가지고 잘라 배열을 만들어 줍니다.
 
 			List<MovieDTO> similarMovies = new ArrayList<>();
-			for (String singleGenre : genreArray) {
+			for (String singleGenre : genreArray) {				// 반복문을 돌면서 비슷한 장르의 영화 데이터를 객체에 담아옵니다.
 				similarMovies.addAll(movieDAO.searchMoviesByGenre(singleGenre.trim()));
-			}
+			}					// 같은 데이터를 가진 영화가 중복되어 들어오는것을 제거해주고 unique한 값으로 반환합니다.
 
 			HashSet<MovieDTO> uniqueMovies = new HashSet<>(similarMovies);
 			similarMovies = new ArrayList<>(uniqueMovies);
@@ -85,12 +85,12 @@ public class ClickPosterAction implements Action {
 			
 			// 정보를 request에 저장
 			request.setAttribute("movieInfo", movieInfo);
-			request.setAttribute("similarMovies", similarMovies);
+			request.setAttribute("similarMovies", similarMovies);	// 페이지에 함께 렌더링 될 정보를 담아줍니다.
 			request.setAttribute("commentList", commentList);
 
 			// JSP 페이지로 포워딩
 			ActionForward forward = new ActionForward();
-			forward.setPath("/movie/html/click-details.jsp?movieSeq=" + movieSeq); // 댓글 ID를 해시로 추가);
+			forward.setPath("/movie/html/click-details.jsp?movieSeq=" + movieSeq); 
 			forward.setRedirect(false);
 
 			return forward;

@@ -28,10 +28,12 @@ public class JoinOkAction implements Action{
 		        // 여기서는 예외가 발생해도 Movie_like가 이미 0으로 설정되어 있으므로 추가적인 처리를 하지 않
 		    }
 		}
-
+		
+		
+		// 프론트 폼 형식에 따라 맞춰주어야 합니다. id값 틀리지 않도록 주의!
 		udto.setUser_id(request.getParameter("user_id"));
 		udto.setUserpassword(request.getParameter("userpassword"));
-		udto.setUsername(request.getParameter("username"));
+		udto.setUsername(request.getParameter("username"));	
 		udto.setUserphone(request.getParameter("userphone"));
 		udto.setUserbirth(request.getParameter("userbirth"));
 		udto.setEmail(request.getParameter("email"));
@@ -39,11 +41,11 @@ public class JoinOkAction implements Action{
 		
 		
 		if(udao.join(udto)) {	// 회원가입
-			forward.setPath("/movie/html/login.jsp");
+			forward.setPath("/movie/html/login.jsp");	// 로그인 페이지로 보내줌
 			forward.setRedirect(true);
 			System.out.println("가입완료");
 		}else {
-			forward.setPath("/movie/html/join.jsp");
+			forward.setPath("/movie/html/join.jsp"); // 추가적인 로직 (경고문 등)을 프론트에서 정의해 줄 수 있습니다.
 		}
 		return forward;
 

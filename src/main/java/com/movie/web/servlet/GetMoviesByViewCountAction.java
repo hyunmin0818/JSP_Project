@@ -31,9 +31,10 @@ public class GetMoviesByViewCountAction implements Action {
         
         DateTimeFormatter inputFormatter = DateTimeFormatter.ofPattern("yyyyMMdd");
         LocalDate startDate = null;
-        LocalDate endDate = null;
+        LocalDate endDate = null;									// 클래스와 메서드, js 파일을 거치며 형변환이 많이 일어나므로 
+        															// 디버깅을 걸어 확인하는것이 좋습니다.
         System.out.println("startDateStr"+startDate);
-        System.out.println("endDateStr"+endDate);
+        System.out.println("endDateStr"+endDate);			// null 값을 반환하므로 원래는 좀 더 아래에 위치해야합니다.
         try {
             if (startDateStr != null && endDateStr != null) {
                 startDate = LocalDate.parse(startDateStr, inputFormatter);
@@ -56,7 +57,7 @@ public class GetMoviesByViewCountAction implements Action {
             movieObj.put("movieSeq", movie.getMovieSeq());
             movieObj.put("title", movie.getTitle());
             movieObj.put("movieView", movie.getMovieView());
-            movieObj.put("releaseDate", movie.getReleaseDate());
+            movieObj.put("releaseDate", movie.getReleaseDate());		// 여기서 담아줘야 페이지로 가져올 수 있습니다.
             movieObj.put("stillUrl", movie.getStillUrl());
             movieObj.put("genre", movie.getGenre());
             moviesArray.add(movieObj);

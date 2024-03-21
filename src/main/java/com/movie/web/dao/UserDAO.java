@@ -109,7 +109,7 @@ public class UserDAO {
 		return sqlSession.selectOne("User.findUserId", params);
 	}
 
-	// 사용자 비밀번호를 찾는 메서드
+	// 사용자 비밀번호를 찾는 메서드 : 실제로 프론트 페이지에서 입력하는 값을 받아오기.
 	public String searchPw(String user_id) {
 		HashMap<String, Object> params = new HashMap<String, Object>();
 		params.put("user_id", user_id);

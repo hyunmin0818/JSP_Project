@@ -28,9 +28,9 @@ public class AddCommentAction implements Action{
         UserDTO udto = (UserDTO) session.getAttribute("userinfo");
         
 
-        String movieSeq = request.getParameter("movieSeq");
+        String movieSeq = request.getParameter("movieSeq"); // 검색 혹은 클릭해서 들어간 결과 페이지의 영화 pk값을 받습니다.
         
-        if (udto != null) {
+        if (udto != null) {					// 로그인 여부 확인 부분
             String user_id = udto.getUser_id(); // 로그인한 사용자의 ID 가져오기
             String comment = request.getParameter("comment"); // 댓글 내용 가져오기
 
@@ -38,7 +38,7 @@ public class AddCommentAction implements Action{
             CommentDAO commentDAO = new CommentDAO(); 
             boolean result = commentDAO.insertComment( user_id, comment , movieSeq);
 
-            response.setContentType("application/json");
+            response.setContentType("application/json");	// 비동기 통신 ajax로 받아주고 내보낼 것이므로 이렇게 설정합니다.
             response.setCharacterEncoding("UTF-8");
             
             SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
@@ -49,7 +49,7 @@ public class AddCommentAction implements Action{
                 jsonResponse.put("status", "success");
                 jsonResponse.put("message", "댓글 등록 성공");
                 jsonResponse.put("user_id", user_id);
-                jsonResponse.put("comment_time", comment_time);
+                jsonResponse.put("comment_time", comment_time);		// 등록이 성공할 경우 바로 업데이트 될 수 있도록
                 jsonResponse.put("comment", comment);
             } else {
                 jsonResponse.put("status", "fail");
@@ -58,7 +58,7 @@ public class AddCommentAction implements Action{
             try {
 				response.getWriter().write(jsonResponse.toString());
 			} catch (IOException e) {
-				// TODO Auto-generated catch block
+				
 				e.printStackTrace();
 			}
         } else {
@@ -68,7 +68,6 @@ public class AddCommentAction implements Action{
             try {
 				response.getWriter().write(jsonResponse.toString());
 			} catch (IOException e) {
-				// TODO Auto-generated catch block
 				e.printStackTrace();
 			}
             return null; // 처리를 여기서 마칩니다.

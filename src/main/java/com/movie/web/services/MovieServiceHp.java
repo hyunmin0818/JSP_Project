@@ -9,9 +9,12 @@ import java.util.List;
 import com.movie.web.dao.MovieDAO;
 import com.movie.web.dto.MovieDTO;
 
-public class MovieServiceHp implements MovieMapper {
-    private static MovieServiceHp instance; 
-    private MovieDAO movieDAO;
+public class MovieServiceHp implements MovieMapper {	// 싱글톤 디자인 패턴
+	 													// 오직 하나의 인스턴스만 생성되도록 보장, 
+														// 해당 인스턴스에 대한 전역적인 접근을 제공
+	private static MovieServiceHp instance; 
+    
+	private MovieDAO movieDAO;
 
     private MovieServiceHp() {
         movieDAO = new MovieDAO();

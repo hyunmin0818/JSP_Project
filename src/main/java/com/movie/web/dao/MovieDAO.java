@@ -37,7 +37,7 @@ public class MovieDAO {
 	     
 	   }
 	   public void insertMovie(Map<String, Object> map) {
-	        sqlSession.insert("mapper.movieinsert", map);
+	        sqlSession.insert("mapper.movieinsert", map); // mapper 자리에 실제 xml에 정의된 id값
 	    }
 		
 	   // 여러 파라미터에 활용 가능. 검색창에 사용
@@ -54,7 +54,8 @@ public class MovieDAO {
 		    }
 		    return movieList;
 		}
-	   // 장르 : 상세페이지 활용
+	  
+	   // 장르 : 상세페이지 활용 
 	   public List<MovieDTO> searchMoviesByGenre(String genre) {
 		    List<MovieDTO> movieList = null;
 		    try {
@@ -69,6 +70,7 @@ public class MovieDAO {
 		    return movieList;
 		}
 	   
+	   // 포스터를 클릭하면 정보를 담아오는 기능
 	   public List<MovieDTO> clickPoster(String movieSeq) {
 		    List<MovieDTO> movieInfo = null;
 		    try {
@@ -84,7 +86,8 @@ public class MovieDAO {
 		}
 	  
 	
-	public List<MovieDTO> getMovieList(int startRow, int endRow) {
+	   // 서버측에서 페이징 처리를 해줄때 필요한 메서드
+	   public List<MovieDTO> getMovieList(int startRow, int endRow) {
 		HashMap<String, Integer> datas = new HashMap<>();
 		datas.put("startRow", startRow);
 		datas.put("endRow", endRow);
@@ -115,6 +118,7 @@ public class MovieDAO {
 //		sqlSession.update("Movie.updateMovieViews", movieId);
 //	}
 	
+	// 특정 날짜값을 범위로 두고 조회수가 높은순으로 정렬하여 값을 가져와 주는 메서드 : index 페이지 슬라이더 적용
 	public List<MovieDTO> selectMoviesByViewCount(LocalDate startDate, LocalDate endDate) {
 	    HashMap<String, Object> params = new HashMap<>();
 
@@ -123,6 +127,7 @@ public class MovieDAO {
 	    LocalDate defaultEndDate = LocalDate.of(2024, 3, 18); // 기본 종료 날짜입니다.
 
 	    // 날짜를 정수형으로 변환하는 과정
+	    // 자바 기본 라이브러리에서 받아오는 값과 다르므로 형변환이 필요. 사용하는 db나 컬럼데이터 타입에 따라 다를 수 있음.
 	    int formattedStartDate = (startDate != null) ? 
 	        Integer.parseInt(startDate.format(DateTimeFormatter.ofPattern("yyyyMMdd"))) : 
 	        Integer.parseInt(defaultStartDate.format(DateTimeFormatter.ofPattern("yyyyMMdd")));
@@ -130,7 +135,7 @@ public class MovieDAO {
 	    int formattedEndDate = (endDate != null) ? 
 	        Integer.parseInt(endDate.format(DateTimeFormatter.ofPattern("yyyyMMdd"))) : 
 	        Integer.parseInt(defaultEndDate.format(DateTimeFormatter.ofPattern("yyyyMMdd")));
-
+	    
 	    // 변환된 날짜를 매개변수로 추가
 	    params.put("startDate", formattedStartDate);
 	    params.put("endDate", formattedEndDate);
@@ -139,10 +144,10 @@ public class MovieDAO {
 	    List<MovieDTO> movies = sqlSession.selectList("Movie.selectMoviesByViewCount", params);
 	    System.out.println("movies" + movies);
 	    return movies.stream().limit(7).collect(Collectors.toList());
-	    
+	    // 서버측에서 미리 7개로 잘라서 보내주기
 	}
 		
-		// 큰 슬라이더에 쓸 개봉일 내림차순
+		// 큰 슬라이더에 쓸 개봉일 내림차순 : 시간부족으로 구현 x 쿼리문에 90개만 가지고 오도록 제한.
 		public List<MovieDTO> selectMoviesByReleaseDate() {
         List<MovieDTO> movieList = null;
         try {

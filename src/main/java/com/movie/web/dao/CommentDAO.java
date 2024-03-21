@@ -13,7 +13,9 @@ import com.movie.web.mybatis.SqlMapConfig;
 
 public class CommentDAO {
     
-	private static int commentIdCounter = 58; // 클래스 멤버 변수로 옮김
+	private static int commentIdCounter = 58; // 톰캣 서버를 재기동 할 때마다 다시 선언해 주어야하는 상수값.
+											  // DB값을 받아올 수 있도록 연동해 주거나 컬럼에 SEQ를 생성해 주는것이
+											  // 유지보수에 용이
     
 	SqlSessionFactory factory = SqlMapConfig.getFactory();
     SqlSession sqlSession;
@@ -24,9 +26,12 @@ public class CommentDAO {
 
     // commentIdCounter에 대한 동기화된 접근 메서드
     private static synchronized int getNextCommentId() {
-        return commentIdCounter++; // 현재 값을 반환하고 1 증가
+        return commentIdCounter++; // 현재 값을 반환하고 1 증가			// 상단에 선언된 상수값에 대해 업데이트
     }
-	   // movie 파라미터를 기준으로 모든 댓글 정보를 가져오는 메서드
+	   
+    
+    	  // movie 파라미터를 기준으로 모든 댓글 정보를 가져오는 메서드 였으나 DB 컬럼의 데이터 타입에 따라 액션 클래스에서 
+    	  // '%' + (param) + '%' 에 대한 값을 돌려주지 못하는 경우가 생길 수 있으므로 여기에선 title로 제한 
 	      public List<CommentDTO> getCommentList(String title) {
 	          List<CommentDTO> commentList = new ArrayList<CommentDTO>();
 	          try {
@@ -37,7 +42,7 @@ public class CommentDAO {
 	          return commentList;
 	         
 	   }
-	      // 클릭시 댓글리스트 갖고오기
+	      // 포스터 클릭시 댓글리스트 갖고오기 프론트에서 태그값과 경로값 설정에 따라 다양하게 활용가능
 	      public List<CommentDTO> getCmByMovieSeq(String movieSeq) {
 	    	    List<CommentDTO> commentList = new ArrayList<CommentDTO>();
 	    	    try {
@@ -47,6 +52,9 @@ public class CommentDAO {
 	    	    }
 	    	    return commentList;
 	    	}
+	     
+	      
+	      // 로그인한 유저 id, contents, 등록되는 댓글과 외래키로 연결된 테이블의 movieSeq
 	      public boolean insertComment(String user_id, String comment, String movieSeq) {
 	    	    boolean result = false;
 	    	    
@@ -60,7 +68,7 @@ public class CommentDAO {
 			  	System.out.println("movieSeq : " + movieSeq);
 				System.out.println("user_id: " + user_id);
 			  	System.out.println("comment: " + comment);
-			  // sqlSession.insert 메서드를 사용하여 댓글 추가 실행
+			  	// 확인용 콘솔 출력
 	    	    if(sqlSession.insert("Movie.insertComment", params) == 1) {
 	    	        result = true;
 	    	    }
@@ -76,7 +84,7 @@ public class CommentDAO {
 	          // 댓글 삭제를 위한 comment_id 값을 HashMap에 저장
 	          HashMap<String, Object> params = new HashMap<>();
 	          params.put("comment_id", comment_id);
-	          params.put("user_id",user_id);
+	          params.put("user_id",user_id);				// 로그인 후 본인댓글만 삭제 가능
 	          
 	          // sqlSession.delete 메서드를 사용하여 댓글 삭제 실행
 	          if(sqlSession.delete("Movie.deleteComment", params) == 1) {
@@ -105,7 +113,7 @@ public class CommentDAO {
 	    	    return result;
 	    	}
 		
-			// 영화 시퀀스를 기준으로 댓글 수를 가져오는 메서드
+			// PK값 기준으로 댓글 수를 가져오는 메서드
 			public int getCommentCountByMovieSeq(String movieSeq) {
 				int commentCount = 0;
 				try {
@@ -116,6 +124,7 @@ public class CommentDAO {
 				return commentCount;
 			}
 			
+			// 같은 기능..?
 			public int selectCount(String movieSeq) {
 				int commentCount = 0;
 				try {

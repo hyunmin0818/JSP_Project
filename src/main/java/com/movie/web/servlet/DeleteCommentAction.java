@@ -14,11 +14,11 @@ public class DeleteCommentAction implements Action {
     public ActionForward execute(HttpServletRequest request, HttpServletResponse response) {
         // ActionForward 객체 초기화
         ActionForward forward = new ActionForward();
-        HttpSession session = request.getSession();
+        HttpSession session = request.getSession();		// 디폴트값이 true
         UserDTO udto = (UserDTO) session.getAttribute("userinfo");
         String movieSeq = request.getParameter("movieSeq");
         
-        if (udto != null) {
+        if (udto != null) {				// 로그인한 유저만 아이디를 삭제할 수 있어야 하므로
             try {
                 int comment_id = Integer.parseInt(request.getParameter("comment_id"));
                 String user_id = udto.getUser_id(); // UserDTO에서 사용자 ID를 가져옴
