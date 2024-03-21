@@ -35,7 +35,7 @@ public class AddCommentAction implements Action{
             if (result) {
                 // 댓글 추가 성공 시, 원래 페이지로 리다이렉트
                 forward.setRedirect(true); // 리다이렉트 방식으로 전송
-                forward.setPath("/movie/html/movie-details.jsp?movieSeq="+ movieSeq); // 원래 페이지로 이동
+                forward.setPath("/movie/html/click-details.jsp?movieSeq="+ movieSeq); // 원래 페이지로 이동
                 System.out.println("댓글 등록 완료");
             }else {
                 // 댓글 추가 실패 시, 에러 페이지로 이동
