@@ -85,7 +85,7 @@ function updateMovieList(data) {
 
     movieListContainer.innerHTML = '';
     
-    var defaultstillUrl = 'img/idefault.png'; // 기본 이미지 URL을 여기에 설정하세요.
+    var defaultstillUrl = 'https://e7.pngegg.com/pngimages/2/610/png-clipart-face-with-tears-of-joy-emoji-android-crying-emoticon-emoji-face-smiley.png'; // 기본 이미지 URL을 여기에 설정하세요.
     
     data.forEach(function(movie) {
 		var stillUrl = movie.stillUrl || defaultstillUrl;
