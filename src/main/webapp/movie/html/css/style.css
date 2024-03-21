@@ -1041,7 +1041,6 @@ ol {
     border-radius: 5px;
     margin-bottom: 20px;
     overflow: hidden; /* 이미지가 요소를 벗어나는 경우를 방지하기 위해 사용 */
-    cursor: pointer;
     border: 1px solid #000; 
 }
 .product__sidebar__view__item-parent{
@@ -1090,8 +1089,9 @@ position: absolute;
 }
 
 .product__sidebar__view__item a {
-	color: rgb(255, 255, 255);
+	color: black;
 	font-weight: 700;
+	
 
 }
 .product__sidebar__view__item li{

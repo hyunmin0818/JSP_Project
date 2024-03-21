@@ -139,49 +139,41 @@
 
 
 	</section>
-	<!-- 마이페이지 창 끝 -->
+	<!-- Footer Section Begin -->
+   <footer class="footer">
+      <div class="page-up">
+         <a href="#" id="scrollToTopButton"><span class="arrow_carrot-up"></span></a>
+      </div>
+      <div class="container">
+         <div class="row">
+            <div class="col-lg-3">
+               <div class="footer__logo">
+                  <a href="${pageContext.request.contextPath}/movie/html/index.jsp"><img src="img/logo2.png" alt=""></a>
+               </div>
+            </div>
+            <div class="col-lg-6">
+               <div class="footer__nav">
+                 
+               </div>
+            </div>
+            <div class="col-lg-3">
+               <p>
+                  <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+                  Copyright &copy;
+                  <script>
+                     document.write(new Date().getFullYear());
+                  </script>
+                  All rights reserved | This template is made with <i
+                     class="fa fa-heart" aria-hidden="true"></i> by <a
+                     href="https://colorlib.com" target="_blank">Colorlib</a>
+                  <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+               </p>
 
-	<!-- 푸터 시작 -->
-	<footer class="footer">
-		<div class="page-up">
-			<a href="#" id="scrollToTopButton"><span class="arrow_carrot-up"></span></a>
-		</div>
-		<div class="container">
-			<div class="row">
-				<div class="col-lg-3">
-					<div class="footer__logo">
-						<a href="${pageContext.request.contextPath}/movie/html/index.jsp"><img
-							src="img/logo2.png" alt=""></a>
-					</div>
-				</div>
-				<div class="col-lg-6">
-					<div class="footer__nav">
-						<ul>
-							<li class="active"><a
-								href="${pageContext.request.contextPath}/movie/html/index.jsp">홈</a></li>
-							<li><a
-								href="${pageContext.request.contextPath}/movie/html/default.jsp">고객센터</a></li>
-							<li><a href="#">블로그</a></li>
-
-						</ul>
-					</div>
-				</div>
-				<div class="col-lg-3">
-					<p>
-						<!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
-						Copyright &copy;
-						<script>document.write(new Date().getFullYear());</script>
-						All rights reserved | This template is made with <i
-							class="fa fa-heart" aria-hidden="true"></i> by <a
-							href="https://colorlib.com" target="_blank">Colorlib</a>
-						<!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
-					</p>
-
-				</div>
-			</div>
-		</div>
-	</footer>
-	<!-- 푸터 끝 -->
+            </div>
+         </div>
+      </div>
+   </footer>
+   <!-- Footer Section End -->
 
 	<!-- 우측 상단 돋보기 검색 창 활성화 시 -->
 	<div class="search-model">
