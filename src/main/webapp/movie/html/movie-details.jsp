@@ -45,13 +45,13 @@
     <div class="loader"></div>
 </div>
 
-<!-- Header Section Begin -->
+<!-- 히어로 섹션 시작 -->
 <header class="header">
     <div class="container"></div>
 </header>
-<!-- Header End -->
+<!-- 히어로 섹션 끝 -->
 
-<!-- Breadcrumb Begin -->
+<!-- Breadcrumb 시작 -->
 <div class="breadcrumb-option">
     <div class="container">
         <div class="row">
@@ -68,14 +68,16 @@
         </div>
     </div>
 </div>
-<!-- Breadcrumb End -->
-<!-- Anime Section Begin -->
+<!-- Breadcrumb 끝 -->
+
+<!-- 영화 상세 정보 페이지 -->
 <section class="anime-details spad">
     <div class="container">
     	<div class="section-title">
                         <h5>you might like...</h5>
                     </div>
         <c:choose>
+        <%-- 영화 정보가 조회될 경우 --%>
         <c:when test="${movieList != null and fn:length(movieList) > 0 }">
         <c:forEach var="movie" items="${movieList}">
         <div class="anime__details__content">
@@ -158,6 +160,7 @@
             </c:forEach>
             </c:when>
             <c:otherwise>
+          			<%-- 영화 정보가 조회되지 않을 경우 --%>
                 <hr style="border: none; border-top: 1px solid #08052e; width: 100%;">
                		 <span style="color: white">상세 정보가 없습니다.</span>
                 </hr>
@@ -166,9 +169,9 @@
         </div>
         </div>
 </section>
-<!-- Anime Section End -->
+<!-- 영화 정보 끝 -->
 
-<!-- Footer Section Begin -->
+<!-- 푸터 시작 -->
 <footer class="footer">
     <div class="page-up">
         <a href="#" id="scrollToTopButton"><span class="arrow_carrot-up"></span></a>
@@ -210,9 +213,9 @@
         </div>
     </div>
 </footer>
-<!-- Footer Section End -->
+<!-- 푸터 끝 -->
 
-<!-- Search model Begin -->
+<!-- 우측 상단 검색창 활성화 시 화면 -->
 <div class="search-model">
     <div class="h-100 d-flex align-items-center justify-content-center">
         <!-- 검색 모달 닫기 스위치 -->
@@ -225,9 +228,9 @@
         </form>
     </div>
 </div>
-<!-- Search model end -->
+<!-- 검색창 끝 -->
 
-<!-- Js Plugins -->
+<!-- 자바스크립트 -->
 
 <script src="${pageContext.request.contextPath}/movie/html/js/jquery-3.3.1.min.js"></script>
 <script src="${pageContext.request.contextPath}/movie/html/js/bootstrap.min.js"></script>

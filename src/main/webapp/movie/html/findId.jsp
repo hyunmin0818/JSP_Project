@@ -1,9 +1,9 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
-<%@ include file="/movie/html/header.jsp" %>
 <!DOCTYPE html>
 <html lang="zxx">
+<%@ include file="/movie/html/header.jsp" %>
 
 <head>
     <meta charset="UTF-8">
@@ -11,12 +11,13 @@
     <meta name="keywords" content="Anime, unica, creative, html">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Anime | Template</title>
+    <title>아이디 찾기</title>
 
     <!-- Google Font -->
     <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Mulish:wght@300;400;500;600;700;800;900&display=swap"
     rel="stylesheet">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" />
 
     <!-- Css Styles -->
     <link rel="stylesheet" href="${pageContext.request.contextPath}/movie/html/css/bootstrap.min.css" type="text/css">
@@ -30,90 +31,106 @@
 </head>
 
 <body>
-    <!-- Page Preloder -->
+    <!-- 페이지 프리로더 -->
     <div id="preloder">
         <div class="loader"></div>
     </div>
 
-    <!-- Header Section Begin -->
+   <!-- Header 시작 -->
     <header class="header">
         <div class="container">
-
+            
         </div>
     </header>
 
 
 
-    <!-- Header End -->	
-    <!-- Normal Breadcrumb Begin -->
-    <section class="normal-breadcrumb set-bg" data-setbg="img/normal-breadcrumb.jpg">
+    <!-- Header 끝 -->
+
+    <!-- Normal Breadcrumb 시작 -->
+    
+    <section class="normal-breadcrumb set-bg" data-setbg="img/cinema1.jpg">
         <div class="container">
             <div class="row">
                 <div class="col-lg-12 text-center">
                     <div class="normal__breadcrumb__text">
-                        <h2>회원가입</h2>
-                        <p>영화 사이트에 오신걸 환영합니다</p>
+                        <h2>아이디/비밀번호 찾기</h2>
+                        <p>보노보노 영화 사이트에 오신걸 환영합니다</p>
                     </div>
                 </div>
             </div>
         </div>
     </section>
-    <!-- Normal Breadcrumb End -->
-
-    <!-- Login Section Begin -->
-    <section class="login spad" align ="center">
-        <div class="container">
-            <div class="row" >
-                <div class="col-lg-6">
-                    <div class="login__form">
-                        <h3>회원가입</h3>
+    <!-- Normal Breadcrumb 끝 -->
+    
+    <!-- 경계선 -->
+	<hr style ="margin-bottom : 100px">
+	
+	
+    <!-- 아이디 찾기 폼 시작 -->
+          <div class="row d-flex justify-content-center">
+    <section class="login" align ="center">
+        <div class="container"  align ="center">
+          
+               
+                    <div class="login__form" id ="logincenter">
+                        <h3>아이디 찾기 <button type="submit" class="site-btn" id="forgot_id_button">?</button></h3>
                         <form action="#">
                             <div class="input__item">
                                 <input type="text" placeholder="이름을 입력해주세요"> 
-                                <span class="icon_mail"></span>
+                                <span class="icon_id"></span>
                             </div>
-                            <div class="input__item">
-                                <input type="text" placeholder="법정생년월일 6자리를 입력해주세요">
-                                <span class="icon_lock"></span>
-                            </div>
-
-                            <div class="input__item">
-                                <input type="text" placeholder="휴대번호 뒤 7~8자리를 입력해주세요.(01X제외)">
-                                <span class="icon_mail"></span>
-                            </div>
+                         
+                      
+                            <br>
                             
- 
-
-                            <button type="submit" class="site-btn">가입</button>
+                            <div class="input__item">
+                                <input type="text" placeholder="생년월일을 입력해주세요"> 
+                              <span class="material-symbols-outlined">cake</span>
+                            </div>
+                         <br>   
+                            <div class="input__item">
+                                <input type="text" placeholder="이메일을 입력해주세요"> 
+                               <span class="material-symbols-outlined">call</span>
+                            </div>
+ 					 <br>
+							<!-- 버튼 -->
+                            <button type="submit" class="site-btn">아이디 찾기</button>
+                            
                         </form>
+                        
                      <br>
                      
                     </div>
-                    <a href="#" class="forget_pass" align="center">Forgot Your Password?</a>
-                  
+                    
+                    	<!--  ? 버튼 클릭시 출력 메시지 -->
+                    <p class = "forgot_idpw_message" id="forgot_id_message">
+                    </p>
+                        
+            
+                 <br>
+                    <a href="${pagecontext.request.contextpath}/movie/html/findPw.jsp" class="forget_pass" align="center">비밀번호 찾기</a> | 
+                    <a href="${pagecontext.request.contextpath}/movie/html/login.jsp" class="forget_pass" align="center">로그인</a>
                 </div>
-                
-            </div>
-            <div class="login__social">
-                <div class="row d-flex justify-content-center">
-                    <div class="col-lg-6">
-                        <div class="login__social__links">
-                            <span>or</span>
-                            <ul>
-                                <li><a href="#" class="facebook"><i class="fa fa-facebook"></i> Sign in With Facebook</a></li>
-                                <li><a href="#" class="google"><i class="fa fa-google"></i> Sign in With Google</a></li>
-                                <li><a href="#" class="twitter"><i class="fa fa-twitter"></i> Sign in With Twitter</a>
-                                </li>
-                            </ul>
-                        </div>
-                    </div>
+
+                        <br><br> 
+                   
+                 
                 </div>
             </div>
         </div>
     </section>
-    <!-- Login Section End -->
 
-    <!-- Footer Section Begin -->
+            <div class="login__social">
+                <div class="row d-flex justify-content-center">
+
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- 아이디 확인 창 끝 -->
+
+  <!-- 푸터 시작 -->
 <footer class="footer">
     <div class="page-up">
         <a href="#" id="scrollToTopButton"><span class="arrow_carrot-up"></span></a>
@@ -128,7 +145,7 @@
             <div class="col-lg-6">
                 <div class="footer__nav">
                     <ul>
-                        <li class="active"><a href="${pageContext.request.contextPath}/movie/html/index.jsp">홈</a></li>
+                        <a href="${pageContext.request.contextPath}/movie/html/index.jsp">홈</a></li>
                         <li><a href="${pageContext.request.contextPath}/movie/html/default.jsp">고객센터</a></li>
                         <li><a href="#">블로그</a></li>
                        
@@ -144,9 +161,9 @@
           </div>
       </div>
   </footer>
-  <!-- Footer Section End -->
+  <!-- 푸터 끝 -->
 
-      <!-- Search model Begin -->
+      <!-- 검색창 활성화 -->
       <div class="search-model">
         <div class="h-100 d-flex align-items-center justify-content-center">
             <div class="search-close-switch"><i class="icon_close"></i></div>
@@ -155,9 +172,9 @@
             </form>
         </div>
     </div>
-    <!-- Search model end -->
+    <!-- 검색창 끝 -->
 
-    <!-- Js Plugins -->
+    <!-- 자바스크립트 -->
     <script src="${pageContext.request.contextPath}/movie/html/js/jquery-3.3.1.min.js"></script>
     <script src="${pageContext.request.contextPath}/movie/html/js/bootstrap.min.js"></script>
     <script src="${pageContext.request.contextPath}/movie/html/js/player.js"></script>

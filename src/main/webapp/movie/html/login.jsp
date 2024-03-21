@@ -11,7 +11,7 @@
     <meta name="keywords" content="Anime, unica, creative, html">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Anime | Template</title>
+    <title>로그인</title>
 
     <!-- Google Font -->
     <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@300;400;500;600;700&display=swap" rel="stylesheet">
@@ -31,12 +31,12 @@
 
 <body>
 
-    <!-- Page Preloder -->
+    <!-- 페이지 프리로더 -->
     <div id="preloder">
         <div class="loader"></div>
     </div>
 
-    <!-- Header Section Begin -->
+    <!-- Header 시작 -->
             <header class="header">
                 <div class="container">
                
@@ -45,9 +45,9 @@
 
 
 
-            <!-- Header End -->
+            <!-- Header 끝 -->
 
-    <!-- Normal Breadcrumb Begin -->
+    <!-- Normal Breadcrumb 시작 -->
     <section class="normal-breadcrumb set-bg" data-setbg="img/cinema1.jpg">
         <div class="container">
             <div class="row">
@@ -60,9 +60,9 @@
             </div>
         </div>
     </section>
-    <!-- Normal Breadcrumb End -->
+    <!-- Normal Breadcrumb 끝 -->
 	<hr/>
-    <!-- Login Section Begin -->
+    <!-- 좌측 로그인 창 활성화 -->
     <section class="login spad">
         <div class="container">
             <div class="row">
@@ -72,7 +72,7 @@
 						<c:if test="${not empty param.flag}">
 							<c:if test="${not param.flag}">
 								<script>
-									alert("아이디나 비밀번호를 확인하세요");
+									alert("아이디나 비밀번호를 확인하세요"); 
 								</script>
 							</c:if>
 						</c:if>
@@ -104,7 +104,7 @@
                     
                 </div>
                
-        
+        <!--  우측 회원가입 버튼 창 -->
                 <div class="col-lg-6">
                     <div class="login__register" align="center" style="margin-top: 80px;">
                         <h3>계정이 없습니까?</h3>
@@ -131,7 +131,7 @@
             </div>
         </div>
     </section>
-    <!-- Login Section End -->
+    <!-- 로그인 창 끝 -->
 
     <!-- Footer Section Begin -->
     <footer class="footer">
@@ -164,9 +164,9 @@
               </div>
           </div>
       </footer>
-      <!-- Footer Section End -->
+      <!-- 푸터 끝 -->
 
-      <!-- Search model Begin -->
+      <!-- 돋보기 검색창을 눌렀을 떄 화면 창 -->
       <div class="search-model">
         <div class="h-100 d-flex align-items-center justify-content-center">
             <div class="search-close-switch"><i class="icon_close"></i></div>
@@ -175,9 +175,9 @@
             </form>
         </div>
     </div>
-    <!-- Search model end -->
+    <!-- 검색창 끝 -->
 
-    <!-- Js Plugins -->
+    <!-- 자바스크립트 -->
     <script src="${pageContext.request.contextPath}/movie/html/js/jquery-3.3.1.min.js"></script>
     <script src="${pageContext.request.contextPath}/movie/html/js/bootstrap.min.js"></script>
     <script src="${pageContext.request.contextPath}/movie/html/js/player.js"></script>

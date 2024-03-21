@@ -11,7 +11,7 @@
 <meta name="keywords" content="Anime, unica, creative, html">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta http-equiv="X-UA-Compatible" content="ie=edge">
-<title>Anime | Template</title>
+<title>아이디,비밀번호 찾기</title>
 
 <!-- Google Font -->
 <link
@@ -20,6 +20,8 @@
 <link
 	href="https://fonts.googleapis.com/css2?family=Mulish:wght@300;400;500;600;700;800;900&display=swap"
 	rel="stylesheet">
+	
+		<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" />
 
 <!-- Css Styles -->
 <link rel="stylesheet"
@@ -49,12 +51,12 @@
 </head>
 
 <body>
-	<!-- Page Preloder -->
+	<!-- 페이지 프리로더 -->
 	<div id="preloder">
 		<div class="loader"></div>
 	</div>
 
-	<!-- Header Section Begin -->
+	<!-- Header 시작 -->
 	<header class="header">
 		<div class="container">
 			
@@ -63,9 +65,9 @@
 
 
 
-	<!-- Header End -->
+	<!-- Header 끝 -->
 
-	<!-- Normal Breadcrumb Begin -->
+	<!-- Normal Breadcrumb 시작 -->
 	<section class="normal-breadcrumb set-bg" data-setbg="img/cinema.jpg">
 		<div class="container">
 			<div class="row">
@@ -78,9 +80,12 @@
 			</div>
 		</div>
 	</section>
-	<!-- Normal Breadcrumb End -->
+	<!-- Normal Breadcrumb 끝 -->
+	
+	<!-- 경계선 -->
+	<hr style ="margin-bottom : 100px">
 
-	<!-- Login Section Begin -->
+	<!-- 로그인 폼 시작 -->
 	<section class="login spad" align="center">
 		<div class="container">
 			<div class="row">
@@ -90,16 +95,16 @@
 						<form action="#">
 							<div class="input__item">
 								<input type="text" placeholder="이름을 입력해주세요"> <span
-									class="icon_mail"></span>
+									class="icon_id"></span>
 							</div>
 							<div class="input__item">
-								<input type="text" placeholder="법정생년월일 6자리를 입력해주세요"> <span
-									class="icon_lock"></span>
+								<input type="text" placeholder="법정생년월일 6자리를 입력해주세요"> 
+								<span class="material-symbols-outlined">cake</span>
 							</div>
 
 							<div class="input__item">
 								<input type="text" placeholder="휴대번호 뒤 7~8자리를 입력해주세요.(01X제외)">
-								<span class="icon_mail"></span>
+								<span class="material-symbols-outlined">call</span>
 							</div>
 
 
@@ -119,16 +124,16 @@
 						<h3>비밀번호 찾기</h3>
 						<form action="#">
 							<div class="input__item">
-								<input type="text" placeholder="이름을 입력해주세요"> <span
-									class="icon_mail"></span>
+								<input type="text" placeholder="이름을 입력해주세요">
+								 <span class="icon_id"></span>
 							</div>
 							<div class="input__item">
-								<input type="text" placeholder="법정생년월일 6자리를 입력해주세요"> <span
-									class="icon_lock"></span>
+								<input type="text" placeholder="법정생년월일 6자리를 입력해주세요">
+								 <span class="material-symbols-outlined">cake</span>
 							</div>
 							<div class="input__item">
 								<input type="text" placeholder="휴대번호 뒤 7~8자리를 입력해주세요.(01X제외)">
-								<span class="icon_mail"></span>
+								<span class="material-symbols-outlined">call</span>
 							</div>
 							<button type="submit" class="site-btn">확인</button>
 						</form>
@@ -166,9 +171,9 @@
 			</div>
 		</div>
 	</section>
-	<!-- Login Section End -->
+	<!-- 로그인 폼 끝 -->
 
-	<!-- Footer Section Begin -->
+	<!-- 푸터 시작 -->
 	<footer class="footer">
 		<div class="page-up">
 			<a href="#" id="scrollToTopButton"><span class="arrow_carrot-up"></span></a>
@@ -210,9 +215,9 @@
 			</div>
 		</div>
 	</footer>
-	<!-- Footer Section End -->
+	<!-- 푸터 끝 -->
 
-	<!-- Search model Begin -->
+	<!-- 우측 상단 검색시 출력 화면 -->
 	<div class="search-model">
 		<div class="h-100 d-flex align-items-center justify-content-center">
 			<div class="search-close-switch">
@@ -223,9 +228,9 @@
 			</form>
 		</div>
 	</div>
-	<!-- Search model end -->
+	<!-- 검색창 활성화 끝 -->
 
-	<!-- Js Plugins -->
+	<!-- 자바스크립트 -->
 	<script
 		src="${pageContext.request.contextPath}/movie/html/js/jquery-3.3.1.min.js"></script>
 	<script

@@ -11,7 +11,7 @@
     <meta name="keywords" content="Anime, unica, creative, html">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Anime | Template</title>
+    <title>비밀번호 찾기</title>
 
     <!-- Google Font -->
     <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@300;400;500;600;700&display=swap" rel="stylesheet">
@@ -30,12 +30,12 @@
 </head>
 
 <body>
-    <!-- Page Preloder -->
+    <!-- 페이지 로드 -->
     <div id="preloder">
         <div class="loader"></div>
     </div>
 
-    <!-- Header Section Begin -->
+    <!-- 헤더 시작 -->
    <header class="header">
         <div class="container">
            
@@ -44,9 +44,9 @@
 
 
 
-    <!-- Header End -->
+    <!-- 헤더 끝 -->
 
-    <!-- Normal Breadcrumb Begin -->
+    <!-- Normal Breadcrumb 시작 -->
     <section class="normal-breadcrumb set-bg" data-setbg="img/cinema1.jpg">
         <div class="container">
             <div class="row">
@@ -59,10 +59,10 @@
             </div>
         </div>
     </section>
-    <!-- Normal Breadcrumb End -->
-<hr>
-    <!-- Login Section Begin -->
-<!--     <div class="login__social"> -->
+    <!-- Normal Breadcrumb 끝 -->
+	<hr style ="margin-bottom : 100px">
+    <!-- 로그인 폼 시작 -->
+
         <div class="row d-flex justify-content-center">
     <section class="login" align ="center">
         <div class="container"  align ="center">
@@ -95,30 +95,17 @@
                     <a href="./findIdPw.jsp" class="forget_pass" target="_blank" align="center">아이디 찾기</a> | 
                     <a href="./login.jsp" class="forget_pass" align="center">로그인</a>
                 </div>
-<!--             <div class="login__social" align="center"> -->
-<!--                 <div class="row d-flex justify-content-center"> -->
-<!--                     <div class="col-lg-6"> -->
-<!--                         <div class="login__social__links" align="center"> -->
-<!--                             <span>or</span> -->
-<!--                             <ul align="center"> -->
-<!--                                 <li><a href="#" class="facebook"><i class="fa fa-facebook"></i> Sign in With -->
-<!--                                 Facebook</a></li> -->
-<!--                                 <li><a href="#" class="google"><i class="fa fa-google"></i> Sign in With Google</a></li> -->
-<!--                                 <li><a href="#" class="twitter"><i class="fa fa-twitter"></i> Sign in With Twitter</a> -->
 
-<!--                                 </li> -->
-<!--                             </ul> -->
-<!--                         </div> -->
                         <br><br> 
-                    <!-- </div> -->
+                   
                  
                 </div>
             </div>
         </div>
     </section>
-    <!-- Login Section End -->
+    <!-- 로그인 폼 끝 -->
 
-    <!-- Footer Section Begin -->
+    <!-- 푸터 시작  -->
 <footer class="footer">
     <div class="page-up">
         <a href="#" id="scrollToTopButton"><span class="arrow_carrot-up"></span></a>
@@ -149,9 +136,9 @@
           </div>
       </div>
   </footer>
-  <!-- Footer Section End -->
+  <!-- 푸터 끝 -->
 
-      <!-- Search model Begin -->
+      <!-- 검색창 클릭 시 -->
       <div class="search-model">
         <div class="h-100 d-flex align-items-center justify-content-center">
             <div class="search-close-switch"><i class="icon_close"></i></div>
@@ -160,7 +147,7 @@
             </form>
         </div>
     </div>
-    <!-- Search model end -->
+    <!-- 검색창 끝 -->
 
     <!-- Js Plugins -->
     <script src="${pageContext.request.contextPath}/movie/html/js/jquery-3.3.1.min.js"></script>

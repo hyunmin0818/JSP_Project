@@ -11,7 +11,7 @@
     <meta name="keywords" content="Anime, unica, creative, html">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>BonoBono Movie</title>
+    <title>회원가입</title>
 
     <!-- Google Font -->
     <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@300;400;500;600;700&display=swap" rel="stylesheet">
@@ -34,12 +34,12 @@
 </head>
 
 <body>
-    <!-- Page Preloder -->
+    <!-- 페이지 프리로드 -->
     <div id="preloder">
         <div class="loader"></div>
     </div>
 
-   <!-- Header Section Begin -->
+   <!-- 헤더 섹션 시작 -->
    <header class="header">
     <div class="container">
       
@@ -48,9 +48,9 @@
 
 
 
-<!-- Header End -->
+<!-- Header 끝 -->
 
-    <!-- Normal Breadcrumb Begin -->
+    <!-- Normal Breadcrumb 시작 -->
     <section class="normal-breadcrumb set-bg" data-setbg="img/cinema1.jpg">
         <div class="container">
             <div class="row">
@@ -65,14 +65,11 @@
         </div>
        
     </section>
-    <!-- Normal Breadcrumb End -->
+    <!-- Normal Breadcrumb 끝 -->
  <hr />
-    <!-- Login Section Begin -->
-  
-        
+ 
+    <!-- 회원가입 폼 활성화 -->
     <section class="login" align ="center">
-        <!-- <h3 align="center" >나의 정보</h3><br> -->
-        <!-- <p>마이페이지!!!!!!!!!!!!!!!!!!!!!!!!!</p> -->
        
         <div class="container">
             <div class="row" >
@@ -147,10 +144,11 @@
         </div>
     </div>
 </div>
-
-
     </section>
-    <!-- Footer Section Begin -->
+    
+    <!--  회원가입 폼 끝 -->
+    
+<!-- 푸터 시작 -->
 <footer class="footer">
     <div class="page-up">
         <a href="#" id="scrollToTopButton"><span class="arrow_carrot-up"></span></a>
@@ -181,9 +179,9 @@
           </div>
       </div>
   </footer>
-  <!-- Footer Section End -->
+  <!-- 푸터 끝 -->
 
-      <!-- Search model Begin -->
+      <!-- 검색창 활성화 -->
       <div class="search-model">
         <div class="h-100 d-flex align-items-center justify-content-center">
             <div class="search-close-switch"><i class="icon_close"></i></div>
@@ -192,7 +190,7 @@
             </form>
         </div>
     </div>
-    <!-- Search model end -->
+    <!-- 검색창 끝 -->
 
     <!-- Js Plugins -->
     <script src="js/jquery-3.3.1.min.js"></script>

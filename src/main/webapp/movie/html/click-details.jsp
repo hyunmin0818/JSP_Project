@@ -62,15 +62,15 @@
     <div class="loader"></div>
 </div>
 
-<!-- Header Section Begin -->
+<!-- 헤더 섹션 시작 -->
 <header class="header">
     <div class="container">
 
     </div>
 </header>
-<!-- Header End -->
+<!-- 헤더 끝 -->
 
-<!-- Breadcrumb Begin -->
+  <!-- Breadcrumb 시작 -->
 <div class="breadcrumb-option">
     <div class="container">
         <div class="row">
@@ -87,13 +87,17 @@
         </div>
     </div>
 </div>
-<!-- Breadcrumb End -->
-<!-- Anime Section Begin -->
+ <!-- Breadcrumb 끝 -->
+<!-- 영화 상세 정보 페이지 -->
+
+
 
 <section class="anime-details spad">
-    <div class="container">
+ <div class="container">
 <c:forEach var="movieinfo" items="${movieInfo}">
         
+        
+ <%-- 영화 스틸컷 출력 --%>       
 <div class="css-yy4d6f e1yew28617" >
     <div class="css_stilcut">
         <div class="css-sdsdsd">
@@ -101,13 +105,16 @@
         </div>
     </div>
 </div>
-   </c:forEach>  <!-- 영화 상세정보를 나오게하는 로직 -->
+   </c:forEach>  <%-- 영화 상세정보를 나오게하는 로직--%>
         <c:choose>
+        
+      <%--  영화 정보가 존재할 경우 --%>
         <c:when test="${not empty movieInfo}">
         <c:forEach var="movieinfo" items="${movieInfo}">
         <div class="anime__details__content">
             <div class="row" style="margin-top: 30px;">
-                <!-- 영화 이미지와 관련 정보 -->
+
+                <%-- 영화 이미지와 관련 정보 --%>
                 <div class="col-lg-3">
                     <div class="anime__details__pic set-bg" data-setbg="${movieinfo.posterUrl }">
                         <!--이미지-->
@@ -179,9 +186,11 @@
             </div>
             </c:forEach>
             </c:when>
+            <%--  영화 정보가 없을 경우 --%>
             <c:otherwise>
                 <hr style="border: none; border-top: 1px solid #08052e; width: 100%;">
-                <span style="color: black;">상세 정보가 없습니다.</span> </hr>
+                <span style="color: white">상세 정보가 없습니다.</span>
+                </hr>
             </c:otherwise>
             </c:choose>
 
@@ -194,10 +203,11 @@
                     
                         <h5>Reviews <i style="padding-left: 90%" class="fa fa-comments"></i> ${movieinfo.commentCount}</h5>
                       
-                        <!-- 댓글-->
+                       
                     </div>
                     <!-- 리뷰 아이템 -->
                     <c:choose>
+                    	 <%-- 해당 영화에 댓글이 존재할 경우 --%>
                         <c:when test="${commentList != null and fn:length(commentList) > 0}">
                             <c:forEach var="comment" items="${commentList }">
                                 <div class="anime__review__item">
@@ -230,11 +240,12 @@
                         <div class="section-title">
                             <h5>Your Comment</h5>
                         </div>
-                        <form id="commentForm">
+                        <form name="commentForm" method="post"
+                              action="${pageContext.request.contextPath}/movie/addComment.mo">
                             <input type="hidden" name="movieSeq" value="${movieInfo[0].movieSeq}">
                             <input type="hidden" name="comment_id" value="${comment.comment_id }">
                             <textarea name="comment" placeholder="Comment 를 작성해주세요">${comment.comment }</textarea>
-                            <button type="submit"  id="submitComment" style="float: right;">
+                            <button type="submit" style="float: right;">
                             	<input type="hidden" name="movieSeq" value="${movieinfo.movieSeq}"> <!-- movieSeq 파라미터를 넘기기위한 태그-->
                            		 <input type="hidden" name="user_id" value="${userinfo.user_id}">   <!-- user_id파라미터를 넘기기위한 태그-->
                                 <i class="fa fa-location-arrow"></i> Review
@@ -253,23 +264,21 @@
                     <c:forEach items="${similarMovies}" var="genremovie" varStatus="status">
                       <c:if test="${status.index >= 1 && status.index <= 4}">
                             <!-- 영화 정보 출력 -->
-                           <a href="${pageContext.request.contextPath}/movie/clickPoster.mo?movieSeq=${genremovie.movieSeq}">
-                           <div class="product__sidebar__view__item set-bg" data-setbg="${genremovie.stillUrl}" onclick="updateViewsOnPage(${genremovie.movieSeq})">
+                           <div class="product__sidebar__view__item set-bg" data-setbg="${genremovie.stillUrl}" onclick="updateViewsOnPage(${genremovie.movieSeq})" >
                                  <h5 ><a>${ genremovie.title}</a></h5>
                                   <div class="product__item__text"><li>${genremovie.genre}</li> </div>       
                                   <div class="view"><i class="fa fa-eye"></i> ${movieinfo.movieView} </div>
                                   
                             </div>
-                            </a>
                      </c:if>
                		</c:forEach>
                 </div>
             </div>
         </div>
 </section>
-<!-- Anime Section End -->
+<!-- 영화 정보 끝 -->
 
-<!-- Footer Section Begin -->
+<!-- 푸터 시작 -->
 <footer class="footer">
     <div class="page-up">
         <a href="#" id="scrollToTopButton"><span class="arrow_carrot-up"></span></a>
@@ -314,7 +323,7 @@
         </div>
     </div>
 </footer>
-<!-- Footer Section End -->
+<!-- 푸터 끝 -->
 
 <!-- Search model Begin -->
 <div class="search-model">
@@ -331,7 +340,7 @@
 </div>
 <!-- Search model end -->
 
-<!-- Js Plugins -->
+<!-- 자바스크립트 -->
 <script>
     function updateViewsOnPage(movieSeq) {
         // updateViewsOnPage() 함수를 호출하여 영화 시퀀스를 전달
@@ -342,7 +351,7 @@
     }
 </script>
 <script >
-$(document).ready(function() {
+$(document).ready(function() {	//페이지 활성화 시 스틸컷 URL 호출 및 활성화
     $('.css_stilcut').each(function() {
         var bgImgUrl = $(this).data('setbg');
         $(this).css('background-image', 'url(' + bgImgUrl + ')');
@@ -362,9 +371,8 @@ $(document).ready(function() {
 <script src="${pageContext.request.contextPath}/movie/html/js/ajaxForLikes.js"></script>
 <script src="${pageContext.request.contextPath}/movie/html/js/ajaxForView.js"></script>
 <script src="${pageContext.request.contextPath}/movie/html/js/ajaxGetCommentList.js"></script>
-<script src="${pageContext.request.contextPath}/movie/html/js/addcomment.js"></script>
 
-<script>window.onload = function () {
+<script>window.onload = function () {	//삭제 버튼
     var deleteButtons = document.getElementsByClassName('deleteButton');
     for (var i = 0; i < deleteButtons.length; i++) {
         deleteButtons[i].style.display = 'show'; // 혹은 필요에 따라 다른 스타일 변경
