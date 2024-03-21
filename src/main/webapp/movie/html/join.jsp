@@ -79,9 +79,9 @@
              
                     <div class="login__form" id ="logincenter">
                         <!-- <h3 align="center" >회원가입</h3><br> -->
-                        <form action="${pageContext.request.contextPath}/movie/joinOk.ms" method="post">               <!--입력창 활성화 -->
+                        <form action="${pageContext.request.contextPath}/movie/joinOk.ms" method="post" name="loginform">               <!--입력창 활성화 -->
                             <div>
-                            <h5 align="left" class="blacktext">아이디 <button type="button" class="site-btn" id ="check_id_btn" align="left">중복확인</button><a id="check_id_message"></a></h5>
+                            <h5 align="left" class="blacktext">아이디 <button type="button" class="site-btn" id ="check_id_btn" align="left" onclick=checkId($("#user_id").val());>중복확인</button><a id="check_id_message"></a></h5>
                             
                             </div>
                             <div class="input__item">
@@ -105,7 +105,7 @@
                               <span class="icon_lock"></span>
                             </div>
 
-                            <h5 align="left" class="blacktext">이름</h5><br>
+                            <h5 align="left" class="blacktext">이름<a id="check_name_message"></a></h5><br>
                             <div class="input__item">
                                
                                 <input type="text" class ="blacktext" placeholder="이름을 입력해주세요" id="username" name="username"> 
@@ -115,26 +115,26 @@
                         
 
 
-                            <h5 align="left" class="blacktext">생년월일</h5><br>  
+                            <h5 align="left" class="blacktext">생년월일<a id="check_birth_message"></a></h5><br> 
                             <div class="input__item">
                                 <input type="text" placeholder="법정생년월일 6자리를 입력해주세요" id="userbirth" name="userbirth">
                                 <span class="material-symbols-outlined">cake</span>
                             </div>
 
-                            <h5 align="left" class="blacktext">휴대번호</h5><br>
+                            <h5 align="left" class="blacktext">휴대번호<a id="check_phone_message"></a></h5><br>
                             <div class="input__item">
                                 
-                                <input type="text" placeholder="휴대번호 뒤 7~8자리를 입력해주세요" id="userphone" name= "userphone">
+                                <input type="text" placeholder="연락처를 입력해주세요 (010,011)" id="userphone" name= "userphone">
                                 <span class="material-symbols-outlined">call</span>
                             </div>
-                            <h5 align="left" class="blacktext">이메일</h5><br>
+                            <h5 align="left" class="blacktext">이메일<a id="check_email_message"></a></h5><br>
                             <div class="input__item">
                                 <input type="text" placeholder="이메일 정보를 입력해주세요" id="email" name="email">
                                 <span class="icon_mail"></span>
                             </div>
  
 						<br>
-                            <button type="submit" class="site-btn" id="join_button">가입</button>
+                            <button type="submit" class="site-btn" id="join_button" onclick=sendit(event);>가입</button>
                         </form>
                        <br> <br> <br> <br> <br> <br>
                     </div>
@@ -204,8 +204,8 @@
     <script src="js/owl.carousel.min.js"></script>
     <script src="js/main.js"></script>
     <script src="js/profile_modify.js"></script>
-    <script src="js/check_id.js"></script>
-
+<!--     <script src="js/check_id.js"></script> -->
+	<script src="js/join_validation.js"></script>
 
 </body>
 
