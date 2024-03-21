@@ -17,7 +17,7 @@
 <meta http-equiv="X-UA-Compatible" content="ie=edge">
 <meta http-equiv="Content-Security-Policy"
    content="upgrade-insecure-requests">
-<title>Anime | Template</title>
+<title>Bonobono | Template</title>
 
 <!-- Google Font -->
 <%@ include file="/movie/html/header.jsp"%>
@@ -199,14 +199,12 @@
                      int endPage = startPage + pageSize - 1;
                      int totalPage = (totalCnt - 1) / pageSize + 1;
                      endPage = endPage > totalPage ? totalPage : endPage;
-                       List<MovieDTO> movieList = mdao.getMovieList(startRow, endRow);
-                            CommentDAO cdao = new CommentDAO();
-                            for (MovieDTO movie : movieList) {
-                                List<CommentDTO> comments = cdao.getCmByMovieSeq(movie.getMovieSeq());
-                                // 댓글 수 계산
-                                int commentCount = comments.size();
-         
-                        %>
+                     List<MovieDTO> movieList = mdao.getMovieList(startRow, endRow);
+                     CommentDAO cdao = new CommentDAO();
+                     for (MovieDTO movie : movieList) {
+                     List<CommentDTO> comments = cdao.getCmByMovieSeq(movie.getMovieSeq());
+                     // 댓글 수 계산
+                     int commentCount = comments.size(); %>
                                 <div class="col-lg-4 col-md-6 col-sm-6">
                                     <div class="product__item">
                                         <a href="${pageContext.request.contextPath}/movie/clickPoster.mo?movieSeq=<%=movie.getMovieSeq()%>" onclick="updateViewsOnPage(<%=movie.getMovieSeq()%>)">

@@ -18,7 +18,7 @@
     <meta name="keywords" content="Anime, unica, creative, html">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>영화 | 상세정보</title>
+    <title>Bonobono | 상세정보</title>
 
     <!-- Google Font -->
     <link
@@ -265,7 +265,7 @@
                       <c:if test="${status.index >= 1 && status.index <= 4}">
                             <!-- 영화 정보 출력 -->
                            <div class="product__sidebar__view__item set-bg" data-setbg="${genremovie.stillUrl}" onclick="updateViewsOnPage(${genremovie.movieSeq})" >
-                                 <h5 ><a>${ genremovie.title}</a></h5>
+                                 <h5 ><a href="${pageContext.request.contextPath}/movie/clickPoster.mo?movieSeq=${genremovie.movieSeq}">${ genremovie.title}</a></h5>
                                   <div class="product__item__text"><li>${genremovie.genre}</li> </div>       
                                   <div class="view"><i class="fa fa-eye"></i> ${movieinfo.movieView} </div>
                                   

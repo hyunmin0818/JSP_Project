@@ -17,7 +17,7 @@
 <meta http-equiv="X-UA-Compatible" content="ie=edge">
 <meta http-equiv="Content-Security-Policy"
    content="upgrade-insecure-requests">
-<title>Anime | Template</title>
+<title>Bonobono | Template</title>
 
 <!-- Google Font -->
 <%@ include file="/movie/html/header.jsp"%>
