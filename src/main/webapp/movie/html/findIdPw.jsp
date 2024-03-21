@@ -104,7 +104,7 @@
 
 
 
-							<button type="submit" class="site-btn">가입</button>
+							<button type="submit" class="site-btn">확인</button>
 						</form>
 
 

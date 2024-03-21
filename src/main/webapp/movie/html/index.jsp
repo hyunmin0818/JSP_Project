@@ -185,7 +185,6 @@
                      <%
                      MovieDAO mdao = new MovieDAO();
                      int totalCnt = mdao.getMovieCnt();
-
                      String temp = request.getParameter("page");
                      int pageIndex = 0;
                      try {
@@ -193,22 +192,16 @@
                      } catch (NumberFormatException e) {
                         pageIndex = 1; // 잘못된 파라미터 값이 전달될 경우 기본값으로 설정
                      }
-
-                     int pageSize = 12;
-                     int endRow = pageIndex * pageSize; // 여기서 수정이 필요했음
+                     int pageSize = 12;  // 페이지 갯수 설정
+                     int endRow = pageIndex * pageSize; // 페이지 갯수
                      int startRow = endRow - pageSize + 1;
-
                      int startPage = ((pageIndex - 1) / pageSize) * pageSize + 1;
                      int endPage = startPage + pageSize - 1;
                      int totalPage = (totalCnt - 1) / pageSize + 1;
-
                      endPage = endPage > totalPage ? totalPage : endPage;
-
                        List<MovieDTO> movieList = mdao.getMovieList(startRow, endRow);
                             CommentDAO cdao = new CommentDAO();
-                            
                             for (MovieDTO movie : movieList) {
-                              
                                 List<CommentDTO> comments = cdao.getCmByMovieSeq(movie.getMovieSeq());
                                 // 댓글 수 계산
                                 int commentCount = comments.size();
