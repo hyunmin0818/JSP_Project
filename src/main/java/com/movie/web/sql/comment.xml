@@ -28,7 +28,6 @@
     DELETE FROM comment
     WHERE comment_id = #{comment_id}
     AND operator_id = #{user_id} 
-    <!-- 여기서 operator_id와 user_id가 일치하는 조건을 확인 -->
 </delete>
 <select id="selectCount" parameterType="string" resultType="commentdto">
 		SELECT count(*),movieSeq  from comment group by movieSeq; 

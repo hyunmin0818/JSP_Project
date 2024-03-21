@@ -31,7 +31,9 @@ SELECT * FROM movie
     JOIN movie m ON ml.movieSeq = m.movieSeq
     WHERE u.user_id = #{user_id};
 </select>
+
 <update id="updateUserinfo" parameterType="hashmap" >
 		UPDATE user SET username = #{username}, email = #{email}, userphone = #{userphone}, userbirth = #{userbirth} WHERE user_id = #{user_id}
 </update>
+
 </mapper>

@@ -1,6 +1,5 @@
 package com.movie.web.servlet;
 
-import java.io.IOException;
 
 import java.util.ArrayList;
 

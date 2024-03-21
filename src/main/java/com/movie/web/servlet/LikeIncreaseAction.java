@@ -26,7 +26,7 @@ public class LikeIncreaseAction implements Action {
 		
 		LikesDTO ldto = new LikesDTO();
 		ldto.setMovieSeq(movieSeq);
-		ldto.setUser_Id(userId); // 변수명 수정
+		ldto.setUser_Id(userId); 
 		
 		LikesDAO ldao = new LikesDAO();
 		boolean success = ldao.addLikeAndUpdateLikesCount(ldto);

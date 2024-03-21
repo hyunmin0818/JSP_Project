@@ -1,12 +1,8 @@
 package com.movie.web.servlet;
 
-import java.util.HashMap;
-
 import com.movie.web.action.Action;
 import com.movie.web.action.ActionForward;
 import com.movie.web.dao.CommentDAO;
-import com.movie.web.dao.UserDAO;
-import com.movie.web.dto.MovieDTO;
 import com.movie.web.dto.UserDTO;
 
 import jakarta.servlet.http.HttpServletRequest;
